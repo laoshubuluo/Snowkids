@@ -14,7 +14,6 @@
         android:gravity="center_vertical"
         android:maxWidth="250dp"
         android:singleLine="true"
-        android:text="返回"
         android:textColor="@color/black"
         android:textSize="@dimen/font_20sp" />
 
@@ -27,7 +26,6 @@
         android:background="@mipmap/arrow_back"
         android:gravity="left|center_vertical"
         android:singleLine="true"
-        android:textColor="@color/blue"
         android:textSize="@dimen/font_17sp" />
 
     <TextView
@@ -39,6 +37,11 @@
         android:gravity="right|center_vertical"
         android:singleLine="true"
         android:textColor="@color/blue"
-        android:textSize="@dimen/font_17sp"
-        android:visibility="visible" />
+        android:textSize="@dimen/font_17sp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/publi_top_line" />
 </RelativeLayout>
