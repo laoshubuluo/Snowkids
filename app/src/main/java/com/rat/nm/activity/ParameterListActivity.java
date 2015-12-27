@@ -103,7 +103,7 @@ public class ParameterListActivity extends BaseActivity {
     /**
      * 点击事件
      */
-    @OnClick(R.id.signInBtn)
+    @OnClick(R.id.loginBtn)
     public void signInBtnOnClick(View v) {
 //        DemoService ds = new DemoService(getApplicationContext(), handler);
 //        ds.testQuery();

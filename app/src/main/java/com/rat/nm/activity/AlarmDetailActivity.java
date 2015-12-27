@@ -32,8 +32,7 @@ public class AlarmDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm_detail);
 
-        //基础框架初始化
-        ViewUtils.inject(this);//xUtils框架注解注入view和事件
+
 
         initView();
         initData();
@@ -116,7 +115,7 @@ public class AlarmDetailActivity extends BaseActivity {
     /**
      * 点击事件
      */
-    @OnClick(R.id.signInBtn)
+    @OnClick(R.id.loginBtn)
     public void signInBtnOnClick(View v) {
 //        DemoService ds = new DemoService(getApplicationContext(), handler);
 //        ds.testQuery();

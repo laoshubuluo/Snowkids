@@ -1,5 +1,6 @@
 package com.rat.nm.appmanager;
 
+import com.lidroid.xutils.ViewUtils;
 import com.rat.nm.util.ImageUtil;
 
 /**

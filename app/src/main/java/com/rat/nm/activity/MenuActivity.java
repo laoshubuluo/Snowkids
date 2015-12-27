@@ -1,7 +1,10 @@
 package com.rat.nm.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.view.View;
+import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -12,6 +15,11 @@ import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.view.MenuItemView;
 
 public class MenuActivity extends BaseActivity {
+
+    @ViewInject(R.id.top_name)
+    private TextView titleView;
+    @ViewInject(R.id.top_left)
+    private TextView backView;
 
     @ViewInject(R.id.profileMIV)
     private MenuItemView profileMIV;
@@ -26,14 +34,13 @@ public class MenuActivity extends BaseActivity {
     @ViewInject(R.id.settingsMIV)
     private MenuItemView settingsMIV;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-        //基础框架初始化
+        // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
-
         initView();
         initData();
     }
@@ -43,6 +50,10 @@ public class MenuActivity extends BaseActivity {
      * 初始化界面
      */
     public void initView() {
+        titleView.setText(R.string.menu);
+        backView.setBackgroundResource(R.mipmap.arrow_back);
+        backView.setOnClickListener(this);
+
         profileMIV.initView(MenuItemView.PROFILE);
         profileMIV.initData(0);
         parameterMIV.initView(MenuItemView.PARAMETER);
@@ -77,5 +88,15 @@ public class MenuActivity extends BaseActivity {
 ////                tv.setText(demo.getName());
 //        }
         return false;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.top_left:
+                finish();
+                break;
+        }
     }
 }
