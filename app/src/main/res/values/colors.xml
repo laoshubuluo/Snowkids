@@ -1,0 +1,10 @@
+<resources>
+    <color name="blue">#01699f</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff0000</color>
+    <color name="gray">#7f7f7f</color>
+
+    <color name="translate">#00000000</color>//透明
+    <color name="translate_half">#a0000000</color>//半透明
+</resources>

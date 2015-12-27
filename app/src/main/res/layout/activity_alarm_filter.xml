@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@mipmap/bg_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".ActivityWelcome">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/alarm_filter"
+        android:textColor="@color/blue"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/time"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@mipmap/alarm_filter_rounded_btn_white"
+        android:drawableRight="@mipmap/alarm_filter_more"
+        android:padding="15dp"
+        android:text="Week"
+        android:textColor="@color/blue" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/leave"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
+
+    <EditText
+        android:id="@+id/userNameET"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@mipmap/alarm_filter_rounded_btn_white"
+        android:drawableRight="@mipmap/alarm_filter_more"
+        android:padding="15dp"
+        android:text="Warn"
+        android:textColor="@color/blue" />
+
+    <Button
+        android:id="@+id/queryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@mipmap/welcome_butten_bg_blue"
+        android:text="@string/query"
+        android:textColor="@color/white" />
+</LinearLayout>
