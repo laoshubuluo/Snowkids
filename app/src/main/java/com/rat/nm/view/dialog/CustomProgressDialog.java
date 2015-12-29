@@ -3,17 +3,24 @@ package com.rat.nm.view.dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.rat.networkmanager.R;
 
+
 /**
- * author : L.jinzhu
- * date : 2015/8/17
- * introduce : 等待提示框
+ * @author shisheng.zhao
+ * @Description: 自定义ProgressDialog
+ * @date 2015-09-06 下午17:57:26
  */
 public class CustomProgressDialog extends ProgressDialog {
-    public CustomProgressDialog(Context context) {
+    private Context context;
+    private String text;
+
+    public CustomProgressDialog(Context context, String text) {
         super(context);
+        this.context = context;
+        this.text = text;
     }
 
     @Override
@@ -21,5 +28,7 @@ public class CustomProgressDialog extends ProgressDialog {
         super.onCreate(savedInstanceState);
         getWindow().setBackgroundDrawableResource(R.color.translate);//背景
         setContentView(R.layout.loading);
+//        loadingText = (TextView) findViewById(R.id.tv_loading);
+//        loadingText.setText(text);
     }
 }

@@ -5,15 +5,15 @@
 //import android.os.Handler;
 //import android.os.Message;
 //
-//import com.wmgj.amen.common.MessageSignConstant;
-//import com.wmgj.amen.common.ResponseConstant;
-//import com.wmgj.amen.common.WebConstant;
-//import com.wmgj.amen.entity.net.request.PasswordUpdateActionInfo;
-//import com.wmgj.amen.entity.net.request.base.RequestInfo;
-//import com.wmgj.amen.entity.net.response.base.ResponseInfo;
-//import com.wmgj.amen.network.request.base.PostJsonRequest;
-//import com.wmgj.amen.util.GsonUtil;
-//import com.wmgj.amen.util.LogUtil;
+//import com..common.MessageSignConstant;
+//import com..common.ResponseConstant;
+//import com..common.WebConstant;
+//import com..entity.net.request.PasswordUpdateActionInfo;
+//import com..entity.net.request.base.RequestInfo;
+//import com..entity.net.response.base.ResponseInfo;
+//import com..network.request.base.PostJsonRequest;
+//import com..util.GsonUtil;
+//import com..util.LogUtil;
 //
 //import org.json.JSONObject;
 //

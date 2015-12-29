@@ -15,7 +15,7 @@
 ///**
 // * 数据库操作工具类
 // *
-// * @author shisheng.zhao
+// * @author L.jinzhu
 // * @date 2015-09-07 18:51:22
 // */
 //public class DbOpenHelper extends SQLiteOpenHelper {

@@ -6,23 +6,23 @@
 //import android.widget.Toast;
 //
 //import com.umeng.analytics.MobclickAgent;
-//import com.wmgj.amen.R;
-//import com.wmgj.amen.activity.user.LoginOpenPlatformActivity;
-//import com.wmgj.amen.appmanager.AppManager;
-//import com.wmgj.amen.appmanager.DbConnectionManager;
-//import com.wmgj.amen.common.ResponseConstant;
-//import com.wmgj.amen.common.WebConstant;
-//import com.wmgj.amen.dao.BibleDao;
-//import com.wmgj.amen.dao.UserDao;
-//import com.wmgj.amen.dao.impl.UserDaoImpl;
-//import com.wmgj.amen.entity.net.request.LoginActionInfo;
-//import com.wmgj.amen.entity.net.request.base.RequestInfo;
-//import com.wmgj.amen.entity.net.response.LoginRegisterInfo;
-//import com.wmgj.amen.entity.user.User;
-//import com.wmgj.amen.network.request.base.PostJsonRequest;
-//import com.wmgj.amen.util.AppUtils;
-//import com.wmgj.amen.util.GsonUtil;
-//import com.wmgj.amen.util.LogUtil;
+//import com..R;
+//import com..activity.user.LoginOpenPlatformActivity;
+//import com..appmanager.AppManager;
+//import com..appmanager.DbConnectionManager;
+//import com..common.ResponseConstant;
+//import com..common.WebConstant;
+//import com..dao.BibleDao;
+//import com..dao.UserDao;
+//import com..dao.impl.UserDaoImpl;
+//import com..entity.net.request.LoginActionInfo;
+//import com..entity.net.request.base.RequestInfo;
+//import com..entity.net.response.LoginRegisterInfo;
+//import com..entity.user.User;
+//import com..network.request.base.PostJsonRequest;
+//import com..util.AppUtils;
+//import com..util.GsonUtil;
+//import com..util.LogUtil;
 //
 //import org.json.JSONObject;
 //

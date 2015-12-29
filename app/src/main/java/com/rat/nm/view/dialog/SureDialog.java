@@ -10,7 +10,7 @@ import com.rat.networkmanager.R;
 import com.rat.nm.util.StringUtils;
 
 /**
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @Description: 自定义Dialog
  * @date 2015-10-28 上午11:17:26
  */

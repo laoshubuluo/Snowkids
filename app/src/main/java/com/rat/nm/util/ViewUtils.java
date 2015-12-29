@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 
 /**
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @Description: View的开关Controll
  * @date 2015-09-01 下午18:07:16
  */

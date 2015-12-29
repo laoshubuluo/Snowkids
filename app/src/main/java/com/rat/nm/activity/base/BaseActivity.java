@@ -29,10 +29,8 @@ public class BaseActivity extends Activity implements Handler.Callback, View.OnC
         requestWindowFeature(Window.FEATURE_NO_TITLE);// 统一去掉标题栏
         super.onCreate(savedInstanceState);
         handler = new Handler(this);
-        customProgressDialog = new CustomProgressDialog(BaseActivity.this);
         promptDialog = new PromptDialog(BaseActivity.this);
         imageLoader = ImageLoader.getInstance();
-
     }
 
     /**

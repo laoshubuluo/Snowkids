@@ -12,21 +12,21 @@
 //import android.widget.TextView;
 //import android.widget.Toast;
 //
-//import com.wmgj.amen.R;
-//import com.wmgj.amen.activity.BaseActivity;
-//import com.wmgj.amen.common.ActivityResultConstant;
-//import com.wmgj.amen.common.MessageSignConstant;
-//import com.wmgj.amen.controller.FriendController;
-//import com.wmgj.amen.controller.GroupController;
-//import com.wmgj.amen.controller.UserInfoController;
-//import com.wmgj.amen.dao.impl.UserDaoImpl;
-//import com.wmgj.amen.entity.user.User;
-//import com.wmgj.amen.injection.ControlInjection;
-//import com.wmgj.amen.util.AppUtils;
-//import com.wmgj.amen.util.LogUtil;
-//import com.wmgj.amen.util.StringUtils;
-//import com.wmgj.amen.view.dialog.CustomProgressDialog;
-//import com.wmgj.amen.view.dialog.SendSuccessDialog;
+//import com..R;
+//import com..activity.BaseActivity;
+//import com..common.ActivityResultConstant;
+//import com..common.MessageSignConstant;
+//import com..controller.FriendController;
+//import com..controller.GroupController;
+//import com..controller.UserInfoController;
+//import com..dao.impl.UserDaoImpl;
+//import com..entity.user.User;
+//import com..injection.ControlInjection;
+//import com..util.AppUtils;
+//import com..util.LogUtil;
+//import com..util.StringUtils;
+//import com..view.dialog.CustomProgressDialog;
+//import com..view.dialog.SendSuccessDialog;
 //
 ///**
 // * author : L.jinzhu

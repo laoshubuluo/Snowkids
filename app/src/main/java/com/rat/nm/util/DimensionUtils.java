@@ -6,7 +6,7 @@ import android.util.TypedValue;
 /**
  * 和尺寸相关的工具类,主要负责尺寸之间的转换
  *
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @date 2015-09-01 17:59:32
  */
 public class DimensionUtils {

@@ -13,7 +13,7 @@ import java.util.Random;
 import java.util.regex.Pattern;
 
 /**
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @Description: 封装一些常用的字符串处理方法
  * @date 2015-08-31 上午12:20:43
  */

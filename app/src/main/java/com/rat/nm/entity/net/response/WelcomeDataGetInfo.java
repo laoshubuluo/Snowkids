@@ -8,7 +8,7 @@ import com.rat.nm.entity.net.response.base.ResponseInfo;
  * date : 2015/8/12
  * introduce : 响应实体
  */
-public class WelcomeDataGatInfo extends ResponseInfo {
+public class WelcomeDataGetInfo extends ResponseInfo {
 //
 //    private WelcomeData splashes;
 //

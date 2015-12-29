@@ -1,7 +1,7 @@
 package com.rat.nm.common;
 
 /**
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @Description: 定义广播Action
  * @date 2015-09-11 下午15:29:33
  */

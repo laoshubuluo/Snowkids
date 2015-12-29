@@ -5,23 +5,23 @@
 //import android.os.Handler;
 //import android.os.Message;
 //
-//import com.wmgj.amen.common.MessageSignConstant;
-//import com.wmgj.amen.common.ResponseConstant;
-//import com.wmgj.amen.common.WebConstant;
-//import com.wmgj.amen.dao.NearbyDao;
-//import com.wmgj.amen.dao.UserDao;
-//import com.wmgj.amen.dao.impl.NearbyDaoImpl;
-//import com.wmgj.amen.dao.impl.UserDaoImpl;
-//import com.wmgj.amen.entity.enums.DataGetType;
-//import com.wmgj.amen.entity.group.Nearby;
-//import com.wmgj.amen.entity.net.request.NearbyActionInfo;
-//import com.wmgj.amen.entity.net.request.base.RequestInfo;
-//import com.wmgj.amen.entity.net.response.NearbyGetInfo;
-//import com.wmgj.amen.entity.user.User;
-//import com.wmgj.amen.network.request.base.PostJsonRequest;
-//import com.wmgj.amen.util.AppUtils;
-//import com.wmgj.amen.util.GsonUtil;
-//import com.wmgj.amen.util.LogUtil;
+//import com..common.MessageSignConstant;
+//import com..common.ResponseConstant;
+//import com..common.WebConstant;
+//import com..dao.NearbyDao;
+//import com..dao.UserDao;
+//import com..dao.impl.NearbyDaoImpl;
+//import com..dao.impl.UserDaoImpl;
+//import com..entity.enums.DataGetType;
+//import com..entity.group.Nearby;
+//import com..entity.net.request.NearbyActionInfo;
+//import com..entity.net.request.base.RequestInfo;
+//import com..entity.net.response.NearbyGetInfo;
+//import com..entity.user.User;
+//import com..network.request.base.PostJsonRequest;
+//import com..util.AppUtils;
+//import com..util.GsonUtil;
+//import com..util.LogUtil;
 //
 //import org.json.JSONObject;
 //

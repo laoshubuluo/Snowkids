@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.lang.ref.SoftReference;
 
 /**
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @Description: 位图工具类
  * @date 2015-09-11 下午12:11:24
  */

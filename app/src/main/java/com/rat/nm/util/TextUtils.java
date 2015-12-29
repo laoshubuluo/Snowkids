@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
 /**
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @Description: TextView工具类:用于处理textView显示中一些处理逻辑
  * @date 2015-12-03 下午11:16:13
  */

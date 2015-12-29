@@ -13,7 +13,7 @@ import com.rat.nm.common.Constant;
 /**
  * 设置一些系统偏好参数
  *
- * @author shisheng.zhao
+ * @author L.jinzhu
  * @date 2015-09-07 18:25:16
  */
 public class AppUtils {
@@ -111,14 +111,15 @@ public class AppUtils {
 //        sharedPreferences.edit().putString("userId", userId).commit();
 //    }
 //
-//    /**
-//     * 获取用户手机号
-//     *
-//     * @return
-//     */
-//    public String getUserId() {
-//        return sharedPreferences.getString("userId", "0");
-//    }
+
+    /**
+     * 获取用户手机号
+     *
+     * @return
+     */
+    public String getUserId() {
+        return sharedPreferences.getString("userId", "0");
+    }
 //
 //    /**
 //     * 保存用户的token

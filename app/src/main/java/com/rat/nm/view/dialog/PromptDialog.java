@@ -8,7 +8,6 @@ import android.widget.TextView;
 import com.rat.networkmanager.R;
 import com.rat.nm.util.StringUtils;
 
-
 /**
  * author : L.jinzhu
  * date : 2015/8/17
