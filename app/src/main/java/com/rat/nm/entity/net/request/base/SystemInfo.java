@@ -4,7 +4,8 @@ import android.content.Context;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 
-import com.wmgj.amen.util.NetworkUtil;
+import com.rat.nm.util.NetworkUtil;
+
 
 /**
  * author : L.jinzhu

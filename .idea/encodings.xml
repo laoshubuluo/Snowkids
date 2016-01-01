@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/AlbumImageLoader.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/AppUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/BitmapUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/CharacterParser.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/CollectionUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/DateUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/DensityUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/DimensionUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/DisplayDataUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/DownLoadUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/GsonUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/HttpUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/ImageLoaderUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/ImageUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/LocationUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/LogUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/NetworkUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/PasswordUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/PropertiesUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/ScreenShot.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/StorageUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/StringUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/TextUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/rat/nm/util/ViewUtils.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/proguard-rules.pro" charset="UTF-8" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

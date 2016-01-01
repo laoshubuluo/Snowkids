@@ -20,7 +20,10 @@
 ///**
 // * author : L.jinzhu
 // * date : 2015/8/24
-// * introduce : 密码更新请求request
+// * introduce : 密码更新请求requeste;
+//    }
+//
+//    @Override
 // */
 //public class PasswordUpdateRequest extends PostJsonRequest {
 //    private String phoneNum;
@@ -32,10 +35,7 @@
 //        this.context = c;
 //        this.phoneNum = phoneNum;
 //        this.password = password;
-//        this.shortCode = shortCode;
-//    }
-//
-//    @Override
+//        this.shortCode = shortCod
 //    protected String getParamsJson() {
 //        PasswordUpdateActionInfo actionInfo = new PasswordUpdateActionInfo(9, phoneNum, password, shortCode);
 //        RequestInfo r = new RequestInfo(context, actionInfo);

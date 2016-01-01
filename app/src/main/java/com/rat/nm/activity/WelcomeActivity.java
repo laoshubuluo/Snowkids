@@ -10,6 +10,8 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
+import com.rat.nm.util.LogUtil;
+import com.rat.nm.util.XXTEA;
 
 public class WelcomeActivity extends BaseActivity {
 

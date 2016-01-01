@@ -24,20 +24,22 @@ import org.json.JSONObject;
  */
 public class LoginRequest extends PostJsonRequest {
     //    private UserDao userDao;
-    private String phoneNum;
+    private String userName;
     private String password;
+    private int type;
 
-    public LoginRequest(Handler h, Context c, String phoneNum, String password) {
+    public LoginRequest(Handler h, Context c, String userName, String password, int type) {
         this.handler = h;
         this.context = c;
-        this.phoneNum = phoneNum;
+        this.userName = userName;
         this.password = password;
+        this.type = type;
 //        this.userDao = new UserDaoImpl();
     }
 
     @Override
     protected String getParamsJson() {
-        LoginActionInfo actionInfo = new LoginActionInfo(5, phoneNum, password);
+        LoginActionInfo actionInfo = new LoginActionInfo(1, userName, password, type);
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
@@ -59,7 +61,8 @@ public class LoginRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             LoginRegisterInfo info = GsonUtil.fromJson(response.toString(), LoginRegisterInfo.class);
-            //响应正常
+            info.setCode(ResponseConstant.SUCCESS);
+            // 响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
 //                // 数据库指向用户自己的数据库
 //                AppUtils.getInstance().setUserId(String.valueOf(info.getUserInfo().getUid()));
@@ -93,7 +96,7 @@ public class LoginRequest extends PostJsonRequest {
 
                 LogUtil.i(requestTag() + " success");
             }
-            //响应失败
+            // 响应失败
             else {
                 b.putInt("code", info.getCode());
                 b.putString("message", info.getMessage());

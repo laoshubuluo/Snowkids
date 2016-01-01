@@ -25,8 +25,8 @@ public class LoginController {
     /**
      * 自有登录
      */
-    public void login(String phoneNum, String password) {
-        LoginRequest loginRequest = new LoginRequest(handler, context, phoneNum, password);
+    public void login(String phoneNum, String password, int type) {
+        LoginRequest loginRequest = new LoginRequest(handler, context, phoneNum, password, type);
         VolleyManager.getInstance(context).add2RequestQueue(loginRequest.getRequest());
     }
 

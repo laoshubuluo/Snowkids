@@ -78,16 +78,11 @@ public class MenuActivity extends BaseActivity {
      */
     @Override
     public boolean handleMessage(Message msg) {
-//        switch (msg.what) {
-//            case MessageSignConstant.DEMO:
-//                Demo demo = (Demo) msg.getData().getSerializable("demo");
-////                tv.setText(demo.getName());
-//        }
         return false;
     }
 
 
-    @Override
+          @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.top_left:

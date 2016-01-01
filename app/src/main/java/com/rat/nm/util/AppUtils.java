@@ -42,8 +42,7 @@ public class AppUtils {
     private AppUtils(Context context) {
         sharedPreferences = context.getSharedPreferences(Constant.PREFS_NAME, Context.MODE_PRIVATE);
         try {
-            packageInfo = context.getPackageManager().getPackageInfo(
-                    context.getPackageName(), PackageManager.GET_ACTIVITIES);
+            packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_ACTIVITIES);
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -118,7 +117,7 @@ public class AppUtils {
      * @return
      */
     public String getUserId() {
-        return sharedPreferences.getString("userId", "0");
+        return sharedPreferences.getString("userId", "");
     }
 //
 //    /**

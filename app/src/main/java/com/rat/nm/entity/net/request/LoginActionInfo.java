@@ -10,13 +10,14 @@ import com.rat.nm.entity.net.request.base.ActionInfo;
  */
 public class LoginActionInfo extends ActionInfo {
 
-    private String phoneNum;
+    private String userId;// 用户名(或手机号等暂不支持)
     private String password;
+    private int type;// 类型，是否需要用户信息:0：不需要，1：需要
 
-
-    public LoginActionInfo(int actionId, String phoneNum, String password) {
+    public LoginActionInfo(int actionId, String userId, String password, int type) {
         super(actionId);
-        this.phoneNum = phoneNum;
+        this.userId = userId;
         this.password = password;
+        this.type = type;
     }
 }

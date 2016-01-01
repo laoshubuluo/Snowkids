@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -14,11 +15,15 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.rat.nm.common.MessageSignConstant;
+import com.rat.nm.common.WebConstant;
 import com.rat.nm.util.LogUtil;
+import com.rat.nm.util.XXTEA;
 
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * author : L.jinzhu
@@ -46,10 +51,23 @@ public abstract class PostJsonRequest extends BaseVolleyPostRequest<JsonRequest,
         try {
             request = new JsonObjectRequest(requestType(), getUrl(), null,
                     responseSuccessListener, responseErrorListener) {
-//                @Override
-//                public byte[] getBody() {
-//                    return addRequestPrefixData(getParamsJson());
-//                }
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> headers = new HashMap<String, String>();
+                    headers.put("Charset", "UTF-8");
+                    headers.put("Content-Type", "application/json");
+                    headers.put("Accept-Encoding", "gzip,deflate");
+                    return headers;
+                }
+
+                @Override
+                public byte[] getBody() {
+                    String body = getParamsJson();
+                    LogUtil.i("request json: [" + requestTag() + "]: " + body);
+                    body = XXTEA.encryptToBase64String(body, WebConstant.WEB_KEY);
+                    LogUtil.i("request json: [" + requestTag() + "][encrypt]: " + body);
+                    return body.getBytes();
+                }
 
                 @Override
                 protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
@@ -67,9 +85,9 @@ public abstract class PostJsonRequest extends BaseVolleyPostRequest<JsonRequest,
             // 超时时间、重试次数设定
             request.setRetryPolicy(new DefaultRetryPolicy(CUD_SOCKET_TIMEOUT, MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
-            if (requestTag() != null && "".equals(requestTag()))
+            if (requestTag() != null && !"".equals(requestTag()))
                 request.setTag(requestTag());
-            LogUtil.i("request json: [" + requestTag() + "]: " + new String(request.getBody()).substring(20));
+
         } catch (Throwable e) {
             LogUtil.e("request json error [" + requestTag() + "] ", e);
         }

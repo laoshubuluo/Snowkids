@@ -14,9 +14,9 @@ public class RequestInfo extends AbstractRequestInfo {
     private ActionInfo actionInfo;
 
     public RequestInfo(Context context, ActionInfo actionInfo) {
-        this.locationInfo = new LocationInfo(context);
-        this.systemInfo = new SystemInfo(context);
-        this.appInfo = new AppInfo(context);
+//        this.locationInfo = new LocationInfo(context);
+//        this.systemInfo = new SystemInfo(context);
+//        this.appInfo = new AppInfo(context);
         this.actionInfo = actionInfo;
     }
 }

@@ -114,7 +114,7 @@ public class LoginActivity extends BaseActivity {
                 customProgressDialog.show();
                 customProgressDialog.setCancelable(false);
                 LoginController loginController = new LoginController(getApplication(), handler);
-                loginController.login(userNameET.getText().toString(), passwordET.getText().toString());
+                loginController.login(userNameET.getText().toString(), passwordET.getText().toString(), 1);
                 break;
             default:
                 break;

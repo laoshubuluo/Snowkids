@@ -9,8 +9,11 @@ public class WebConstant {
     private WebConstant() {
     }
 
-    //服务器URL
-    public static String BASE_URL = "https://verifyapp.amenba.com/amen";
+    // 密钥
+    public static String WEB_KEY = "PCLtMrolKeSCJwVn";
+    // 服务器URL
+    public static String BASE_URL = "http://192.168.0.182:8080/nms/auth/login";
+
 
 //    //未能连接到互联网url
 //    public static String NETWORK_CONNECT_URL = "http://app.amenba.com/html/heretical_doctrine.html";
