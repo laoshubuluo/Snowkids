@@ -4,43 +4,48 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
+import com.rat.nm.adapter.RunningListAdapter;
 import com.rat.nm.entity.Device;
-import com.rat.nm.view.RunningAlarmListItemView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class RunningListActivity extends BaseActivity {
+    @ViewInject(R.id.top_name)
+    private TextView topTitleView;
+    @ViewInject(R.id.top_left)
+    private TextView topLeftView;
 
     @ViewInject(R.id.deviceListLV)
     protected ListView deviceListLV;
 
     private List<Device> deviceList = new ArrayList<Device>();
+    private RunningListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running_list);
-
-        //基础框架初始化
+        // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         initView();
         initData();
     }
 
-
     /**
      * 初始化界面
      */
     public void initView() {
+        topTitleView.setText(R.string.device_list);
+        topLeftView.setVisibility(View.VISIBLE);
+        topLeftView.setOnClickListener(this);
     }
 
     /**
@@ -50,47 +55,16 @@ public class RunningListActivity extends BaseActivity {
         for (int i = 100; i < 200; i++) {
             int status;
             if (i % 4 == 0)
-                status = RunningAlarmListItemView.STOP;
+                status = Device.STOP;
             else if (i % 3 == 0)
-                status = RunningAlarmListItemView.ERROR;
+                status = Device.ERROR;
             else
-                status = RunningAlarmListItemView.NORMAL;
+                status = Device.NORMAL;
             deviceList.add(new Device(i, "第" + i + "号设备", status));
         }
-        deviceListLV.setAdapter(baseAdapter);
+        adapter = new RunningListAdapter(getApplicationContext(), deviceList);
+        deviceListLV.setAdapter(adapter);
     }
-
-    BaseAdapter baseAdapter = new BaseAdapter() {
-        @Override
-        public int getCount() {
-            return deviceList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return deviceList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            RunningAlarmListItemView item = new RunningAlarmListItemView(getApplication());
-            Device device = deviceList.get(position);
-            item.initData(position, device.getName(), device.getStatus());
-            item.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(RunningListActivity.this, RunningDetailActivity.class);
-                    startActivity(i);
-                }
-            });
-            return item;
-        }
-    };
 
 
     /**
@@ -101,11 +75,30 @@ public class RunningListActivity extends BaseActivity {
      */
     @Override
     public boolean handleMessage(Message msg) {
+//        if (customProgressDialog != null)
+//            customProgressDialog.dismiss();
+//        if (promptDialog == null || promptDialog.isShowing())
+//            promptDialog = new PromptDialog(LoginActivity.this);
 //        switch (msg.what) {
-//            case MessageSignConstant.DEMO:
-//                Demo demo = (Demo) msg.getData().getSerializable("demo");
-////                tv.setText(demo.getName());
+//            case MessageSignConstant.LOGIN_SUCCESS:
+////                User user = (User) msg.getData().getSerializable("user");
+//                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+//                startActivity(i);
+//                finish();
+//                break;
 //        }
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.top_left:
+                finish();
+                break;
+            default:
+                break;
+        }
     }
 }

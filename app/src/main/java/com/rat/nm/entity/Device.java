@@ -8,6 +8,11 @@ import java.io.Serializable;
  * introduce : 设备实体
  */
 public class Device implements Serializable {
+    //Running
+    public static final int NORMAL = 5;
+    public static final int STOP = 6;
+    public static final int ERROR = 7;
+
     private int id;
     private String name;
     private int status;

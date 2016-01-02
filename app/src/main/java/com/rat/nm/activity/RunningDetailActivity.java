@@ -24,13 +24,10 @@ public class RunningDetailActivity extends BaseActivity {
         initData();
     }
 
-
     /**
      * 初始化界面
      */
     public void initView() {
-//        String url = "http://image.photophoto.cn/nm-6/018/030/0180300244.jpg";
-//        imageLoader.displayImage(url, iv, ImageUtil.getImageOptions());
     }
 
     /**

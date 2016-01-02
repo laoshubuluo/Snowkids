@@ -4,17 +4,18 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="@mipmap/bg_content"
-    android:orientation="vertical"
-    tools:context=".ActivityWelcome">
+    android:orientation="vertical">
 
     <include layout="@layout/public_top_layout" />
 
     <EditText
         android:id="@+id/searchEdt"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
         android:background="@mipmap/welcome_butten_bg_white"
         android:drawableRight="@mipmap/menu_loop_search"
         android:ems="10"
@@ -26,54 +27,62 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="40dp"
         android:gravity="center_horizontal">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="3">
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/profileMIV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/parameterMIV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/alarmInfoMIV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:weightSum="3">
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/operationLogMIV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/runningStateMIV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/settingsMIV"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
         </TableRow>
     </TableLayout>
-
 </LinearLayout>

@@ -1,21 +1,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="@mipmap/bg_content"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:weightSum="1"
-    tools:context=".ActivityWelcome">
+    android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/device_list"
-        android:textColor="@color/blue"
-        android:textSize="30dp" />
+    <include layout="@layout/public_top_layout" />
 
     <ListView
         android:id="@+id/deviceListLV"

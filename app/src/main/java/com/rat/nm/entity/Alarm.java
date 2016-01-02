@@ -8,6 +8,12 @@ import java.io.Serializable;
  * introduce : 告警实体
  */
 public class Alarm implements Serializable {
+    // Alarm
+    public static final int LEVEL_1 = 1;
+    public static final int LEVEL_2 = 2;
+    public static final int LEVEL_3 = 3;
+    public static final int LEVEL_4 = 4;
+
     private int id;
     private String name;
     private String content;

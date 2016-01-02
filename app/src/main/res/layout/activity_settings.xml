@@ -7,7 +7,6 @@
     android:background="@mipmap/settings"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:weightSum="1"
-    tools:context=".ActivityWelcome">
+    android:weightSum="1">
 
 </LinearLayout>

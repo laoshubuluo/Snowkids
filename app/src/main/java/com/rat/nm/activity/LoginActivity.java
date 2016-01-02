@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
@@ -22,6 +23,10 @@ import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 
 public class LoginActivity extends BaseActivity {
+    @ViewInject(R.id.top_name)
+    private TextView topTitleView;
+    @ViewInject(R.id.top_left)
+    private TextView topLeftView;
 
     @ViewInject(R.id.loginBtn)
     private Button loginBtn;
@@ -50,6 +55,9 @@ public class LoginActivity extends BaseActivity {
     }
 
     public void initView() {
+        topTitleView.setText(R.string.login);
+        topTitleView.setVisibility(View.VISIBLE);
+        topLeftView.setOnClickListener(this);
         loginBtn.setOnClickListener(this);
     }
 
@@ -101,6 +109,9 @@ public class LoginActivity extends BaseActivity {
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
+            case R.id.top_left:
+                finish();
+                break;
             case R.id.loginBtn:
                 if (TextUtils.isEmpty(userNameET.getText().toString())) {
                     Toast.makeText(getApplicationContext(), getString(R.string.user_name_is_null), Toast.LENGTH_SHORT).show();

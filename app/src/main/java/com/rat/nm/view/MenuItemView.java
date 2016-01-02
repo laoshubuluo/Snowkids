@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -91,7 +92,7 @@ public class MenuItemView extends FrameLayout {
         }
         iconIV.setBackgroundResource(resouceId);
         titleTV.setText(title);
-        itemFL.setOnFocusChangeListener(focusChangeListener);
+        itemFL.setOnTouchListener(onTouchListener);
     }
 
     /**
@@ -99,7 +100,7 @@ public class MenuItemView extends FrameLayout {
      */
     public void initData(int messageNumber) {
         if (messageNumber > 0) {
-            messageBtn.setText(messageNumber + "");
+            messageBtn.setText(String.valueOf(messageNumber));
             messageBtn.setVisibility(VISIBLE);
         } else {
             messageBtn.setVisibility(INVISIBLE);
@@ -107,39 +108,40 @@ public class MenuItemView extends FrameLayout {
     }
 
     /**
-     * 焦点事件
+     * 点击事件
      */
-    OnFocusChangeListener focusChangeListener = new OnFocusChangeListener() {
+    OnTouchListener onTouchListener = new OnTouchListener() {
         @Override
-        public void onFocusChange(View v, boolean hasFocus) {
-            if (hasFocus) {
+        public boolean onTouch(View v, MotionEvent event) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 itemFL.setBackgroundResource(R.mipmap.menu_circle_blue);
-                Intent i = null;
-                switch (itemType) {
-                    case PROFILE:
-                        Toast.makeText(context, context.getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
-                        //i = new Intent(context, Pr.class);
-                        break;
-                    case PARAMETER:
-                        i = new Intent(context, ParameterListActivity.class);
-                        break;
-                    case ALARM_INFO:
-                        i = new Intent(context, AlarmFilterActivity.class);
-                        break;
-                    case OPERTION_LOG:
-                        i = new Intent(context, OperationLogFilterActivity.class);
-                        break;
-                    case RUNNING_STATE:
-                        i = new Intent(context, RunningListActivity.class);
-                        break;
-                    case SETTINGS:
-                        i = new Intent(context, SettingsActivity.class);
-                        break;
-                }
-                if (i != null)
-                    context.startActivity(i);
-            } else
+            } else if (event.getAction() == MotionEvent.ACTION_UP) {
                 itemFL.setBackgroundResource(R.mipmap.menu_circle_border);
+            }
+            Intent i = null;
+            switch (itemType) {
+                case PROFILE:
+                    Toast.makeText(context, context.getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
+                    break;
+                case PARAMETER:
+                    i = new Intent(context, ParameterListActivity.class);
+                    break;
+                case ALARM_INFO:
+                    i = new Intent(context, AlarmFilterActivity.class);
+                    break;
+                case OPERTION_LOG:
+                    i = new Intent(context, OperationLogFilterActivity.class);
+                    break;
+                case RUNNING_STATE:
+                    i = new Intent(context, RunningListActivity.class);
+                    break;
+                case SETTINGS:
+                    i = new Intent(context, SettingsActivity.class);
+                    break;
+            }
+            if (i != null)
+                context.startActivity(i);
+            return false;
         }
     };
 }

@@ -6,69 +6,77 @@
     android:background="@mipmap/bg_welcome"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:weightSum="1"
-    tools:context=".ActivityWelcome">
+    android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/welcome_to"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="40dp" />
+    <include layout="@layout/public_top_layout" />
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
         android:background="@mipmap/welcome_logo" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
         android:background="@mipmap/welcome_network_management" />
-
 
     <EditText
         android:id="@+id/userNameET"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/bg_edittext"
+        android:background="@color/translate"
         android:drawableLeft="@mipmap/login_icon_username"
-        android:ems="10"
         android:inputType="textPersonName"
-        android:padding="10px"
         android:text="wangguan001"
         android:textColor="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/blue" />
 
     <EditText
         android:id="@+id/passwordET"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bg_edittext"
+        android:background="@color/translate"
         android:drawableLeft="@mipmap/login_icon_password"
-        android:ems="10"
         android:inputType="textPassword"
-        android:padding="10px"
         android:text="wangguan001"
         android:textColor="@color/white" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/blue" />
+
     <Button
         android:id="@+id/loginBtn"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
         android:background="@mipmap/welcome_butten_bg_white"
         android:text="@string/login"
         android:textColor="@color/blue" />
-
 </LinearLayout>

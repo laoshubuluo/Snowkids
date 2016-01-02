@@ -10,13 +10,11 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
-import com.rat.nm.util.LogUtil;
-import com.rat.nm.util.XXTEA;
 
 public class WelcomeActivity extends BaseActivity {
 
-    @ViewInject(R.id.loginBtn)
-    private Button loginBtn;
+    @ViewInject(R.id.btn)
+    private Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class WelcomeActivity extends BaseActivity {
     }
 
     public void initView() {
-        loginBtn.setOnClickListener(this);
+        btn.setOnClickListener(this);
     }
 
     public void initData() {
@@ -42,11 +40,6 @@ public class WelcomeActivity extends BaseActivity {
      */
     @Override
     public boolean handleMessage(Message msg) {
-//        switch (msg.what) {
-//            case MessageSignConstant.DEMO:
-//                Demo demo = (Demo) msg.getData().getSerializable("demo");
-////                tv.setText(demo.getName());
-//        }
         return false;
     }
 
@@ -54,7 +47,7 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.loginBtn:
+            case R.id.btn:
                 Intent i = new Intent(WelcomeActivity.this, LoginActivity.class);
                 startActivity(i);
                 finish();

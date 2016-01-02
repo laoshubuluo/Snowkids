@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:text="这里是key"
+        android:text="this is key"
         android:textColor="@color/red"
         android:textSize="20sp" />
 
@@ -24,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:text="这里是des"
+        android:text="this is des"
         android:textColor="@color/black"
         android:textSize="15sp" />
 
@@ -33,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:text="这里是value"
+        android:text="this is value"
         android:textColor="@color/white"
         android:textSize="15sp" />
 </LinearLayout>

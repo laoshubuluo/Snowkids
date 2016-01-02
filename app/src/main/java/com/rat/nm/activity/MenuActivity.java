@@ -14,8 +14,6 @@ import com.rat.nm.view.MenuItemView;
 public class MenuActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
-    @ViewInject(R.id.top_left)
-    private TextView topLeftView;
 
     @ViewInject(R.id.profileMIV)
     private MenuItemView profileMIV;
@@ -29,7 +27,6 @@ public class MenuActivity extends BaseActivity {
     private MenuItemView runningStateMIV;
     @ViewInject(R.id.settingsMIV)
     private MenuItemView settingsMIV;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +44,6 @@ public class MenuActivity extends BaseActivity {
      */
     public void initView() {
         topTitleView.setText(R.string.menu);
-        topLeftView.setBackgroundResource(R.mipmap.arrow_back);
-        topLeftView.setOnClickListener(this);
 
         profileMIV.initView(MenuItemView.PROFILE);
         profileMIV.initData(0);
@@ -70,24 +65,4 @@ public class MenuActivity extends BaseActivity {
     public void initData() {
     }
 
-    /**
-     * Handler发送message的逻辑处理方法
-     *
-     * @param msg
-     * @return
-     */
-    @Override
-    public boolean handleMessage(Message msg) {
-        return false;
-    }
-
-
-          @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.top_left:
-                finish();
-                break;
-        }
-    }
 }

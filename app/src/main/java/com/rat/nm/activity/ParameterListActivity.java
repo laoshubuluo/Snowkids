@@ -4,40 +4,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
-import com.lidroid.xutils.view.annotation.event.OnClick;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
-
+import com.rat.nm.adapter.ParameterListAdapter;
 import com.rat.nm.entity.Parameter;
-import com.rat.nm.view.ParameterListItemView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterListActivity extends BaseActivity {
-
+    @ViewInject(R.id.top_name)
+    private TextView topTitleView;
+    @ViewInject(R.id.top_left)
+    private TextView topLeftView;
 
     @ViewInject(R.id.parameterListLV)
     protected ListView parameterListLV;
 
     private List<Parameter> parameterList = new ArrayList<Parameter>();
+    private ParameterListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parameter_list);
-
-        //基础框架初始化
+        // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
-
-
         initView();
         initData();
     }
@@ -47,42 +44,20 @@ public class ParameterListActivity extends BaseActivity {
      * 初始化界面
      */
     public void initView() {
+        topTitleView.setText(R.string.parameter_list);
+        topLeftView.setVisibility(View.VISIBLE);
+        topLeftView.setOnClickListener(this);
     }
 
     /**
      * 初始化数据
      */
     public void initData() {
-        for (int i = 100; i < 200; i++)
-            parameterList.add(new Parameter(i, "The name of no " + i + " parameter", "this is a description" + i, "http://www.baidu.com/wewe?name=1&&to=222" + i));
-        parameterListLV.setAdapter(baseAdapter);
+        for (int i = 100; i < 20000; i++)
+            parameterList.add(new Parameter(i, "The name of no " + i + " parameter", "this is a description for parameter " + i, "http://www.baidu.com/wewe?name=1&&to=222" + i));
+        adapter = new ParameterListAdapter(getApplicationContext(), parameterList);
+        parameterListLV.setAdapter(adapter);
     }
-
-    BaseAdapter baseAdapter = new BaseAdapter() {
-        @Override
-        public int getCount() {
-            return parameterList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return parameterList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ParameterListItemView item = new ParameterListItemView(getApplication());
-            Parameter parameter = parameterList.get(position);
-            item.initData(position, parameter.getKey(), parameter.getDes(), parameter.getValue());
-            return item;
-        }
-    };
-
 
     /**
      * Handler发送message的逻辑处理方法
@@ -92,30 +67,30 @@ public class ParameterListActivity extends BaseActivity {
      */
     @Override
     public boolean handleMessage(Message msg) {
+//        if (customProgressDialog != null)
+//            customProgressDialog.dismiss();
+//        if (promptDialog == null || promptDialog.isShowing())
+//            promptDialog = new PromptDialog(LoginActivity.this);
 //        switch (msg.what) {
-//            case MessageSignConstant.DEMO:
-//                Demo demo = (Demo) msg.getData().getSerializable("demo");
-////                tv.setText(demo.getName());
+//            case MessageSignConstant.LOGIN_SUCCESS:
+////                User user = (User) msg.getData().getSerializable("user");
+//                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+//                startActivity(i);
+//                finish();
+//                break;
 //        }
         return false;
     }
 
-    /**
-     * 点击事件
-     */
-    @OnClick(R.id.loginBtn)
-    public void signInBtnOnClick(View v) {
-//        DemoService ds = new DemoService(getApplicationContext(), handler);
-//        ds.testQuery();
-//
-//        DBDemo dbDemo = new DBDemo(getApplication());
-//        dbDemo.save();
-//        List<Demo> demoList = dbDemo.getAll();
-//        for (Demo d : demoList)
-//            LogUtil.e(d.getName() + "||" + d.getPassword());
-        Intent i = new Intent(ParameterListActivity.this, ParameterListActivity.class);
-        startActivity(i);
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.top_left:
+                finish();
+                break;
+            default:
+                break;
+        }
     }
-
-
 }
