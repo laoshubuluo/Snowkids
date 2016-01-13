@@ -43,7 +43,6 @@ public class WelcomeActivity extends BaseActivity {
         return false;
     }
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
