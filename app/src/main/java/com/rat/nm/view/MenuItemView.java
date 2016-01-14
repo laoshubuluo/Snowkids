@@ -15,9 +15,11 @@ import android.widget.Toast;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
+import com.rat.nm.activity.AlarmDetailActivity;
 import com.rat.nm.activity.AlarmFilterActivity;
 import com.rat.nm.activity.OperationLogFilterActivity;
 import com.rat.nm.activity.ParameterListActivity;
+import com.rat.nm.activity.RunningDetailActivity;
 import com.rat.nm.activity.RunningListActivity;
 import com.rat.nm.activity.SettingsActivity;
 

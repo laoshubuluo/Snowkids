@@ -18,7 +18,7 @@ import com.rat.nm.entity.Alarm;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlarmListActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class AlarmListActivity extends BaseActivity implements ListView.OnItemClickListener {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
     @ViewInject(R.id.top_left)
@@ -55,7 +55,7 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
      * 初始化数据
      */
     public void initData() {
-        for (int i = 100; i < 200; i++) {
+        for (int i = 100; i < 110; i++) {
             int level;
             if (i % 4 == 0)
                 level = Alarm.LEVEL_4;
@@ -108,7 +108,7 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Alarm alarm = alarmList.get(position);
+//        Alarm alarm = alarmList.get(position);
         Intent i = new Intent(AlarmListActivity.this, AlarmDetailActivity.class);
         startActivity(i);
     }

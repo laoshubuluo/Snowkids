@@ -20,7 +20,7 @@ public class PromptDialog extends Dialog {
     private TextView sureTV;
 
     public PromptDialog(Context context) {
-        super(context, R.style.WinDialog);
+        super(context, R.style.promptDialog);
         setContentView(R.layout.view_dialog_prompt);
         titleTV = (TextView) findViewById(R.id.titleTV);
         contentTV = (TextView) findViewById(R.id.contentTV);

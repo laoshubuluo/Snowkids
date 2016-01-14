@@ -23,7 +23,7 @@ public class SureDialog extends Dialog {
     public View lineView;
 
     public SureDialog(Context context) {
-        super(context, R.style.WinDialog);
+        super(context, R.style.promptDialog);
         setContentView(R.layout.view_dialog_sure);
         titleTV = (TextView) findViewById(R.id.titleTV);
         contentTV = (TextView) findViewById(R.id.contentTV);

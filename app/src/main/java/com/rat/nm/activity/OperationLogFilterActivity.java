@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -13,7 +14,10 @@ import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 
 public class OperationLogFilterActivity extends BaseActivity {
-
+    @ViewInject(R.id.top_name)
+    private TextView topTitleView;
+    @ViewInject(R.id.top_left)
+    private TextView topLeftView;
 
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
@@ -22,21 +26,22 @@ public class OperationLogFilterActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_operation_log_filter);
-
-        //基础框架初始化
+        // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
-
-
         initView();
         initData();
     }
-
 
     /**
      * 初始化界面
      */
     public void initView() {
+        topTitleView.setText(R.string.operation_log_filter);
+        topLeftView.setVisibility(View.VISIBLE);
+        topLeftView.setOnClickListener(this);
+        queryBtn.setOnClickListener(this);
     }
+
 
     /**
      * 初始化数据
@@ -52,20 +57,34 @@ public class OperationLogFilterActivity extends BaseActivity {
      */
     @Override
     public boolean handleMessage(Message msg) {
+//        if (customProgressDialog != null)
+//            customProgressDialog.dismiss();
+//        if (promptDialog == null || promptDialog.isShowing())
+//            promptDialog = new PromptDialog(LoginActivity.this);
 //        switch (msg.what) {
-//            case MessageSignConstant.DEMO:
-//                Demo demo = (Demo) msg.getData().getSerializable("demo");
-////                tv.setText(demo.getName());
+//            case MessageSignConstant.LOGIN_SUCCESS:
+////                User user = (User) msg.getData().getSerializable("user");
+//                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+//                startActivity(i);
+//                finish();
+//                break;
 //        }
         return false;
     }
 
-    /**
-     * 点击事件
-     */
-    @OnClick(R.id.queryBtn)
-    public void queryBtnOnClick(View v) {
-        Intent i = new Intent(OperationLogFilterActivity.this, OperationLogDetailActivity.class);
-        startActivity(i);
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.top_left:
+                finish();
+                break;
+            case R.id.queryBtn:
+                Intent i = new Intent(OperationLogFilterActivity.this, OperationLogDetailActivity.class);
+                startActivity(i);
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -16,7 +16,7 @@ public class SendSuccessDialog extends Dialog {
     private Dialog dialog;
 
     public SendSuccessDialog(Context context) {
-        super(context, R.style.WinDialog);
+        super(context, R.style.promptDialog);
         setContentView(R.layout.view_dialog_send_success);
         dialog = this;
     }

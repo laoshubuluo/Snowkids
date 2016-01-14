@@ -121,11 +121,14 @@ public class LoginActivity extends BaseActivity {
                     Toast.makeText(getApplicationContext(), getString(R.string.password_is_null), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
-                customProgressDialog.show();
-                customProgressDialog.setCancelable(false);
-                LoginController loginController = new LoginController(getApplication(), handler);
-                loginController.login(userNameET.getText().toString(), passwordET.getText().toString(), 1);
+                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+                startActivity(i);
+                finish();
+//                customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
+//                customProgressDialog.show();
+//                customProgressDialog.setCancelable(false);
+//                LoginController loginController = new LoginController(getApplication(), handler);
+//                loginController.login(userNameET.getText().toString(), passwordET.getText().toString(), 1);
                 break;
             default:
                 break;
