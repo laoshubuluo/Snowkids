@@ -1,25 +1,33 @@
 package com.rat.nm.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
-import com.lidroid.xutils.view.annotation.event.OnClick;
+import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 
-
 public class RunningDetailActivity extends BaseActivity {
+    @ViewInject(R.id.top_name)
+    private TextView topTitleView;
+    @ViewInject(R.id.top_left)
+    private TextView topLeftView;
+
+    @ViewInject(R.id.runningDetailLL)
+    private LinearLayout runningDetailLL;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_running_detail);
-
-        //基础框架初始化
+        // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
-
         initView();
         initData();
     }
@@ -28,6 +36,10 @@ public class RunningDetailActivity extends BaseActivity {
      * 初始化界面
      */
     public void initView() {
+        topTitleView.setText(R.string.device);
+        topLeftView.setVisibility(View.VISIBLE);
+        topLeftView.setOnClickListener(this);
+        runningDetailLL.setOnClickListener(this);
     }
 
     /**
@@ -44,20 +56,33 @@ public class RunningDetailActivity extends BaseActivity {
      */
     @Override
     public boolean handleMessage(Message msg) {
+//        if (customProgressDialog != null)
+//            customProgressDialog.dismiss();
+//        if (promptDialog == null || promptDialog.isShowing())
+//            promptDialog = new PromptDialog(LoginActivity.this);
 //        switch (msg.what) {
-//            case MessageSignConstant.DEMO:
-//                Demo demo = (Demo) msg.getData().getSerializable("demo");
-////                tv.setText(demo.getName());
+//            case MessageSignConstant.LOGIN_SUCCESS:
+////                User user = (User) msg.getData().getSerializable("user");
+//                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+//                startActivity(i);
+//                finish();
+//                break;
 //        }
         return false;
     }
 
-
-    /**
-     * 点击事件
-     */
-    @OnClick(R.id.runningDetailLL)
-    public void runningDetailLLOnClick(View v) {
-        Toast.makeText(getApplicationContext(), getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.top_left:
+                finish();
+                break;
+            case R.id.runningDetailLL:
+                Toast.makeText(getApplicationContext(), getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
     }
 }

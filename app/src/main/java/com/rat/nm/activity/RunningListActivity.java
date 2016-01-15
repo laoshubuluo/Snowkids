@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,7 +18,7 @@ import com.rat.nm.entity.Device;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RunningListActivity extends BaseActivity {
+public class RunningListActivity extends BaseActivity implements AdapterView.OnItemClickListener {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
     @ViewInject(R.id.top_left)
@@ -46,6 +47,7 @@ public class RunningListActivity extends BaseActivity {
         topTitleView.setText(R.string.device_list);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
+        deviceListLV.setOnItemClickListener(this);
     }
 
     /**
@@ -100,5 +102,11 @@ public class RunningListActivity extends BaseActivity {
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent i = new Intent(RunningListActivity.this, RunningDetailActivity.class);
+        startActivity(i);
     }
 }
