@@ -9,8 +9,16 @@
 
     <include layout="@layout/public_top_layout" />
 
-    <ListView
-        android:id="@+id/alarmDetailLV"
-        style="@style/listview_in_root_layout" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <include
+            android:id="@+id/empty"
+            layout="@layout/public_empty" />
+
+        <com.rat.nm.view.pull2refresh.XListView
+            android:id="@+id/alarmDetailLV"
+            style="@style/listview_in_root_layout" />
+    </FrameLayout>
 </LinearLayout>
