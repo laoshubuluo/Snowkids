@@ -94,13 +94,11 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
     public void onRefresh() {
         currentPage = 0;
         updateData(DataGetType.UPDATE);
-        onLoad();
     }
 
     @Override
     public void onLoadMore() {
         updateData(DataGetType.PAGE_DOWN);
-        onLoad();
     }
 
     private void onLoad() {
@@ -207,6 +205,8 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
 //                isMeetingDataLoading = false;
 //                break;
         }
+        // 加载效果取消
+        onLoad();
         return false;
     }
 }
