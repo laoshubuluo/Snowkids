@@ -13,7 +13,8 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.adapter.AlarmDetailAdapter;
-import com.rat.nm.entity.Alarm;
+import com.rat.nm.entity.enums.AlarmType;
+import com.rat.nm.entity.model.Alarm;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -71,19 +72,19 @@ public class AlarmDetailActivity extends BaseActivity implements AdapterView.OnI
             int level;
             String content;
             if (i % 4 == 0) {
-                level = Alarm.LEVEL_4;
+                level = AlarmType.INFO.getCode();
                 content = "com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: ";
             } else if (i % 3 == 0) {
-                level = Alarm.LEVEL_3;
+                level =  AlarmType.INFO.getCode();
                 content = "g.gradle.process.internal.Exec ";
             } else if (i % 2 == 0) {
-                level = Alarm.LEVEL_2;
+                level =  AlarmType.INFO.getCode();
                 content = "common.process.ProcessException: org.gradle.process.internal ";
             } else {
-                level = Alarm.LEVEL_1;
+                level = AlarmType.INFO.getCode();
                 content = "com.android.ide.common.process.ProcessException: org.gradle.process.internal.ExecException: ";
             }
-            alarmDetailList.add(new Alarm(i, "告警", content, level, "2015.08.18"));
+//            alarmDetailList.add(new Alarm(i, "告警", content,  AlarmType.INFO.getCode(), "2015.08.18"));
         }
         adapter = new AlarmDetailAdapter(getApplicationContext(), alarmDetailList);
         alarmDetailLV.setAdapter(adapter);

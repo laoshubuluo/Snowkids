@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rat.networkmanager.R;
-import com.rat.nm.entity.Alarm;
+import com.rat.nm.entity.model.Alarm;
 
 import java.util.List;
 
@@ -67,18 +67,18 @@ public class AlarmDetailAdapter extends BaseAdapter {
         if (null == alarm)
             return convertView;
         int resourceId = 0;
-        int status = alarm.getStatus();
-        if (Alarm.LEVEL_1 == status)
-            resourceId = R.mipmap.alarm_detail_warn1;
-        else if (Alarm.LEVEL_2 == status)
-            resourceId = R.mipmap.alarm_detail_warn2;
-        else if (Alarm.LEVEL_3 == status)
-            resourceId = R.mipmap.alarm_detail_warn3;
-        else if (Alarm.LEVEL_4 == status)
-            resourceId = R.mipmap.alarm_detail_warn4;
+//        int status = alarm.getTimeEnd();
+//        if (Alarm.LEVEL_1 == status)
+//            resourceId = R.mipmap.alarm_detail_warn1;
+//        else if (Alarm.LEVEL_2 == status)
+//            resourceId = R.mipmap.alarm_detail_warn2;
+//        else if (Alarm.LEVEL_3 == status)
+//            resourceId = R.mipmap.alarm_detail_warn3;
+//        else if (Alarm.LEVEL_4 == status)
+//            resourceId = R.mipmap.alarm_detail_warn4;
         viewHolder.iconIV.setBackgroundResource(resourceId);
-        viewHolder.contentTV.setText(alarm.getContent());
-        viewHolder.timeTV.setText(alarm.getTime());
+//        viewHolder.contentTV.setText(alarm.getContent());
+//        viewHolder.timeTV.setText(alarm.getTime());
         return convertView;
     }
 

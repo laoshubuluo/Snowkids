@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.rat.networkmanager.R;
-import com.rat.nm.entity.Device;
+import com.rat.nm.entity.model.Device;
 
 import java.util.List;
 
@@ -66,23 +66,23 @@ public class RunningListAdapter extends BaseAdapter {
         final Device device = list.get(position);
         if (null == device)
             return convertView;
-        int status = device.getStatus();
-        String statusStr = "";
-        int color = 0;
-        if (Device.NORMAL == status) {
-            statusStr = "NORMAL";
-            color = R.color.blue;
-        } else if (Device.STOP == status) {
-            statusStr = "STOP";
-            color = R.color.gray;
-        } else if (Device.ERROR == status) {
-            statusStr = "ERROR";
-            color = R.color.red;
-        }
-        viewHolder.indexBtn.setText(String.valueOf(position));
-        viewHolder.nameTV.setText(device.getName());
-        viewHolder.statusTV.setText(statusStr);
-        viewHolder.statusTV.setTextColor(context.getResources().getColor(color));
+//        int status = device.getStatus();
+//        String statusStr = "";
+//        int color = 0;
+//        if (Device.NORMAL == status) {
+//            statusStr = "NORMAL";
+//            color = R.color.blue;
+//        } else if (Device.STOP == status) {
+//            statusStr = "STOP";
+//            color = R.color.gray;
+//        } else if (Device.ERROR == status) {
+//            statusStr = "ERROR";
+//            color = R.color.red;
+//        }
+//        viewHolder.indexBtn.setText(String.valueOf(position));
+//        viewHolder.nameTV.setText(device.getName());
+//        viewHolder.statusTV.setText(statusStr);
+//        viewHolder.statusTV.setTextColor(context.getResources().getColor(color));
         return convertView;
     }
 

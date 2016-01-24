@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.rat.networkmanager.R;
-import com.rat.nm.entity.Parameter;
+import com.rat.nm.entity.model.Parameter;
 
 import java.util.List;
 
@@ -66,7 +66,7 @@ public class ParameterListAdapter extends BaseAdapter {
         if (null == parameter)
             return convertView;
         viewHolder.keyTV.setText(parameter.getKey());
-        viewHolder.desTV.setText(parameter.getDes());
+        viewHolder.desTV.setText(parameter.getDescribe());
         viewHolder.valueTV.setText(parameter.getValue());
         return convertView;
     }

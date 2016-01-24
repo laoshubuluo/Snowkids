@@ -10,4 +10,8 @@
     <dimen name="header_height">60dp</dimen>
     <dimen name="footer_height">90dp</dimen>
     <dimen name="footer_padding">10dp</dimen>
+
+    <!--滑动菜单-->
+    <dimen name="slidingmenu_offset">40dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
 </resources>

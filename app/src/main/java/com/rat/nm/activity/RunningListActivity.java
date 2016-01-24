@@ -13,7 +13,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.adapter.RunningListAdapter;
-import com.rat.nm.entity.Device;
+import com.rat.nm.entity.model.Device;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -69,13 +69,13 @@ public class RunningListActivity extends BaseActivity implements AdapterView.OnI
     public void initData() {
         for (int i = 100; i < 200; i++) {
             int status;
-            if (i % 4 == 0)
-                status = Device.STOP;
-            else if (i % 3 == 0)
-                status = Device.ERROR;
-            else
-                status = Device.NORMAL;
-            deviceList.add(new Device(i, "第" + i + "号设备", status));
+//            if (i % 4 == 0)
+//                status = Device.STOP;
+//            else if (i % 3 == 0)
+//                status = Device.ERROR;
+//            else
+//                status = Device.NORMAL;
+//            deviceList.add(new Device(i, "第" + i + "号设备", status));
         }
         adapter = new RunningListAdapter(getApplicationContext(), deviceList);
         deviceListLV.setAdapter(adapter);

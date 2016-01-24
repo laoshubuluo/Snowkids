@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.rat.networkmanager.R;
-import com.rat.nm.entity.Alarm;
+import com.rat.nm.entity.model.Alarm;
 
 import java.util.List;
 
@@ -67,26 +67,26 @@ public class AlarmListAdapter extends BaseAdapter {
         if (null == alarm)
             return convertView;
         int resourceId = 0;
-        int status = alarm.getStatus();
-        String statusStr = "";
-        int color = 0;
-        if (Alarm.LEVEL_1 == status) {
-            statusStr = "LEVEL_1";
-            color = R.color.red;
-        } else if (Alarm.LEVEL_2 == status) {
-            statusStr = "LEVEL_2";
-            color = R.color.blue;
-        } else if (Alarm.LEVEL_3 == status) {
-            statusStr = "LEVEL_3";
-            color = R.color.gray;
-        } else if (Alarm.LEVEL_4 == status) {
-            statusStr = "LEVEL_4";
-            color = R.color.white;
-        }
-        viewHolder.indexBtn.setText(String.valueOf(position));
-        viewHolder.nameTV.setText(alarm.getName());
-        viewHolder.statusTV.setText(statusStr);
-        viewHolder.statusTV.setTextColor(context.getResources().getColor(color));
+//        int status = alarm.getStatus();
+//        String statusStr = "";
+//        int color = 0;
+//        if (Alarm.LEVEL_1 == status) {
+//            statusStr = "LEVEL_1";
+//            color = R.color.red;
+//        } else if (Alarm.LEVEL_2 == status) {
+//            statusStr = "LEVEL_2";
+//            color = R.color.blue;
+//        } else if (Alarm.LEVEL_3 == status) {
+//            statusStr = "LEVEL_3";
+//            color = R.color.gray;
+//        } else if (Alarm.LEVEL_4 == status) {
+//            statusStr = "LEVEL_4";
+//            color = R.color.white;
+//        }
+//        viewHolder.indexBtn.setText(String.valueOf(position));
+//        viewHolder.nameTV.setText(alarm.getName());
+//        viewHolder.statusTV.setText(statusStr);
+//        viewHolder.statusTV.setTextColor(context.getResources().getColor(color));
         return convertView;
     }
 

@@ -1,30 +1,23 @@
-package com.rat.nm.entity;
+package com.rat.nm.entity.model;
 
 import java.io.Serializable;
 
 /**
  * author : L.jinzhu
  * date : 2015/8/12
- * introduce : 设备实体
+ * introduce : 参数实体
  */
 public class Parameter implements Serializable {
-    private int id;
+    private String id;
     private String key;
-    private String des;
     private String value;
+    private String describe;
 
-    public Parameter(int id, String key, String des, String value) {
-        this.id = id;
-        this.key = key;
-        this.des = des;
-        this.value = value;
-    }
-
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -44,11 +37,11 @@ public class Parameter implements Serializable {
         this.value = value;
     }
 
-    public String getDes() {
-        return des;
+    public String getDescribe() {
+        return describe;
     }
 
-    public void setDes(String des) {
-        this.des = des;
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 }

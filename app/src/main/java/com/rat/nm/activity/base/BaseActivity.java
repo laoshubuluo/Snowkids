@@ -1,6 +1,5 @@
 package com.rat.nm.activity.base;
 
-import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,8 +7,12 @@ import android.os.Message;
 import android.view.View;
 import android.view.Window;
 
-import com.lidroid.xutils.ViewUtils;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.rat.networkmanager.R;
+import com.rat.nm.fragment.MenuLeftFragment;
+import com.rat.nm.fragment.MenuRightFragment;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 
@@ -18,7 +21,7 @@ import com.rat.nm.view.dialog.PromptDialog;
  * date : 2015/8/28
  * introduce : 基础界面
  */
-public class BaseActivity extends Activity implements Handler.Callback, View.OnClickListener {
+public class BaseActivity extends SlidingFragmentActivity implements Handler.Callback, View.OnClickListener {
     public Handler handler;
     public CustomProgressDialog customProgressDialog;
     public PromptDialog promptDialog;
@@ -31,6 +34,20 @@ public class BaseActivity extends Activity implements Handler.Callback, View.OnC
         handler = new Handler(this);
         promptDialog = new PromptDialog(BaseActivity.this);
         imageLoader = ImageLoader.getInstance();
+
+        // 加载滑动菜单
+        setBehindContentView(R.layout.layout_default_menu_left);
+        SlidingMenu menu = getSlidingMenu();
+        menu.setMode(SlidingMenu.LEFT_RIGHT);// 左右滑动菜单激活
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
+        menu.setShadowWidthRes(R.dimen.shadow_width);
+        menu.setShadowDrawable(R.drawable.menu_shadow_left);
+        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        menu.setFadeDegree(0.35f);
+        menu.setSecondaryShadowDrawable(R.drawable.menu_shadow_right);
+        menu.setSecondaryMenu(R.layout.layout_default_menu_right);
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_default_menu_left, new MenuLeftFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.layout_default_menu_right, new MenuRightFragment()).commit();
     }
 
     /**

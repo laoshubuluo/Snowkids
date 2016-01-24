@@ -13,7 +13,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.adapter.ParameterListAdapter;
-import com.rat.nm.entity.Parameter;
+import com.rat.nm.entity.model.Parameter;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -68,7 +68,7 @@ public class ParameterListActivity extends BaseActivity implements AdapterView.O
      */
     public void initData() {
         for (int i = 100; i < 110; i++)
-            parameterList.add(new Parameter(i, "The name of no " + i + " parameter", "this is a description for parameter " + i, "http://www.baidu.com/wewe?name=1&&to=222" + i));
+//            parameterList.add(new Parameter(i, "The name of no " + i + " parameter", "this is a description for parameter " + i, "http://www.baidu.com/wewe?name=1&&to=222" + i));
         adapter = new ParameterListAdapter(getApplicationContext(), parameterList);
         parameterListLV.setAdapter(adapter);
     }

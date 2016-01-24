@@ -13,7 +13,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.adapter.AlarmListAdapter;
-import com.rat.nm.entity.Alarm;
+import com.rat.nm.entity.model.Alarm;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -69,15 +69,15 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
     public void initData() {
         for (int i = 100; i < 110; i++) {
             int level;
-            if (i % 4 == 0)
-                level = Alarm.LEVEL_4;
-            else if (i % 3 == 0)
-                level = Alarm.LEVEL_3;
-            else if (i % 2 == 0)
-                level = Alarm.LEVEL_2;
-            else
-                level = Alarm.LEVEL_1;
-            alarmList.add(new Alarm(i, "Alarm! alarm:" + i, "", level, ""));
+//            if (i % 4 == 0)
+//                level = Alarm.LEVEL_4;
+//            else if (i % 3 == 0)
+//                level = Alarm.LEVEL_3;
+//            else if (i % 2 == 0)
+//                level = Alarm.LEVEL_2;
+//            else
+//                level = Alarm.LEVEL_1;
+//            alarmList.add(new Alarm(i, "Alarm! alarm:" + i, "", level, ""));
         }
         adapter = new AlarmListAdapter(getApplicationContext(), alarmList);
         alarmListLV.setAdapter(adapter);
