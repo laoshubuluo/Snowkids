@@ -1,7 +1,9 @@
 package com.rat.nm.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,16 +15,18 @@ import android.widget.Toast;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
-import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.common.MessageSignConstant;
-import com.rat.nm.controller.LoginController;
 import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.LogUtil;
 import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends Activity implements Handler.Callback, View.OnClickListener {
+    public Handler handler;
+    public CustomProgressDialog customProgressDialog;
+    public PromptDialog promptDialog;
+
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
     @ViewInject(R.id.top_left)
@@ -39,13 +43,16 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        handler = new Handler(this);
+        promptDialog = new PromptDialog(LoginActivity.this);
+
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
 
         // 判断是否需要登录
         if (StringUtils.isNotBlank(AppUtils.getInstance().getUserId())) {
             notNeedLogin();
-            Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);
             finish();
             return;
@@ -80,7 +87,7 @@ public class LoginActivity extends BaseActivity {
         switch (msg.what) {
             case MessageSignConstant.LOGIN_SUCCESS:
 //                User user = (User) msg.getData().getSerializable("user");
-                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
                 break;
@@ -121,7 +128,7 @@ public class LoginActivity extends BaseActivity {
                     Toast.makeText(getApplicationContext(), getString(R.string.password_is_null), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+                Intent i = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
 //                customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));

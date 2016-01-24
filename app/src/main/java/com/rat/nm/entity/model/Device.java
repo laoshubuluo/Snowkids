@@ -19,6 +19,12 @@ public class Device implements Serializable {
     private String runningStatus;// 运行状态
     private List<Parameter> parameterList;// 参数列表
 
+    public Device(String id, String name4Show, String runningStatus) {
+        this.id = id;
+        this.name4Show = name4Show;
+        this.runningStatus = runningStatus;
+    }
+
     public String getId() {
         return id;
     }

@@ -15,12 +15,10 @@ import android.widget.Toast;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
-import com.rat.nm.activity.AlarmDetailActivity;
 import com.rat.nm.activity.AlarmFilterActivity;
+import com.rat.nm.activity.DeviceDetailActivity;
+import com.rat.nm.activity.DeviceListActivity;
 import com.rat.nm.activity.OperationLogFilterActivity;
-import com.rat.nm.activity.ParameterListActivity;
-import com.rat.nm.activity.RunningDetailActivity;
-import com.rat.nm.activity.RunningListActivity;
 import com.rat.nm.activity.SettingsActivity;
 
 /**
@@ -34,7 +32,7 @@ public class MenuItemView extends FrameLayout {
     public static final int PARAMETER = 2;
     public static final int ALARM_INFO = 3;
     public static final int OPERTION_LOG = 4;
-    public static final int RUNNING_STATE = 5;
+    public static final int DEVICE = 5;
     public static final int SETTINGS = 6;
 
     private Context context;
@@ -83,8 +81,8 @@ public class MenuItemView extends FrameLayout {
                 title = "Operation Log";
                 resouceId = R.mipmap.menu_chat;
                 break;
-            case RUNNING_STATE:
-                title = "Running State";
+            case DEVICE:
+                title = "Device";
                 resouceId = R.mipmap.menu_events;
                 break;
             case SETTINGS:
@@ -126,7 +124,7 @@ public class MenuItemView extends FrameLayout {
                     Toast.makeText(context, context.getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
                     break;
                 case PARAMETER:
-                    i = new Intent(context, ParameterListActivity.class);
+                    i = new Intent(context, DeviceDetailActivity.class);
                     break;
                 case ALARM_INFO:
                     i = new Intent(context, AlarmFilterActivity.class);
@@ -134,8 +132,8 @@ public class MenuItemView extends FrameLayout {
                 case OPERTION_LOG:
                     i = new Intent(context, OperationLogFilterActivity.class);
                     break;
-                case RUNNING_STATE:
-                    i = new Intent(context, RunningListActivity.class);
+                case DEVICE:
+                    i = new Intent(context, DeviceListActivity.class);
                     break;
                 case SETTINGS:
                     i = new Intent(context, SettingsActivity.class);

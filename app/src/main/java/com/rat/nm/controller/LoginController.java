@@ -6,7 +6,6 @@ import android.os.Handler;
 import com.rat.nm.network.VolleyManager;
 import com.rat.nm.network.request.LoginRequest;
 
-
 /**
  * author : L.jinzhu
  * date : 2015/8/24

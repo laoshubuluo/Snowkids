@@ -11,7 +11,7 @@ import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.view.MenuItemView;
 
-public class MenuActivity extends BaseActivity {
+public class MainActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
 
@@ -23,8 +23,8 @@ public class MenuActivity extends BaseActivity {
     private MenuItemView alarmInfoMIV;
     @ViewInject(R.id.operationLogMIV)
     private MenuItemView operationLogMIV;
-    @ViewInject(R.id.runningStateMIV)
-    private MenuItemView runningStateMIV;
+    @ViewInject(R.id.deviceMIV)
+    private MenuItemView deviceMIV;
     @ViewInject(R.id.settingsMIV)
     private MenuItemView settingsMIV;
 
@@ -53,8 +53,8 @@ public class MenuActivity extends BaseActivity {
         //alarmInfoMIV.initData(3);
         operationLogMIV.initView(MenuItemView.OPERTION_LOG);
         //operationLogMIV.initData(3);
-        runningStateMIV.initView(MenuItemView.RUNNING_STATE);
-        runningStateMIV.initData(20);
+        deviceMIV.initView(MenuItemView.DEVICE);
+        deviceMIV.initData(20);
         settingsMIV.initView(MenuItemView.SETTINGS);
         settingsMIV.initData(99);
     }

@@ -18,12 +18,12 @@ import java.util.List;
  * date : 2015/09/14
  * introduce : 运行设备列表adapter
  */
-public class RunningListAdapter extends BaseAdapter {
+public class DeviceListAdapter extends BaseAdapter {
     private Context context;
     private List<Device> list;
     private ViewHolder viewHolder;
 
-    public RunningListAdapter(Context context, List<Device> list) {
+    public DeviceListAdapter(Context context, List<Device> list) {
         this.context = context;
         this.list = list;
     }
@@ -66,23 +66,10 @@ public class RunningListAdapter extends BaseAdapter {
         final Device device = list.get(position);
         if (null == device)
             return convertView;
-//        int status = device.getStatus();
-//        String statusStr = "";
-//        int color = 0;
-//        if (Device.NORMAL == status) {
-//            statusStr = "NORMAL";
-//            color = R.color.blue;
-//        } else if (Device.STOP == status) {
-//            statusStr = "STOP";
-//            color = R.color.gray;
-//        } else if (Device.ERROR == status) {
-//            statusStr = "ERROR";
-//            color = R.color.red;
-//        }
-//        viewHolder.indexBtn.setText(String.valueOf(position));
-//        viewHolder.nameTV.setText(device.getName());
-//        viewHolder.statusTV.setText(statusStr);
-//        viewHolder.statusTV.setTextColor(context.getResources().getColor(color));
+        viewHolder.indexBtn.setText(String.valueOf(position));
+        viewHolder.nameTV.setText(device.getName4Show());
+        viewHolder.statusTV.setText(device.getRunningStatus());
+        viewHolder.statusTV.setTextColor(context.getResources().getColor(R.color.blue));
         return convertView;
     }
 

@@ -34,7 +34,6 @@
     <string name="menu">Menu</string>
     <string name="device">Device</string>
     <string name="device_list">Device List</string>
-    <string name="parameter_list">Parameter List</string>
     <string name="alarm">Alarm</string>
     <string name="alarm_filter">Alarm Filter</string>
     <string name="alarm_list">Alarm List</string>

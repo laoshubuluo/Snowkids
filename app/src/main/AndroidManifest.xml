@@ -55,11 +55,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.MenuActivity"
+            android:name="com.rat.nm.activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.RunningListActivity"
+            android:name="com.rat.nm.activity.DeviceListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
@@ -67,7 +67,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.ParameterListActivity"
+            android:name="com.rat.nm.activity.DeviceDetailActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

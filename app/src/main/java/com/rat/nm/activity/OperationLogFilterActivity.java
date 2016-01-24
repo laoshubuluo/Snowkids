@@ -64,7 +64,7 @@ public class OperationLogFilterActivity extends BaseActivity {
 //        switch (msg.what) {
 //            case MessageSignConstant.LOGIN_SUCCESS:
 ////                User user = (User) msg.getData().getSerializable("user");
-//                Intent i = new Intent(LoginActivity.this, MenuActivity.class);
+//                Intent i = new Intent(LoginActivity.this, MainActivity.class);
 //                startActivity(i);
 //                finish();
 //                break;

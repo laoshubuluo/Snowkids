@@ -14,9 +14,9 @@ public class MessageSignConstant {
 
     public static final int LOGIN_SUCCESS = 1101;
     public static final int LOGIN_FAILURE = 1102;
-//
-//    public static final int REGISTER_SUCCESS = 1105;
-//    public static final int REGISTER_FAILURE = 1106;
+
+    public static final int DEVICE_GET_SUCCESS = 1105;
+    public static final int DEVICE_GET_FAILURE = 1106;
 //
 //    public static final int AUTH_CODE_GET_SUCCESS = 1109;
 //    public static final int AUTH_CODE_GET_FAILURE = 1110;

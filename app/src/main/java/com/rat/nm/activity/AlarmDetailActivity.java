@@ -130,7 +130,7 @@ public class AlarmDetailActivity extends BaseActivity implements AdapterView.OnI
 //        User user = (User) parent.getAdapter().getItem(position);
 //        if (null == user)
 //            return;
-//        Intent intent = new Intent(ParameterListActivity.this, UserInfoActivity.class);
+//        Intent intent = new Intent(DeviceDetailActivity.this, UserInfoActivity.class);
 //        startActivity(intent);
     }
 

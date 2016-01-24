@@ -12,16 +12,16 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
-import com.rat.nm.adapter.RunningListAdapter;
-import com.rat.nm.entity.model.Device;
+import com.rat.nm.adapter.DeviceListAdapter;
 import com.rat.nm.entity.enums.DataGetType;
+import com.rat.nm.entity.model.Device;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RunningListActivity extends BaseActivity implements AdapterView.OnItemClickListener, XListView.IXListViewListener {
+public class DeviceListActivity extends BaseActivity implements AdapterView.OnItemClickListener, XListView.IXListViewListener {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
     @ViewInject(R.id.top_left)
@@ -35,7 +35,7 @@ public class RunningListActivity extends BaseActivity implements AdapterView.OnI
     private List<Device> deviceList = new ArrayList<Device>();
     private int totalPage = 0;
     private int currentPage = 0;
-    private RunningListAdapter adapter;
+    private DeviceListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,17 +67,10 @@ public class RunningListActivity extends BaseActivity implements AdapterView.OnI
      * 初始化数据
      */
     public void initData() {
-        for (int i = 100; i < 200; i++) {
-            int status;
-//            if (i % 4 == 0)
-//                status = Device.STOP;
-//            else if (i % 3 == 0)
-//                status = Device.ERROR;
-//            else
-//                status = Device.NORMAL;
-//            deviceList.add(new Device(i, "第" + i + "号设备", status));
+        for (int i = 100; i < 150; i++) {
+            deviceList.add(new Device(String.valueOf(i), "第" + i + "号设备", "哈哈"));
         }
-        adapter = new RunningListAdapter(getApplicationContext(), deviceList);
+        adapter = new DeviceListAdapter(getApplicationContext(), deviceList);
         deviceListLV.setAdapter(adapter);
     }
 
@@ -118,7 +111,9 @@ public class RunningListActivity extends BaseActivity implements AdapterView.OnI
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent i = new Intent(RunningListActivity.this, RunningDetailActivity.class);
+        Device device = deviceList.get(position);
+        Intent i = new Intent(DeviceListActivity.this, DeviceDetailActivity.class);
+        i.putExtra("device", device);
         startActivity(i);
     }
 
@@ -131,7 +126,7 @@ public class RunningListActivity extends BaseActivity implements AdapterView.OnI
     @Override
     public boolean handleMessage(Message msg) {
         if (promptDialog == null || promptDialog.isShowing())
-            promptDialog = new PromptDialog(RunningListActivity.this);
+            promptDialog = new PromptDialog(DeviceListActivity.this);
         if (null != customProgressDialog) {
             customProgressDialog.dismiss();
         }
