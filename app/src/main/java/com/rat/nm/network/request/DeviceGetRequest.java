@@ -55,6 +55,9 @@ public class DeviceGetRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             DeviceGetRspInfo info = GsonUtil.fromJson(response.toString(), DeviceGetRspInfo.class);
+
+            info.setCode(ResponseConstant.SUCCESS);
+
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putSerializable("device", info.getDevice());

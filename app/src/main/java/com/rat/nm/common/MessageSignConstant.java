@@ -17,15 +17,15 @@ public class MessageSignConstant {
 
     public static final int DEVICE_GET_SUCCESS = 1105;
     public static final int DEVICE_GET_FAILURE = 1106;
-//
-//    public static final int AUTH_CODE_GET_SUCCESS = 1109;
-//    public static final int AUTH_CODE_GET_FAILURE = 1110;
-//
-//    public static final int USER_INFO_MODIFY_SUCCESS = 1113;
-//    public static final int USER_INFO_MODIFY_FAILURE = 1114;
-//
-//    public static final int UPLOAD_HEAD_SUCCESS = 1115;
-//    public static final int UPLOAD_HEAD_FAILURE = 1116;
+
+    public static final int DEVICE_LIST_GET_SUCCESS = 1109;
+    public static final int DEVICE_LIST_GET_FAILURE = 1110;
+
+    public static final int ALARM_LIST_GET_SUCCESS = 1113;
+    public static final int ALARM_LIST_GET_FAILURE = 1114;
+
+    public static final int ALARM_GET_SUCCESS = 1115;
+    public static final int ALARM_GET_FAILURE = 1116;
 //
 //    public static final int TOKEN_OR_USERINFO_FROM_WEIXIN_SUCCESS = 1117;
 //    public static final int TOKEN_OR_USERINFO_FROM_WEIXIN_FAILURE = 1118;

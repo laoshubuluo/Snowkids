@@ -48,6 +48,7 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         device = (Device) getIntent().getSerializableExtra("device");
+        device = new Device("", "", "");
         controller = new DeviceController(getApplication(), handler);
         initView();
         initData();

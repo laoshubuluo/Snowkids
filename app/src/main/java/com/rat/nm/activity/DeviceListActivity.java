@@ -7,14 +7,18 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.adapter.DeviceListAdapter;
+import com.rat.nm.common.MessageSignConstant;
+import com.rat.nm.controller.DeviceController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.model.Device;
+import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
 
@@ -36,13 +40,15 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
     private int totalPage = 0;
     private int currentPage = 0;
     private DeviceListAdapter adapter;
+    private DeviceController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_running_list);
+        setContentView(R.layout.activity_device_list);
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
+        controller = new DeviceController(getApplication(), handler);
         initView();
         initData();
     }
@@ -67,18 +73,19 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
      * 初始化数据
      */
     public void initData() {
-        for (int i = 100; i < 150; i++) {
-            deviceList.add(new Device(String.valueOf(i), "第" + i + "号设备", "哈哈"));
-        }
         adapter = new DeviceListAdapter(getApplicationContext(), deviceList);
         deviceListLV.setAdapter(adapter);
+
+        customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
+        customProgressDialog.show();
+        updateData(DataGetType.UPDATE);
     }
 
     /**
      * 更新数据
      */
-    private void updateData(final DataGetType dataGetType) {
-//        controller.getFamily(totalPage, currentPage, dataGetType, getActivity().getApplication());
+    private void updateData(DataGetType dataGetType) {
+        controller.getList(totalPage, currentPage, dataGetType, "deviceType");
     }
 
     @Override
@@ -135,66 +142,53 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
         int code;
         String message;
         switch (msg.what) {
-//            case MessageSignConstant.NEARBY_GET_FAMILY_SUCCESS:
-//                totalPage = msg.getData().getInt("totalPage");
-//                currentPage = msg.getData().getInt("currentPage");
-//                userList = (List<User>) msg.getData().getSerializable("userList");
-//                dataGetType = msg.getData().getString("dataGetType");
-//                // 刷新列表
-//                if (dataGetType.equals(DataGetType.UPDATE.getType())) {
-//                    familyAdapter.modifyData(userList, true);
-//                } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType()))
-//                    familyAdapter.modifyData(userList, false);
-//
-//                // 判断数据获取状态（无数据或无更多数据）
-//                // 无数据
-//                if (totalPage == 0) {
-//                    deviceListLV.setPullLoadEnable(false);
-//                }
-//                // 无更多数据
-//                else if (totalPage == currentPage) {
-//                    deviceListLV.setPullLoadEnable(false);
-//                } else {
-//                    deviceListLV.setPullLoadEnable(true);
-//                }
-//                // 是否存在数据
-//                if (userList.isEmpty() && dataGetType.equals(DataGetType.UPDATE.getType())) {
-//                    empty.setVisibility(View.VISIBLE);
-//                    empty.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            onRefresh();
-//                        }
-//                    });
-//                } else
-//                    empty.setVisibility(View.GONE);
-//                isFriendDataLoading = false;
-//                break;
-//            case MessageSignConstant.NEARBY_GET_FAMILY_FAILURE:
-//                code = msg.getData().getInt("code");
-//                message = msg.getData().getString("message");
-//                promptDialog.initData(getString(R.string.nearby_family_get_failure), message);
-//                promptDialog.show();
-//                isFriendDataLoading = false;
-//                break;
-//            case MessageSignConstant.NEARBY_GET_MEETING_FAILURE:
-//                code = msg.getData().getInt("code");
-//                message = msg.getData().getString("message");
-//                promptDialog.initData(getString(R.string.nearby_meeting_get_failure), message);
-//                promptDialog.show();
-//                isMeetingDataLoading = false;
-//                break;
-//            case MessageSignConstant.SERVER_OR_NETWORK_ERROR:
-//                promptDialog.initData(getString(R.string.nearby_get_error), msg.getData().getString("message"));
-//                promptDialog.show();
-//                isFriendDataLoading = false;
-//                isMeetingDataLoading = false;
-//                break;
-//            case MessageSignConstant.UNKNOWN_ERROR:
-//                Toast.makeText(getActivity(), getString(R.string.unknown_error), Toast.LENGTH_LONG).show();
-//                isFriendDataLoading = false;
-//                isMeetingDataLoading = false;
-//                break;
+            case MessageSignConstant.DEVICE_LIST_GET_SUCCESS:
+                totalPage = msg.getData().getInt("totalPage");
+                currentPage = msg.getData().getInt("currentPage");
+                deviceList = (List<Device>) msg.getData().getSerializable("deviceList");
+                dataGetType = msg.getData().getString("dataGetType");
+                // 刷新列表
+                if (dataGetType.equals(DataGetType.UPDATE.getType())) {
+                    adapter.modifyData(deviceList, true);
+                } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType()))
+                    adapter.modifyData(deviceList, true);
+
+                // 判断数据获取状态（无数据或无更多数据）
+                // 无数据
+                if (totalPage == 0) {
+                    deviceListLV.setPullLoadEnable(false);
+                }
+                // 无更多数据
+                else if (totalPage == currentPage) {
+                    deviceListLV.setPullLoadEnable(false);
+                } else {
+                    deviceListLV.setPullLoadEnable(true);
+                }
+                // 是否存在数据
+                if (deviceList.isEmpty() && dataGetType.equals(DataGetType.UPDATE.getType())) {
+                    empty.setVisibility(View.VISIBLE);
+                    empty.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            onRefresh();
+                        }
+                    });
+                } else
+                    empty.setVisibility(View.GONE);
+                break;
+            case MessageSignConstant.DEVICE_LIST_GET_FAILURE:
+                code = msg.getData().getInt("code");
+                message = msg.getData().getString("message");
+                promptDialog.initData("", message);
+                promptDialog.show();
+                break;
+            case MessageSignConstant.SERVER_OR_NETWORK_ERROR:
+                promptDialog.initData("", msg.getData().getString("message"));
+                promptDialog.show();
+                break;
+            case MessageSignConstant.UNKNOWN_ERROR:
+                Toast.makeText(getApplication(), getString(R.string.unknown_error), Toast.LENGTH_LONG).show();
+                break;
         }
         // 加载效果取消
         onLoad();

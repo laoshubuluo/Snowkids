@@ -16,6 +16,7 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.common.MessageSignConstant;
+import com.rat.nm.controller.LoginController;
 import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.LogUtil;
 import com.rat.nm.util.StringUtils;
@@ -128,14 +129,11 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
                     Toast.makeText(getApplicationContext(), getString(R.string.password_is_null), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
-//                customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
-//                customProgressDialog.show();
-//                customProgressDialog.setCancelable(false);
-//                LoginController loginController = new LoginController(getApplication(), handler);
-//                loginController.login(userNameET.getText().toString(), passwordET.getText().toString(), 1);
+                customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
+                customProgressDialog.show();
+                customProgressDialog.setCancelable(false);
+                LoginController loginController = new LoginController(getApplication(), handler);
+                loginController.login(userNameET.getText().toString(), passwordET.getText().toString(), 1);
                 break;
             default:
                 break;

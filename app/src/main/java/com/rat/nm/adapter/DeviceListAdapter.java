@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * author : L.jinzhu
  * date : 2015/09/14
- * introduce : 运行设备列表adapter
+ * introduce : 设备列表adapter
  */
 public class DeviceListAdapter extends BaseAdapter {
     private Context context;

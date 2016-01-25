@@ -3,8 +3,10 @@ package com.rat.nm.controller;
 import android.content.Context;
 import android.os.Handler;
 
+import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.network.VolleyManager;
 import com.rat.nm.network.request.DeviceGetRequest;
+import com.rat.nm.network.request.DeviceListGetRequest;
 
 /**
  * author : L.jinzhu
@@ -26,6 +28,14 @@ public class DeviceController {
      */
     public void get(String deviceId) {
         DeviceGetRequest request = new DeviceGetRequest(handler, context, deviceId);
+        VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
+    }
+
+    /**
+     * 设备获取
+     */
+    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String deviceType) {
+        DeviceListGetRequest request = new DeviceListGetRequest(handler, context, totalPage, currentPage, deviceType, dataGetType);
         VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 }
