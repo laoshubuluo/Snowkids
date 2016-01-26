@@ -29,36 +29,34 @@
     <string name="send">发送</string>
     <string name="read_more">查看更多...</string>
     <string name="empty">暂无内容，请重试</string>
+    <string name="time">日期</string>
+    <string name="level">等级</string>
+    <string name="query">查询</string>
 
     <!--主菜单-->
     <string name="menu">Menu</string>
+    <string name="profile">Profile</string>
     <string name="device">Device</string>
+    <string name="device_type">Device Type</string>
     <string name="device_list">Device List</string>
     <string name="parameter_list">Parameter List</string>
     <string name="alarm">Alarm</string>
     <string name="alarm_filter">Alarm Filter</string>
     <string name="alarm_list">Alarm List</string>
-    <string name="operation_log">Log</string>
-    <string name="operation_log_filter">Log Filter</string>
+    <string name="operate_log">Operate Log</string>
+    <string name="operate_log_list">Operate Log List</string>
+    <string name="operate_log_filter">Operate Log Filter</string>
     <string name="settings">Settings</string>
 
     <!--登录鉴权-->
-    <string name="action_settings">Settings</string>
-    <string name="login">Sign in</string>
-    <string name="register">Register</string>
-    <string name="search">Search</string>
+    <string name="action_settings">设置</string>
+    <string name="login">登录</string>
+    <string name="logout">退出登录</string>
+    <string name="register">注册</string>
+    <string name="search">搜索</string>
     <string name="login_success">登录成功</string>
     <string name="login_failure">登录失败</string>
     <string name="login_error">登录异常</string>
     <string name="user_name_is_null">用户名不能为空</string>
     <string name="password_is_null">密码不能为空</string>
-
-    <!--日志界面-->
-    <string name="operator">Operator</string>
-    <string name="date">Date</string>
-    <string name="state">State</string>
-    <string name="time">Time</string>
-    <string name="leave">Leave</string>
-    <string name="query">Query</string>
-
 </resources>

@@ -16,7 +16,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="40dp"
-        android:text="@string/operator"
+        android:text="@string/time"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -27,10 +27,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:background="@mipmap/alarm_filter_rounded_btn_white"
-        android:drawableRight="@mipmap/alarm_filter_more"
+        android:background="@mipmap/rounded_btn_white"
+        android:drawableRight="@mipmap/filter_more"
         android:padding="15dp"
-        android:text="LUA"
+        android:text="Week"
         android:textColor="@color/blue" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
-        android:text="@string/date"
+        android:text="@string/level"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -52,34 +52,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:background="@mipmap/alarm_filter_rounded_btn_white"
-        android:drawableRight="@mipmap/alarm_filter_more"
+        android:background="@mipmap/rounded_btn_white"
+        android:drawableRight="@mipmap/filter_more"
         android:padding="15dp"
-        android:text="2015.08.18"
-        android:textColor="@color/blue" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/state"
-        android:textColor="@color/white"
-        android:textSize="25dp" />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="@mipmap/alarm_filter_rounded_btn_white"
-        android:drawableRight="@mipmap/alarm_filter_more"
-        android:padding="15dp"
-        android:text="Normal"
+        android:text="Warn"
         android:textColor="@color/blue" />
 
     <Button

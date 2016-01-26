@@ -9,11 +9,10 @@ import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
-import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 
-public class OperationLogFilterActivity extends BaseActivity {
+public class OperateLogFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
     @ViewInject(R.id.top_left)
@@ -25,7 +24,8 @@ public class OperationLogFilterActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_operation_log_filter);
+        setContentView(R.layout.activity_operate_log_filter);
+
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         initView();
@@ -36,12 +36,11 @@ public class OperationLogFilterActivity extends BaseActivity {
      * 初始化界面
      */
     public void initView() {
-        topTitleView.setText(R.string.operation_log_filter);
+        topTitleView.setText(R.string.operate_log_filter);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
         queryBtn.setOnClickListener(this);
     }
-
 
     /**
      * 初始化数据
@@ -80,7 +79,7 @@ public class OperationLogFilterActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.queryBtn:
-                Intent i = new Intent(OperationLogFilterActivity.this, OperationLogDetailActivity.class);
+                Intent i = new Intent(OperateLogFilterActivity.this, OperateLogListActivity.class);
                 startActivity(i);
                 break;
             default:

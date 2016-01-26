@@ -83,11 +83,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.OperationLogDetailActivity"
+            android:name="com.rat.nm.activity.OperateLogDetailActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.OperationLogFilterActivity"
+            android:name="com.rat.nm.activity.OperateLogFilterActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

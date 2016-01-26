@@ -38,7 +38,7 @@ public class BaseActivity extends SlidingFragmentActivity implements Handler.Cal
         // 加载滑动菜单
         setBehindContentView(R.layout.layout_default_menu_left);
         SlidingMenu menu = getSlidingMenu();
-        menu.setMode(SlidingMenu.LEFT_RIGHT);// 左右滑动菜单激活
+        menu.setMode(SlidingMenu.LEFT);// 左右滑动菜单激活
         menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         menu.setShadowWidthRes(R.dimen.shadow_width);
         menu.setShadowDrawable(R.drawable.menu_shadow_left);

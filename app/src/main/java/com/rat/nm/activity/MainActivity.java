@@ -1,8 +1,6 @@
 package com.rat.nm.activity;
 
 import android.os.Bundle;
-import android.os.Message;
-import android.view.View;
 import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
@@ -17,14 +15,14 @@ public class MainActivity extends BaseActivity {
 
     @ViewInject(R.id.profileMIV)
     private MenuItemView profileMIV;
-    @ViewInject(R.id.parameterMIV)
-    private MenuItemView parameterMIV;
-    @ViewInject(R.id.alarmInfoMIV)
-    private MenuItemView alarmInfoMIV;
-    @ViewInject(R.id.operationLogMIV)
-    private MenuItemView operationLogMIV;
+    @ViewInject(R.id.deviceTypeMIV)
+    private MenuItemView deviceTypeMIV;
     @ViewInject(R.id.deviceMIV)
     private MenuItemView deviceMIV;
+    @ViewInject(R.id.alarmMIV)
+    private MenuItemView alarmMIV;
+    @ViewInject(R.id.operateLogMIV)
+    private MenuItemView operateLogMIV;
     @ViewInject(R.id.settingsMIV)
     private MenuItemView settingsMIV;
 
@@ -47,16 +45,16 @@ public class MainActivity extends BaseActivity {
 
         profileMIV.initView(MenuItemView.PROFILE);
         profileMIV.initData(0);
-        parameterMIV.initView(MenuItemView.PARAMETER);
-        parameterMIV.initData(1);
-        alarmInfoMIV.initView(MenuItemView.ALARM_INFO);
-        //alarmInfoMIV.initData(3);
-        operationLogMIV.initView(MenuItemView.OPERTION_LOG);
-        //operationLogMIV.initData(3);
+        deviceTypeMIV.initView(MenuItemView.DEVICE_TYPE);
+        //deviceTypeMIV.initData(1);
         deviceMIV.initView(MenuItemView.DEVICE);
-        deviceMIV.initData(20);
+        deviceMIV.initData(3);
+        alarmMIV.initView(MenuItemView.ALARM);
+        alarmMIV.initData(3);
+        operateLogMIV.initView(MenuItemView.OPERATE_LOG);
+        operateLogMIV.initData(20);
         settingsMIV.initView(MenuItemView.SETTINGS);
-        settingsMIV.initData(99);
+        //settingsMIV.initData(99);
     }
 
     /**

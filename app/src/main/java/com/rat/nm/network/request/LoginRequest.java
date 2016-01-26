@@ -12,6 +12,7 @@ import com.rat.nm.entity.net.request.LoginActionInfo;
 import com.rat.nm.entity.net.request.base.RequestInfo;
 import com.rat.nm.entity.net.response.LoginRegisterInfo;
 import com.rat.nm.network.request.base.PostJsonRequest;
+import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.GsonUtil;
 import com.rat.nm.util.LogUtil;
 
@@ -64,8 +65,7 @@ public class LoginRequest extends PostJsonRequest {
             info.setCode(ResponseConstant.SUCCESS);
             // 响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
-//                // 数据库指向用户自己的数据库
-//                AppUtils.getInstance().setUserId(String.valueOf(info.getUserInfo().getUid()));
+                AppUtils.getInstance().setUserName(userName);
 //                AppUtils.getInstance().setUserToken(info.getToken());
 //                DbConnectionManager.getInstance().reload();
 //                // 保存好友列表

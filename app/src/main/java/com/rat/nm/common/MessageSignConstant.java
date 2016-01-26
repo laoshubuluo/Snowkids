@@ -26,12 +26,12 @@ public class MessageSignConstant {
 
     public static final int ALARM_GET_SUCCESS = 1115;
     public static final int ALARM_GET_FAILURE = 1116;
-//
-//    public static final int TOKEN_OR_USERINFO_FROM_WEIXIN_SUCCESS = 1117;
-//    public static final int TOKEN_OR_USERINFO_FROM_WEIXIN_FAILURE = 1118;
-//
-//    public static final int FRIEND_ADD_REQ_SUCCESS = 1125;
-//    public static final int FRIEND_ADD_REQ_FAILURE = 1126;
+
+    public static final int OPERATE_LOG_GET_SUCCESS = 1117;
+    public static final int OPERATE_LOG_GET_FAILURE = 1118;
+
+    public static final int OPERATE_LOG_LIST_GET_SUCCESS = 1125;
+    public static final int OPERATE_LOG_LIST_GET_FAILURE = 1126;
 //
 //    public static final int FRIEND_ADD_RSP_SUCCESS = 1129;
 //    public static final int FRIEND_ADD_RSP_FAILURE = 1130;

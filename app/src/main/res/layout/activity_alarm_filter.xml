@@ -27,8 +27,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:background="@mipmap/alarm_filter_rounded_btn_white"
-        android:drawableRight="@mipmap/alarm_filter_more"
+        android:background="@mipmap/rounded_btn_white"
+        android:drawableRight="@mipmap/filter_more"
         android:padding="15dp"
         android:text="Week"
         android:textColor="@color/blue" />
@@ -40,7 +40,7 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
-        android:text="@string/leave"
+        android:text="@string/level"
         android:textColor="@color/white"
         android:textSize="25dp" />
 
@@ -52,8 +52,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:background="@mipmap/alarm_filter_rounded_btn_white"
-        android:drawableRight="@mipmap/alarm_filter_more"
+        android:background="@mipmap/rounded_btn_white"
+        android:drawableRight="@mipmap/filter_more"
         android:padding="15dp"
         android:text="Warn"
         android:textColor="@color/blue" />

@@ -101,18 +101,37 @@ public class AppUtils {
 //        sharedPreferences.edit().putBoolean("isFirstStart", false).commit();
 //    }
 //
-//    /**
-//     * 保存用户的ID
-//     *
-//     * @param userId
-//     */
-//    public void setUserId(String userId) {
-//        sharedPreferences.edit().putString("userId", userId).commit();
-//    }
-//
 
     /**
-     * 获取用户手机号
+     * 保存用户的ID
+     *
+     * @param userId
+     */
+    public void setUserId(String userId) {
+        sharedPreferences.edit().putString("userId", userId).commit();
+    }
+
+
+    /**
+     * 获取用户的ID
+     *
+     * @return
+     */
+    public String getUserName() {
+        return sharedPreferences.getString("userName", "");
+    }
+
+    /**
+     * 保存用户名
+     *
+     * @param userName
+     */
+    public void setUserName(String userName) {
+        sharedPreferences.edit().putString("userName", userName).commit();
+    }
+
+    /**
+     * 获取用户名
      *
      * @return
      */
