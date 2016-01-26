@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@mipmap/bg_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <include layout="@layout/public_top_layout" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/empty"
+            layout="@layout/public_empty" />
+
+        <com.rat.nm.view.pull2refresh.XListView
+            android:id="@+id/deviceTypeListLV"
+            style="@style/listview_in_root_layout" />
+    </FrameLayout>
+</LinearLayout>
