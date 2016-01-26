@@ -48,7 +48,7 @@ public class AlarmListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        AlarmListGetActionInfo actionInfo = new AlarmListGetActionInfo(32, alarmType, totalPage, currentPage, dataGetType.getType());
+        AlarmListGetActionInfo actionInfo = new AlarmListGetActionInfo(4, alarmType, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
@@ -70,9 +70,6 @@ public class AlarmListGetRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             AlarmListGetRspInfo info = GsonUtil.fromJson(response.toString(), AlarmListGetRspInfo.class);
-
-            info.setCode(ResponseConstant.SUCCESS);
-
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putInt("totalPage", info.getTotalPage());

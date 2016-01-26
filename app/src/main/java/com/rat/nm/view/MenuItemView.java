@@ -19,6 +19,7 @@ import com.rat.nm.activity.AlarmFilterActivity;
 import com.rat.nm.activity.AlarmListActivity;
 import com.rat.nm.activity.DeviceDetailActivity;
 import com.rat.nm.activity.DeviceListActivity;
+import com.rat.nm.activity.DeviceTypeListActivity;
 import com.rat.nm.activity.OperateLogFilterActivity;
 import com.rat.nm.activity.OperateLogListActivity;
 import com.rat.nm.activity.SettingsActivity;
@@ -125,10 +126,10 @@ public class MenuItemView extends FrameLayout {
                     Toast.makeText(context, context.getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
                     break;
                 case DEVICE_TYPE:
-                    i = new Intent(context, DeviceListActivity.class);
+                    i = new Intent(context, DeviceTypeListActivity.class);
                     break;
                 case DEVICE:
-                    i = new Intent(context, DeviceDetailActivity.class);
+                    i = new Intent(context, DeviceListActivity.class);
                     break;
                 case ALARM:
                     i = new Intent(context, AlarmListActivity.class);

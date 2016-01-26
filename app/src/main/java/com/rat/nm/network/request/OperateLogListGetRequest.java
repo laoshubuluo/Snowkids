@@ -48,7 +48,7 @@ public class OperateLogListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        OperateLogListGetActionInfo actionInfo = new OperateLogListGetActionInfo(32, operateLogType, totalPage, currentPage, dataGetType.getType());
+        OperateLogListGetActionInfo actionInfo = new OperateLogListGetActionInfo(5, operateLogType, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
@@ -70,9 +70,6 @@ public class OperateLogListGetRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             OperateLogListGetRspInfo info = GsonUtil.fromJson(response.toString(), OperateLogListGetRspInfo.class);
-
-            info.setCode(ResponseConstant.SUCCESS);
-
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putInt("totalPage", info.getTotalPage());

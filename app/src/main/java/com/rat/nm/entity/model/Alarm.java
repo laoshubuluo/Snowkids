@@ -1,5 +1,7 @@
 package com.rat.nm.entity.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -8,11 +10,16 @@ import java.io.Serializable;
  * introduce : 告警实体
  */
 public class Alarm implements Serializable {
+    @SerializedName("alarmId")
     private String id;// 告警id
     private String type;// 告警类型:信息Info、警告Alarm、故障Fault
+    @SerializedName("deviceId")
     private String deviceId;// 设备ID
+    @SerializedName("alarmStart")
     private String timeStart;// 告警开始时间
+    @SerializedName("alarmEnd")
     private String timeEnd;// 告警结束时间
+    @SerializedName("alarmLog")
     private String log;// 告警日志
     private String nmx;
 

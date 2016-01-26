@@ -63,7 +63,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.RunningDetailActivity"
+            android:name="com.rat.nm.activity.DeviceTypeListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
@@ -83,7 +83,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.rat.nm.activity.OperateLogDetailActivity"
+            android:name="com.rat.nm.activity.OperateLogListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity

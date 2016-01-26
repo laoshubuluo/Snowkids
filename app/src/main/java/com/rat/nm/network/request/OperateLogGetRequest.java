@@ -55,9 +55,6 @@ public class OperateLogGetRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             OperateLogGetRspInfo info = GsonUtil.fromJson(response.toString(), OperateLogGetRspInfo.class);
-
-            info.setCode(ResponseConstant.SUCCESS);
-
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putSerializable("operateLog", info.getOperateLog());

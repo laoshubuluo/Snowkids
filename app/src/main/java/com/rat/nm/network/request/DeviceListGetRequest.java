@@ -48,7 +48,7 @@ public class DeviceListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        DeviceListGetActionInfo actionInfo = new DeviceListGetActionInfo(32, deviceType, totalPage, currentPage, dataGetType.getType());
+        DeviceListGetActionInfo actionInfo = new DeviceListGetActionInfo(2, deviceType, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
@@ -70,9 +70,6 @@ public class DeviceListGetRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             DeviceListGetRspInfo info = GsonUtil.fromJson(response.toString(), DeviceListGetRspInfo.class);
-
-            info.setCode(ResponseConstant.SUCCESS);
-
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putInt("totalPage", info.getTotalPage());

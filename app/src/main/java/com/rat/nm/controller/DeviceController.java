@@ -7,6 +7,7 @@ import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.network.VolleyManager;
 import com.rat.nm.network.request.DeviceGetRequest;
 import com.rat.nm.network.request.DeviceListGetRequest;
+import com.rat.nm.network.request.DeviceTypeListGetRequest;
 
 /**
  * author : L.jinzhu
@@ -36,6 +37,14 @@ public class DeviceController {
      */
     public void getList(int totalPage, int currentPage, DataGetType dataGetType, String deviceType) {
         DeviceListGetRequest request = new DeviceListGetRequest(handler, context, totalPage, currentPage, deviceType, dataGetType);
+        VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
+    }
+
+    /**
+     * 设备类型获取
+     */
+    public void getTypeList() {
+        DeviceTypeListGetRequest request = new DeviceTypeListGetRequest(handler, context);
         VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 }

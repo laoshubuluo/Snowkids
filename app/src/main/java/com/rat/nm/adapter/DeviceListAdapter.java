@@ -54,7 +54,7 @@ public class DeviceListAdapter extends BaseAdapter {
 
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.view_running_list_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.view_device_list_item, null);
             viewHolder = new ViewHolder();
             viewHolder.indexBtn = (Button) convertView.findViewById(R.id.indexBtn);
             viewHolder.nameTV = (TextView) convertView.findViewById(R.id.nameTV);

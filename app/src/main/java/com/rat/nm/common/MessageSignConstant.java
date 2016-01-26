@@ -32,10 +32,10 @@ public class MessageSignConstant {
 
     public static final int OPERATE_LOG_LIST_GET_SUCCESS = 1125;
     public static final int OPERATE_LOG_LIST_GET_FAILURE = 1126;
-//
-//    public static final int FRIEND_ADD_RSP_SUCCESS = 1129;
-//    public static final int FRIEND_ADD_RSP_FAILURE = 1130;
-//
+
+    public static final int DEVICE_TYPE_LIST_GET_SUCCESS = 1129;
+    public static final int DEVICE_TYPE_LIST_GET_FAILURE = 1130;
+
 //    public static final int QUIT_GROUP_SUCCESS = 1131;
 //    public static final int QUIT_GROUP_FAILURE = 1132;
 //

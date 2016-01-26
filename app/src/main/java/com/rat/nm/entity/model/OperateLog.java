@@ -1,5 +1,7 @@
 package com.rat.nm.entity.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -9,10 +11,12 @@ import java.io.Serializable;
  */
 public class OperateLog implements Serializable {
     private String id;// 日志id
+    @SerializedName("operType")
     private String type;// 操作类型:自动Auto、手动Manual
     private String deviceId;// 设备ID
     private String userId;// 用户ID
     private String log;// 操作日志
+    @SerializedName("operTime")
     private String time;// 时间
 
     public String getId() {

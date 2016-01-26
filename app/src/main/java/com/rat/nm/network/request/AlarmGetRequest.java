@@ -55,9 +55,6 @@ public class AlarmGetRequest extends PostJsonRequest {
         try {
             LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
             AlarmGetRspInfo info = GsonUtil.fromJson(response.toString(), AlarmGetRspInfo.class);
-
-            info.setCode(ResponseConstant.SUCCESS);
-
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putSerializable("alarm", info.getAlarm());

@@ -52,20 +52,19 @@ public class LoginRequest extends PostJsonRequest {
 
     @Override
     protected String requestTag() {
-        return "login";
-    }
+                return "login";
+            }
 
-    @Override
-    protected void responseSuccess(JSONObject response) {
-        Bundle b = new Bundle();
-        Message msg = new Message();
-        try {
-            LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
-            LoginRegisterInfo info = GsonUtil.fromJson(response.toString(), LoginRegisterInfo.class);
-            info.setCode(ResponseConstant.SUCCESS);
-            // 响应正常
-            if (ResponseConstant.SUCCESS == info.getCode()) {
-                AppUtils.getInstance().setUserName(userName);
+            @Override
+            protected void responseSuccess(JSONObject response) {
+                Bundle b = new Bundle();
+                Message msg = new Message();
+                try {
+                    LogUtil.i("response success json: [" + requestTag() + "]: " + response.toString());
+                    LoginRegisterInfo info = GsonUtil.fromJson(response.toString(), LoginRegisterInfo.class);
+                    // 响应正常
+                    if (ResponseConstant.SUCCESS == info.getCode()) {
+                        AppUtils.getInstance().setUserName(userName);
 //                AppUtils.getInstance().setUserToken(info.getToken());
 //                DbConnectionManager.getInstance().reload();
 //                // 保存好友列表
