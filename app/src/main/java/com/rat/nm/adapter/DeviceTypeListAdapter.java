@@ -68,7 +68,7 @@ public class DeviceTypeListAdapter extends BaseAdapter {
         if (null == deviceType)
             return convertView;
         viewHolder.indexBtn.setText(String.valueOf(position));
-        viewHolder.nameTV.setText(deviceType.getName4Show());
+        viewHolder.nameTV.setText(deviceType.getName());
         viewHolder.statusTV.setText(deviceType.getDescribe());
         viewHolder.statusTV.setTextColor(context.getResources().getColor(R.color.blue));
         return convertView;

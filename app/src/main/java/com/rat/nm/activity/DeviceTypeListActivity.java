@@ -19,10 +19,12 @@ import com.rat.nm.controller.DeviceController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.model.Device;
 import com.rat.nm.entity.model.DeviceType;
+import com.rat.nm.util.LogUtil;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,20 +137,13 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
         if (null != customProgressDialog) {
             customProgressDialog.dismiss();
         }
-        String dataGetType;
         Intent intent = null;
         int code;
         String message;
         switch (msg.what) {
             case MessageSignConstant.DEVICE_TYPE_LIST_GET_SUCCESS:
                 deviceTypeList = (List<DeviceType>) msg.getData().getSerializable("deviceTypeList");
-                dataGetType = msg.getData().getString("dataGetType");
-                // 刷新列表
-                if (dataGetType.equals(DataGetType.UPDATE.getType())) {
-                    adapter.modifyData(deviceTypeList, true);
-                } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType()))
-                    adapter.modifyData(deviceTypeList, true);
-
+                adapter.modifyData(deviceTypeList, true);
                 // 是否存在数据
                 if (deviceTypeList.isEmpty()) {
                     empty.setVisibility(View.VISIBLE);

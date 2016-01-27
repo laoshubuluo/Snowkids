@@ -73,11 +73,11 @@ public class MenuItemView extends FrameLayout {
                 break;
             case DEVICE_TYPE:
                 title = context.getString(R.string.device_type);
-                resouceId = R.mipmap.menu_mail;
+                resouceId = R.mipmap.menu_articles;
                 break;
             case DEVICE:
                 title = context.getString(R.string.device);
-                resouceId = R.mipmap.menu_articles;
+                resouceId = R.mipmap.menu_device;
                 break;
             case OPERATE_LOG:
                 title = context.getString(R.string.operate_log);

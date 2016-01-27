@@ -40,7 +40,7 @@ public class DeviceTypeListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL + "devicetype/list";
     }
 
     @Override

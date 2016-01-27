@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.rat.networkmanager.R;
@@ -56,9 +57,9 @@ public class DeviceListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_device_list_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.indexBtn = (Button) convertView.findViewById(R.id.indexBtn);
             viewHolder.nameTV = (TextView) convertView.findViewById(R.id.nameTV);
-            viewHolder.statusTV = (TextView) convertView.findViewById(R.id.statusTV);
+            viewHolder.desTV = (TextView) convertView.findViewById(R.id.desTV);
+            viewHolder.statusIV = (ImageView) convertView.findViewById(R.id.statusIV);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -66,16 +67,15 @@ public class DeviceListAdapter extends BaseAdapter {
         final Device device = list.get(position);
         if (null == device)
             return convertView;
-        viewHolder.indexBtn.setText(String.valueOf(position));
         viewHolder.nameTV.setText(device.getName4Show());
-        viewHolder.statusTV.setText(device.getRunningStatus());
-        viewHolder.statusTV.setTextColor(context.getResources().getColor(R.color.blue));
+        viewHolder.desTV.setText(device.getNameInEN());
+        viewHolder.statusIV.setBackgroundResource(R.drawable.shape_circle_solid_green);
         return convertView;
     }
 
     private class ViewHolder {
-        private Button indexBtn;
         private TextView nameTV;
-        private TextView statusTV;
+        private TextView desTV;
+        private ImageView statusIV;
     }
 }

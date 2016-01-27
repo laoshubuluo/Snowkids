@@ -12,20 +12,25 @@ import java.util.List;
  */
 public class DeviceType implements Serializable {
     private String id;
-    @SerializedName("displayName")
-    private String name4Show;// 显示名称
-    @SerializedName("deviceName")
-    private String nameInEN;// 英文名称
-    private String nameInZH;// 中文名称
+    @SerializedName("typeName")
+    private String name;
     private String type;// 设备类型
     private String describe;// 描述
-    @SerializedName("picUrl")
+    @SerializedName("typUrl")
     private String imageUrl;// 图片地址
 
-    public DeviceType(String id, String name4Show, String type) {
+    public DeviceType(String id, String name, String type) {
         this.id = id;
-        this.name4Show = name4Show;
+        this.name = name;
         this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getId() {
@@ -34,30 +39,6 @@ public class DeviceType implements Serializable {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getName4Show() {
-        return name4Show;
-    }
-
-    public void setName4Show(String name4Show) {
-        this.name4Show = name4Show;
-    }
-
-    public String getNameInEN() {
-        return nameInEN;
-    }
-
-    public void setNameInEN(String nameInEN) {
-        this.nameInEN = nameInEN;
-    }
-
-    public String getNameInZH() {
-        return nameInZH;
-    }
-
-    public void setNameInZH(String nameInZH) {
-        this.nameInZH = nameInZH;
     }
 
     public String getType() {
