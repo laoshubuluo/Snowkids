@@ -33,7 +33,7 @@ public class DeviceTypeListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        ActionInfo actionInfo = new ActionInfo(1);
+        ActionInfo actionInfo = new ActionInfo(0);
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }

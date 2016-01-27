@@ -48,14 +48,14 @@ public class AlarmListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        AlarmListGetActionInfo actionInfo = new AlarmListGetActionInfo(4, alarmType, totalPage, currentPage, dataGetType.getType());
+        AlarmListGetActionInfo actionInfo = new AlarmListGetActionInfo(0, alarmType, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL + "alarm/list";
     }
 
     @Override

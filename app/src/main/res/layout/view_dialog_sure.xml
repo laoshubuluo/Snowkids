@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_43"
         android:textSize="@dimen/font_18sp"
         android:visibility="gone" />
 
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:textColor="@color/black"
+        android:textColor="@color/blue_43"
         android:textSize="@dimen/font_18sp"
         android:visibility="gone" />
 
@@ -42,7 +42,7 @@
         android:layout_height="1dp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
-        android:background="@color/gray"
+        android:background="@color/gray_ad"
         android:gravity="center" />
 
     <LinearLayout
@@ -57,14 +57,14 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/cancel"
-            android:textColor="@color/blue"
+            android:textColor="@color/blue_43"
             android:textSize="@dimen/font_18sp" />
 
         <View
             android:id="@+id/line_layout"
             android:layout_width="1dp"
             android:layout_height="match_parent"
-            android:background="@color/gray" />
+            android:background="@color/gray_ad" />
 
         <TextView
             android:id="@+id/sureTV"
@@ -73,7 +73,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/sure"
-            android:textColor="@color/blue"
+            android:textColor="@color/blue_43"
             android:textSize="@dimen/font_18sp" />
     </LinearLayout>
 </LinearLayout>

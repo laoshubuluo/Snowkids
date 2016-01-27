@@ -33,14 +33,14 @@ public class AlarmGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        AlarmGetActionInfo actionInfo = new AlarmGetActionInfo(32, alarmId);
+        AlarmGetActionInfo actionInfo = new AlarmGetActionInfo(0, alarmId);
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL + "auth/login";
     }
 
     @Override

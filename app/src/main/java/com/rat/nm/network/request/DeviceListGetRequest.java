@@ -48,14 +48,14 @@ public class DeviceListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        DeviceListGetActionInfo actionInfo = new DeviceListGetActionInfo(2, deviceType, totalPage, currentPage, dataGetType.getType());
+        DeviceListGetActionInfo actionInfo = new DeviceListGetActionInfo(0, deviceType, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL+"device/list";
     }
 
     @Override

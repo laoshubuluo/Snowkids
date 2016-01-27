@@ -12,7 +12,7 @@ public class WebConstant {
     // 密钥
     public static String WEB_KEY = "PCLtMrolKeSCJwVn";
     // 服务器URL
-    public static String BASE_URL = "http://182.92.107.7:8080/nms-rest/nms/auth/login";
+    public static String BASE_URL = "http://182.92.107.7:8080/nms-rest/nms/";
 
 //    //未能连接到互联网url
 //    public static String NETWORK_CONNECT_URL = "http://app.amenba.com/html/heretical_doctrine.html";

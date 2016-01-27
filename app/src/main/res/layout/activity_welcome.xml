@@ -4,14 +4,14 @@
     android:layout_gravity="center_horizontal"
     android:background="@mipmap/bg_welcome"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="100dp"
         android:background="@mipmap/welcome_logo" />
-
 </LinearLayout>

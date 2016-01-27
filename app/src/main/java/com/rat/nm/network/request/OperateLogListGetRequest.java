@@ -48,14 +48,14 @@ public class OperateLogListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        OperateLogListGetActionInfo actionInfo = new OperateLogListGetActionInfo(5, operateLogType, totalPage, currentPage, dataGetType.getType());
+        OperateLogListGetActionInfo actionInfo = new OperateLogListGetActionInfo(0, operateLogType, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL + "operate/list";
     }
 
     @Override

@@ -33,7 +33,7 @@ public class OperateLogGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        OperateLogGetActionInfo actionInfo = new OperateLogGetActionInfo(32, operateLogId);
+        OperateLogGetActionInfo actionInfo = new OperateLogGetActionInfo(0, operateLogId);
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }

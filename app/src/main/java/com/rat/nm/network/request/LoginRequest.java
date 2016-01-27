@@ -40,14 +40,14 @@ public class LoginRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        LoginActionInfo actionInfo = new LoginActionInfo(1, userName, password, type);
+        LoginActionInfo actionInfo = new LoginActionInfo(0, userName, password, type);
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL+"auth/login";
     }
 
     @Override
