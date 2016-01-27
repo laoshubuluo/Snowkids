@@ -5,12 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.rat.networkmanager.R;
+import com.rat.nm.entity.enums.RunningStatus;
 import com.rat.nm.entity.model.Device;
+import com.rat.nm.util.ImageUtil;
 
 import java.util.List;
 
@@ -23,10 +25,12 @@ public class DeviceListAdapter extends BaseAdapter {
     private Context context;
     private List<Device> list;
     private ViewHolder viewHolder;
+    public ImageLoader imageLoader;
 
     public DeviceListAdapter(Context context, List<Device> list) {
         this.context = context;
         this.list = list;
+        this.imageLoader = ImageLoader.getInstance();
     }
 
     public int getCount() {
@@ -57,6 +61,7 @@ public class DeviceListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_device_list_item, null);
             viewHolder = new ViewHolder();
+            viewHolder.iconIV = (ImageView) convertView.findViewById(R.id.iconIV);
             viewHolder.nameTV = (TextView) convertView.findViewById(R.id.nameTV);
             viewHolder.desTV = (TextView) convertView.findViewById(R.id.desTV);
             viewHolder.statusIV = (ImageView) convertView.findViewById(R.id.statusIV);
@@ -69,11 +74,19 @@ public class DeviceListAdapter extends BaseAdapter {
             return convertView;
         viewHolder.nameTV.setText(device.getName4Show());
         viewHolder.desTV.setText(device.getNameInEN());
-        viewHolder.statusIV.setBackgroundResource(R.drawable.shape_circle_solid_green);
+        imageLoader.displayImage(device.getImageUrl(), viewHolder.iconIV, ImageUtil.getImageOptions());
+        String runningStatus = device.getRunningStatus();
+        if (RunningStatus.ONLINE.getMessage().equals(runningStatus))
+            viewHolder.statusIV.setBackgroundResource(R.drawable.shape_circle_solid_green);
+        else if (RunningStatus.OFFLINE.getMessage().equals(runningStatus))
+            viewHolder.statusIV.setBackgroundResource(R.drawable.shape_circle_solid_red);
+        else
+            viewHolder.statusIV.setBackgroundResource(0);
         return convertView;
     }
 
     private class ViewHolder {
+        private ImageView iconIV;
         private TextView nameTV;
         private TextView desTV;
         private ImageView statusIV;

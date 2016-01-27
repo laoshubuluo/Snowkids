@@ -13,8 +13,8 @@
 
     <!--根布局中的listview-->
     <style name="listview_in_root_layout" parent="wh_mm">
-        <item name="android:layout_marginTop">20dp</item>
-        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
         <item name="android:divider">@color/gray_ad</item>
         <item name="android:dividerHeight">0.2dp</item>
         <item name="android:scrollbars">none</item>

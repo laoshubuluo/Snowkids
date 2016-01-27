@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left"
         android:text="this is key"
-        android:textColor="@color/red"
+        android:textColor="@color/orage"
         android:textSize="20sp" />
 
     <TextView

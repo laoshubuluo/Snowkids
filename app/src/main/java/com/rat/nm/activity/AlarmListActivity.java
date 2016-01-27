@@ -146,6 +146,8 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
                 totalPage = msg.getData().getInt("totalPage");
                 currentPage = msg.getData().getInt("currentPage");
                 alarmList = (List<Alarm>) msg.getData().getSerializable("alarmList");
+                if (null == alarmList)
+                    alarmList = new ArrayList<Alarm>();
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {

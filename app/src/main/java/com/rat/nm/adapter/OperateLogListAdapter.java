@@ -5,9 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.rat.networkmanager.R;
 import com.rat.nm.entity.model.OperateLog;
 
@@ -22,10 +23,12 @@ public class OperateLogListAdapter extends BaseAdapter {
     private Context context;
     private List<OperateLog> list;
     private ViewHolder viewHolder;
+    public ImageLoader imageLoader;
 
     public OperateLogListAdapter(Context context, List<OperateLog> list) {
         this.context = context;
         this.list = list;
+        this.imageLoader = ImageLoader.getInstance();
     }
 
     public int getCount() {
@@ -45,8 +48,8 @@ public class OperateLogListAdapter extends BaseAdapter {
             this.list.clear();
             this.list = ls;
         } else {
-            for (OperateLog p : ls) {
-                this.list.add(p);
+            for (OperateLog d : ls) {
+                this.list.add(d);
             }
         }
         notifyDataSetChanged();
@@ -56,9 +59,11 @@ public class OperateLogListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_operate_log_list_item, null);
             viewHolder = new ViewHolder();
-            viewHolder.indexBtn = (Button) convertView.findViewById(R.id.indexBtn);
+            viewHolder.iconIV = (ImageView) convertView.findViewById(R.id.iconIV);
             viewHolder.nameTV = (TextView) convertView.findViewById(R.id.nameTV);
-            viewHolder.statusTV = (TextView) convertView.findViewById(R.id.statusTV);
+            viewHolder.contentTV = (TextView) convertView.findViewById(R.id.contentTV);
+            viewHolder.desTV = (TextView) convertView.findViewById(R.id.desTV);
+            viewHolder.statusIV = (ImageView) convertView.findViewById(R.id.statusIV);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -66,33 +71,17 @@ public class OperateLogListAdapter extends BaseAdapter {
         final OperateLog operateLog = list.get(position);
         if (null == operateLog)
             return convertView;
-        int resourceId = 0;
-//        int status = operateLog.getStatus();
-//        String statusStr = "";
-//        int color = 0;
-//        if (OperateLog.LEVEL_1 == status) {
-//            statusStr = "LEVEL_1";
-//            color = R.color.red;
-//        } else if (OperateLog.LEVEL_2 == status) {
-//            statusStr = "LEVEL_2";
-//            color = R.color.blue;
-//        } else if (OperateLog.LEVEL_3 == status) {
-//            statusStr = "LEVEL_3";
-//            color = R.color.gray;
-//        } else if (OperateLog.LEVEL_4 == status) {
-//            statusStr = "LEVEL_4";
-//            color = R.color.white;
-//        }
-//        viewHolder.indexBtn.setText(String.valueOf(position));
-//        viewHolder.nameTV.setText(operateLog.getName());
-//        viewHolder.statusTV.setText(statusStr);
-//        viewHolder.statusTV.setTextColor(context.getResources().getColor(color));
+        viewHolder.nameTV.setText(context.getString(R.string.device_colon) + operateLog.getDeviceId() + "    " + context.getString(R.string.user_colon) + operateLog.getUserId());
+        viewHolder.contentTV.setText(operateLog.getType() + "-" + operateLog.getTime());
+        viewHolder.desTV.setText(operateLog.getLog());
         return convertView;
     }
 
     private class ViewHolder {
-        private Button indexBtn;
+        private ImageView iconIV;
         private TextView nameTV;
-        private TextView statusTV;
+        private TextView contentTV;
+        private TextView desTV;
+        private ImageView statusIV;
     }
 }

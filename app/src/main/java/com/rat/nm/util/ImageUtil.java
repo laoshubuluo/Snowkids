@@ -49,16 +49,17 @@ public class ImageUtil {
         ImageLoader.getInstance().init(config);
     }
 
-//    // 获取头像图片信息
-//    public static DisplayImageOptions getHeadImageOptions() {
-//        // 设定圆角
-//        RoundedBitmapDisplayer bitmapDisplayer = new RoundedBitmapDisplayer(corners);
-//        DisplayImageOptions options = new DisplayImageOptions.Builder().showImageForEmptyUri(R.mipmap.default_head)
-//                .imageScaleType(ImageScaleType.IN_SAMPLE_INT).displayer(bitmapDisplayer)
-//                .showImageOnFail(R.mipmap.default_head).cacheInMemory(true).cacheOnDisk(true)
-//                .build();
-//        return options;
-//    }
+    // 获取头像图片信息
+    public static DisplayImageOptions getImageOptions() {
+        // 设定圆角
+        // RoundedBitmapDisplayer bitmapDisplayer = new RoundedBitmapDisplayer(corners);
+        DisplayImageOptions options = new DisplayImageOptions.Builder().showImageForEmptyUri(R.mipmap.img_default)
+                .imageScaleType(ImageScaleType.IN_SAMPLE_INT)
+                        //.displayer(bitmapDisplayer)
+                .showImageOnFail(R.mipmap.img_default).cacheInMemory(true).cacheOnDisk(true)
+                .build();
+        return options;
+    }
 //
 //    // 获取图片信息
 //    public static DisplayImageOptions getImageOptions() {

@@ -146,6 +146,8 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
                 totalPage = msg.getData().getInt("totalPage");
                 currentPage = msg.getData().getInt("currentPage");
                 operateLogList = (List<OperateLog>) msg.getData().getSerializable("operateLogList");
+                if (null == operateLogList)
+                    operateLogList = new ArrayList<OperateLog>();
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {

@@ -58,7 +58,7 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
      * 初始化界面
      */
     public void initView() {
-        topTitleView.setText(R.string.device_list);
+        topTitleView.setText(R.string.device_type);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
 
@@ -143,6 +143,8 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
         switch (msg.what) {
             case MessageSignConstant.DEVICE_TYPE_LIST_GET_SUCCESS:
                 deviceTypeList = (List<DeviceType>) msg.getData().getSerializable("deviceTypeList");
+                if (null == deviceTypeList)
+                    deviceTypeList = new ArrayList<DeviceType>();
                 adapter.modifyData(deviceTypeList, true);
                 // 是否存在数据
                 if (deviceTypeList.isEmpty()) {

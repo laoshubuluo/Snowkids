@@ -146,6 +146,8 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
                 totalPage = msg.getData().getInt("totalPage");
                 currentPage = msg.getData().getInt("currentPage");
                 deviceList = (List<Device>) msg.getData().getSerializable("deviceList");
+                if (null == deviceList)
+                    deviceList = new ArrayList<Device>();
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {

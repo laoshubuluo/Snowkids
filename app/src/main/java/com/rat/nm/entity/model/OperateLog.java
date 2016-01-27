@@ -10,10 +10,13 @@ import java.io.Serializable;
  * introduce : 操作日志实体
  */
 public class OperateLog implements Serializable {
+    @SerializedName("operId")
     private String id;// 日志id
-    @SerializedName("operType")
+    @SerializedName("operateLogType")
     private String type;// 操作类型:自动Auto、手动Manual
+    @SerializedName("deviceName")
     private String deviceId;// 设备ID
+    @SerializedName("userName")
     private String userId;// 用户ID
     private String log;// 操作日志
     @SerializedName("operTime")
