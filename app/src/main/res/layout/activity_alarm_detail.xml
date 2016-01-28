@@ -9,16 +9,13 @@
 
     <include layout="@layout/public_top_layout" />
 
-    <FrameLayout
+    <TextView
+        android:id="@+id/logTV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include
-            android:id="@+id/empty"
-            layout="@layout/public_empty" />
-
-        <com.rat.nm.view.pull2refresh.XListView
-            android:id="@+id/alarmDetailLV"
-            style="@style/listview_in_root_layout" />
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@mipmap/bg_rechange_white"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14sp" />
 </LinearLayout>

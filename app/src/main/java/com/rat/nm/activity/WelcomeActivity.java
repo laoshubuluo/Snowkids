@@ -13,7 +13,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 
 public class WelcomeActivity extends Activity {
-    private final int waitTime = 100;
+    private final int waitTime = 3000;
     @ViewInject(R.id.logo)
     private ImageView logo;
 

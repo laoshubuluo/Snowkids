@@ -36,6 +36,15 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
     @ViewInject(R.id.empty)
     private LinearLayout empty;
 
+    @ViewInject(R.id.deviceName)
+    private TextView deviceName;
+    @ViewInject(R.id.deviceModel)
+    private TextView deviceModel;
+    @ViewInject(R.id.deviceType)
+    private TextView deviceType;
+    @ViewInject(R.id.deviceDescribe)
+    private TextView deviceDescribe;
+
     private List<Parameter> parameterList = new ArrayList<Parameter>();
     private ParameterListAdapter adapter;
     private Device device;
@@ -48,7 +57,6 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         device = (Device) getIntent().getSerializableExtra("device");
-        device = new Device("", "", "");
         controller = new DeviceController(getApplication(), handler);
         initView();
         initData();
@@ -63,7 +71,7 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
         topLeftView.setOnClickListener(this);
 
         parameterListLV.setOnItemClickListener(this);
-        parameterListLV.setPullRefreshEnable(true);
+        parameterListLV.setPullRefreshEnable(false);
         parameterListLV.setPullLoadEnable(false);
         parameterListLV.setAutoLoadEnable(false);
         parameterListLV.setXListViewListener(this);
@@ -74,12 +82,20 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
      * 初始化数据
      */
     public void initData() {
+        if (null == device)
+            return;
+        parameterList = device.getParameterList();
+        if (null == parameterList)
+            parameterList = new ArrayList<Parameter>();
+        deviceName.setText(device.getName4Show());
+        deviceType.setText(device.getType());
+        deviceModel.setText(device.getModel());
+        deviceDescribe.setText(device.getDescribe());
         adapter = new ParameterListAdapter(getApplicationContext(), parameterList);
         parameterListLV.setAdapter(adapter);
-
-        customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
-        customProgressDialog.show();
-        controller.get(device.getId());
+        //customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
+        //customProgressDialog.show();
+        //controller.get(device.getId());
     }
 
     /**
