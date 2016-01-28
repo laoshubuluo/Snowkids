@@ -60,9 +60,6 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
         controller = new DeviceController(getApplication(), handler);
         initView();
         initData();
-        customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
-        customProgressDialog.show();
-        controller.get(device.getId());
     }
 
     /**
@@ -87,16 +84,30 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
     public void initData() {
         if (null == device)
             return;
-        parameterList = device.getParameterList();
-        if (null == parameterList)
-            parameterList = new ArrayList<Parameter>();
         deviceName.setText(device.getName4Show());
         deviceType.setText(device.getType());
         deviceModel.setText(device.getModel());
         deviceDescribe.setText(device.getDescribe());
+
+        customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
+        customProgressDialog.show();
+        controller.get(device.getId());
+    }
+
+
+    /**
+     * 初始化数据
+     */
+    public void initParamter() {
+        if (null == device)
+            return;
+        parameterList = device.getParameterList();
+        if (null == parameterList)
+            parameterList = new ArrayList<Parameter>();
         adapter = new ParameterListAdapter(getApplicationContext(), parameterList);
         parameterListLV.setAdapter(adapter);
     }
+
 
     /**
      * 更新数据
@@ -155,7 +166,7 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
         switch (msg.what) {
             case MessageSignConstant.DEVICE_GET_SUCCESS:
                 device = (Device) msg.getData().getSerializable("device");
-                initData();
+                initParamter();
                 break;
             case MessageSignConstant.DEVICE_GET_FAILURE:
                 code = msg.getData().getInt("code");

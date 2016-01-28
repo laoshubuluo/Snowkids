@@ -26,6 +26,13 @@ public class OperateLog implements Serializable {
     @SerializedName("operTime")
     private String time;// 时间
 
+    public OperateLog(String type, String deviceName, String userName, String time) {
+        this.type = type;
+        this.deviceName = deviceName;
+        this.userName = userName;
+        this.time = time;
+    }
+
     public String getId() {
         return id;
     }

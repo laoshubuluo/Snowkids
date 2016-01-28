@@ -18,6 +18,7 @@ import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.DeviceController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.model.Device;
+import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -154,6 +155,20 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
                 deviceList = (List<Device>) msg.getData().getSerializable("deviceList");
                 if (null == deviceList)
                     deviceList = new ArrayList<Device>();
+
+                //TODO -------------本地过滤数据-------------------
+                if (StringUtils.isNotBlank(deviceName)) {
+                    List<Device> deleteList = new ArrayList<Device>();
+                    for (Device device : deviceList) {
+                        if (!device.getName4Show().toUpperCase().contains(deviceName.toUpperCase())) {//不包涵
+                            deleteList.add(device);
+                        }
+                    }
+                    deviceList.removeAll(deleteList);
+                }
+                //TODO -------------本地过滤数据-------------------
+
+
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {

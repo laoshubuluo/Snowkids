@@ -12,6 +12,7 @@ public class Parameter implements Serializable {
     private String key;
     private String value;
     private String describe;
+    private String time;
 
     public String getId() {
         return id;
@@ -43,5 +44,13 @@ public class Parameter implements Serializable {
 
     public void setDescribe(String describe) {
         this.describe = describe;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

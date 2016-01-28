@@ -66,7 +66,7 @@ public class ParameterListAdapter extends BaseAdapter {
         if (null == parameter)
             return convertView;
         viewHolder.keyTV.setText(parameter.getKey());
-        viewHolder.desTV.setText(parameter.getDescribe());
+        viewHolder.desTV.setText(parameter.getTime());
         viewHolder.valueTV.setText(parameter.getValue());
         return convertView;
     }

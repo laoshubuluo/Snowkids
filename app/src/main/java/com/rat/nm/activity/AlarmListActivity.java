@@ -18,6 +18,8 @@ import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.AlarmController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.model.Alarm;
+import com.rat.nm.entity.model.Device;
+import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -156,6 +158,22 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
                 alarmList = (List<Alarm>) msg.getData().getSerializable("alarmList");
                 if (null == alarmList)
                     alarmList = new ArrayList<Alarm>();
+
+
+                //TODO -------------本地过滤数据-------------------
+
+                if (StringUtils.isNotBlank(alarmType)) {
+                    List<Alarm> deleteList = new ArrayList<Alarm>();
+                    for (Alarm alarm : alarmList) {
+                        if (!alarm.getType().toUpperCase().contains(alarmType.toUpperCase())) {//不包涵
+                            deleteList.add(alarm);
+                        }
+                    }
+                    alarmList.removeAll(deleteList);
+                }
+                //TODO -------------本地过滤数据-------------------
+
+
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {
