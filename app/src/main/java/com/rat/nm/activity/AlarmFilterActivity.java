@@ -11,6 +11,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.activity.base.DateInputActivity;
+import com.rat.nm.common.ActivityResultConstant;
 
 public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
@@ -61,10 +62,26 @@ public class AlarmFilterActivity extends BaseActivity {
 //                startActivity(i);
 
                 Intent i = new Intent(AlarmFilterActivity.this, DateInputActivity.class);
-                startActivity(i);
+                startActivityForResult(i, 0);
                 break;
             default:
                 break;
         }
     }
+
+    /**
+     * 接收新activity返回数据
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (resultCode) {
+            case ActivityResultConstant.DATE_INPUT:
+                String name = data.getExtras().getString("name");
+                topTitleView.setText(name);
+                break;
+            default:
+                break;
+        }
+    }
+
 }

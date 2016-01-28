@@ -60,13 +60,7 @@
 
     <Button
         android:id="@+id/queryBtn"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="40dp"
-        android:background="@mipmap/welcome_butten_bg_blue"
+        style="@style/button_blue"
         android:text="@string/query"
         android:textColor="@color/white" />
 </LinearLayout>

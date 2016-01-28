@@ -1,10 +1,7 @@
 <resources>
-    <dimen name="font_9sp">9sp</dimen>
-    <dimen name="font_12sp">12sp</dimen>
-    <dimen name="font_14sp">14sp</dimen>
-    <dimen name="font_17sp">17sp</dimen>
-    <dimen name="font_18sp">18sp</dimen>
-    <dimen name="font_20sp">20sp</dimen>
+    <dimen name="font_14sp">14sp</dimen> //列表条目小字号
+    <dimen name="font_17sp">17sp</dimen> //列表条目大字号、几乎所有标题字号、提示框字号
+    <dimen name="font_20sp">20sp</dimen> //top大标题字号
 
     <!--下拉刷新组件尺寸-->
     <dimen name="header_height">60dp</dimen>

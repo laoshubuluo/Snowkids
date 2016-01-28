@@ -11,6 +11,7 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.common.ActivityResultConstant;
+import com.rat.nm.util.DateUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -85,8 +86,7 @@ public class DateInputActivity extends BaseActivity {
                 // 获取一个日历对象，并初始化为当前选中的时间
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, monthOfYear, dayOfMonth);
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                date = sdf.format(calendar.getTime());
+                date = DateUtil.dateToString(calendar.getTime());
                 dateTV.setText(date);
             }
         });
@@ -105,7 +105,7 @@ public class DateInputActivity extends BaseActivity {
 
     private void comitChange() {
         Intent i = new Intent();
-        i.putExtra("date", date);
+        i.putExtra("name", date);
         setResult(ActivityResultConstant.DATE_INPUT, i);
         finish();
     }

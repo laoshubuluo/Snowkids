@@ -9,19 +9,9 @@
 
     <EditText
         android:id="@+id/searchEdt"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="20dp"
-        android:background="@mipmap/welcome_butten_bg_white"
+        style="@style/textview_white"
         android:drawableRight="@mipmap/menu_loop_search"
-        android:ems="10"
-        android:hint="@string/search"
-        android:padding="10dp"
-        android:textColor="@color/blue"
-        android:textColorHint="@color/blue" />
+        android:hint="@string/search" />
 
     <TableLayout
         android:layout_width="match_parent"

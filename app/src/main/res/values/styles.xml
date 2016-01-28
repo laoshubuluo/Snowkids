@@ -20,6 +20,45 @@
         <item name="android:scrollbars">none</item>
     </style>
 
+    <!--button样式-->
+    <style name="button_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@mipmap/button_bg_white</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <!--button样式-->
+    <style name="button_blue">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:background">@mipmap/button_bg_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--textview样式-->
+    <style name="textview_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@mipmap/textview_bg_white</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:ems">10</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColorHint">@color/gray_ad</item>
+    </style>
+
     <style name="promptDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
