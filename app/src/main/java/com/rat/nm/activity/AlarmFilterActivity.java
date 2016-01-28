@@ -60,6 +60,7 @@ public class AlarmFilterActivity extends BaseActivity {
 
         alarmType.setOffset(1);
         alarmType.setItems(Arrays.asList(messageList));
+        alarmType.setSeletion(1);
         alarmType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
             @Override
             public void onSelected(int selectedIndex, String item) {

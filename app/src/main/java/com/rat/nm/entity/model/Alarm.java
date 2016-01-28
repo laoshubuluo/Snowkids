@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class Alarm implements Serializable {
     @SerializedName("alarmId")
     private String id;// 告警id
+    @SerializedName("alarmType")
     private String type;// 告警类型:信息Info、警告Alarm、故障Fault
     @SerializedName("deviceId")
     private String deviceId;// 设备ID

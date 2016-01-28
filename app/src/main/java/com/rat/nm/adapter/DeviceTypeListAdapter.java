@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.rat.networkmanager.R;
-import com.rat.nm.entity.enums.RunningStatus;
-import com.rat.nm.entity.model.Device;
 import com.rat.nm.entity.model.DeviceType;
 import com.rat.nm.util.ImageUtil;
 
@@ -75,7 +73,7 @@ public class DeviceTypeListAdapter extends BaseAdapter {
         if (null == deviceType)
             return convertView;
         viewHolder.nameTV.setText(deviceType.getName());
-        viewHolder.desTV.setText(deviceType.getDescribe());
+        viewHolder.desTV.setText("a device type which name is " + deviceType.getName());
         imageLoader.displayImage(deviceType.getImageUrl(), viewHolder.iconIV, ImageUtil.getImageOptions());
         return convertView;
     }

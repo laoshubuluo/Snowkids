@@ -72,8 +72,8 @@ public class OperateLogListAdapter extends BaseAdapter {
         if (null == operateLog)
             return convertView;
         viewHolder.nameTV.setText(context.getString(R.string.device_colon) + operateLog.getDeviceName() + "    " + context.getString(R.string.user_colon) + operateLog.getUserName());
-        viewHolder.contentTV.setText("[" + operateLog.getType() + "] - [" + operateLog.getTime() + "]");
-        viewHolder.desTV.setText(operateLog.getLog());
+        viewHolder.contentTV.setText(operateLog.getType());
+        viewHolder.desTV.setText(operateLog.getTime());
         return convertView;
     }
 

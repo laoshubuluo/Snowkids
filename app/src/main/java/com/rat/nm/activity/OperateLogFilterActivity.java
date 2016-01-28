@@ -64,6 +64,7 @@ public class OperateLogFilterActivity extends BaseActivity {
 
         operateLogType.setOffset(1);
         operateLogType.setItems(Arrays.asList(messageList));
+        operateLogType.setSeletion(1);
         operateLogType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
             @Override
             public void onSelected(int selectedIndex, String item) {

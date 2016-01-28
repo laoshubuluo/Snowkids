@@ -130,7 +130,7 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        OperateLog operateLog = operateLogList.get(position);
+        OperateLog operateLog = operateLogList.get((int) id);
         Intent i = new Intent(OperateLogListActivity.this, OperateLogListActivity.class);
         i.putExtra("operateLog", operateLog);
         startActivity(i);

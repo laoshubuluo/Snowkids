@@ -126,7 +126,7 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Alarm alarm = alarmList.get(position);
+        Alarm alarm = alarmList.get((int) id);
         Intent i = new Intent(AlarmListActivity.this, AlarmDetailActivity.class);
         i.putExtra("alarm", alarm);
         startActivity(i);
