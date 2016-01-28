@@ -94,5 +94,10 @@
             android:name="com.rat.nm.activity.SettingsActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rat.nm.activity.base.DateInputActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" />
     </application>
 </manifest>

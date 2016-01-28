@@ -132,7 +132,7 @@ public class MenuItemView extends FrameLayout {
                     i = new Intent(context, DeviceListActivity.class);
                     break;
                 case ALARM:
-                    i = new Intent(context, AlarmListActivity.class);
+                    i = new Intent(context, AlarmFilterActivity.class);
                     break;
                 case OPERATE_LOG:
                     i = new Intent(context, OperateLogListActivity.class);

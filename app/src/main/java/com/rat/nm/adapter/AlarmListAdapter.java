@@ -72,8 +72,8 @@ public class AlarmListAdapter extends BaseAdapter {
         final Alarm alarm = list.get(position);
         if (null == alarm)
             return convertView;
-        viewHolder.nameTV.setText(context.getString(R.string.device_colon) + alarm.getDeviceId());
-        viewHolder.contentTV.setText(alarm.getTimeStart() + "-" + alarm.getTimeEnd());
+        viewHolder.nameTV.setText(context.getString(R.string.device_colon) + alarm.getDeviceName());
+        viewHolder.contentTV.setText("[" + alarm.getTimeStart() + "] - [" + alarm.getTimeEnd() + "]");
         viewHolder.desTV.setText(alarm.getLog());
         String type = alarm.getType();
         if (AlarmType.INFO.getMessage().equals(type))

@@ -6,9 +6,9 @@ package com.rat.nm.entity.enums;
  * introduce : 运行状态
  */
 public enum RunningStatus {
-    ONLINE(1, "Online"),// 在线
-    OFFLINE(2, "Offline"),// 不在线
-    UNKNOW(0, "Unknow");
+    ONLINE(1, "online"),// 在线
+    OFFLINE(2, "offline"),// 不在线
+    UNKNOW(0, "unknow");
 
     private int code;
     private String message;

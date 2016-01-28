@@ -15,6 +15,8 @@ public class Alarm implements Serializable {
     private String type;// 告警类型:信息Info、警告Alarm、故障Fault
     @SerializedName("deviceId")
     private String deviceId;// 设备ID
+    @SerializedName("deviceName")
+    private String deviceName;// 设备名称
     @SerializedName("alarmStart")
     private String timeStart;// 告警开始时间
     @SerializedName("alarmEnd")
@@ -77,5 +79,13 @@ public class Alarm implements Serializable {
 
     public void setNmx(String nmx) {
         this.nmx = nmx;
+    }
+
+    public String getDeviceName() {
+        return deviceName;
+    }
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
     }
 }

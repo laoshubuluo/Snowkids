@@ -14,10 +14,14 @@ public class OperateLog implements Serializable {
     private String id;// 日志id
     @SerializedName("operateLogType")
     private String type;// 操作类型:自动Auto、手动Manual
-    @SerializedName("deviceName")
+    @SerializedName("deviceId")
     private String deviceId;// 设备ID
-    @SerializedName("userName")
+    @SerializedName("deviceName")
+    private String deviceName;// 设备名
+    @SerializedName("userId")
     private String userId;// 用户ID
+    @SerializedName("userName")
+    private String userName;// 用户名称
     private String log;// 操作日志
     @SerializedName("operTime")
     private String time;// 时间
@@ -46,12 +50,28 @@ public class OperateLog implements Serializable {
         this.deviceId = deviceId;
     }
 
+    public String getDeviceName() {
+        return deviceName;
+    }
+
+    public void setDeviceName(String deviceName) {
+        this.deviceName = deviceName;
+    }
+
     public String getUserId() {
         return userId;
     }
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getLog() {
