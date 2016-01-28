@@ -105,8 +105,8 @@ public class DateInputActivity extends BaseActivity {
 
     private void comitChange() {
         Intent i = new Intent();
-        i.putExtra("name", date);
-        setResult(ActivityResultConstant.DATE_INPUT, i);
+        i.putExtra("date", date);
+        setResult(0, i);
         finish();
     }
 }

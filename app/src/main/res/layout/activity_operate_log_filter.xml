@@ -3,64 +3,76 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="@mipmap/bg_content"
-    android:gravity="center_horizontal"
+    android:gravity="left|center_horizontal"
     android:orientation="vertical"
     android:weightSum="1">
 
     <include layout="@layout/public_top_layout" />
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
         android:layout_marginTop="40dp"
-        android:text="@string/time"
+        android:text="@string/operate_log_user"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textSize="@dimen/font_17sp" />
 
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="@mipmap/rounded_btn_white"
-        android:drawableRight="@mipmap/filter_more"
-        android:padding="15dp"
-        android:text="Week"
-        android:textColor="@color/blue" />
+    <TextView
+        android:id="@+id/operateLogUser"
+        style="@style/textview_white"
+        android:hint="@string/operate_log_user" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left|center_vertical"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/level"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/operate_log_type"
         android:textColor="@color/white"
-        android:textSize="25dp" />
+        android:textSize="@dimen/font_17sp" />
 
+    <TextView
+        android:id="@+id/operateLogType"
+        style="@style/textview_white"
+        android:hint="@string/operate_log_type" />
 
-    <EditText
-        android:id="@+id/userNameET"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:background="@mipmap/rounded_btn_white"
-        android:drawableRight="@mipmap/filter_more"
-        android:padding="15dp"
-        android:text="Warn"
-        android:textColor="@color/blue" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/timeStart"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_17sp" />
+
+    <TextView
+        android:id="@+id/timeStart"
+        style="@style/textview_white"
+        android:hint="@string/timeStart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/timeEnd"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_17sp" />
+
+    <TextView
+        android:id="@+id/timeEnd"
+        style="@style/textview_white"
+        android:hint="@string/timeEnd" />
 
     <Button
         android:id="@+id/queryBtn"
         style="@style/button_blue"
-        android:text="@string/query"
-        android:textColor="@color/white" />
+        android:layout_marginTop="40dp"
+        android:text="@string/query" />
 </LinearLayout>

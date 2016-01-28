@@ -2,7 +2,6 @@ package com.rat.nm.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,12 +10,23 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
+import com.rat.nm.activity.base.DateInputActivity;
+import com.rat.nm.common.ActivityResultConstant;
 
 public class OperateLogFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
     @ViewInject(R.id.top_left)
     private TextView topLeftView;
+
+    @ViewInject(R.id.operateLogUser)
+    private TextView operateLogUser;
+    @ViewInject(R.id.operateLogType)
+    private TextView operateLogType;
+    @ViewInject(R.id.timeStart)
+    private TextView timeStart;
+    @ViewInject(R.id.timeEnd)
+    private TextView timeEnd;
 
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
@@ -32,6 +42,7 @@ public class OperateLogFilterActivity extends BaseActivity {
         initData();
     }
 
+
     /**
      * 初始化界面
      */
@@ -39,6 +50,10 @@ public class OperateLogFilterActivity extends BaseActivity {
         topTitleView.setText(R.string.operate_log_filter);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
+        operateLogUser.setOnClickListener(this);
+        operateLogType.setOnClickListener(this);
+        timeStart.setOnClickListener(this);
+        timeEnd.setOnClickListener(this);
         queryBtn.setOnClickListener(this);
     }
 
@@ -48,39 +63,45 @@ public class OperateLogFilterActivity extends BaseActivity {
     public void initData() {
     }
 
-    /**
-     * Handler发送message的逻辑处理方法
-     *
-     * @param msg
-     * @return
-     */
-    @Override
-    public boolean handleMessage(Message msg) {
-//        if (customProgressDialog != null)
-//            customProgressDialog.dismiss();
-//        if (promptDialog == null || promptDialog.isShowing())
-//            promptDialog = new PromptDialog(LoginActivity.this);
-//        switch (msg.what) {
-//            case MessageSignConstant.LOGIN_SUCCESS:
-////                User user = (User) msg.getData().getSerializable("user");
-//                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(i);
-//                finish();
-//                break;
-//        }
-        return false;
-    }
-
     @Override
     public void onClick(View v) {
-        Intent intent;
+        Intent i;
         switch (v.getId()) {
             case R.id.top_left:
                 finish();
                 break;
+            case R.id.timeStart:
+                i = new Intent(OperateLogFilterActivity.this, DateInputActivity.class);
+                startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_START);
+                break;
+            case R.id.timeEnd:
+                i = new Intent(OperateLogFilterActivity.this, DateInputActivity.class);
+                startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_END);
+                break;
             case R.id.queryBtn:
-                Intent i = new Intent(OperateLogFilterActivity.this, OperateLogListActivity.class);
+                i = new Intent(OperateLogFilterActivity.this, OperateLogListActivity.class);
                 startActivity(i);
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 接收新activity返回数据
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        String date;
+        if (null == data) return;
+        switch (requestCode) {
+            case ActivityResultConstant.REQUEST_CODE_DATE_START:
+                date = data.getExtras().getString("date");
+                timeStart.setText(date);
+                break;
+            case ActivityResultConstant.REQUEST_CODE_DATE_END:
+                date = data.getExtras().getString("date");
+                timeEnd.setText(date);
                 break;
             default:
                 break;

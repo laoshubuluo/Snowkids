@@ -9,6 +9,6 @@ public class ActivityResultConstant {
     private ActivityResultConstant() {
     }
 
-    // 用户信息修改
-    public static final int DATE_INPUT = 1010;
+    public static final int REQUEST_CODE_DATE_START = 1;
+    public static final int REQUEST_CODE_DATE_END = 2;
 }

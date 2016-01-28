@@ -19,6 +19,13 @@ public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_left)
     private TextView topLeftView;
 
+    @ViewInject(R.id.alarmType)
+    private TextView alarmType;
+    @ViewInject(R.id.timeStart)
+    private TextView timeStart;
+    @ViewInject(R.id.timeEnd)
+    private TextView timeEnd;
+
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
 
@@ -41,6 +48,9 @@ public class AlarmFilterActivity extends BaseActivity {
         topTitleView.setText(R.string.alarm_filter);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
+        alarmType.setOnClickListener(this);
+        timeStart.setOnClickListener(this);
+        timeEnd.setOnClickListener(this);
         queryBtn.setOnClickListener(this);
     }
 
@@ -52,17 +62,22 @@ public class AlarmFilterActivity extends BaseActivity {
 
     @Override
     public void onClick(View v) {
-        Intent intent;
+        Intent i;
         switch (v.getId()) {
             case R.id.top_left:
                 finish();
                 break;
+            case R.id.timeStart:
+                i = new Intent(AlarmFilterActivity.this, DateInputActivity.class);
+                startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_START);
+                break;
+            case R.id.timeEnd:
+                i = new Intent(AlarmFilterActivity.this, DateInputActivity.class);
+                startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_END);
+                break;
             case R.id.queryBtn:
-//                Intent i = new Intent(AlarmFilterActivity.this, AlarmListActivity.class);
-//                startActivity(i);
-
-                Intent i = new Intent(AlarmFilterActivity.this, DateInputActivity.class);
-                startActivityForResult(i, 0);
+                i = new Intent(AlarmFilterActivity.this, AlarmListActivity.class);
+                startActivity(i);
                 break;
             default:
                 break;
@@ -74,14 +89,19 @@ public class AlarmFilterActivity extends BaseActivity {
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch (resultCode) {
-            case ActivityResultConstant.DATE_INPUT:
-                String name = data.getExtras().getString("name");
-                topTitleView.setText(name);
+        String date;
+        if (null == data) return;
+        switch (requestCode) {
+            case ActivityResultConstant.REQUEST_CODE_DATE_START:
+                date = data.getExtras().getString("date");
+                timeStart.setText(date);
+                break;
+            case ActivityResultConstant.REQUEST_CODE_DATE_END:
+                date = data.getExtras().getString("date");
+                timeEnd.setText(date);
                 break;
             default:
                 break;
         }
     }
-
 }
