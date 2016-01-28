@@ -8,10 +8,11 @@
     <include layout="@layout/public_top_layout" />
 
     <EditText
-        android:id="@+id/searchEdt"
+        android:id="@+id/searchET"
         style="@style/textview_white"
         android:drawableRight="@mipmap/menu_loop_search"
-        android:hint="@string/search" />
+        android:hint="@string/search_commit"
+        android:imeOptions="actionSearch" />
 
     <TableLayout
         android:layout_width="match_parent"

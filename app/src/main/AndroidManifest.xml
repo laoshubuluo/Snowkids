@@ -60,30 +60,37 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.DeviceListActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.DeviceTypeListActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.DeviceDetailActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.AlarmFilterActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.AlarmListActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.AlarmDetailActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.OperateLogListActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.OperateLogFilterActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.SettingsActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.rat.nm.activity.base.DateInputActivity"

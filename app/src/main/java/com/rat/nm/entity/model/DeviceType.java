@@ -14,15 +14,13 @@ public class DeviceType implements Serializable {
     private String id;
     @SerializedName("typeName")
     private String name;
-    private String type;// 设备类型
     private String describe;// 描述
     @SerializedName("typUrl")
     private String imageUrl;// 图片地址
 
-    public DeviceType(String id, String name, String type) {
+    public DeviceType(String id, String name) {
         this.id = id;
         this.name = name;
-        this.type = type;
     }
 
     public String getName() {
@@ -41,13 +39,6 @@ public class DeviceType implements Serializable {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public String getDescribe() {
         return describe;

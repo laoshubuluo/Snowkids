@@ -34,8 +34,8 @@ public class OperateLogController {
     /**
      * 操作日志获取
      */
-    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String operateLogType) {
-        OperateLogListGetRequest request = new OperateLogListGetRequest(handler, context, totalPage, currentPage, operateLogType, dataGetType);
+    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String operateUser, String operateType, String timeStart, String timeEnd) {
+        OperateLogListGetRequest request = new OperateLogListGetRequest(handler, context, totalPage, currentPage, dataGetType, operateUser, operateType, timeStart, timeEnd);
         VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 }

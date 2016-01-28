@@ -35,8 +35,8 @@ public class DeviceController {
     /**
      * 设备获取
      */
-    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String deviceType) {
-        DeviceListGetRequest request = new DeviceListGetRequest(handler, context, totalPage, currentPage, deviceType, dataGetType);
+    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String deviceType, String deviceName) {
+        DeviceListGetRequest request = new DeviceListGetRequest(handler, context, totalPage, currentPage, deviceType, deviceName, dataGetType);
         VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 

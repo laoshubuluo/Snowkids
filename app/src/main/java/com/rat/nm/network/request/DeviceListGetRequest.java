@@ -30,14 +30,16 @@ public class DeviceListGetRequest extends PostJsonRequest {
     private int totalPage;
     private int currentPage;
     private String deviceType;
+    private String deviceName;
 
-    public DeviceListGetRequest(Handler handler, Context context, int totalPage, int currentPage, String deviceType, DataGetType dataGetType) {
+    public DeviceListGetRequest(Handler handler, Context context, int totalPage, int currentPage, String deviceType, String deviceName, DataGetType dataGetType) {
         this.handler = handler;
         this.context = context;
         this.totalPage = totalPage;
         this.currentPage = currentPage;
         this.dataGetType = dataGetType;
         this.deviceType = deviceType;
+        this.deviceName = deviceName;
         if (dataGetType.equals(DataGetType.UPDATE)) {
             this.totalPage = 0;
             this.currentPage = 0;
@@ -48,14 +50,14 @@ public class DeviceListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        DeviceListGetActionInfo actionInfo = new DeviceListGetActionInfo(0, deviceType, totalPage, currentPage, dataGetType.getType());
+        DeviceListGetActionInfo actionInfo = new DeviceListGetActionInfo(0, deviceType, deviceName, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL+"device/list";
+        return WebConstant.BASE_URL + "device/list";
     }
 
     @Override

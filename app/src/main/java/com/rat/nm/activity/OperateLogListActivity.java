@@ -42,6 +42,11 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
     private OperateLogListAdapter adapter;
     private OperateLogController controller;
 
+    private String operateUser;// 检索参数
+    private String operateType;// 检索参数
+    private String timeStart;// 检索参数
+    private String timeEnd;// 检索参数
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,11 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         controller = new OperateLogController(getApplication(), handler);
+
+        operateUser = getIntent().getStringExtra("operateUser");
+        operateType = getIntent().getStringExtra("operateType");
+        timeStart = getIntent().getStringExtra("timeStart");
+        timeEnd = getIntent().getStringExtra("timeEnd");
         initView();
         initData();
     }
@@ -85,7 +95,9 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
      * 更新数据
      */
     private void updateData(DataGetType dataGetType) {
-        controller.getList(totalPage, currentPage, dataGetType, "operateLogType");
+        controller.getList(totalPage, currentPage, dataGetType, operateUser, operateType, timeStart, timeEnd);
+
+
     }
 
     @Override

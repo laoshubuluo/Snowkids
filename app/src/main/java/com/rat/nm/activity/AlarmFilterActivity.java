@@ -77,6 +77,9 @@ public class AlarmFilterActivity extends BaseActivity {
                 break;
             case R.id.queryBtn:
                 i = new Intent(AlarmFilterActivity.this, AlarmListActivity.class);
+                i.putExtra("alarmType", alarmType.getText().toString().trim());
+                i.putExtra("timeStart", timeStart.getText().toString().trim());
+                i.putExtra("timeEnd", timeEnd.getText().toString().trim());
                 startActivity(i);
                 break;
             default:

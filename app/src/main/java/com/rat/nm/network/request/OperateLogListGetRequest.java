@@ -29,15 +29,21 @@ public class OperateLogListGetRequest extends PostJsonRequest {
     private DataGetType dataGetType;// 数据获取类型
     private int totalPage;
     private int currentPage;
-    private String operateLogType;
+    private String operateUser;
+    private String operateType;
+    private String timeStart;
+    private String timeEnd;
 
-    public OperateLogListGetRequest(Handler handler, Context context, int totalPage, int currentPage, String operateLogType, DataGetType dataGetType) {
+    public OperateLogListGetRequest(Handler handler, Context context, int totalPage, int currentPage, DataGetType dataGetType, String operateUser, String operateType, String timeStart, String timeEnd) {
         this.handler = handler;
         this.context = context;
         this.totalPage = totalPage;
         this.currentPage = currentPage;
         this.dataGetType = dataGetType;
-        this.operateLogType = operateLogType;
+        this.operateUser = operateUser;
+        this.operateType = operateType;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
         if (dataGetType.equals(DataGetType.UPDATE)) {
             this.totalPage = 0;
             this.currentPage = 0;
@@ -48,7 +54,7 @@ public class OperateLogListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        OperateLogListGetActionInfo actionInfo = new OperateLogListGetActionInfo(0, operateLogType, totalPage, currentPage, dataGetType.getType());
+        OperateLogListGetActionInfo actionInfo = new OperateLogListGetActionInfo(0, totalPage, currentPage, dataGetType.getType(), operateUser, operateType, timeStart, timeEnd);
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }

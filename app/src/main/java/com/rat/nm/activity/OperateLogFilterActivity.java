@@ -80,6 +80,10 @@ public class OperateLogFilterActivity extends BaseActivity {
                 break;
             case R.id.queryBtn:
                 i = new Intent(OperateLogFilterActivity.this, OperateLogListActivity.class);
+                i.putExtra("operateUser", operateLogUser.getText().toString().trim());
+                i.putExtra("operateType", operateLogType.getText().toString().trim());
+                i.putExtra("timeStart", timeStart.getText().toString().trim());
+                i.putExtra("timeEnd", timeEnd.getText().toString().trim());
                 startActivity(i);
                 break;
             default:

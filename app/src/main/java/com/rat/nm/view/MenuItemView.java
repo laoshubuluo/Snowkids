@@ -10,18 +10,15 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.AlarmFilterActivity;
-import com.rat.nm.activity.AlarmListActivity;
-import com.rat.nm.activity.DeviceDetailActivity;
 import com.rat.nm.activity.DeviceListActivity;
 import com.rat.nm.activity.DeviceTypeListActivity;
 import com.rat.nm.activity.OperateLogFilterActivity;
-import com.rat.nm.activity.OperateLogListActivity;
 import com.rat.nm.activity.SettingsActivity;
 
 /**
@@ -47,6 +44,8 @@ public class MenuItemView extends FrameLayout {
     private Button messageBtn;
     @ViewInject(R.id.titleTV)
     private TextView titleTV;
+
+    private SlidingMenu menu;
 
     public MenuItemView(Context c, AttributeSet attrs) {
         super(c, attrs);
@@ -110,6 +109,13 @@ public class MenuItemView extends FrameLayout {
     }
 
     /**
+     * 初始化数据
+     */
+    public void initClickView(SlidingMenu menu) {
+        this.menu = menu;
+    }
+
+    /**
      * 点击事件
      */
     OnTouchListener onTouchListener = new OnTouchListener() {
@@ -119,30 +125,31 @@ public class MenuItemView extends FrameLayout {
                 itemFL.setBackgroundResource(R.mipmap.menu_circle_blue);
             } else if (event.getAction() == MotionEvent.ACTION_UP) {
                 itemFL.setBackgroundResource(R.mipmap.menu_circle_border);
+
+                Intent i = null;
+                switch (itemType) {
+                    case PROFILE:
+                        menu.showMenu();// 开启侧边栏
+                        break;
+                    case DEVICE_TYPE:
+                        i = new Intent(context, DeviceTypeListActivity.class);
+                        break;
+                    case DEVICE:
+                        i = new Intent(context, DeviceListActivity.class);
+                        break;
+                    case ALARM:
+                        i = new Intent(context, AlarmFilterActivity.class);
+                        break;
+                    case OPERATE_LOG:
+                        i = new Intent(context, OperateLogFilterActivity.class);
+                        break;
+                    case SETTINGS:
+                        i = new Intent(context, SettingsActivity.class);
+                        break;
+                }
+                if (i != null)
+                    context.startActivity(i);
             }
-            Intent i = null;
-            switch (itemType) {
-                case PROFILE:
-                    Toast.makeText(context, context.getString(R.string.function_unavailable), Toast.LENGTH_SHORT).show();
-                    break;
-                case DEVICE_TYPE:
-                    i = new Intent(context, DeviceTypeListActivity.class);
-                    break;
-                case DEVICE:
-                    i = new Intent(context, DeviceListActivity.class);
-                    break;
-                case ALARM:
-                    i = new Intent(context, AlarmFilterActivity.class);
-                    break;
-                case OPERATE_LOG:
-                    i = new Intent(context, OperateLogFilterActivity.class);
-                    break;
-                case SETTINGS:
-                    i = new Intent(context, SettingsActivity.class);
-                    break;
-            }
-            if (i != null)
-                context.startActivity(i);
             return false;
         }
     };

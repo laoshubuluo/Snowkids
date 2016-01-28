@@ -1,18 +1,24 @@
 package com.rat.nm.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
+import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.MenuItemView;
 
 public class MainActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
     private TextView topTitleView;
-
+    @ViewInject(R.id.searchET)
+    private TextView searchET;
     @ViewInject(R.id.profileMIV)
     private MenuItemView profileMIV;
     @ViewInject(R.id.deviceTypeMIV)
@@ -45,6 +51,7 @@ public class MainActivity extends BaseActivity {
 
         profileMIV.initView(MenuItemView.PROFILE);
         profileMIV.initData(0);
+        profileMIV.initClickView(menu);
         deviceTypeMIV.initView(MenuItemView.DEVICE_TYPE);
         //deviceTypeMIV.initData(1);
         deviceMIV.initView(MenuItemView.DEVICE);
@@ -55,6 +62,8 @@ public class MainActivity extends BaseActivity {
         operateLogMIV.initData(20);
         settingsMIV.initView(MenuItemView.SETTINGS);
         //settingsMIV.initData(99);
+
+        searchET.setOnEditorActionListener(actionListener);
     }
 
     /**
@@ -63,4 +72,21 @@ public class MainActivity extends BaseActivity {
     public void initData() {
     }
 
+    private TextView.OnEditorActionListener actionListener = new TextView.OnEditorActionListener() {
+        @Override
+        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                String key = searchET.getText().toString().trim();
+                if (StringUtils.isNullOrBlank(key)) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.device_name_is_null), Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                Intent i = new Intent(MainActivity.this, DeviceListActivity.class);
+                i.putExtra("deviceName", key);
+                startActivity(i);
+                return true;
+            }
+            return false;
+        }
+    };
 }

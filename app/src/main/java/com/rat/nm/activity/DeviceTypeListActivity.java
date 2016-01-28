@@ -16,15 +16,11 @@ import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.adapter.DeviceTypeListAdapter;
 import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.DeviceController;
-import com.rat.nm.entity.enums.DataGetType;
-import com.rat.nm.entity.model.Device;
 import com.rat.nm.entity.model.DeviceType;
-import com.rat.nm.util.LogUtil;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -120,7 +116,7 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         DeviceType deviceType = deviceTypeList.get(position);
         Intent i = new Intent(DeviceTypeListActivity.this, DeviceListActivity.class);
-        i.putExtra("deviceType", deviceType);
+        i.putExtra("deviceType", deviceType.getName());
         startActivity(i);
     }
 

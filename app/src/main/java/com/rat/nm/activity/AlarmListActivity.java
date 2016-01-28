@@ -42,6 +42,10 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
     private AlarmListAdapter adapter;
     private AlarmController controller;
 
+    private String alarmType;// 检索参数
+    private String timeStart;// 检索参数
+    private String timeEnd;// 检索参数
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,10 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         controller = new AlarmController(getApplication(), handler);
+
+        alarmType = getIntent().getStringExtra("alarmType");
+        timeStart = getIntent().getStringExtra("timeStart");
+        timeEnd = getIntent().getStringExtra("timeEnd");
         initView();
         initData();
     }
@@ -85,7 +93,7 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
      * 更新数据
      */
     private void updateData(DataGetType dataGetType) {
-        controller.getList(totalPage, currentPage, dataGetType, "alarmType");
+        controller.getList(totalPage, currentPage, dataGetType, alarmType, timeStart, timeEnd);
     }
 
     @Override

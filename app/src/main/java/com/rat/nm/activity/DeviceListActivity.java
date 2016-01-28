@@ -42,6 +42,9 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
     private DeviceListAdapter adapter;
     private DeviceController controller;
 
+    private String deviceType;// 检索参数
+    private String deviceName;// 检索参数
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +52,9 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         controller = new DeviceController(getApplication(), handler);
+
+        deviceType = getIntent().getStringExtra("deviceType");
+        deviceName = getIntent().getStringExtra("deviceName");
         initView();
         initData();
     }
@@ -85,7 +91,7 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
      * 更新数据
      */
     private void updateData(DataGetType dataGetType) {
-        controller.getList(totalPage, currentPage, dataGetType, "deviceType");
+        controller.getList(totalPage, currentPage, dataGetType, deviceType, deviceName);
     }
 
     @Override
