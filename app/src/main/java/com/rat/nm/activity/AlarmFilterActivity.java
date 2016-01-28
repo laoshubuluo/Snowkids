@@ -12,6 +12,11 @@ import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.activity.base.DateInputActivity;
 import com.rat.nm.common.ActivityResultConstant;
+import com.rat.nm.entity.enums.AlarmType;
+import com.rat.nm.util.LogUtil;
+import com.rat.nm.view.WheelView;
+
+import java.util.Arrays;
 
 public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
@@ -20,7 +25,7 @@ public class AlarmFilterActivity extends BaseActivity {
     private TextView topLeftView;
 
     @ViewInject(R.id.alarmType)
-    private TextView alarmType;
+    private WheelView alarmType;
     @ViewInject(R.id.timeStart)
     private TextView timeStart;
     @ViewInject(R.id.timeEnd)
@@ -28,6 +33,8 @@ public class AlarmFilterActivity extends BaseActivity {
 
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
+
+    private static final String[] messageList = new String[]{"", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,6 @@ public class AlarmFilterActivity extends BaseActivity {
         initData();
     }
 
-
     /**
      * 初始化界面
      */
@@ -48,10 +54,18 @@ public class AlarmFilterActivity extends BaseActivity {
         topTitleView.setText(R.string.alarm_filter);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
-        alarmType.setOnClickListener(this);
         timeStart.setOnClickListener(this);
         timeEnd.setOnClickListener(this);
         queryBtn.setOnClickListener(this);
+
+        alarmType.setOffset(1);
+        alarmType.setItems(Arrays.asList(messageList));
+        alarmType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+            }
+        });
     }
 
     /**
@@ -77,7 +91,7 @@ public class AlarmFilterActivity extends BaseActivity {
                 break;
             case R.id.queryBtn:
                 i = new Intent(AlarmFilterActivity.this, AlarmListActivity.class);
-                i.putExtra("alarmType", alarmType.getText().toString().trim());
+                i.putExtra("alarmType", alarmType.getSeletedItem().toString().trim());
                 i.putExtra("timeStart", timeStart.getText().toString().trim());
                 i.putExtra("timeEnd", timeEnd.getText().toString().trim());
                 startActivity(i);

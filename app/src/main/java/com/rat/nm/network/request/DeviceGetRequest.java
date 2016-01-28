@@ -40,7 +40,7 @@ public class DeviceGetRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.BASE_URL + "device/info";
     }
 
     @Override

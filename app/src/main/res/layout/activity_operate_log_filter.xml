@@ -9,21 +9,23 @@
 
     <include layout="@layout/public_top_layout" />
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_marginTop="40dp"
-        android:text="@string/operate_log_user"
+        android:text="@string/operate_log_type"
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
 
-    <TextView
-        android:id="@+id/operateLogUser"
-        style="@style/textview_white"
-        android:hint="@string/operate_log_user" />
+    <com.rat.nm.view.WheelView
+        android:id="@+id/operateLogType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,14 +33,14 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_marginTop="20dp"
-        android:text="@string/operate_log_type"
+        android:text="@string/operate_log_user"
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
 
-    <TextView
-        android:id="@+id/operateLogType"
+    <EditText
+        android:id="@+id/operateLogUser"
         style="@style/textview_white"
-        android:hint="@string/operate_log_type" />
+        android:hint="@string/operate_log_user" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -72,7 +74,7 @@
 
     <Button
         android:id="@+id/queryBtn"
-        style="@style/button_blue"
+        style="@style/button_white"
         android:layout_marginTop="40dp"
         android:text="@string/query" />
 </LinearLayout>

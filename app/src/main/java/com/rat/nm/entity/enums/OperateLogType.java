@@ -6,8 +6,8 @@ package com.rat.nm.entity.enums;
  * introduce : 告警类型
  */
 public enum OperateLogType {
-    INFO(1, "Auto"),// 自动
-    ALARM(2, "Manual"),// 手动
+    AUTO(1, "Auto"),// 自动
+    MANUAL(2, "Manual"),// 手动
     UNKNOW(0, "Unknow");
 
     private int code;

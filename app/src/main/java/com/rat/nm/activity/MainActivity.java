@@ -50,16 +50,16 @@ public class MainActivity extends BaseActivity {
         topTitleView.setText(R.string.menu);
 
         profileMIV.initView(MenuItemView.PROFILE);
-        profileMIV.initData(0);
+        //profileMIV.initData(0);
         profileMIV.initClickView(menu);
         deviceTypeMIV.initView(MenuItemView.DEVICE_TYPE);
         //deviceTypeMIV.initData(1);
         deviceMIV.initView(MenuItemView.DEVICE);
-        deviceMIV.initData(3);
+        //deviceMIV.initData(3);
         alarmMIV.initView(MenuItemView.ALARM);
-        alarmMIV.initData(3);
+        alarmMIV.initData(1);
         operateLogMIV.initView(MenuItemView.OPERATE_LOG);
-        operateLogMIV.initData(20);
+        //operateLogMIV.initData(1);
         settingsMIV.initView(MenuItemView.SETTINGS);
         //settingsMIV.initData(99);
 

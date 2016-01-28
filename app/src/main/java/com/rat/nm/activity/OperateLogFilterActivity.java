@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.lidroid.xutils.ViewUtils;
@@ -12,6 +13,11 @@ import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.activity.base.DateInputActivity;
 import com.rat.nm.common.ActivityResultConstant;
+import com.rat.nm.entity.enums.OperateLogType;
+import com.rat.nm.util.LogUtil;
+import com.rat.nm.view.WheelView;
+
+import java.util.Arrays;
 
 public class OperateLogFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
@@ -20,9 +26,9 @@ public class OperateLogFilterActivity extends BaseActivity {
     private TextView topLeftView;
 
     @ViewInject(R.id.operateLogUser)
-    private TextView operateLogUser;
+    private EditText operateLogUser;
     @ViewInject(R.id.operateLogType)
-    private TextView operateLogType;
+    private WheelView operateLogType;
     @ViewInject(R.id.timeStart)
     private TextView timeStart;
     @ViewInject(R.id.timeEnd)
@@ -30,6 +36,8 @@ public class OperateLogFilterActivity extends BaseActivity {
 
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
+
+    private static final String[] messageList = new String[]{"", OperateLogType.AUTO.getMessage(), OperateLogType.MANUAL.getMessage()};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +58,18 @@ public class OperateLogFilterActivity extends BaseActivity {
         topTitleView.setText(R.string.operate_log_filter);
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
-        operateLogUser.setOnClickListener(this);
-        operateLogType.setOnClickListener(this);
         timeStart.setOnClickListener(this);
         timeEnd.setOnClickListener(this);
         queryBtn.setOnClickListener(this);
+
+        operateLogType.setOffset(1);
+        operateLogType.setItems(Arrays.asList(messageList));
+        operateLogType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+            }
+        });
     }
 
     /**
@@ -81,7 +96,7 @@ public class OperateLogFilterActivity extends BaseActivity {
             case R.id.queryBtn:
                 i = new Intent(OperateLogFilterActivity.this, OperateLogListActivity.class);
                 i.putExtra("operateUser", operateLogUser.getText().toString().trim());
-                i.putExtra("operateType", operateLogType.getText().toString().trim());
+                i.putExtra("operateType", operateLogType.getSeletedItem().toString().trim());
                 i.putExtra("timeStart", timeStart.getText().toString().trim());
                 i.putExtra("timeEnd", timeEnd.getText().toString().trim());
                 startActivity(i);
