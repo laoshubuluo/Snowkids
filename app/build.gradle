@@ -16,15 +16,15 @@ android {
     signingConfigs {
         release {
             storeFile file("../sign.jks")
-            storePassword "rat.nm"
-            keyAlias "nm"
-            keyPassword "rat.nm"
+            storePassword "laoshubuluo"
+            keyAlias "laoshu"
+            keyPassword "laoshubuluo"
         }
     }
     //build类型
     buildTypes {
         release {
-            minifyEnabled false //开启混淆
+            minifyEnabled true //开启混淆
             shrinkResources true //删除无效的resources(需要与minifyEnabled同时设定)
             debuggable false
             jniDebuggable false

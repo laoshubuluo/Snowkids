@@ -18,7 +18,6 @@ import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.OperateLogController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.enums.OperateLogType;
-import com.rat.nm.entity.model.Alarm;
 import com.rat.nm.entity.model.OperateLog;
 import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;

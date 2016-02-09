@@ -86,21 +86,35 @@ public class AppUtils {
     public int getCurrentVersion() {
         return packageInfo.versionCode;
     }
-//
-//    /**
-//     * 是否首次启动
-//     */
-//    public boolean isFirstStart() {
-//        return sharedPreferences.getBoolean("isFirstStart", true);
-//    }
-//
-//    /**
-//     * 更新状态：非首次启动
-//     */
-//    public void updateStartStatus() {
-//        sharedPreferences.edit().putBoolean("isFirstStart", false).commit();
-//    }
-//
+
+    /**
+     * 是否记住账号密码
+     */
+    public boolean isRemeberMe() {
+        return sharedPreferences.getBoolean("isRemeberMe", false);
+    }
+
+    /**
+     * 更新状态：是否记住账号密码
+     */
+    public void updateIsRemeberMe(boolean isRemeberMe) {
+        sharedPreferences.edit().putBoolean("isRemeberMe", isRemeberMe).commit();
+    }
+
+
+    /**
+     * 是否接收push消息
+     */
+    public boolean isReceivePushMessage() {
+        return sharedPreferences.getBoolean("isReceivePushMessage", true);
+    }
+
+    /**
+     * 更新状态：是否接收push消息
+     */
+    public void updateIsReceivePushMessage(boolean isReceivePushMessage) {
+        sharedPreferences.edit().putBoolean("isReceivePushMessage", isReceivePushMessage).commit();
+    }
 
     /**
      * 保存用户的ID
@@ -111,6 +125,14 @@ public class AppUtils {
         sharedPreferences.edit().putString("userId", userId).commit();
     }
 
+    /**
+     * 获取用户名
+     *
+     * @return
+     */
+    public String getUserId() {
+        return sharedPreferences.getString("userId", "");
+    }
 
     /**
      * 获取用户的ID
@@ -130,14 +152,7 @@ public class AppUtils {
         sharedPreferences.edit().putString("userName", userName).commit();
     }
 
-    /**
-     * 获取用户名
-     *
-     * @return
-     */
-    public String getUserId() {
-        return sharedPreferences.getString("userId", "");
-    }
+
 //
 //    /**
 //     * 保存用户的token

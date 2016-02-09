@@ -78,4 +78,8 @@
     <string name="device_describe_colon">设备描述：</string>
 
     <string name="search_commit">请输入设备名称，并点击键盘搜索键</string>
+
+    <string name="remeber_me">记住我</string>
+    <string name="receive_push_message">接收消息提醒</string>
+    <string name="setting_success">设置成功</string>
 </resources>

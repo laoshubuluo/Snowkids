@@ -79,4 +79,8 @@
     <string name="device_describe_colon">device describe：</string>
 
     <string name="search_commit">please input device name</string>
+
+    <string name="remeber_me">Remeber me</string>
+    <string name="receive_push_message">Receive push message</string>
+    <string name="setting_success">setting success</string>
 </resources>

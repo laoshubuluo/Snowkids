@@ -51,7 +51,8 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
 
         // 判断是否需要登录
-        if (StringUtils.isNotBlank(AppUtils.getInstance().getUserId())) {
+        // TODO by L.jinzhu for need check userId or userToken is null or not
+        if (AppUtils.getInstance().isRemeberMe() && StringUtils.isNotBlank(AppUtils.getInstance().getUserName())) {
             notNeedLogin();
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(i);

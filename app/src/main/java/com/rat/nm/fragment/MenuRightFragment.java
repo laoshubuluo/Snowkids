@@ -53,6 +53,7 @@ public class MenuRightFragment extends Fragment {
         logoutLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AppUtils.getInstance().setUserName("");
                 Intent i = new Intent(getActivity(), LoginActivity.class);
                 startActivity(i);
                 getActivity().finish();
