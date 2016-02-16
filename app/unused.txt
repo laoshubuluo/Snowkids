@@ -808,6 +808,8 @@ com.nostra13.universalimageloader.utils.StorageUtils:
     private static final java.lang.String INDIVIDUAL_DIR_NAME
     38:39:private StorageUtils()
 com.rat.networkmanager.BuildConfig
+com.rat.networkmanager.Manifest
+com.rat.networkmanager.Manifest$permission
 com.rat.networkmanager.R
 com.rat.networkmanager.R$anim
 com.rat.networkmanager.R$attr
@@ -870,7 +872,8 @@ com.rat.nm.util.AppUtils:
     69:70:public static void reset()
     78:78:public com.rat.nm.appmanager.Application getApplication()
     87:87:public int getCurrentVersion()
-    111:112:public void setUserId(java.lang.String)
+    125:126:public void setUserId(java.lang.String)
+    134:134:public java.lang.String getUserId()
 com.rat.nm.util.BitmapUtils
 com.rat.nm.util.CharacterParser
 com.rat.nm.util.CollectionUtils
@@ -960,6 +963,8 @@ com.rat.nm.view.MenuItemView:
     public static final int ALARM
     public static final int OPERATE_LOG
     public static final int SETTINGS
+    private android.widget.Button messageBtn
+    103:109:public void initData(int)
 com.rat.nm.view.WheelView:
     public static final int OFF_SET_DEFAULT
     private static final int SCROLL_DIRECTION_UP

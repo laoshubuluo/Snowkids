@@ -231,6 +231,10 @@
 #-keep class com.tencent.mid.**  {* ;}
 -keep class com.jg.**{*;}
 
+#个推
+-dontwarn com.igexin.**
+-keep class com.igexin.**{*;}
+
 #Butterknife
 #-keep class butterknife.** { *; }
 #-dontwarn butterknife.internal.**

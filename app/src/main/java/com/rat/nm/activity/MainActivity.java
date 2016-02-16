@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.igexin.sdk.PushManager;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_menu);
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
+        PushManager.getInstance().initialize(this.getApplicationContext());//个推push服务初始化
         initView();
         initData();
     }
@@ -57,7 +59,7 @@ public class MainActivity extends BaseActivity {
         deviceMIV.initView(MenuItemView.DEVICE);
         //deviceMIV.initData(3);
         alarmMIV.initView(MenuItemView.ALARM);
-        alarmMIV.initData(1);
+        //alarmMIV.initData(1);
         operateLogMIV.initView(MenuItemView.OPERATE_LOG);
         //operateLogMIV.initData(1);
         settingsMIV.initView(MenuItemView.SETTINGS);
