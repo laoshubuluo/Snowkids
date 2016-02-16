@@ -40,6 +40,7 @@ public class MainActivity extends BaseActivity {
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
         PushManager.getInstance().initialize(this.getApplicationContext());//个推push服务初始化
+        Toast.makeText(getApplicationContext(), "push service init: " + PushManager.getInstance().getClientid(this.getApplicationContext()), Toast.LENGTH_LONG).show();
         initView();
         initData();
     }
