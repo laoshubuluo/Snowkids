@@ -7,7 +7,9 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.igexin.sdk.PushManager;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
@@ -23,6 +25,9 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
+        // 个推push服务初始化
+        PushManager.getInstance().initialize(this.getApplicationContext());
+
         initView();
         initData();
         // 定时跳转

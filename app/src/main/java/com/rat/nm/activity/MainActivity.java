@@ -12,6 +12,7 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
+import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.MenuItemView;
 
@@ -39,12 +40,16 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_menu);
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
-        PushManager.getInstance().initialize(this.getApplicationContext());//个推push服务初始化
-        Toast.makeText(getApplicationContext(), "push service init: " + PushManager.getInstance().getClientid(this.getApplicationContext()), Toast.LENGTH_LONG).show();
+        // 个推push服务初始化
+        PushManager.getInstance().initialize(this.getApplicationContext());
+        // 绑定别名，用于push消息
+        PushManager.getInstance().bindAlias(getApplicationContext(), AppUtils.getInstance().getUserName());
+        Toast.makeText(getApplicationContext(),
+                "push service init:  [ " + AppUtils.getInstance().getUserName() + " || " + PushManager.getInstance().getClientid(this.getApplicationContext()) + " ]",
+                Toast.LENGTH_SHORT).show();
         initView();
         initData();
     }
-
 
     /**
      * 初始化界面
