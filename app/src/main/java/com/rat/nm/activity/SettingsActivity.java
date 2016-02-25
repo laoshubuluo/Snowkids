@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.igexin.sdk.PushManager;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
@@ -89,6 +90,11 @@ public class SettingsActivity extends BaseActivity {
                     AppUtils.getInstance().updateIsReceivePushMessage(true);
                     receivePushMessageIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 }
+                // 是否接收push消息
+                if (AppUtils.getInstance().isReceivePushMessage())
+                    PushManager.getInstance().turnOnPush(getApplicationContext());
+                else
+                    PushManager.getInstance().turnOffPush(getApplicationContext());
                 Toast.makeText(getApplicationContext(), getString(R.string.setting_success), Toast.LENGTH_SHORT).show();
                 break;
             default:

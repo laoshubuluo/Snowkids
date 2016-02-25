@@ -47,6 +47,11 @@ public class MainActivity extends BaseActivity {
         Toast.makeText(getApplicationContext(),
                 "push service init:  [ " + AppUtils.getInstance().getUserName() + " || " + PushManager.getInstance().getClientid(this.getApplicationContext()) + " ]",
                 Toast.LENGTH_SHORT).show();
+        // 是否接收push消息
+        if (AppUtils.getInstance().isReceivePushMessage())
+            PushManager.getInstance().turnOnPush(getApplicationContext());
+        else
+            PushManager.getInstance().turnOffPush(getApplicationContext());
         initView();
         initData();
     }
