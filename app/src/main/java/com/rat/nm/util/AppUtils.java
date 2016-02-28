@@ -117,24 +117,6 @@ public class AppUtils {
     }
 
     /**
-     * 保存用户的ID
-     *
-     * @param userId
-     */
-    public void setUserId(String userId) {
-        sharedPreferences.edit().putString("userId", userId).commit();
-    }
-
-    /**
-     * 获取用户名
-     *
-     * @return
-     */
-    public String getUserId() {
-        return sharedPreferences.getString("userId", "");
-    }
-
-    /**
      * 获取用户的ID
      *
      * @return
@@ -152,26 +134,24 @@ public class AppUtils {
         sharedPreferences.edit().putString("userName", userName).commit();
     }
 
+    /**
+     * 保存用户的token
+     *
+     * @param token
+     */
+    public void setUserToken(String token) {
+        sharedPreferences.edit().putString("userToken", token).commit();
+    }
 
-//
-//    /**
-//     * 保存用户的token
-//     *
-//     * @param token
-//     */
-//    public void setUserToken(String token) {
-//        sharedPreferences.edit().putString("userToken", token).commit();
-//    }
-//
-//    /**
-//     * 获取用户token
-//     *
-//     * @return
-//     */
-//    public String getUserToken() {
-//        return sharedPreferences.getString("userToken", "");
-//    }
-//
+    /**
+     * 获取用户token
+     *
+     * @return
+     */
+    public String getUserToken() {
+        return sharedPreferences.getString("userToken", "");
+    }
+
 //    /**
 //     * 是否首次上报位置信息
 //     */

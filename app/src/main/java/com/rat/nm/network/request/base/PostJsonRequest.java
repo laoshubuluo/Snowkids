@@ -16,6 +16,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.common.WebConstant;
+import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.LogUtil;
 import com.rat.nm.util.XXTEA;
 
@@ -57,6 +58,7 @@ public abstract class PostJsonRequest extends BaseVolleyPostRequest<JsonRequest,
                     headers.put("Charset", "UTF-8");
                     headers.put("Content-Type", "application/json");
                     headers.put("Accept-Encoding", "gzip,deflate");
+                    headers.put("token", AppUtils.getInstance().getUserToken());
                     return headers;
                 }
 

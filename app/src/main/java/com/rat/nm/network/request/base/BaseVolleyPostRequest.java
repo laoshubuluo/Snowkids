@@ -35,7 +35,7 @@ public abstract class BaseVolleyPostRequest<REQUEST, RESPONSE> extends BaseVolle
             os = new ByteArrayOutputStream();
             dos = new DataOutputStream(os);
             //二进制前缀
-            String userId = AppUtils.getInstance().getUserId();
+            String userId = AppUtils.getInstance().getUserToken();
             long uid = StringUtils.isNotBlank(userId) ? Long.parseLong(userId) : 0;
             int version = 100;
             long tmp = 0;
