@@ -155,20 +155,6 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
                 deviceList = (List<Device>) msg.getData().getSerializable("deviceList");
                 if (null == deviceList)
                     deviceList = new ArrayList<Device>();
-
-                //TODO -------------本地过滤数据-------------------
-                if (StringUtils.isNotBlank(deviceName)) {
-                    List<Device> deleteList = new ArrayList<Device>();
-                    for (Device device : deviceList) {
-                        if (!device.getName4Show().toUpperCase().contains(deviceName.toUpperCase())) {//不包涵
-                            deleteList.add(device);
-                        }
-                    }
-                    deviceList.removeAll(deleteList);
-                }
-                //TODO -------------本地过滤数据-------------------
-
-
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {

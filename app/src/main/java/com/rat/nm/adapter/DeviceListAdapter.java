@@ -72,13 +72,13 @@ public class DeviceListAdapter extends BaseAdapter {
         final Device device = list.get(position);
         if (null == device)
             return convertView;
-        viewHolder.nameTV.setText(device.getName4Show());
-        viewHolder.desTV.setText(device.getNameInEN());
+        viewHolder.nameTV.setText(device.getNameInEN() + " - " + device.getId());
+        viewHolder.desTV.setText(device.getType());
         imageLoader.displayImage(device.getImageUrl(), viewHolder.iconIV, ImageUtil.getImageOptions());
         String runningStatus = device.getRunningStatus();
-        if (RunningStatus.ONLINE.getMessage().equals(runningStatus))
+        if (RunningStatus.ONLINE.getMessage().toUpperCase().equals(runningStatus.toUpperCase()))
             viewHolder.statusIV.setBackgroundResource(R.drawable.shape_circle_solid_green);
-        else if (RunningStatus.OFFLINE.getMessage().equals(runningStatus))
+        else if (RunningStatus.OFFLINE.getMessage().toUpperCase().equals(runningStatus.toUpperCase()))
             viewHolder.statusIV.setBackgroundResource(R.drawable.shape_circle_solid_red);
         else
             viewHolder.statusIV.setBackgroundResource(0);

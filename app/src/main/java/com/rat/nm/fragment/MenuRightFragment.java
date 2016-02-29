@@ -54,6 +54,7 @@ public class MenuRightFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 AppUtils.getInstance().setUserName("");
+                AppUtils.getInstance().setUserToken("");
                 Intent i = new Intent(getActivity(), LoginActivity.class);
                 startActivity(i);
                 getActivity().finish();

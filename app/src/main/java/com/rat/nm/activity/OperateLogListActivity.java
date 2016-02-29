@@ -162,65 +162,6 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
                 operateLogList = (List<OperateLog>) msg.getData().getSerializable("operateLogList");
                 if (null == operateLogList)
                     operateLogList = new ArrayList<OperateLog>();
-
-                //TODO -------------本地构造数据-------------------
-                OperateLog o;
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "Down Conv -2", "liang", "2015-02-27 03:02:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "Down Conv -2", "zhang", "2015-03-27 12:02:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "AUPC", "liang", "2015-12-27 08:02:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "Down Conv -1", "zhang", "2015-12-27 12:02:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.AUTO.getMessage(), "LNB", "liang", "2015-12-27 08:22:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "AUPC", "zhang", "2015-12-27 08:22:34");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.AUTO.getMessage(), "Down Conv -2", "zhang", "2015-11-27 08:02:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.AUTO.getMessage(), "Down Conv -1", "zhang", "2015-12-27 08:02:43");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "AUPC", "liang", "2015-12-27 01:12:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "AUPC", "ruisanx", "2015-12-27 08:02:34");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "Up Conv", "liang", "2015-12-27 02:11:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.AUTO.getMessage(), "Up Conv", "ruisanx", "2015-12-27 08:02:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.MANUAL.getMessage(), "Up Conv", "ruisanx", "2015-02-27 03:22:12");
-                operateLogList.add(o);
-                o = new OperateLog(OperateLogType.AUTO.getMessage(), "Down Conv -1", "ruisanx", "2015-01-27 08:02:12");
-                operateLogList.add(o);
-
-                //TODO -------------本地构造数据-------------------
-
-
-                //TODO -------------本地过滤数据-------------------
-
-                if (StringUtils.isNotBlank(operateUser)) {
-                    List<OperateLog> deleteList = new ArrayList<OperateLog>();
-                    for (OperateLog operateLog : operateLogList) {
-                        if (!operateLog.getUserName().toUpperCase().contains(operateUser.toUpperCase())) {//不包涵
-                            deleteList.add(operateLog);
-                        }
-                    }
-                    operateLogList.removeAll(deleteList);
-                }
-
-                if (StringUtils.isNotBlank(operateType)) {
-                    List<OperateLog> deleteList = new ArrayList<OperateLog>();
-                    for (OperateLog operateLog : operateLogList) {
-                        if (!operateLog.getType().toUpperCase().contains(operateType.toUpperCase())) {//不包涵
-                            deleteList.add(operateLog);
-                        }
-                    }
-                    operateLogList.removeAll(deleteList);
-                }
-                //TODO -------------本地过滤数据-------------------
-
-
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {

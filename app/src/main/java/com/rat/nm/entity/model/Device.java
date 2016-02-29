@@ -18,6 +18,7 @@ public class Device implements Serializable {
     @SerializedName("deviceName")
     private String nameInEN;// 英文名称
     private String nameInZH;// 中文名称
+    @SerializedName("deviceType")
     private String type;// 设备类型
     private String model;// 设备型号
     private String describe;// 描述

@@ -62,7 +62,7 @@
     <string name="password_is_null">password is null</string>
 
     <!--其他-->
-    <string name="device_colon">device:</string>
+    <string name="device_colon">device: </string>
     <string name="user_colon">user:</string>
     <string name="date_choice">date choice:</string>
     <string name="date">date</string>

@@ -84,7 +84,7 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
     public void initData() {
         if (null == device)
             return;
-        deviceName.setText(device.getName4Show());
+        deviceName.setText(device.getNameInEN());
         deviceType.setText(device.getType());
         deviceModel.setText(device.getModel());
         deviceDescribe.setText(device.getDescribe());

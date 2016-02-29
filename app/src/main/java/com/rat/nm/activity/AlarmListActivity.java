@@ -158,22 +158,6 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
                 alarmList = (List<Alarm>) msg.getData().getSerializable("alarmList");
                 if (null == alarmList)
                     alarmList = new ArrayList<Alarm>();
-
-
-                //TODO -------------本地过滤数据-------------------
-
-                if (StringUtils.isNotBlank(alarmType)) {
-                    List<Alarm> deleteList = new ArrayList<Alarm>();
-                    for (Alarm alarm : alarmList) {
-                        if (!alarm.getType().toUpperCase().contains(alarmType.toUpperCase())) {//不包涵
-                            deleteList.add(alarm);
-                        }
-                    }
-                    alarmList.removeAll(deleteList);
-                }
-                //TODO -------------本地过滤数据-------------------
-
-
                 dataGetType = msg.getData().getString("dataGetType");
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {
