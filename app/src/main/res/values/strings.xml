@@ -81,5 +81,6 @@
 
     <string name="remeber_me">记住我</string>
     <string name="receive_push_message">接收消息提醒</string>
+    <string name="operate_environment">操作环境</string>
     <string name="setting_success">设置成功</string>
 </resources>

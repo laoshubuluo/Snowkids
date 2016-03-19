@@ -1,6 +1,7 @@
 package com.rat.nm.entity.net.response;
 
 
+import com.google.gson.annotations.SerializedName;
 import com.rat.nm.entity.net.response.base.ResponseInfo;
 
 /**
@@ -11,6 +12,9 @@ import com.rat.nm.entity.net.response.base.ResponseInfo;
 public class LoginRegisterInfo extends ResponseInfo {
 
     private String token;
+    @SerializedName("ENVList")
+    private String environmentStr;
+    private String[] environmentList;// 环境列表
 //    private int firstReg;//是否为首次注册0：登录（非首次注册） 1：首次注册（信息不完整）
 //    private int location;//0:不需要更新地址位置，1:需要更新地址位置
 //    private User userInfo;//用户信息
@@ -24,35 +28,14 @@ public class LoginRegisterInfo extends ResponseInfo {
         this.token = token;
     }
 
-//    public int getFirstReg() {
-//        return firstReg;
-//    }
-//
-//    public void setFirstReg(int firstReg) {
-//        this.firstReg = firstReg;
-//    }
-//
-//    public int getLocation() {
-//        return location;
-//    }
-//
-//    public void setLocation(int location) {
-//        this.location = location;
-//    }
-//
-//    public User getUserInfo() {
-//        return userInfo;
-//    }
-//
-//    public void setUserInfo(User userInfo) {
-//        this.userInfo = userInfo;
-//    }
-//
-//    public List<User> getFriendList() {
-//        return friendList;
-//    }
-//
-//    public void setFriendList(List<User> friendList) {
-//        this.friendList = friendList;
-//    }
+    public String[] getEnvironmentList() {
+        environmentList = environmentStr.split(",");
+        if (null == environmentList)
+            environmentList = new String[0];
+        return environmentList;
+    }
+
+    public void setEnvironmentList(String[] environmentList) {
+        this.environmentList = environmentList;
+    }
 }

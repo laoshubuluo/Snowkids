@@ -8,6 +8,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 
 import com.rat.nm.appmanager.Application;
 import com.rat.nm.common.Constant;
+import com.rat.nm.entity.model.Environment;
 
 
 /**
@@ -135,6 +136,15 @@ public class AppUtils {
     }
 
     /**
+     * 获取用户token
+     *
+     * @return
+     */
+    public String getUserToken() {
+        return sharedPreferences.getString("userToken", "");
+    }
+
+    /**
      * 保存用户的token
      *
      * @param token
@@ -144,12 +154,28 @@ public class AppUtils {
     }
 
     /**
-     * 获取用户token
+     * 获取用户environment
      *
      * @return
      */
-    public String getUserToken() {
-        return sharedPreferences.getString("userToken", "");
+    public Environment getUserEnvironment() {
+        String jsonStr = sharedPreferences.getString("userEnvironment" + getUserName(), "");
+        Environment environment;
+        if (StringUtils.isNotBlank(jsonStr))
+            environment = GsonUtil.fromJson(jsonStr, Environment.class);
+        else
+            environment = new Environment(null);
+        return environment;
+    }
+
+    /**
+     * 保存用户的environment
+     *
+     * @param environment
+     */
+    public void setUserEnvironment(Environment environment) {
+        String jsonStr = GsonUtil.toJson(environment);
+        sharedPreferences.edit().putString("userEnvironment" + getUserName(), jsonStr).commit();
     }
 
 //    /**

@@ -36,7 +36,6 @@
         android:background="@color/translate"
         android:drawableLeft="@mipmap/login_icon_username"
         android:inputType="textPersonName"
-        android:text="wangguan001"
         android:textColor="@color/white" />
 
     <View
@@ -57,7 +56,6 @@
         android:background="@color/translate"
         android:drawableLeft="@mipmap/login_icon_password"
         android:inputType="textPassword"
-        android:text="wangguan001"
         android:textColor="@color/white" />
 
     <View

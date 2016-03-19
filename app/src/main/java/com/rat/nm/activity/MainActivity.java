@@ -13,6 +13,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.util.AppUtils;
+import com.rat.nm.util.LogUtil;
 import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.MenuItemView;
 
@@ -44,9 +45,7 @@ public class MainActivity extends BaseActivity {
         PushManager.getInstance().initialize(this.getApplicationContext());
         // 绑定别名，用于push消息
         PushManager.getInstance().bindAlias(getApplicationContext(), AppUtils.getInstance().getUserName());
-        Toast.makeText(getApplicationContext(),
-                "push service init:  [ " + AppUtils.getInstance().getUserName() + " || " + PushManager.getInstance().getClientid(this.getApplicationContext()) + " ]",
-                Toast.LENGTH_SHORT).show();
+        LogUtil.i("push service init:  [ " + AppUtils.getInstance().getUserName() + " || " + PushManager.getInstance().getClientid(this.getApplicationContext()) + " ]");
         // 是否接收push消息
         if (AppUtils.getInstance().isReceivePushMessage())
             PushManager.getInstance().turnOnPush(getApplicationContext());

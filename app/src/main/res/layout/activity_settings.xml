@@ -48,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:paddingLeft="15dp"
+        android:visibility="gone"
         android:paddingRight="15dp">
 
         <TextView
@@ -70,6 +71,36 @@
 
     <View
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="0.2dp"
         android:background="@color/gray_ad" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="@string/operate_environment"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_17sp"
+            android:id="@+id/textView" />
+    </RelativeLayout>
+
+    <com.rat.nm.view.WheelView
+        android:id="@+id/operateEnvironment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_ad" />
+
 </LinearLayout>

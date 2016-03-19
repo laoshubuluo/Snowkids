@@ -11,7 +11,12 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
+import com.rat.nm.entity.model.Environment;
 import com.rat.nm.util.AppUtils;
+import com.rat.nm.util.LogUtil;
+import com.rat.nm.view.WheelView;
+
+import java.util.Arrays;
 
 public class SettingsActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
@@ -23,6 +28,8 @@ public class SettingsActivity extends BaseActivity {
     private ImageView remeberMeIV;
     @ViewInject(R.id.receivePushMessageIV)
     private ImageView receivePushMessageIV;
+    @ViewInject(R.id.operateEnvironment)
+    private WheelView operateEnvironment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +62,26 @@ public class SettingsActivity extends BaseActivity {
             receivePushMessageIV.setBackgroundResource(R.mipmap.settings_turn_on);
         else
             receivePushMessageIV.setBackgroundResource(R.mipmap.settings_turn_off);
+        // 操作环境切换
+        final Environment environment = AppUtils.getInstance().getUserEnvironment();
+        String[] messageList = environment.getList();
+        operateEnvironment.setOffset(1);
+        operateEnvironment.setItems(Arrays.asList(messageList));
+        for (int i = 0; i < messageList.length; i++) {
+            String str = messageList[i];
+            if (environment.getCurrent().equals(str)) {
+                operateEnvironment.setSeletion(i);
+                break;
+            }
+        }
+        operateEnvironment.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+                environment.setCurrent(item);
+                AppUtils.getInstance().setUserEnvironment(environment);
+            }
+        });
     }
 
     /**

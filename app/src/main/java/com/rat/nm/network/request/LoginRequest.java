@@ -8,6 +8,7 @@ import android.os.Message;
 import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.common.ResponseConstant;
 import com.rat.nm.common.WebConstant;
+import com.rat.nm.entity.model.Environment;
 import com.rat.nm.entity.net.request.LoginActionInfo;
 import com.rat.nm.entity.net.request.base.RequestInfo;
 import com.rat.nm.entity.net.response.LoginRegisterInfo;
@@ -66,6 +67,7 @@ public class LoginRequest extends PostJsonRequest {
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 AppUtils.getInstance().setUserName(userName);
                 AppUtils.getInstance().setUserToken(info.getToken());
+                AppUtils.getInstance().setUserEnvironment(new Environment(info.getEnvironmentList()));
 //                DbConnectionManager.getInstance().reload();
 //                // 保存好友列表
 //                List<User> friendList = info.getFriendList();

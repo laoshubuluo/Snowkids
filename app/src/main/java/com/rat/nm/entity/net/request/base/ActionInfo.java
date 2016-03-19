@@ -1,5 +1,8 @@
 package com.rat.nm.entity.net.request.base;
 
+import com.google.gson.annotations.SerializedName;
+import com.rat.nm.util.AppUtils;
+
 /**
  * author : L.jinzhu
  * date : 2015/8/12
@@ -8,8 +11,11 @@ package com.rat.nm.entity.net.request.base;
 public class ActionInfo extends AbstractRequestInfo {
 
     int actionId;
+    @SerializedName("ENV")
+    String environment;
 
     public ActionInfo(int actionId) {
         this.actionId = actionId;
+        this.environment = AppUtils.getInstance().getUserEnvironment().getCurrent();
     }
 }
