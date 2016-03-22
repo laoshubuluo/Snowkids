@@ -80,8 +80,10 @@
 
     <string name="search_commit">please input device name</string>
 
-    <string name="remeber_me">Remeber me</string>
-    <string name="receive_push_message">Receive push message</string>
-    <string name="operate_environment">Operate environment</string>
+    <string name="remeber_me">Remeber Me</string>
+    <string name="receive_push_message">Receive Push Message</string>
+    <string name="operate_environment">Operate Environment</string>
+    <string name="server_ip">Server IP</string>
+    <string name="server_tip">Warn:If you enter the above address, the all requests of application will connect the new address you entered. Format:192.168.221.252:8080</string>
     <string name="setting_success">setting success</string>
 </resources>

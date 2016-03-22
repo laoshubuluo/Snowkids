@@ -18,6 +18,7 @@ import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.OperateLogController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.enums.OperateLogType;
+import com.rat.nm.entity.model.Alarm;
 import com.rat.nm.entity.model.OperateLog;
 import com.rat.nm.util.StringUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;
@@ -79,6 +80,7 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
         operateLogListLV.setAutoLoadEnable(false);
         operateLogListLV.setXListViewListener(this);
         operateLogListLV.setRefreshTime();
+        operateLogListLV.setOnItemClickListener(this);
     }
 
     /**
@@ -133,7 +135,7 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         OperateLog operateLog = operateLogList.get((int) id);
-        Intent i = new Intent(OperateLogListActivity.this, OperateLogListActivity.class);
+        Intent i = new Intent(OperateLogListActivity.this, OperateLogDetailActivity.class);
         i.putExtra("operateLog", operateLog);
         startActivity(i);
     }

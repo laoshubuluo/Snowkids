@@ -59,7 +59,7 @@ public class AlarmListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL + "alarm/list";
+        return WebConstant.getServerUrl() + "alarm/list";
     }
 
     @Override

@@ -22,6 +22,7 @@ public class OperateLog implements Serializable {
     private String userId;// 用户ID
     @SerializedName("userName")
     private String userName;// 用户名称
+    @SerializedName("operLog")
     private String log;// 操作日志
     @SerializedName("operTime")
     private String time;// 时间

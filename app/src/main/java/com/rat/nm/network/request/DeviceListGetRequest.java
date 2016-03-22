@@ -57,7 +57,7 @@ public class DeviceListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL + "device/list";
+        return WebConstant.getServerUrl() + "device/list";
     }
 
     @Override

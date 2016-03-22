@@ -14076,6 +14076,15 @@ com.rat.nm.activity.MainActivity -> com.rat.nm.activity.MainActivity:
 com.rat.nm.activity.MainActivity$1 -> com.rat.nm.activity.e:
     com.rat.nm.activity.MainActivity this$0 -> a
     boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent) -> onEditorAction
+com.rat.nm.activity.OperateLogDetailActivity -> com.rat.nm.activity.OperateLogDetailActivity:
+    android.widget.TextView topTitleView -> f
+    android.widget.TextView topLeftView -> g
+    android.widget.TextView logTV -> h
+    com.rat.nm.entity.model.OperateLog operateLog -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void initView() -> b
+    void initData() -> c
+    void onClick(android.view.View) -> onClick
 com.rat.nm.activity.OperateLogFilterActivity -> com.rat.nm.activity.OperateLogFilterActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
@@ -14125,17 +14134,23 @@ com.rat.nm.activity.SettingsActivity -> com.rat.nm.activity.SettingsActivity:
     android.widget.TextView topLeftView -> g
     android.widget.ImageView remeberMeIV -> h
     android.widget.ImageView receivePushMessageIV -> i
+    com.rat.nm.view.WheelView operateEnvironment -> j
+    android.widget.EditText serverIpET -> k
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
     void onClick(android.view.View) -> onClick
+com.rat.nm.activity.SettingsActivity$1 -> com.rat.nm.activity.h:
+    com.rat.nm.entity.model.Environment val$environment -> a
+    com.rat.nm.activity.SettingsActivity this$0 -> b
+    void onSelected(int,java.lang.String) -> a
 com.rat.nm.activity.WelcomeActivity -> com.rat.nm.activity.WelcomeActivity:
     int waitTime -> a
     android.widget.ImageView logo -> b
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> a
     void initData() -> b
-com.rat.nm.activity.WelcomeActivity$1 -> com.rat.nm.activity.h:
+com.rat.nm.activity.WelcomeActivity$1 -> com.rat.nm.activity.i:
     com.rat.nm.activity.WelcomeActivity this$0 -> a
     void run() -> run
 com.rat.nm.activity.base.BaseActivity -> com.rat.nm.activity.base.BaseActivity:
@@ -14311,7 +14326,8 @@ com.rat.nm.appmanager.CrashHandler$1 -> com.rat.nm.appmanager.CrashHandler$1:
     void run() -> run
 com.rat.nm.common.WebConstant -> com.rat.nm.b.a:
     java.lang.String WEB_KEY -> a
-    java.lang.String BASE_URL -> b
+    java.lang.String getServerUrl() -> a
+    java.lang.String getServerIp() -> b
 com.rat.nm.controller.AlarmController -> com.rat.nm.c.a:
     android.os.Handler handler -> a
     android.content.Context context -> b
@@ -14448,6 +14464,13 @@ com.rat.nm.entity.model.DeviceType -> com.rat.nm.entity.model.DeviceType:
     void setDescribe(java.lang.String) -> setDescribe
     java.lang.String getImageUrl() -> getImageUrl
     void setImageUrl(java.lang.String) -> setImageUrl
+com.rat.nm.entity.model.Environment -> com.rat.nm.entity.model.Environment:
+    java.lang.String current -> current
+    java.lang.String[] list -> list
+    java.lang.String getCurrent() -> getCurrent
+    void setCurrent(java.lang.String) -> setCurrent
+    java.lang.String[] getList() -> getList
+    void setList(java.lang.String[]) -> setList
 com.rat.nm.entity.model.OperateLog -> com.rat.nm.entity.model.OperateLog:
     java.lang.String id -> id
     java.lang.String type -> type
@@ -14524,6 +14547,7 @@ com.rat.nm.entity.net.request.base.AbstractRequestInfo -> com.rat.nm.entity.net.
     long serialVersionUID -> serialVersionUID
 com.rat.nm.entity.net.request.base.ActionInfo -> com.rat.nm.entity.net.request.base.ActionInfo:
     int actionId -> actionId
+    java.lang.String environment -> environment
 com.rat.nm.entity.net.request.base.AppInfo -> com.rat.nm.entity.net.request.base.AppInfo:
     java.lang.String language -> language
     int versionCode -> versionCode
@@ -14596,8 +14620,12 @@ com.rat.nm.entity.net.response.DeviceTypeListGetRspInfo -> com.rat.nm.entity.net
     void setDeviceTypeList(java.util.List) -> setDeviceTypeList
 com.rat.nm.entity.net.response.LoginRegisterInfo -> com.rat.nm.entity.net.response.LoginRegisterInfo:
     java.lang.String token -> token
+    java.lang.String environmentStr -> environmentStr
+    java.lang.String[] environmentList -> environmentList
     java.lang.String getToken() -> getToken
     void setToken(java.lang.String) -> setToken
+    java.lang.String[] getEnvironmentList() -> getEnvironmentList
+    void setEnvironmentList(java.lang.String[]) -> setEnvironmentList
 com.rat.nm.entity.net.response.OperateLogGetRspInfo -> com.rat.nm.entity.net.response.OperateLogGetRspInfo:
     com.rat.nm.entity.model.OperateLog operateLog -> operateLog
     com.rat.nm.entity.model.OperateLog getOperateLog() -> getOperateLog
@@ -14749,6 +14777,12 @@ com.rat.nm.util.AppUtils -> com.rat.nm.e.a:
     void updateIsReceivePushMessage(boolean) -> b
     java.lang.String getUserName() -> d
     void setUserName(java.lang.String) -> a
+    java.lang.String getUserToken() -> e
+    void setUserToken(java.lang.String) -> b
+    com.rat.nm.entity.model.Environment getUserEnvironment() -> f
+    void setUserEnvironment(com.rat.nm.entity.model.Environment) -> a
+    java.lang.String getServerIp() -> g
+    void setServerIp(java.lang.String) -> c
 com.rat.nm.util.DateUtil -> com.rat.nm.e.b:
     java.text.SimpleDateFormat formatter -> a
     java.text.SimpleDateFormat dateFormat -> b

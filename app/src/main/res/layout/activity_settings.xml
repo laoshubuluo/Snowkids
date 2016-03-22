@@ -11,7 +11,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.2dp"
+        android:layout_height="0.3dp"
         android:layout_marginTop="15dp"
         android:background="@color/gray_ad" />
 
@@ -41,15 +41,15 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.2dp"
+        android:layout_height="0.3dp"
         android:background="@color/gray_ad" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:paddingLeft="15dp"
-        android:visibility="gone"
-        android:paddingRight="15dp">
+        android:paddingRight="15dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,9 +71,9 @@
 
     <View
         android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="0.2dp"
-        android:background="@color/gray_ad" />
+        android:layout_height="0.3dp"
+        android:background="@color/gray_ad"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -88,19 +88,74 @@
             android:layout_centerInParent="true"
             android:text="@string/operate_environment"
             android:textColor="@color/white"
-            android:textSize="@dimen/font_17sp"
-            android:id="@+id/textView" />
+            android:textSize="@dimen/font_17sp" />
     </RelativeLayout>
 
     <com.rat.nm.view.WheelView
         android:id="@+id/operateEnvironment"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.2dp"
+        android:layout_height="0.3dp"
         android:layout_marginTop="10dp"
         android:background="@color/gray_ad" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="@string/server_ip"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_17sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <EditText
+            android:id="@+id/serverIpET"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@color/translate"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/server_tip"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray_ad" />
 </LinearLayout>

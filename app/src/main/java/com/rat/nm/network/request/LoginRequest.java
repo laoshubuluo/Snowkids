@@ -48,7 +48,7 @@ public class LoginRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL + "auth/login";
+        return WebConstant.getServerUrl() + "auth/login";
     }
 
     @Override

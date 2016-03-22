@@ -178,22 +178,19 @@ public class AppUtils {
         sharedPreferences.edit().putString("userEnvironment" + getUserName(), jsonStr).commit();
     }
 
-//    /**
-//     * 是否首次上报位置信息
-//     */
-//    public boolean isFirstInformLocation() {
-//        String key = "isFirstInformLocation_" + this.getUserId();
-//        return sharedPreferences.getBoolean(key, true);
-//    }
-//
-//    /**
-//     * 更新状态：非首次上报位置信息
-//     */
-//    public void updateInformLocationStatus() {
-//        String key = "isFirstInformLocation_" + this.getUserId();
-//        sharedPreferences.edit().putBoolean(key, false).commit();
-//    }
-//
+    /**
+     * 获取服务地址
+     */
+    public String getServerIp() {
+        return sharedPreferences.getString("serverIp", "").replace(" ", "").replace("：", ":").trim();
+    }
+
+    /**
+     * 保存服务地址
+     */
+    public void setServerIp(String serverIp) {
+        sharedPreferences.edit().putString("serverIp", serverIp).commit();
+    }
 //
 //    /**
 //     * 是否首次上报通讯录信息

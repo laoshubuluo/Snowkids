@@ -1,7 +1,11 @@
 package com.rat.nm.activity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +34,8 @@ public class SettingsActivity extends BaseActivity {
     private ImageView receivePushMessageIV;
     @ViewInject(R.id.operateEnvironment)
     private WheelView operateEnvironment;
+    @ViewInject(R.id.serverIpET)
+    private EditText serverIpET;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +88,8 @@ public class SettingsActivity extends BaseActivity {
                 AppUtils.getInstance().setUserEnvironment(environment);
             }
         });
+        // 服务器IP
+        serverIpET.setText(AppUtils.getInstance().getServerIp());
     }
 
     /**
@@ -95,6 +103,7 @@ public class SettingsActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.top_left:
+                AppUtils.getInstance().setServerIp(serverIpET.getText().toString());
                 finish();
                 break;
             case R.id.remeberMeIV:

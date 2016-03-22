@@ -72,7 +72,7 @@ public class DeviceListAdapter extends BaseAdapter {
         final Device device = list.get(position);
         if (null == device)
             return convertView;
-        viewHolder.nameTV.setText(device.getNameInEN() + " - " + device.getId());
+        viewHolder.nameTV.setText(device.getNameInEN());
         viewHolder.desTV.setText(device.getType());
         imageLoader.displayImage(device.getImageUrl(), viewHolder.iconIV, ImageUtil.getImageOptions());
         String runningStatus = device.getRunningStatus();

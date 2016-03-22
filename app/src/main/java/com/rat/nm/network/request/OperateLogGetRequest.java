@@ -40,7 +40,7 @@ public class OperateLogGetRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL;
+        return WebConstant.getServerUrl();
     }
 
     @Override

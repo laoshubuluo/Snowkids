@@ -61,7 +61,7 @@ public class OperateLogListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getUrl() {
-        return WebConstant.BASE_URL + "operate/list";
+        return WebConstant.getServerUrl() + "operate/list";
     }
 
     @Override

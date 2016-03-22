@@ -187,7 +187,7 @@ com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove:
     351:357:public int getChildWidth(int)
     362:362:public boolean isSlidingEnabled()
     376:377:void smoothScrollTo(int,int)
-    897:914:protected boolean canScroll(android.view.View,boolean,int,int,int)
+    896:913:protected boolean canScroll(android.view.View,boolean,int,int,int)
 com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove$SimpleOnPageChangeListener:
     147:147:public void onPageScrollStateChanged(int)
 com.jeremyfeinstein.slidingmenu.lib.CustomViewBehind:
@@ -836,7 +836,7 @@ com.rat.nm.common.Constant
 com.rat.nm.common.MessageSignConstant
 com.rat.nm.common.ResponseConstant
 com.rat.nm.common.WebConstant:
-    9:10:private WebConstant()
+    12:13:private WebConstant()
 com.rat.nm.controller.AlarmController:
     30:32:public void get(java.lang.String)
 com.rat.nm.controller.OperateLogController:
@@ -852,7 +852,7 @@ com.rat.nm.network.request.base.BaseVolleyRequest:
     public abstract java.lang.Object getRequest()
 com.rat.nm.network.request.base.GetStringRequest
 com.rat.nm.network.request.base.PostJsonRequest:
-    33:33:public bridge synthetic java.lang.Object getRequest()
+    34:34:public bridge synthetic java.lang.Object getRequest()
 com.rat.nm.network.request.base.PostStringRequest
 com.rat.nm.network.request.base.PostStringRequest$1
 com.rat.nm.network.request.base.VolleyErrorHelper:
@@ -869,11 +869,9 @@ com.rat.nm.util.AlbumImageLoader$ImageSize
 com.rat.nm.util.AlbumImageLoader$ImgBeanHolder
 com.rat.nm.util.AlbumImageLoader$Type
 com.rat.nm.util.AppUtils:
-    69:70:public static void reset()
-    78:78:public com.rat.nm.appmanager.Application getApplication()
-    87:87:public int getCurrentVersion()
-    125:126:public void setUserId(java.lang.String)
-    134:134:public java.lang.String getUserId()
+    70:71:public static void reset()
+    79:79:public com.rat.nm.appmanager.Application getApplication()
+    88:88:public int getCurrentVersion()
 com.rat.nm.util.BitmapUtils
 com.rat.nm.util.CharacterParser
 com.rat.nm.util.CollectionUtils

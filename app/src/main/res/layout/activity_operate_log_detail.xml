@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@mipmap/bg_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <include layout="@layout/public_top_layout" />
+
+    <TextView
+        android:id="@+id/logTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@mipmap/bg_rechange_white"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_14sp" />
+</LinearLayout>

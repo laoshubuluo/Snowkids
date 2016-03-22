@@ -13767,6 +13767,7 @@ com.rat.networkmanager.R$id: int notification_right_under_left
 com.rat.networkmanager.R$id: int notification_update_icon
 com.rat.networkmanager.R$id: int notification_update_text
 com.rat.networkmanager.R$id: int notification_version
+com.rat.networkmanager.R$id: int operateEnvironment
 com.rat.networkmanager.R$id: int operateLogListLV
 com.rat.networkmanager.R$id: int operateLogMIV
 com.rat.networkmanager.R$id: int operateLogType
@@ -13803,6 +13804,7 @@ com.rat.networkmanager.R$id: int remeberMeIV
 com.rat.networkmanager.R$id: int right
 com.rat.networkmanager.R$id: int searchET
 com.rat.networkmanager.R$id: int selected_view
+com.rat.networkmanager.R$id: int serverIpET
 com.rat.networkmanager.R$id: int settingsLL
 com.rat.networkmanager.R$id: int settingsMIV
 com.rat.networkmanager.R$id: int setup_app_name
@@ -13847,6 +13849,7 @@ com.rat.networkmanager.R$layout: int activity_device_list
 com.rat.networkmanager.R$layout: int activity_device_type_list
 com.rat.networkmanager.R$layout: int activity_login
 com.rat.networkmanager.R$layout: int activity_menu
+com.rat.networkmanager.R$layout: int activity_operate_log_detail
 com.rat.networkmanager.R$layout: int activity_operate_log_filter
 com.rat.networkmanager.R$layout: int activity_operate_log_list
 com.rat.networkmanager.R$layout: int activity_settings
@@ -13969,6 +13972,7 @@ com.rat.networkmanager.R$string: int logout
 com.rat.networkmanager.R$string: int menu
 com.rat.networkmanager.R$string: int network_error
 com.rat.networkmanager.R$string: int network_timeout_error
+com.rat.networkmanager.R$string: int operate_environment
 com.rat.networkmanager.R$string: int operate_error
 com.rat.networkmanager.R$string: int operate_failure
 com.rat.networkmanager.R$string: int operate_log
@@ -13990,6 +13994,8 @@ com.rat.networkmanager.R$string: int search
 com.rat.networkmanager.R$string: int search_commit
 com.rat.networkmanager.R$string: int send
 com.rat.networkmanager.R$string: int server_error
+com.rat.networkmanager.R$string: int server_ip
+com.rat.networkmanager.R$string: int server_tip
 com.rat.networkmanager.R$string: int setting_success
 com.rat.networkmanager.R$string: int settings
 com.rat.networkmanager.R$string: int submit
@@ -14045,6 +14051,9 @@ com.rat.nm.activity.LoginActivity: LoginActivity()
 com.rat.nm.activity.LoginActivity: void onClick(android.view.View)
 com.rat.nm.activity.MainActivity
 com.rat.nm.activity.MainActivity: MainActivity()
+com.rat.nm.activity.OperateLogDetailActivity
+com.rat.nm.activity.OperateLogDetailActivity: OperateLogDetailActivity()
+com.rat.nm.activity.OperateLogDetailActivity: void onClick(android.view.View)
 com.rat.nm.activity.OperateLogFilterActivity
 com.rat.nm.activity.OperateLogFilterActivity: OperateLogFilterActivity()
 com.rat.nm.activity.OperateLogFilterActivity: void onClick(android.view.View)
@@ -14218,6 +14227,14 @@ com.rat.nm.entity.model.DeviceType: java.lang.String getDescribe()
 com.rat.nm.entity.model.DeviceType: void setDescribe(java.lang.String)
 com.rat.nm.entity.model.DeviceType: java.lang.String getImageUrl()
 com.rat.nm.entity.model.DeviceType: void setImageUrl(java.lang.String)
+com.rat.nm.entity.model.Environment
+com.rat.nm.entity.model.Environment: java.lang.String current
+com.rat.nm.entity.model.Environment: java.lang.String[] list
+com.rat.nm.entity.model.Environment: Environment(java.lang.String[])
+com.rat.nm.entity.model.Environment: java.lang.String getCurrent()
+com.rat.nm.entity.model.Environment: void setCurrent(java.lang.String)
+com.rat.nm.entity.model.Environment: java.lang.String[] getList()
+com.rat.nm.entity.model.Environment: void setList(java.lang.String[])
 com.rat.nm.entity.model.OperateLog
 com.rat.nm.entity.model.OperateLog: java.lang.String id
 com.rat.nm.entity.model.OperateLog: java.lang.String type
@@ -14304,6 +14321,7 @@ com.rat.nm.entity.net.request.base.AbstractRequestInfo: long serialVersionUID
 com.rat.nm.entity.net.request.base.AbstractRequestInfo: AbstractRequestInfo()
 com.rat.nm.entity.net.request.base.ActionInfo
 com.rat.nm.entity.net.request.base.ActionInfo: int actionId
+com.rat.nm.entity.net.request.base.ActionInfo: java.lang.String environment
 com.rat.nm.entity.net.request.base.ActionInfo: ActionInfo(int)
 com.rat.nm.entity.net.request.base.AppInfo
 com.rat.nm.entity.net.request.base.AppInfo: java.lang.String language
@@ -14387,9 +14405,13 @@ com.rat.nm.entity.net.response.DeviceTypeListGetRspInfo: java.util.List getDevic
 com.rat.nm.entity.net.response.DeviceTypeListGetRspInfo: void setDeviceTypeList(java.util.List)
 com.rat.nm.entity.net.response.LoginRegisterInfo
 com.rat.nm.entity.net.response.LoginRegisterInfo: java.lang.String token
+com.rat.nm.entity.net.response.LoginRegisterInfo: java.lang.String environmentStr
+com.rat.nm.entity.net.response.LoginRegisterInfo: java.lang.String[] environmentList
 com.rat.nm.entity.net.response.LoginRegisterInfo: LoginRegisterInfo()
 com.rat.nm.entity.net.response.LoginRegisterInfo: java.lang.String getToken()
 com.rat.nm.entity.net.response.LoginRegisterInfo: void setToken(java.lang.String)
+com.rat.nm.entity.net.response.LoginRegisterInfo: java.lang.String[] getEnvironmentList()
+com.rat.nm.entity.net.response.LoginRegisterInfo: void setEnvironmentList(java.lang.String[])
 com.rat.nm.entity.net.response.OperateLogGetRspInfo
 com.rat.nm.entity.net.response.OperateLogGetRspInfo: com.rat.nm.entity.model.OperateLog operateLog
 com.rat.nm.entity.net.response.OperateLogGetRspInfo: OperateLogGetRspInfo()
