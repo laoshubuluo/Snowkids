@@ -69,4 +69,13 @@
         android:id="@+id/loginBtn"
         style="@style/button_white"
         android:text="@string/login" />
+
+    <TextView
+        android:id="@+id/settingsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_14sp" />
 </LinearLayout>

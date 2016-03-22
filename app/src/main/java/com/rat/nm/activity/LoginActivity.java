@@ -39,6 +39,8 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
     private EditText userNameET;
     @ViewInject(R.id.passwordET)
     private EditText passwordET;
+    @ViewInject(R.id.settingsTV)
+    private TextView settingsTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
         topTitleView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
         loginBtn.setOnClickListener(this);
+        settingsTV.setOnClickListener(this);
     }
 
     public void initData() {
@@ -119,6 +122,10 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
         switch (v.getId()) {
             case R.id.top_left:
                 finish();
+                break;
+            case R.id.settingsTV:
+                intent = new Intent(LoginActivity.this, SettingsActivity.class);
+                startActivity(intent);
                 break;
             case R.id.loginBtn:
                 if (TextUtils.isEmpty(userNameET.getText().toString())) {

@@ -14053,6 +14053,7 @@ com.rat.nm.activity.LoginActivity -> com.rat.nm.activity.LoginActivity:
     android.widget.Button loginBtn -> f
     android.widget.EditText userNameET -> g
     android.widget.EditText passwordET -> h
+    android.widget.TextView settingsTV -> i
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> a
     void initData() -> b

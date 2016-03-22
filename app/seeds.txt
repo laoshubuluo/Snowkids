@@ -13807,6 +13807,7 @@ com.rat.networkmanager.R$id: int selected_view
 com.rat.networkmanager.R$id: int serverIpET
 com.rat.networkmanager.R$id: int settingsLL
 com.rat.networkmanager.R$id: int settingsMIV
+com.rat.networkmanager.R$id: int settingsTV
 com.rat.networkmanager.R$id: int setup_app_name
 com.rat.networkmanager.R$id: int setup_app_version
 com.rat.networkmanager.R$id: int setup_icon
