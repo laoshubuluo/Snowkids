@@ -84,10 +84,12 @@ public class AlarmFilterActivity extends BaseActivity {
                 break;
             case R.id.timeStart:
                 i = new Intent(AlarmFilterActivity.this, DateInputActivity.class);
+                i.putExtra("date", timeStart.getText().toString());
                 startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_START);
                 break;
             case R.id.timeEnd:
                 i = new Intent(AlarmFilterActivity.this, DateInputActivity.class);
+                i.putExtra("date", timeEnd.getText().toString());
                 startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_END);
                 break;
             case R.id.queryBtn:

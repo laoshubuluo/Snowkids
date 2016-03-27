@@ -88,10 +88,12 @@ public class OperateLogFilterActivity extends BaseActivity {
                 break;
             case R.id.timeStart:
                 i = new Intent(OperateLogFilterActivity.this, DateInputActivity.class);
+                i.putExtra("date", timeStart.getText().toString());
                 startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_START);
                 break;
             case R.id.timeEnd:
                 i = new Intent(OperateLogFilterActivity.this, DateInputActivity.class);
+                i.putExtra("date", timeEnd.getText().toString());
                 startActivityForResult(i, ActivityResultConstant.REQUEST_CODE_DATE_END);
                 break;
             case R.id.queryBtn:

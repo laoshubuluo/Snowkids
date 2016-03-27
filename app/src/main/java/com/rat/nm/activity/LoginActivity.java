@@ -20,6 +20,7 @@ import com.rat.nm.controller.LoginController;
 import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.LogUtil;
 import com.rat.nm.util.StringUtils;
+import com.rat.nm.util.UserUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 
@@ -98,6 +99,9 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
             case MessageSignConstant.LOGIN_FAILURE:
                 int code = msg.getData().getInt("code");
                 String message = msg.getData().getString("message");
+                // 检查token是否失效
+                if (UserUtils.getInstance(LoginActivity.this).isTokenError(code, message))
+                    break;
                 promptDialog.initData(getString(R.string.login_failure), message);
                 promptDialog.show();
                 break;

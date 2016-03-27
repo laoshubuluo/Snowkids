@@ -18,14 +18,16 @@ import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.AlarmController;
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.entity.model.Alarm;
-import com.rat.nm.entity.model.Device;
-import com.rat.nm.util.StringUtils;
+import com.rat.nm.util.UserUtils;
+import com.rat.nm.view.CountView;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AlarmListActivity extends BaseActivity implements AdapterView.OnItemClickListener, XListView.IXListViewListener {
     @ViewInject(R.id.top_name)
@@ -37,6 +39,9 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
     private XListView alarmListLV;
     @ViewInject(R.id.empty)
     private LinearLayout empty;
+    @ViewInject(R.id.countLL)
+    private LinearLayout countLL;
+
 
     private List<Alarm> alarmList = new ArrayList<Alarm>();
     private int totalPage = 0;
@@ -162,8 +167,11 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {
                     adapter.modifyData(alarmList, true);
-                } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType()))
+                    initCountView(alarmList);
+                } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType())) {
                     adapter.modifyData(alarmList, true);
+                    initCountView(alarmList);
+                }
 
                 // 判断数据获取状态（无数据或无更多数据）
                 // 无数据
@@ -191,6 +199,9 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
             case MessageSignConstant.ALARM_LIST_GET_FAILURE:
                 code = msg.getData().getInt("code");
                 message = msg.getData().getString("message");
+                // 检查token是否失效
+                if (UserUtils.getInstance(AlarmListActivity.this).isTokenError(code, message))
+                    break;
                 promptDialog.initData("", message);
                 promptDialog.show();
                 break;
@@ -205,5 +216,27 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
         // 加载效果取消
         onLoad();
         return false;
+    }
+
+    private void initCountView(List<Alarm> list) {
+        countLL.removeAllViews();
+        // 计算数量
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for (Alarm item : list) {
+            String key = item.getType().toUpperCase();
+            int count = 0;
+            if (map.containsKey(key))
+                count = map.get(key);
+            count++;
+            map.put(key, count);
+        }
+        // 绘制布局
+        CountView countView;
+        countView = new CountView(getApplicationContext(), "ALL", String.valueOf(list.size()));
+        countLL.addView(countView);
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            countView = new CountView(getApplicationContext(), entry.getKey(), String.valueOf(String.valueOf(entry.getValue())));
+            countLL.addView(countView);
+        }
     }
 }

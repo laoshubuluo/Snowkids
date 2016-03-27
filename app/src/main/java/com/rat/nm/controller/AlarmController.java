@@ -5,7 +5,6 @@ import android.os.Handler;
 
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.network.VolleyManager;
-import com.rat.nm.network.request.AlarmGetRequest;
 import com.rat.nm.network.request.AlarmListGetRequest;
 
 /**
@@ -27,8 +26,8 @@ public class AlarmController {
      * 告警获取
      */
     public void get(String alarmId) {
-        AlarmGetRequest request = new AlarmGetRequest(handler, context, alarmId);
-        VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
+//        AlarmGetRequest request = new AlarmGetRequest(handler, context, alarmId);
+//        VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 
     /**

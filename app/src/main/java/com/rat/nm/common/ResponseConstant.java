@@ -10,7 +10,5 @@ public class ResponseConstant {
     }
 
     public static final int SUCCESS = 1;
-    public static final int USER_DISABLE = 300;//用户被封
-    public static final int REMOVE_GROUP = 4200; // 被移除该群
-    public static final int QUIT_GROUP = 4201; // 群解散
+    public static final int TOKEN_ERROR = 7;// 用户鉴权失败，需要重新登录
 }

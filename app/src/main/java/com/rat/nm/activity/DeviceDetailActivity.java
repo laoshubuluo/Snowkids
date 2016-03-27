@@ -18,6 +18,7 @@ import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.DeviceController;
 import com.rat.nm.entity.model.Device;
 import com.rat.nm.entity.model.Parameter;
+import com.rat.nm.util.UserUtils;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -171,6 +172,9 @@ public class DeviceDetailActivity extends BaseActivity implements AdapterView.On
             case MessageSignConstant.DEVICE_GET_FAILURE:
                 code = msg.getData().getInt("code");
                 message = msg.getData().getString("message");
+                // 检查token是否失效
+                if (UserUtils.getInstance(DeviceDetailActivity.this).isTokenError(code, message))
+                    break;
                 promptDialog.initData("", message);
                 promptDialog.show();
                 break;

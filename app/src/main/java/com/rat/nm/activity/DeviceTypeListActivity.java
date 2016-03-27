@@ -17,6 +17,8 @@ import com.rat.nm.adapter.DeviceTypeListAdapter;
 import com.rat.nm.common.MessageSignConstant;
 import com.rat.nm.controller.DeviceController;
 import com.rat.nm.entity.model.DeviceType;
+import com.rat.nm.util.UserUtils;
+import com.rat.nm.view.CountView;
 import com.rat.nm.view.dialog.CustomProgressDialog;
 import com.rat.nm.view.dialog.PromptDialog;
 import com.rat.nm.view.pull2refresh.XListView;
@@ -34,6 +36,8 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
     private XListView deviceTypeListLV;
     @ViewInject(R.id.empty)
     private LinearLayout empty;
+    @ViewInject(R.id.countLL)
+    private LinearLayout countLL;
 
     private List<DeviceType> deviceTypeList = new ArrayList<DeviceType>();
     private DeviceTypeListAdapter adapter;
@@ -142,6 +146,7 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
                 if (null == deviceTypeList)
                     deviceTypeList = new ArrayList<DeviceType>();
                 adapter.modifyData(deviceTypeList, true);
+                initCountView(deviceTypeList);
                 // 是否存在数据
                 if (deviceTypeList.isEmpty()) {
                     empty.setVisibility(View.VISIBLE);
@@ -157,6 +162,9 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
             case MessageSignConstant.DEVICE_TYPE_LIST_GET_FAILURE:
                 code = msg.getData().getInt("code");
                 message = msg.getData().getString("message");
+                // 检查token是否失效
+                if (UserUtils.getInstance(DeviceTypeListActivity.this).isTokenError(code, message))
+                    break;
                 promptDialog.initData("", message);
                 promptDialog.show();
                 break;
@@ -171,5 +179,13 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
         // 加载效果取消
         onLoad();
         return false;
+    }
+
+    private void initCountView(List<DeviceType> list) {
+        countLL.removeAllViews();
+        // 绘制布局
+        CountView countView;
+        countView = new CountView(getApplicationContext(), "ALL", String.valueOf(list.size()));
+        countLL.addView(countView);
     }
 }

@@ -42,7 +42,7 @@ public class VolleyManager {
     }
 
     public void cancelPendingRequests(String tag) {
-        //TODO L.jinzhu 应用stop\crash状况下，清空网络请求
+        // 应用stop\crash状况下，清空网络请求
         getRequestQueue().cancelAll(tag);
     }
 

@@ -5,7 +5,6 @@ import android.os.Handler;
 
 import com.rat.nm.entity.enums.DataGetType;
 import com.rat.nm.network.VolleyManager;
-import com.rat.nm.network.request.OperateLogGetRequest;
 import com.rat.nm.network.request.OperateLogListGetRequest;
 
 /**
@@ -27,8 +26,8 @@ public class OperateLogController {
      * 操作日志获取
      */
     public void get(String operateLogId) {
-        OperateLogGetRequest request = new OperateLogGetRequest(handler, context, operateLogId);
-        VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
+//        OperateLogGetRequest request = new OperateLogGetRequest(handler, context, operateLogId);
+//        VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 
     /**
