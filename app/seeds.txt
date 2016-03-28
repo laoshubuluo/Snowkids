@@ -13626,7 +13626,7 @@ com.rat.networkmanager.R$color: int green
 com.rat.networkmanager.R$color: int orage
 com.rat.networkmanager.R$color: int red
 com.rat.networkmanager.R$color: int translate
-com.rat.networkmanager.R$color: int translate_half
+com.rat.networkmanager.R$color: int translate_half_white
 com.rat.networkmanager.R$color: int white
 com.rat.networkmanager.R$dimen: int font_14sp
 com.rat.networkmanager.R$dimen: int font_17sp
@@ -13664,6 +13664,8 @@ com.rat.networkmanager.R$id: int click_upload
 com.rat.networkmanager.R$id: int close
 com.rat.networkmanager.R$id: int contentTV
 com.rat.networkmanager.R$id: int content_layout
+com.rat.networkmanager.R$id: int countLL
+com.rat.networkmanager.R$id: int countTV
 com.rat.networkmanager.R$id: int datePicker
 com.rat.networkmanager.R$id: int dateTV
 com.rat.networkmanager.R$id: int desTV
@@ -13868,6 +13870,7 @@ com.rat.networkmanager.R$layout: int public_top_layout
 com.rat.networkmanager.R$layout: int slidingmenumain
 com.rat.networkmanager.R$layout: int view_alarm_detail_item
 com.rat.networkmanager.R$layout: int view_alarm_list_item
+com.rat.networkmanager.R$layout: int view_count
 com.rat.networkmanager.R$layout: int view_device_list_item
 com.rat.networkmanager.R$layout: int view_device_type_list_item
 com.rat.networkmanager.R$layout: int view_dialog_prompt

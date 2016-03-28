@@ -838,13 +838,11 @@ com.rat.nm.common.ResponseConstant
 com.rat.nm.common.WebConstant:
     12:13:private WebConstant()
 com.rat.nm.controller.AlarmController:
-    30:32:public void get(java.lang.String)
+    31:31:public void get(java.lang.String)
 com.rat.nm.controller.OperateLogController:
-    30:32:public void get(java.lang.String)
+    31:31:public void get(java.lang.String)
 com.rat.nm.network.VolleyManager:
     46:47:public void cancelPendingRequests(java.lang.String)
-com.rat.nm.network.request.AlarmGetRequest
-com.rat.nm.network.request.OperateLogGetRequest
 com.rat.nm.network.request.base.BaseVolleyGetRequest
 com.rat.nm.network.request.base.BaseVolleyPostRequest:
     31:59:public byte[] addRequestPrefixData(java.lang.String)
@@ -889,7 +887,6 @@ com.rat.nm.util.DateUtil:
     178:178:public static java.lang.String getDate(long)
     187:187:public static java.lang.String getDateAndTime()
     197:197:public static java.lang.String getDateAndTime(long)
-    205:215:public static java.util.Date stringToDate(java.lang.String,java.lang.String)
     219:219:public static long dateToLong(java.util.Date)
     224:229:public static java.lang.String longToString(long,java.lang.String)
     234:237:public static java.util.Date longToDate(long,java.lang.String)

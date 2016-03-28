@@ -13954,14 +13954,15 @@ com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
     android.widget.TextView topLeftView -> g
     com.rat.nm.view.pull2refresh.XListView alarmListLV -> h
     android.widget.LinearLayout empty -> i
-    java.util.List alarmList -> j
-    int totalPage -> k
-    int currentPage -> l
-    com.rat.nm.adapter.AlarmListAdapter adapter -> m
-    com.rat.nm.controller.AlarmController controller -> n
-    java.lang.String alarmType -> o
-    java.lang.String timeStart -> p
-    java.lang.String timeEnd -> q
+    android.widget.LinearLayout countLL -> j
+    java.util.List alarmList -> k
+    int totalPage -> l
+    int currentPage -> m
+    com.rat.nm.adapter.AlarmListAdapter adapter -> n
+    com.rat.nm.controller.AlarmController controller -> o
+    java.lang.String alarmType -> p
+    java.lang.String timeStart -> q
+    java.lang.String timeEnd -> r
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -13972,6 +13973,7 @@ com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
     void onClick(android.view.View) -> onClick
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
+    void initCountView(java.util.List) -> a
 com.rat.nm.activity.AlarmListActivity$1 -> com.rat.nm.activity.b:
     com.rat.nm.activity.AlarmListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -14003,13 +14005,14 @@ com.rat.nm.activity.DeviceListActivity -> com.rat.nm.activity.DeviceListActivity
     android.widget.TextView topLeftView -> g
     com.rat.nm.view.pull2refresh.XListView deviceListLV -> h
     android.widget.LinearLayout empty -> i
-    java.util.List deviceList -> j
-    int totalPage -> k
-    int currentPage -> l
-    com.rat.nm.adapter.DeviceListAdapter adapter -> m
-    com.rat.nm.controller.DeviceController controller -> n
-    java.lang.String deviceType -> o
-    java.lang.String deviceName -> p
+    android.widget.LinearLayout countLL -> j
+    java.util.List deviceList -> k
+    int totalPage -> l
+    int currentPage -> m
+    com.rat.nm.adapter.DeviceListAdapter adapter -> n
+    com.rat.nm.controller.DeviceController controller -> o
+    java.lang.String deviceType -> p
+    java.lang.String deviceName -> q
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14020,6 +14023,7 @@ com.rat.nm.activity.DeviceListActivity -> com.rat.nm.activity.DeviceListActivity
     void onClick(android.view.View) -> onClick
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
+    void initCountView(java.util.List) -> a
 com.rat.nm.activity.DeviceListActivity$1 -> com.rat.nm.activity.c:
     com.rat.nm.activity.DeviceListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -14028,9 +14032,10 @@ com.rat.nm.activity.DeviceTypeListActivity -> com.rat.nm.activity.DeviceTypeList
     android.widget.TextView topLeftView -> g
     com.rat.nm.view.pull2refresh.XListView deviceTypeListLV -> h
     android.widget.LinearLayout empty -> i
-    java.util.List deviceTypeList -> j
-    com.rat.nm.adapter.DeviceTypeListAdapter adapter -> k
-    com.rat.nm.controller.DeviceController controller -> l
+    android.widget.LinearLayout countLL -> j
+    java.util.List deviceTypeList -> k
+    com.rat.nm.adapter.DeviceTypeListAdapter adapter -> l
+    com.rat.nm.controller.DeviceController controller -> m
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14041,6 +14046,7 @@ com.rat.nm.activity.DeviceTypeListActivity -> com.rat.nm.activity.DeviceTypeList
     void onClick(android.view.View) -> onClick
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
+    void initCountView(java.util.List) -> a
 com.rat.nm.activity.DeviceTypeListActivity$1 -> com.rat.nm.activity.d:
     com.rat.nm.activity.DeviceTypeListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -14108,15 +14114,16 @@ com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogList
     android.widget.TextView topLeftView -> g
     com.rat.nm.view.pull2refresh.XListView operateLogListLV -> h
     android.widget.LinearLayout empty -> i
-    java.util.List operateLogList -> j
-    int totalPage -> k
-    int currentPage -> l
-    com.rat.nm.adapter.OperateLogListAdapter adapter -> m
-    com.rat.nm.controller.OperateLogController controller -> n
-    java.lang.String operateUser -> o
-    java.lang.String operateType -> p
-    java.lang.String timeStart -> q
-    java.lang.String timeEnd -> r
+    android.widget.LinearLayout countLL -> j
+    java.util.List operateLogList -> k
+    int totalPage -> l
+    int currentPage -> m
+    com.rat.nm.adapter.OperateLogListAdapter adapter -> n
+    com.rat.nm.controller.OperateLogController controller -> o
+    java.lang.String operateUser -> p
+    java.lang.String operateType -> q
+    java.lang.String timeStart -> r
+    java.lang.String timeEnd -> s
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14127,6 +14134,7 @@ com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogList
     void onClick(android.view.View) -> onClick
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
+    void initCountView(java.util.List) -> a
 com.rat.nm.activity.OperateLogListActivity$1 -> com.rat.nm.activity.g:
     com.rat.nm.activity.OperateLogListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
@@ -14789,6 +14797,7 @@ com.rat.nm.util.DateUtil -> com.rat.nm.e.b:
     java.text.SimpleDateFormat dateFormat -> b
     java.text.SimpleDateFormat dateAndTimeFormat -> c
     java.lang.String dateToString(java.util.Date) -> a
+    java.util.Date stringToDate(java.lang.String,java.lang.String) -> a
 com.rat.nm.util.GsonUtil -> com.rat.nm.e.c:
     com.google.gson.Gson gson -> a
     java.lang.String toJson(java.lang.Object) -> a
@@ -14814,7 +14823,13 @@ com.rat.nm.util.StringUtils -> com.rat.nm.e.h:
     char[] HEX_DIGITS -> a
     boolean isNotBlank(java.lang.String) -> a
     boolean isNullOrBlank(java.lang.String) -> b
-com.rat.nm.util.XXTEA -> com.rat.nm.e.i:
+com.rat.nm.util.UserUtils -> com.rat.nm.e.i:
+    com.rat.nm.util.UserUtils instance -> a
+    android.content.Context context -> b
+    com.rat.nm.util.UserUtils getInstance(android.content.Context) -> a
+    boolean isTokenError(int,java.lang.String) -> a
+    void loginOut() -> a
+com.rat.nm.util.XXTEA -> com.rat.nm.e.j:
     int MX(int,int,int,int,int,int[]) -> a
     byte[] encrypt(byte[],byte[]) -> a
     byte[] encrypt(java.lang.String,java.lang.String) -> a
@@ -14823,6 +14838,19 @@ com.rat.nm.util.XXTEA -> com.rat.nm.e.i:
     byte[] fixKey(byte[]) -> a
     int[] toIntArray(byte[],boolean) -> a
     byte[] toByteArray(int[],boolean) -> a
+com.rat.nm.view.CountView -> com.rat.nm.view.a:
+    android.content.Context context -> a
+    java.lang.String title -> b
+    java.lang.String count -> c
+    android.widget.TextView titleTV -> d
+    android.widget.TextView countTV -> e
+com.rat.nm.view.CountView$1 -> com.rat.nm.view.b:
+    com.rat.nm.view.CountView this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.rat.nm.view.CountView$2 -> com.rat.nm.view.c:
+    android.content.Context val$context -> a
+    com.rat.nm.view.CountView this$0 -> b
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 com.rat.nm.view.MenuItemView -> com.rat.nm.view.MenuItemView:
     android.content.Context context -> b
     int itemType -> c
@@ -14837,7 +14865,7 @@ com.rat.nm.view.MenuItemView -> com.rat.nm.view.MenuItemView:
     int access$100(com.rat.nm.view.MenuItemView) -> b
     com.jeremyfeinstein.slidingmenu.lib.SlidingMenu access$200(com.rat.nm.view.MenuItemView) -> c
     android.content.Context access$300(com.rat.nm.view.MenuItemView) -> d
-com.rat.nm.view.MenuItemView$1 -> com.rat.nm.view.a:
+com.rat.nm.view.MenuItemView$1 -> com.rat.nm.view.d:
     com.rat.nm.view.MenuItemView this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
 com.rat.nm.view.WheelView -> com.rat.nm.view.WheelView:
@@ -14882,26 +14910,26 @@ com.rat.nm.view.WheelView -> com.rat.nm.view.WheelView:
     int getViewMeasuredHeight(android.view.View) -> a
     void access$000(com.rat.nm.view.WheelView) -> a
     int[] access$100(com.rat.nm.view.WheelView) -> b
-com.rat.nm.view.WheelView$1 -> com.rat.nm.view.b:
+com.rat.nm.view.WheelView$1 -> com.rat.nm.view.e:
     com.rat.nm.view.WheelView this$0 -> a
     void run() -> run
-com.rat.nm.view.WheelView$1$1 -> com.rat.nm.view.c:
+com.rat.nm.view.WheelView$1$1 -> com.rat.nm.view.f:
     int val$remainder -> a
     int val$divided -> b
     com.rat.nm.view.WheelView$1 this$1 -> c
     void run() -> run
-com.rat.nm.view.WheelView$1$2 -> com.rat.nm.view.d:
+com.rat.nm.view.WheelView$1$2 -> com.rat.nm.view.g:
     int val$remainder -> a
     int val$divided -> b
     com.rat.nm.view.WheelView$1 this$1 -> c
     void run() -> run
-com.rat.nm.view.WheelView$2 -> com.rat.nm.view.e:
+com.rat.nm.view.WheelView$2 -> com.rat.nm.view.h:
     com.rat.nm.view.WheelView this$0 -> a
     void draw(android.graphics.Canvas) -> draw
     void setAlpha(int) -> setAlpha
     void setColorFilter(android.graphics.ColorFilter) -> setColorFilter
     int getOpacity() -> getOpacity
-com.rat.nm.view.WheelView$3 -> com.rat.nm.view.f:
+com.rat.nm.view.WheelView$3 -> com.rat.nm.view.i:
     int val$p -> a
     com.rat.nm.view.WheelView this$0 -> b
     void run() -> run

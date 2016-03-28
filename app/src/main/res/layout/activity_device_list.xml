@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginBottom="10dp"
-            android:background="@color/white"
+            android:background="@color/translate_half_white"
             android:gravity="center"
             android:orientation="horizontal" />
     </FrameLayout>
