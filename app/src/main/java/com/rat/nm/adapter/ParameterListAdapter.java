@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.rat.networkmanager.R;
 import com.rat.nm.entity.model.Parameter;
+import com.rat.nm.util.StringUtils;
 
 import java.util.List;
 
@@ -56,7 +57,6 @@ public class ParameterListAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_parameter_list_item, null);
             viewHolder = new ViewHolder();
             viewHolder.keyTV = (TextView) convertView.findViewById(R.id.keyTV);
-            viewHolder.desTV = (TextView) convertView.findViewById(R.id.desTV);
             viewHolder.valueTV = (TextView) convertView.findViewById(R.id.valueTV);
             convertView.setTag(viewHolder);
         } else {
@@ -66,14 +66,13 @@ public class ParameterListAdapter extends BaseAdapter {
         if (null == parameter)
             return convertView;
         viewHolder.keyTV.setText(parameter.getKey());
-        viewHolder.desTV.setText(parameter.getTime());
+        parameter.setValue(StringUtils.isNullOrBlank(parameter.getValue()) ? "-" : parameter.getValue());
         viewHolder.valueTV.setText(parameter.getValue());
         return convertView;
     }
 
     private class ViewHolder {
         private TextView keyTV;
-        private TextView desTV;
         private TextView valueTV;
     }
 }
