@@ -174,6 +174,28 @@ public class AppUtils {
      * @param environment
      */
     public void setUserEnvironment(Environment environment) {
+        if (null == environment || null == environment.getList())
+            return;
+        Environment eOld = getUserEnvironment();
+        // 历史环境为空则更新新的
+        if (StringUtils.isNullOrBlank(eOld.getCurrent())) {
+            setUserEnvironment4Update(environment);
+            return;
+        }
+        // 历史环境不在新列表中则更新新的
+        for (String s : environment.getList()) {
+            if (eOld.getCurrent().equals(s))
+                return;
+        }
+        setUserEnvironment4Update(environment);
+    }
+
+    /**
+     * 保存用户的environment
+     *
+     * @param environment
+     */
+    public void setUserEnvironment4Update(Environment environment) {
         String jsonStr = GsonUtil.toJson(environment);
         sharedPreferences.edit().putString("userEnvironment" + getUserName(), jsonStr).commit();
     }
@@ -260,10 +282,4 @@ public class AppUtils {
 //            return false;
 //    }
 //
-//    /**
-//     * 更新应用信息上报成功
-//     */
-//    public void updateAppInfoInformOK() {
-//        sharedPreferences.edit().putInt("informOKAppInfo", getCurrentVersion()).commit();
-//    }
 }

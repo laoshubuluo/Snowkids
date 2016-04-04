@@ -40,8 +40,7 @@
         android:orientation="horizontal"
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
-        android:paddingTop="10dp"
-        android:visibility="gone">
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,7 +89,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|center_vertical"
         android:orientation="horizontal"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:visibility="gone">
 
         <TextView
             android:layout_width="wrap_content"

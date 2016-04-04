@@ -28,13 +28,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:weightSum="3">
+            android:weightSum="2">
 
-            <com.rat.nm.view.MenuItemView
-                android:id="@+id/profileMIV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+            <!--<com.rat.nm.view.MenuItemView-->
+            <!--android:id="@+id/profileMIV"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1" />-->
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/deviceTypeMIV"
@@ -42,8 +42,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+            <!--<com.rat.nm.view.MenuItemView-->
+            <!--android:id="@+id/deviceMIV"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1" />-->
+
             <com.rat.nm.view.MenuItemView
-                android:id="@+id/deviceMIV"
+                android:id="@+id/alarmMIV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
@@ -54,13 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
-            android:weightSum="3">
-
-            <com.rat.nm.view.MenuItemView
-                android:id="@+id/alarmMIV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+            android:weightSum="2">
 
             <com.rat.nm.view.MenuItemView
                 android:id="@+id/operateLogMIV"

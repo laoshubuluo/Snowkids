@@ -1,10 +1,8 @@
 package com.rat.nm.activity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +16,7 @@ import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.entity.model.Environment;
 import com.rat.nm.util.AppUtils;
 import com.rat.nm.util.LogUtil;
+import com.rat.nm.util.UserUtils;
 import com.rat.nm.view.WheelView;
 
 import java.util.Arrays;
@@ -36,6 +35,8 @@ public class SettingsActivity extends BaseActivity {
     private WheelView operateEnvironment;
     @ViewInject(R.id.serverIpET)
     private EditText serverIpET;
+    @ViewInject(R.id.logoutBtn)
+    private Button logoutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class SettingsActivity extends BaseActivity {
         topLeftView.setOnClickListener(this);
         remeberMeIV.setOnClickListener(this);
         receivePushMessageIV.setOnClickListener(this);
+        logoutBtn.setOnClickListener(this);
         // 是否记住我
         if (AppUtils.getInstance().isRemeberMe())
             remeberMeIV.setBackgroundResource(R.mipmap.settings_turn_on);
@@ -85,7 +87,7 @@ public class SettingsActivity extends BaseActivity {
             public void onSelected(int selectedIndex, String item) {
                 LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
                 environment.setCurrent(item);
-                AppUtils.getInstance().setUserEnvironment(environment);
+                AppUtils.getInstance().setUserEnvironment4Update(environment);
             }
         });
         // 服务器IP
@@ -132,6 +134,10 @@ public class SettingsActivity extends BaseActivity {
                 else
                     PushManager.getInstance().turnOffPush(getApplicationContext());
                 Toast.makeText(getApplicationContext(), getString(R.string.setting_success), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.logoutBtn:
+                UserUtils.getInstance(SettingsActivity.this).logout();
+                finish();
                 break;
             default:
                 break;

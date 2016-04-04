@@ -10,9 +10,11 @@
     <include layout="@layout/public_top_layout" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
         android:layout_marginTop="40dp"
         android:background="@mipmap/welcome_logo" />
 

@@ -1,6 +1,5 @@
 package com.rat.nm.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,8 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.rat.networkmanager.R;
-import com.rat.nm.activity.LoginActivity;
 import com.rat.nm.util.AppUtils;
+import com.rat.nm.util.UserUtils;
 
 /**
  * author : L.jinzhu
@@ -53,10 +52,7 @@ public class MenuRightFragment extends Fragment {
         logoutLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AppUtils.getInstance().setUserName("");
-                AppUtils.getInstance().setUserToken("");
-                Intent i = new Intent(getActivity(), LoginActivity.class);
-                startActivity(i);
+                UserUtils.getInstance(getActivity()).logout();
                 getActivity().finish();
             }
         });

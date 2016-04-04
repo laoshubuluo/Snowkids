@@ -14303,15 +14303,12 @@ com.rat.nm.adapter.ParameterListAdapter -> com.rat.nm.a.e:
 com.rat.nm.adapter.ParameterListAdapter$1 -> com.rat.nm.a.e$1:
 com.rat.nm.adapter.ParameterListAdapter$ViewHolder -> com.rat.nm.a.e$a:
     android.widget.TextView keyTV -> b
-    android.widget.TextView desTV -> c
-    android.widget.TextView valueTV -> d
+    android.widget.TextView valueTV -> c
     com.rat.nm.adapter.ParameterListAdapter this$0 -> a
     android.widget.TextView access$102(com.rat.nm.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> a
     android.widget.TextView access$202(com.rat.nm.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> b
-    android.widget.TextView access$302(com.rat.nm.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> c
     android.widget.TextView access$100(com.rat.nm.adapter.ParameterListAdapter$ViewHolder) -> a
     android.widget.TextView access$200(com.rat.nm.adapter.ParameterListAdapter$ViewHolder) -> b
-    android.widget.TextView access$300(com.rat.nm.adapter.ParameterListAdapter$ViewHolder) -> c
 com.rat.nm.appmanager.AppData -> com.rat.nm.appmanager.AppData:
     android.os.Handler DefaultHandler -> DefaultHandler
 com.rat.nm.appmanager.Application -> com.rat.nm.appmanager.Application:

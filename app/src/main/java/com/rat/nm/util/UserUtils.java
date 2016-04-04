@@ -47,7 +47,7 @@ public class UserUtils {
     public boolean isTokenError(int code, String message) {
         if (ResponseConstant.TOKEN_ERROR == code) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-            loginOut();
+            logout();
             Intent intent = new Intent((Activity) context, LoginActivity.class);
             context.startActivity(intent);
             return true;
@@ -58,9 +58,12 @@ public class UserUtils {
     /**
      * 退出登录
      */
-    public void loginOut() {
+    public void logout() {
         AppUtils.getInstance().setUserName("");
         AppUtils.getInstance().setUserToken("");
         AppUtils.getInstance().updateIsRemeberMe(false);
+        Intent i = new Intent(context, LoginActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
     }
 }

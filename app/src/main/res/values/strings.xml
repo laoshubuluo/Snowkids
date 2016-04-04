@@ -83,6 +83,6 @@
     <string name="receive_push_message">接收消息提醒</string>
     <string name="operate_environment">操作环境</string>
     <string name="server_ip">服务器地址</string>
-    <string name="server_tip">提醒：如果您输入上述地址，应用所有请求将指向您输入的新地址。格式参考：192.168.221.252:8080</string>
+    <string name="server_tip">提醒：如果您输入上述地址，应用所有请求将指向您输入的新地址。格式参考：182.92.107.7:8080</string>
     <string name="setting_success">设置成功</string>
 </resources>

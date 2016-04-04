@@ -73,10 +73,10 @@
     <string name="timeEnd">end time</string>
     <string name="device_name_is_null">device name is null</string>
 
-    <string name="device_name_colon">device name：</string>
-    <string name="device_type_colon">device type：</string>
-    <string name="device_model_colon">device model：</string>
-    <string name="device_describe_colon">device describe：</string>
+    <string name="device_name_colon">Name：</string>
+    <string name="device_type_colon">Type：</string>
+    <string name="device_model_colon">Model：</string>
+    <string name="device_describe_colon">Describe：</string>
 
     <string name="search_commit">please input device name</string>
 
@@ -84,6 +84,6 @@
     <string name="receive_push_message">Receive Push Message</string>
     <string name="operate_environment">Operate Environment</string>
     <string name="server_ip">Server IP</string>
-    <string name="server_tip">Warn:If you enter the above address, the all requests of application will connect the new address you entered. Format:192.168.221.252:8080</string>
+    <string name="server_tip">Warn:If you enter the above address, the all requests of application will connect the new address you entered. Format:182.92.107.7:8080</string>
     <string name="setting_success">setting success</string>
 </resources>

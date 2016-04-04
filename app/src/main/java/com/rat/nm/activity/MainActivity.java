@@ -22,12 +22,12 @@ public class MainActivity extends BaseActivity {
     private TextView topTitleView;
     @ViewInject(R.id.searchET)
     private TextView searchET;
-    @ViewInject(R.id.profileMIV)
-    private MenuItemView profileMIV;
+//    @ViewInject(R.id.profileMIV)
+//    private MenuItemView profileMIV;
     @ViewInject(R.id.deviceTypeMIV)
     private MenuItemView deviceTypeMIV;
-    @ViewInject(R.id.deviceMIV)
-    private MenuItemView deviceMIV;
+//    @ViewInject(R.id.deviceMIV)
+//    private MenuItemView deviceMIV;
     @ViewInject(R.id.alarmMIV)
     private MenuItemView alarmMIV;
     @ViewInject(R.id.operateLogMIV)
@@ -61,12 +61,12 @@ public class MainActivity extends BaseActivity {
     public void initView() {
         topTitleView.setText(R.string.menu);
 
-        profileMIV.initView(MenuItemView.PROFILE);
+        //profileMIV.initView(MenuItemView.PROFILE);
         //profileMIV.initData(0);
-        profileMIV.initClickView(menu);
+        //profileMIV.initClickView(menu);
         deviceTypeMIV.initView(MenuItemView.DEVICE_TYPE);
         //deviceTypeMIV.initData(1);
-        deviceMIV.initView(MenuItemView.DEVICE);
+        //deviceMIV.initView(MenuItemView.DEVICE);
         //deviceMIV.initData(3);
         alarmMIV.initView(MenuItemView.ALARM);
         //alarmMIV.initData(1);
