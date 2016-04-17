@@ -103,8 +103,6 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
      */
     private void updateData(DataGetType dataGetType) {
         controller.getList(totalPage, currentPage, dataGetType, operateUser, operateType, timeStart, timeEnd);
-
-
     }
 
     @Override
@@ -113,10 +111,10 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
         updateData(DataGetType.UPDATE);
     }
 
-    @Override
-    public void onLoadMore() {
-        currentPage++;
-        updateData(DataGetType.PAGE_DOWN);
+        @Override
+        public void onLoadMore() {
+            currentPage++;
+            updateData(DataGetType.PAGE_DOWN);
     }
 
     private void onLoad() {

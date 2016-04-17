@@ -9,6 +9,7 @@ import com.rat.nm.entity.net.request.base.ActionInfo;
  * introduce : 请求实体
  */
 public class OperateLogListGetActionInfo extends ActionInfo {
+    @SerializedName("userName")
     private String operateUser;
     private String operateType;
     @SerializedName("operStart")

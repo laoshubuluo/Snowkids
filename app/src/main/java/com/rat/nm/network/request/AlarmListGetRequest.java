@@ -45,7 +45,7 @@ public class AlarmListGetRequest extends PostJsonRequest {
         if (dataGetType.equals(DataGetType.UPDATE)) {
             this.totalPage = 0;
             this.currentPage = 0;
-            this.dataGetType = DataGetType.PAGE_DOWN;
+            this.dataGetType = DataGetType.UPDATE;
         } else
             this.dataGetType = dataGetType;
     }

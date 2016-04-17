@@ -47,10 +47,10 @@ public class OperateLogListGetRequest extends PostJsonRequest {
         if (dataGetType.equals(DataGetType.UPDATE)) {
             this.totalPage = 0;
             this.currentPage = 0;
-            this.dataGetType = DataGetType.PAGE_DOWN;
-        } else
+        this.dataGetType = DataGetType.UPDATE;
+    } else
             this.dataGetType = dataGetType;
-    }
+}
 
     @Override
     protected String getParamsJson() {
