@@ -61,7 +61,7 @@
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="alarmListGet" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="361e34ff-70a5-43c3-bec2-639eaa2b682f" name="Default" comment="modify message">
+    <list default="true" id="361e34ff-70a5-43c3-bec2-639eaa2b682f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extras/SlidingMenu/build/outputs/aar/SlidingMenu-debug.aar" afterPath="$PROJECT_DIR$/extras/SlidingMenu/build/outputs/aar/SlidingMenu-debug.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extras/SlidingMenu/build/outputs/aar/SlidingMenu-release.aar" afterPath="$PROJECT_DIR$/extras/SlidingMenu/build/outputs/aar/SlidingMenu-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
@@ -70,24 +70,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extras/SlidingMenu/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/extras/SlidingMenu/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/AlarmListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/AlarmListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/AlarmListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/AlarmListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/AlarmListGetRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/AlarmListGetRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/DeviceListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/DeviceListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/DeviceListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/DeviceListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/DeviceListGetRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/DeviceListGetRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/DeviceTypeListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/DeviceTypeListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/DeviceTypeListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/DeviceTypeListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/OperateLogListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/OperateLogListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/OperateLogListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/OperateLogListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/OperateLogListGetRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/OperateLogListGetRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/ParameterListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/adapter/ParameterListAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/class_files.txt" afterPath="$PROJECT_DIR$/app/class_files.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mapping.txt" afterPath="$PROJECT_DIR$/app/mapping.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/seeds.txt" afterPath="$PROJECT_DIR$/app/seeds.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/unused.txt" afterPath="$PROJECT_DIR$/app/unused.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NetworkManager.iws" />
@@ -4229,7 +4212,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460881011248</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="modify message">
+      <created>1460882600952</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1460882600952</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -4252,9 +4241,9 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.50606585" sideWeight="0.6634304" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19930676" sideWeight="0.7645631" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.8578856" sideWeight="0.43446603" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.8578856" sideWeight="0.43446603" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.8578856" sideWeight="0.565534" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.8578856" sideWeight="0.565534" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27636364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
