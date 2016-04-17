@@ -71,6 +71,8 @@
     <string name="operate_log_user">operate log user</string>
     <string name="timeStart">start time</string>
     <string name="timeEnd">end time</string>
+    <string name="device_type_small">device type</string>
+    <string name="device_name_small">device name</string>
     <string name="device_name_is_null">device name is null</string>
 
     <string name="device_name_colon">Name：</string>

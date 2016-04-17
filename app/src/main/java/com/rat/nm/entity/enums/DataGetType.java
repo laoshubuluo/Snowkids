@@ -7,7 +7,6 @@ package com.rat.nm.entity.enums;
  */
 public enum DataGetType {
     PAGE_DOWN("down"),
-    PAGE_UP("up"),
     UPDATE("update");
 
     private String type;

@@ -131,7 +131,7 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Device device = deviceList.get((int) id);
+        Device device = (Device) parent.getAdapter().getItem(position);
         Intent i = new Intent(DeviceListActivity.this, DeviceDetailActivity.class);
         i.putExtra("device", device);
         startActivity(i);

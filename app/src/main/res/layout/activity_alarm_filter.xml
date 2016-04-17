@@ -1,65 +1,108 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    android:background="@mipmap/bg_content"
-    android:gravity="left|center_horizontal"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/public_top_layout" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/alarm_type"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
-
-    <com.rat.nm.view.WheelView
-        android:id="@+id/alarmType"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"  />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/timeStart"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/bg_content"
+            android:gravity="left|center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1">
 
-    <TextView
-        android:id="@+id/timeStart"
-        style="@style/textview_white"
-        android:hint="@string/timeStart" />
+            <include layout="@layout/public_top_layout" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/timeEnd"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/alarm_type"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
 
-    <TextView
-        android:id="@+id/timeEnd"
-        style="@style/textview_white"
-        android:hint="@string/timeEnd" />
+            <com.rat.nm.view.WheelView
+                android:id="@+id/alarmType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp" />
 
-    <Button
-        android:id="@+id/queryBtn"
-        style="@style/button_blue"
-        android:layout_marginTop="40dp"
-        android:text="@string/query" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/device_type_small"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <com.rat.nm.view.WheelView
+                android:id="@+id/diviceType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/device_name_small"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <TextView
+                android:id="@+id/deviceName"
+                style="@style/textview_white"
+                android:hint="@string/device_name_small" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/timeStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <TextView
+                android:id="@+id/timeStart"
+                style="@style/textview_white"
+                android:hint="@string/timeStart" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/timeEnd"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <TextView
+                android:id="@+id/timeEnd"
+                style="@style/textview_white"
+                android:hint="@string/timeEnd" />
+
+            <Button
+                android:id="@+id/queryBtn"
+                style="@style/button_blue"
+                android:layout_marginTop="40dp"
+                android:text="@string/query" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

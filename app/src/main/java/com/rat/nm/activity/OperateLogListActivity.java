@@ -111,10 +111,10 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
         updateData(DataGetType.UPDATE);
     }
 
-        @Override
-        public void onLoadMore() {
-            currentPage++;
-            updateData(DataGetType.PAGE_DOWN);
+    @Override
+    public void onLoadMore() {
+        currentPage++;
+        updateData(DataGetType.PAGE_DOWN);
     }
 
     private void onLoad() {
@@ -136,7 +136,7 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        OperateLog operateLog = operateLogList.get((int) id);
+        OperateLog operateLog = (OperateLog) parent.getAdapter().getItem(position);
         Intent i = new Intent(OperateLogListActivity.this, OperateLogDetailActivity.class);
         i.putExtra("operateLog", operateLog);
         startActivity(i);

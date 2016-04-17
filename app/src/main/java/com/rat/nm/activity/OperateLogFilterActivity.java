@@ -37,7 +37,7 @@ public class OperateLogFilterActivity extends BaseActivity {
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
 
-    private static final String[] messageList = new String[]{"", OperateLogType.AUTO.getMessage(), OperateLogType.MANUAL.getMessage()};
+    private static final String[] messageList = new String[]{"All", OperateLogType.AUTO.getMessage(), OperateLogType.MANUAL.getMessage()};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +99,7 @@ public class OperateLogFilterActivity extends BaseActivity {
             case R.id.queryBtn:
                 i = new Intent(OperateLogFilterActivity.this, OperateLogListActivity.class);
                 i.putExtra("operateUser", operateLogUser.getText().toString().trim());
-                i.putExtra("operateType", operateLogType.getSeletedItem().toString().trim());
+                i.putExtra("operateType", operateLogType.getSeletedItem().toString().trim().replace("All", ""));
                 i.putExtra("timeStart", timeStart.getText().toString().trim());
                 i.putExtra("timeEnd", timeEnd.getText().toString().trim());
                 startActivity(i);

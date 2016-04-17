@@ -26,6 +26,13 @@ public class AlarmFilterActivity extends BaseActivity {
 
     @ViewInject(R.id.alarmType)
     private WheelView alarmType;
+    // TODO 需要发请求，获取设备类型列表，动态刷新
+    @ViewInject(R.id.deviceType)
+    private WheelView deviceType;
+    @ViewInject(R.id.deviceName)
+    // TODO 和黑总联调
+    private TextView deviceName;
+    // TODO WheelView 不能获取焦点
     @ViewInject(R.id.timeStart)
     private TextView timeStart;
     @ViewInject(R.id.timeEnd)
@@ -34,7 +41,7 @@ public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
 
-    private static final String[] messageList = new String[]{"", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
+    private static final String[] messageList = new String[]{"All", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +101,7 @@ public class AlarmFilterActivity extends BaseActivity {
                 break;
             case R.id.queryBtn:
                 i = new Intent(AlarmFilterActivity.this, AlarmListActivity.class);
-                i.putExtra("alarmType", alarmType.getSeletedItem().toString().trim());
+                i.putExtra("alarmType", alarmType.getSeletedItem().toString().trim().replace("All", ""));
                 i.putExtra("timeStart", timeStart.getText().toString().trim());
                 i.putExtra("timeEnd", timeEnd.getText().toString().trim());
                 startActivity(i);
