@@ -142,7 +142,6 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
                 }
                 customProgressDialog = new CustomProgressDialog(this, getString(R.string.loading));
                 customProgressDialog.show();
-                customProgressDialog.setCancelable(false);
                 LoginController loginController = new LoginController(getApplication(), handler);
                 loginController.login(userNameET.getText().toString(), passwordET.getText().toString(), 1);
                 break;

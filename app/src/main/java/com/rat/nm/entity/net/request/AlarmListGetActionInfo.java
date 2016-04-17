@@ -1,5 +1,6 @@
 package com.rat.nm.entity.net.request;
 
+import com.google.gson.annotations.SerializedName;
 import com.rat.nm.entity.net.request.base.ActionInfo;
 
 /**
@@ -9,7 +10,9 @@ import com.rat.nm.entity.net.request.base.ActionInfo;
  */
 public class AlarmListGetActionInfo extends ActionInfo {
     private String alarmType;
+    @SerializedName("alarmStart")
     private String timeStart;
+    @SerializedName("alarmEnd")
     private String timeEnd;
     private int totalPage;//总页数
     private int currentPage;//当前页

@@ -1,5 +1,6 @@
 package com.rat.nm.entity.net.request;
 
+import com.google.gson.annotations.SerializedName;
 import com.rat.nm.entity.net.request.base.ActionInfo;
 
 /**
@@ -10,7 +11,9 @@ import com.rat.nm.entity.net.request.base.ActionInfo;
 public class OperateLogListGetActionInfo extends ActionInfo {
     private String operateUser;
     private String operateType;
+    @SerializedName("operStart")
     private String timeStart;
+    @SerializedName("operEnd")
     private String timeEnd;
 
     private int totalPage;//总页数
