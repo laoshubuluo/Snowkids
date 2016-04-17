@@ -111,6 +111,7 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
 
     @Override
     public void onLoadMore() {
+        currentPage++;
         updateData(DataGetType.PAGE_DOWN);
     }
 
@@ -167,10 +168,10 @@ public class AlarmListActivity extends BaseActivity implements AdapterView.OnIte
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {
                     adapter.modifyData(alarmList, true);
-                    initCountView(alarmList);
+                    initCountView(adapter.getList());
                 } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType())) {
-                    adapter.modifyData(alarmList, true);
-                    initCountView(alarmList);
+                    adapter.modifyData(alarmList, false);
+                    initCountView(adapter.getList());
                 }
 
                 // 判断数据获取状态（无数据或无更多数据）

@@ -26,7 +26,6 @@ public class DeviceTypeListAdapter extends BaseAdapter {
     private ViewHolder viewHolder;
     public ImageLoader imageLoader;
 
-
     public DeviceTypeListAdapter(Context context, List<DeviceType> list) {
         this.context = context;
         this.list = list;
@@ -55,6 +54,10 @@ public class DeviceTypeListAdapter extends BaseAdapter {
             }
         }
         notifyDataSetChanged();
+    }
+
+    public List<DeviceType> getList() {
+        return list;
     }
 
     public View getView(final int position, View convertView, ViewGroup parent) {

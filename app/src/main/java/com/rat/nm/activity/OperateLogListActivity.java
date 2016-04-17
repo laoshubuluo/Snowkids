@@ -115,6 +115,7 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
 
     @Override
     public void onLoadMore() {
+        currentPage++;
         updateData(DataGetType.PAGE_DOWN);
     }
 
@@ -171,10 +172,10 @@ public class OperateLogListActivity extends BaseActivity implements AdapterView.
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {
                     adapter.modifyData(operateLogList, true);
-                    initCountView(operateLogList);
+                    initCountView(adapter.getList());
                 } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType())) {
-                    adapter.modifyData(operateLogList, true);
-                    initCountView(operateLogList);
+                    adapter.modifyData(operateLogList, false);
+                    initCountView(adapter.getList());
                 }
 
                 // 判断数据获取状态（无数据或无更多数据）

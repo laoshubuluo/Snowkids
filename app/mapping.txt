@@ -14069,13 +14069,11 @@ com.rat.nm.activity.LoginActivity -> com.rat.nm.activity.LoginActivity:
 com.rat.nm.activity.MainActivity -> com.rat.nm.activity.MainActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView searchET -> g
-    com.rat.nm.view.MenuItemView profileMIV -> h
-    com.rat.nm.view.MenuItemView deviceTypeMIV -> i
-    com.rat.nm.view.MenuItemView deviceMIV -> j
-    com.rat.nm.view.MenuItemView alarmMIV -> k
-    com.rat.nm.view.MenuItemView operateLogMIV -> l
-    com.rat.nm.view.MenuItemView settingsMIV -> m
-    android.widget.TextView$OnEditorActionListener actionListener -> n
+    com.rat.nm.view.MenuItemView deviceTypeMIV -> h
+    com.rat.nm.view.MenuItemView alarmMIV -> i
+    com.rat.nm.view.MenuItemView operateLogMIV -> j
+    com.rat.nm.view.MenuItemView settingsMIV -> k
+    android.widget.TextView$OnEditorActionListener actionListener -> l
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14145,6 +14143,7 @@ com.rat.nm.activity.SettingsActivity -> com.rat.nm.activity.SettingsActivity:
     android.widget.ImageView receivePushMessageIV -> i
     com.rat.nm.view.WheelView operateEnvironment -> j
     android.widget.EditText serverIpET -> k
+    android.widget.Button logoutBtn -> l
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14198,6 +14197,7 @@ com.rat.nm.adapter.AlarmListAdapter -> com.rat.nm.a.a:
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
+    java.util.List getList() -> a
     void modifyData(java.util.List,boolean) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
 com.rat.nm.adapter.AlarmListAdapter$1 -> com.rat.nm.a.a$1:
@@ -14226,6 +14226,7 @@ com.rat.nm.adapter.DeviceListAdapter -> com.rat.nm.a.b:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     void modifyData(java.util.List,boolean) -> a
+    java.util.List getList() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
 com.rat.nm.adapter.DeviceListAdapter$1 -> com.rat.nm.a.b$1:
 com.rat.nm.adapter.DeviceListAdapter$ViewHolder -> com.rat.nm.a.b$a:
@@ -14251,6 +14252,7 @@ com.rat.nm.adapter.DeviceTypeListAdapter -> com.rat.nm.a.c:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     void modifyData(java.util.List,boolean) -> a
+    java.util.List getList() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
 com.rat.nm.adapter.DeviceTypeListAdapter$1 -> com.rat.nm.a.c$1:
 com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder -> com.rat.nm.a.c$a:
@@ -14275,6 +14277,7 @@ com.rat.nm.adapter.OperateLogListAdapter -> com.rat.nm.a.d:
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     void modifyData(java.util.List,boolean) -> a
+    java.util.List getList() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
 com.rat.nm.adapter.OperateLogListAdapter$1 -> com.rat.nm.a.d$1:
 com.rat.nm.adapter.OperateLogListAdapter$ViewHolder -> com.rat.nm.a.d$a:
@@ -14787,6 +14790,7 @@ com.rat.nm.util.AppUtils -> com.rat.nm.e.a:
     void setUserToken(java.lang.String) -> b
     com.rat.nm.entity.model.Environment getUserEnvironment() -> f
     void setUserEnvironment(com.rat.nm.entity.model.Environment) -> a
+    void setUserEnvironment4Update(com.rat.nm.entity.model.Environment) -> b
     java.lang.String getServerIp() -> g
     void setServerIp(java.lang.String) -> c
 com.rat.nm.util.DateUtil -> com.rat.nm.e.b:
@@ -14825,7 +14829,7 @@ com.rat.nm.util.UserUtils -> com.rat.nm.e.i:
     android.content.Context context -> b
     com.rat.nm.util.UserUtils getInstance(android.content.Context) -> a
     boolean isTokenError(int,java.lang.String) -> a
-    void loginOut() -> a
+    void logout() -> a
 com.rat.nm.util.XXTEA -> com.rat.nm.e.j:
     int MX(int,int,int,int,int,int[]) -> a
     byte[] encrypt(byte[],byte[]) -> a
@@ -14857,7 +14861,6 @@ com.rat.nm.view.MenuItemView -> com.rat.nm.view.MenuItemView:
     com.jeremyfeinstein.slidingmenu.lib.SlidingMenu menu -> g
     android.view.View$OnTouchListener onTouchListener -> a
     void initView(int) -> a
-    void initClickView(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu) -> a
     android.widget.FrameLayout access$000(com.rat.nm.view.MenuItemView) -> a
     int access$100(com.rat.nm.view.MenuItemView) -> b
     com.jeremyfeinstein.slidingmenu.lib.SlidingMenu access$200(com.rat.nm.view.MenuItemView) -> c

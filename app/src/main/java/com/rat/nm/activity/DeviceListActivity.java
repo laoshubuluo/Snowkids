@@ -108,6 +108,7 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
 
     @Override
     public void onLoadMore() {
+        currentPage++;
         updateData(DataGetType.PAGE_DOWN);
     }
 
@@ -164,10 +165,10 @@ public class DeviceListActivity extends BaseActivity implements AdapterView.OnIt
                 // 刷新列表
                 if (dataGetType.equals(DataGetType.UPDATE.getType())) {
                     adapter.modifyData(deviceList, true);
-                    initCountView(deviceList);
+                    initCountView(adapter.getList());
                 } else if (dataGetType.equals(DataGetType.PAGE_DOWN.getType())) {
-                    adapter.modifyData(deviceList, true);
-                    initCountView(deviceList);
+                    adapter.modifyData(deviceList, false);
+                    initCountView(adapter.getList());
                 }
                 // 判断数据获取状态（无数据或无更多数据）
                 // 无数据

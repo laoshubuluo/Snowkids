@@ -57,6 +57,10 @@ public class DeviceListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public List<Device> getList() {
+        return list;
+    }
+
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_device_list_item, null);

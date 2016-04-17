@@ -146,7 +146,7 @@ public class DeviceTypeListActivity extends BaseActivity implements AdapterView.
                 if (null == deviceTypeList)
                     deviceTypeList = new ArrayList<DeviceType>();
                 adapter.modifyData(deviceTypeList, true);
-                initCountView(deviceTypeList);
+                initCountView(adapter.getList());
                 // 是否存在数据
                 if (deviceTypeList.isEmpty()) {
                     empty.setVisibility(View.VISIBLE);

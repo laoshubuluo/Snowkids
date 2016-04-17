@@ -77,7 +77,7 @@ public class AlarmListGetRequest extends PostJsonRequest {
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putInt("totalPage", info.getTotalPage());
-                b.putInt("currentPage", info.getCurrentPage());
+                b.putInt("currentPage", currentPage);
                 b.putString("dataGetType", dataGetType == null ? "" : dataGetType.getType());
                 b.putSerializable("alarmList", (Serializable) info.getAlarmList());
                 msg.what = MessageSignConstant.ALARM_LIST_GET_SUCCESS;

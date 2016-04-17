@@ -75,7 +75,7 @@ public class DeviceListGetRequest extends PostJsonRequest {
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putInt("totalPage", info.getTotalPage());
-                b.putInt("currentPage", info.getCurrentPage());
+                b.putInt("currentPage", currentPage);
                 b.putString("dataGetType", dataGetType == null ? "" : dataGetType.getType());
                 b.putSerializable("deviceList", (Serializable) info.getDeviceList());
                 msg.what = MessageSignConstant.DEVICE_LIST_GET_SUCCESS;

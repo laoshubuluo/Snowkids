@@ -52,6 +52,10 @@ public class ParameterListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public List<Parameter> getList() {
+        return list;
+    }
+
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_parameter_list_item, null);

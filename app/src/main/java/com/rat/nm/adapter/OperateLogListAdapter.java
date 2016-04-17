@@ -55,6 +55,10 @@ public class OperateLogListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public List<OperateLog> getList() {
+        return list;
+    }
+
     public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.view_operate_log_list_item, null);

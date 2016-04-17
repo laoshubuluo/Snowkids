@@ -830,6 +830,7 @@ com.rat.nm.adapter.AlarmDetailAdapter$1
 com.rat.nm.adapter.AlarmDetailAdapter$ViewHolder
 com.rat.nm.adapter.ParameterListAdapter:
     44:53:public void modifyData(java.util.List,boolean)
+    56:56:public java.util.List getList()
 com.rat.nm.common.Actions
 com.rat.nm.common.ActivityResultConstant
 com.rat.nm.common.Constant
@@ -960,6 +961,7 @@ com.rat.nm.view.MenuItemView:
     public static final int SETTINGS
     private android.widget.Button messageBtn
     103:109:public void initData(int)
+    115:116:public void initClickView(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu)
 com.rat.nm.view.WheelView:
     public static final int OFF_SET_DEFAULT
     private static final int SCROLL_DIRECTION_UP

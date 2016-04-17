@@ -44,6 +44,10 @@ public class AlarmListAdapter extends BaseAdapter {
         return position;
     }
 
+    public List<Alarm> getList() {
+        return list;
+    }
+
     public void modifyData(List<Alarm> ls, boolean isClean) {
         if (isClean) {
             this.list.clear();

@@ -79,7 +79,7 @@ public class OperateLogListGetRequest extends PostJsonRequest {
             //响应正常
             if (ResponseConstant.SUCCESS == info.getCode()) {
                 b.putInt("totalPage", info.getTotalPage());
-                b.putInt("currentPage", info.getCurrentPage());
+                b.putInt("currentPage", currentPage);
                 b.putString("dataGetType", dataGetType == null ? "" : dataGetType.getType());
                 b.putSerializable("operateLogList", (Serializable) info.getOperateLogList());
                 msg.what = MessageSignConstant.OPERATE_LOG_LIST_GET_SUCCESS;

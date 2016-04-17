@@ -13671,7 +13671,6 @@ com.rat.networkmanager.R$id: int dateTV
 com.rat.networkmanager.R$id: int desTV
 com.rat.networkmanager.R$id: int deviceDescribe
 com.rat.networkmanager.R$id: int deviceListLV
-com.rat.networkmanager.R$id: int deviceMIV
 com.rat.networkmanager.R$id: int deviceModel
 com.rat.networkmanager.R$id: int deviceName
 com.rat.networkmanager.R$id: int deviceType
@@ -13746,6 +13745,7 @@ com.rat.networkmanager.R$id: int line_layout
 com.rat.networkmanager.R$id: int logTV
 com.rat.networkmanager.R$id: int loginBtn
 com.rat.networkmanager.R$id: int logo
+com.rat.networkmanager.R$id: int logoutBtn
 com.rat.networkmanager.R$id: int logoutLL
 com.rat.networkmanager.R$id: int m_background
 com.rat.networkmanager.R$id: int manage_app
@@ -13778,7 +13778,6 @@ com.rat.networkmanager.R$id: int other_operation
 com.rat.networkmanager.R$id: int parameterListLV
 com.rat.networkmanager.R$id: int passwordET
 com.rat.networkmanager.R$id: int phoneTV
-com.rat.networkmanager.R$id: int profileMIV
 com.rat.networkmanager.R$id: int queryBtn
 com.rat.networkmanager.R$id: int rec_install1
 com.rat.networkmanager.R$id: int rec_install2
@@ -13897,7 +13896,6 @@ com.rat.networkmanager.R$mipmap: int bg_welcome
 com.rat.networkmanager.R$mipmap: int button_bg_blue
 com.rat.networkmanager.R$mipmap: int button_bg_white
 com.rat.networkmanager.R$mipmap: int empty
-com.rat.networkmanager.R$mipmap: int filter_more
 com.rat.networkmanager.R$mipmap: int ic_launcher
 com.rat.networkmanager.R$mipmap: int img_default
 com.rat.networkmanager.R$mipmap: int login_bg_white
