@@ -13676,6 +13676,8 @@ com.rat.networkmanager.R$id: int deviceName
 com.rat.networkmanager.R$id: int deviceType
 com.rat.networkmanager.R$id: int deviceTypeListLV
 com.rat.networkmanager.R$id: int deviceTypeMIV
+com.rat.networkmanager.R$id: int diviceName
+com.rat.networkmanager.R$id: int diviceType
 com.rat.networkmanager.R$id: int down_click_linearLayout
 com.rat.networkmanager.R$id: int downlaod_progress_horizontal
 com.rat.networkmanager.R$id: int download_app_name
@@ -13826,6 +13828,7 @@ com.rat.networkmanager.R$id: int status_img
 com.rat.networkmanager.R$id: int status_txt
 com.rat.networkmanager.R$id: int sureTV
 com.rat.networkmanager.R$id: int timeEnd
+com.rat.networkmanager.R$id: int timePicker
 com.rat.networkmanager.R$id: int timeStart
 com.rat.networkmanager.R$id: int timeTV
 com.rat.networkmanager.R$id: int titleTV
@@ -13953,8 +13956,10 @@ com.rat.networkmanager.R$string: int device_list
 com.rat.networkmanager.R$string: int device_model_colon
 com.rat.networkmanager.R$string: int device_name_colon
 com.rat.networkmanager.R$string: int device_name_is_null
+com.rat.networkmanager.R$string: int device_name_small
 com.rat.networkmanager.R$string: int device_type
 com.rat.networkmanager.R$string: int device_type_colon
+com.rat.networkmanager.R$string: int device_type_small
 com.rat.networkmanager.R$string: int empty
 com.rat.networkmanager.R$string: int footer_hint_load_normal
 com.rat.networkmanager.R$string: int footer_hint_load_ready
@@ -14013,6 +14018,7 @@ com.rat.networkmanager.R$style: int button_white
 com.rat.networkmanager.R$style: int listview_in_root_layout
 com.rat.networkmanager.R$style: int promptDialog
 com.rat.networkmanager.R$style: int textview_white
+com.rat.networkmanager.R$style: int textview_white_no_margin
 com.rat.networkmanager.R$style: int wh_mm
 com.rat.networkmanager.R$style: int wh_ww
 com.rat.networkmanager.R$styleable: int[] SlidingMenu
@@ -14094,7 +14100,6 @@ com.rat.nm.appmanager.CrashHandler: void uncaughtException(java.lang.Thread,java
 com.rat.nm.appmanager.CrashHandler: boolean handleException(java.lang.Throwable)
 com.rat.nm.appmanager.CrashHandler: void collectDeviceInfo(android.content.Context)
 com.rat.nm.appmanager.CrashHandler: java.lang.String saveCrashInfo2File(java.lang.Throwable)
-com.rat.nm.appmanager.CrashHandler: android.content.Context access$000(com.rat.nm.appmanager.CrashHandler)
 com.rat.nm.appmanager.CrashHandler: void <clinit>()
 com.rat.nm.appmanager.CrashHandler$1
 com.rat.nm.appmanager.CrashHandler$1: com.rat.nm.appmanager.CrashHandler this$0
@@ -14118,7 +14123,6 @@ com.rat.nm.entity.enums.AlarmType: void setMessage(java.lang.String)
 com.rat.nm.entity.enums.AlarmType: void <clinit>()
 com.rat.nm.entity.enums.DataGetType
 com.rat.nm.entity.enums.DataGetType: com.rat.nm.entity.enums.DataGetType PAGE_DOWN
-com.rat.nm.entity.enums.DataGetType: com.rat.nm.entity.enums.DataGetType PAGE_UP
 com.rat.nm.entity.enums.DataGetType: com.rat.nm.entity.enums.DataGetType UPDATE
 com.rat.nm.entity.enums.DataGetType: java.lang.String type
 com.rat.nm.entity.enums.DataGetType: com.rat.nm.entity.enums.DataGetType[] $VALUES

@@ -13937,16 +13937,24 @@ com.rat.nm.activity.AlarmFilterActivity -> com.rat.nm.activity.AlarmFilterActivi
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
     com.rat.nm.view.WheelView alarmType -> h
-    android.widget.TextView timeStart -> i
-    android.widget.TextView timeEnd -> j
-    android.widget.Button queryBtn -> k
-    java.lang.String[] messageList -> l
+    com.rat.nm.view.WheelView deviceType -> i
+    com.rat.nm.view.WheelView deviceName -> j
+    android.widget.TextView timeStart -> k
+    android.widget.TextView timeEnd -> l
+    android.widget.Button queryBtn -> m
+    java.lang.String[] messageList -> n
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
     void onClick(android.view.View) -> onClick
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
 com.rat.nm.activity.AlarmFilterActivity$1 -> com.rat.nm.activity.a:
+    com.rat.nm.activity.AlarmFilterActivity this$0 -> a
+    void onSelected(int,java.lang.String) -> a
+com.rat.nm.activity.AlarmFilterActivity$2 -> com.rat.nm.activity.b:
+    com.rat.nm.activity.AlarmFilterActivity this$0 -> a
+    void onSelected(int,java.lang.String) -> a
+com.rat.nm.activity.AlarmFilterActivity$3 -> com.rat.nm.activity.c:
     com.rat.nm.activity.AlarmFilterActivity this$0 -> a
     void onSelected(int,java.lang.String) -> a
 com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
@@ -13974,7 +13982,7 @@ com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.AlarmListActivity$1 -> com.rat.nm.activity.b:
+com.rat.nm.activity.AlarmListActivity$1 -> com.rat.nm.activity.d:
     com.rat.nm.activity.AlarmListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.rat.nm.activity.DeviceDetailActivity -> com.rat.nm.activity.DeviceDetailActivity:
@@ -14024,7 +14032,7 @@ com.rat.nm.activity.DeviceListActivity -> com.rat.nm.activity.DeviceListActivity
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.DeviceListActivity$1 -> com.rat.nm.activity.c:
+com.rat.nm.activity.DeviceListActivity$1 -> com.rat.nm.activity.e:
     com.rat.nm.activity.DeviceListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.rat.nm.activity.DeviceTypeListActivity -> com.rat.nm.activity.DeviceTypeListActivity:
@@ -14047,7 +14055,7 @@ com.rat.nm.activity.DeviceTypeListActivity -> com.rat.nm.activity.DeviceTypeList
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.DeviceTypeListActivity$1 -> com.rat.nm.activity.d:
+com.rat.nm.activity.DeviceTypeListActivity$1 -> com.rat.nm.activity.f:
     com.rat.nm.activity.DeviceTypeListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.rat.nm.activity.LoginActivity -> com.rat.nm.activity.LoginActivity:
@@ -14078,7 +14086,7 @@ com.rat.nm.activity.MainActivity -> com.rat.nm.activity.MainActivity:
     void initView() -> b
     void initData() -> c
     android.widget.TextView access$000(com.rat.nm.activity.MainActivity) -> a
-com.rat.nm.activity.MainActivity$1 -> com.rat.nm.activity.e:
+com.rat.nm.activity.MainActivity$1 -> com.rat.nm.activity.g:
     com.rat.nm.activity.MainActivity this$0 -> a
     boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent) -> onEditorAction
 com.rat.nm.activity.OperateLogDetailActivity -> com.rat.nm.activity.OperateLogDetailActivity:
@@ -14104,7 +14112,7 @@ com.rat.nm.activity.OperateLogFilterActivity -> com.rat.nm.activity.OperateLogFi
     void initData() -> c
     void onClick(android.view.View) -> onClick
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-com.rat.nm.activity.OperateLogFilterActivity$1 -> com.rat.nm.activity.f:
+com.rat.nm.activity.OperateLogFilterActivity$1 -> com.rat.nm.activity.h:
     com.rat.nm.activity.OperateLogFilterActivity this$0 -> a
     void onSelected(int,java.lang.String) -> a
 com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogListActivity:
@@ -14133,7 +14141,7 @@ com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogList
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.OperateLogListActivity$1 -> com.rat.nm.activity.g:
+com.rat.nm.activity.OperateLogListActivity$1 -> com.rat.nm.activity.i:
     com.rat.nm.activity.OperateLogListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
 com.rat.nm.activity.SettingsActivity -> com.rat.nm.activity.SettingsActivity:
@@ -14148,7 +14156,7 @@ com.rat.nm.activity.SettingsActivity -> com.rat.nm.activity.SettingsActivity:
     void initView() -> b
     void initData() -> c
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.SettingsActivity$1 -> com.rat.nm.activity.h:
+com.rat.nm.activity.SettingsActivity$1 -> com.rat.nm.activity.j:
     com.rat.nm.entity.model.Environment val$environment -> a
     com.rat.nm.activity.SettingsActivity this$0 -> b
     void onSelected(int,java.lang.String) -> a
@@ -14158,7 +14166,7 @@ com.rat.nm.activity.WelcomeActivity -> com.rat.nm.activity.WelcomeActivity:
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> a
     void initData() -> b
-com.rat.nm.activity.WelcomeActivity$1 -> com.rat.nm.activity.i:
+com.rat.nm.activity.WelcomeActivity$1 -> com.rat.nm.activity.k:
     com.rat.nm.activity.WelcomeActivity this$0 -> a
     void run() -> run
 com.rat.nm.activity.base.BaseActivity -> com.rat.nm.activity.base.BaseActivity:
@@ -14329,7 +14337,6 @@ com.rat.nm.appmanager.CrashHandler -> com.rat.nm.appmanager.CrashHandler:
     boolean handleException(java.lang.Throwable) -> handleException
     void collectDeviceInfo(android.content.Context) -> collectDeviceInfo
     java.lang.String saveCrashInfo2File(java.lang.Throwable) -> saveCrashInfo2File
-    android.content.Context access$000(com.rat.nm.appmanager.CrashHandler) -> access$000
 com.rat.nm.appmanager.CrashHandler$1 -> com.rat.nm.appmanager.CrashHandler$1:
     com.rat.nm.appmanager.CrashHandler this$0 -> this$0
     void run() -> run
@@ -14371,7 +14378,6 @@ com.rat.nm.entity.enums.AlarmType -> com.rat.nm.entity.enums.AlarmType:
     void setMessage(java.lang.String) -> setMessage
 com.rat.nm.entity.enums.DataGetType -> com.rat.nm.entity.enums.DataGetType:
     com.rat.nm.entity.enums.DataGetType PAGE_DOWN -> PAGE_DOWN
-    com.rat.nm.entity.enums.DataGetType PAGE_UP -> PAGE_UP
     com.rat.nm.entity.enums.DataGetType UPDATE -> UPDATE
     java.lang.String type -> type
     com.rat.nm.entity.enums.DataGetType[] $VALUES -> $VALUES

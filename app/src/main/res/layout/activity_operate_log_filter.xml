@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/operate_log_type"
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/operate_log_user"
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/timeStart"
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="@string/timeEnd"
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
@@ -75,6 +75,6 @@
     <Button
         android:id="@+id/queryBtn"
         style="@style/button_blue"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/query" />
 </LinearLayout>

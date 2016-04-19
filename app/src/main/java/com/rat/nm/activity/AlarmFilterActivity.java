@@ -26,13 +26,10 @@ public class AlarmFilterActivity extends BaseActivity {
 
     @ViewInject(R.id.alarmType)
     private WheelView alarmType;
-    // TODO 需要发请求，获取设备类型列表，动态刷新
     @ViewInject(R.id.deviceType)
     private WheelView deviceType;
     @ViewInject(R.id.deviceName)
-    // TODO 和黑总联调
-    private TextView deviceName;
-    // TODO WheelView 不能获取焦点
+    private WheelView deviceName;
     @ViewInject(R.id.timeStart)
     private TextView timeStart;
     @ViewInject(R.id.timeEnd)
@@ -41,7 +38,7 @@ public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
 
-    private static final String[] messageList = new String[]{"All", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
+    private static final String[] alarmTypeMsgList = new String[]{"All", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,9 +63,27 @@ public class AlarmFilterActivity extends BaseActivity {
         queryBtn.setOnClickListener(this);
 
         alarmType.setOffset(1);
-        alarmType.setItems(Arrays.asList(messageList));
+        alarmType.setItems(Arrays.asList(alarmTypeMsgList));
         alarmType.setSeletion(1);
         alarmType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+            }
+        });
+        deviceType.setOffset(1);
+        deviceType.setItems(Arrays.asList(alarmTypeMsgList));
+        deviceType.setSeletion(1);
+        deviceType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+            }
+        });
+        deviceName.setOffset(1);
+        deviceName.setItems(Arrays.asList(alarmTypeMsgList));
+        deviceName.setSeletion(1);
+        deviceName.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
             @Override
             public void onSelected(int selectedIndex, String item) {
                 LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
