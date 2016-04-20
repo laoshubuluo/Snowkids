@@ -2,9 +2,11 @@ package com.rat.nm.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -12,11 +14,19 @@ import com.rat.networkmanager.R;
 import com.rat.nm.activity.base.BaseActivity;
 import com.rat.nm.activity.base.DateInputActivity;
 import com.rat.nm.common.ActivityResultConstant;
+import com.rat.nm.common.MessageSignConstant;
+import com.rat.nm.controller.DeviceController;
 import com.rat.nm.entity.enums.AlarmType;
+import com.rat.nm.entity.enums.DataGetType;
+import com.rat.nm.entity.model.Device;
+import com.rat.nm.entity.model.DeviceType;
 import com.rat.nm.util.LogUtil;
+import com.rat.nm.util.UserUtils;
 import com.rat.nm.view.WheelView;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.top_name)
@@ -38,7 +48,13 @@ public class AlarmFilterActivity extends BaseActivity {
     @ViewInject(R.id.queryBtn)
     private Button queryBtn;
 
-    private static final String[] alarmTypeMsgList = new String[]{"All", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
+    private List<DeviceType> deviceTypeList;
+    private List<Device> deviceList;
+    private DeviceController controller;
+
+    private String[] alarmTypeMsgList = new String[]{"All", AlarmType.INFO.getMessage(), AlarmType.ALARM.getMessage(), AlarmType.FAULT.getMessage()};
+    private List<String> deviceTypeMsgList;
+    private List<String> deviceNameMsgList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +63,7 @@ public class AlarmFilterActivity extends BaseActivity {
 
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
+        controller = new DeviceController(getApplication(), handler);
         initView();
         initData();
     }
@@ -71,30 +88,62 @@ public class AlarmFilterActivity extends BaseActivity {
                 LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
             }
         });
-        deviceType.setOffset(1);
-        deviceType.setItems(Arrays.asList(alarmTypeMsgList));
-        deviceType.setSeletion(1);
-        deviceType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
-            @Override
-            public void onSelected(int selectedIndex, String item) {
-                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
-            }
-        });
-        deviceName.setOffset(1);
-        deviceName.setItems(Arrays.asList(alarmTypeMsgList));
-        deviceName.setSeletion(1);
-        deviceName.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
-            @Override
-            public void onSelected(int selectedIndex, String item) {
-                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
-            }
-        });
     }
 
     /**
      * 初始化数据
      */
     public void initData() {
+//        initDeviceTypeData();
+//        initDeviceNameData();
+        controller.getTypeList();
+    }
+
+    /**
+     * 初始化设备类型数据
+     */
+    public void initDeviceTypeData() {
+        deviceTypeMsgList = new ArrayList<String>();
+        deviceTypeMsgList.add("All");
+        if (null != deviceTypeList && deviceTypeList.size() > 0) {
+            for (DeviceType deviceType : deviceTypeList) {
+                deviceTypeMsgList.add(deviceType.getName());
+            }
+        }
+        deviceType.setOffset(1);
+        deviceType.setItems(deviceTypeMsgList);
+        deviceType.setSeletion(0);
+        deviceType.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+                if (1 != selectedIndex) { // 非选中All
+                    controller.getList(0, 0, DataGetType.UPDATE, item, "");
+                }
+            }
+        });
+    }
+
+    /**
+     * 初始化设备数据
+     */
+    public void initDeviceNameData() {
+        deviceNameMsgList = new ArrayList<String>();
+        deviceNameMsgList.add("All");
+        if (null != deviceList && deviceList.size() > 0) {
+            for (Device device : deviceList) {
+                deviceNameMsgList.add(device.getNameInEN());
+            }
+        }
+        deviceName.setOffset(1);
+        deviceName.setItems(deviceNameMsgList);
+        deviceName.setSeletion(0);
+        deviceName.setOnWheelViewListener(new WheelView.OnWheelViewListener() {
+            @Override
+            public void onSelected(int selectedIndex, String item) {
+                LogUtil.i("selectedIndex: " + selectedIndex + ", item: " + item);
+            }
+        });
     }
 
     @Override
@@ -119,6 +168,10 @@ public class AlarmFilterActivity extends BaseActivity {
                 i.putExtra("alarmType", alarmType.getSeletedItem().toString().trim().replace("All", ""));
                 i.putExtra("timeStart", timeStart.getText().toString().trim());
                 i.putExtra("timeEnd", timeEnd.getText().toString().trim());
+                if (1 != deviceName.getSeletedIndex()) { // 非选中All
+                    Device device = deviceList.get(deviceName.getSeletedIndex() - 1 - 1);
+                    i.putExtra("deviceId", device.getId());
+                }
                 startActivity(i);
                 break;
             default:
@@ -145,5 +198,54 @@ public class AlarmFilterActivity extends BaseActivity {
             default:
                 break;
         }
+    }
+
+
+    /**
+     * Handler发送message的逻辑处理方法
+     *
+     * @param msg
+     * @return
+     */
+    @Override
+    public boolean handleMessage(Message msg) {
+        int code;
+        String message;
+        switch (msg.what) {
+            case MessageSignConstant.DEVICE_TYPE_LIST_GET_SUCCESS:
+                deviceTypeList = (List<DeviceType>) msg.getData().getSerializable("deviceTypeList");
+                initDeviceTypeData();
+                break;
+            case MessageSignConstant.DEVICE_TYPE_LIST_GET_FAILURE:
+                code = msg.getData().getInt("code");
+                message = msg.getData().getString("message");
+                // 检查token是否失效
+                if (UserUtils.getInstance(AlarmFilterActivity.this).isTokenError(code, message))
+                    break;
+                promptDialog.initData("", message);
+                promptDialog.show();
+                break;
+            case MessageSignConstant.DEVICE_LIST_GET_SUCCESS:
+                deviceList = (List<Device>) msg.getData().getSerializable("deviceList");
+                initDeviceNameData();
+                break;
+            case MessageSignConstant.DEVICE_LIST_GET_FAILURE:
+                code = msg.getData().getInt("code");
+                message = msg.getData().getString("message");
+                // 检查token是否失效
+                if (UserUtils.getInstance(AlarmFilterActivity.this).isTokenError(code, message))
+                    break;
+                promptDialog.initData("", message);
+                promptDialog.show();
+                break;
+            case MessageSignConstant.SERVER_OR_NETWORK_ERROR:
+                promptDialog.initData("", msg.getData().getString("message"));
+                promptDialog.show();
+                break;
+            case MessageSignConstant.UNKNOWN_ERROR:
+                Toast.makeText(getApplication(), getString(R.string.unknown_error), Toast.LENGTH_LONG).show();
+                break;
+        }
+        return false;
     }
 }

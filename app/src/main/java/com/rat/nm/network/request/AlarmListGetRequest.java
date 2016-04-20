@@ -32,8 +32,9 @@ public class AlarmListGetRequest extends PostJsonRequest {
     private String alarmType;
     private String timeStart;
     private String timeEnd;
+    private String deviceId;
 
-    public AlarmListGetRequest(Handler handler, Context context, int totalPage, int currentPage, String alarmType, String timeStart, String timeEnd, DataGetType dataGetType) {
+    public AlarmListGetRequest(Handler handler, Context context, int totalPage, int currentPage, String alarmType, String timeStart, String timeEnd, String deviceId, DataGetType dataGetType) {
         this.handler = handler;
         this.context = context;
         this.totalPage = totalPage;
@@ -42,6 +43,7 @@ public class AlarmListGetRequest extends PostJsonRequest {
         this.alarmType = alarmType;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
+        this.deviceId = deviceId;
         if (dataGetType.equals(DataGetType.UPDATE)) {
             this.totalPage = 0;
             this.currentPage = 0;
@@ -52,7 +54,7 @@ public class AlarmListGetRequest extends PostJsonRequest {
 
     @Override
     protected String getParamsJson() {
-        AlarmListGetActionInfo actionInfo = new AlarmListGetActionInfo(0, alarmType, timeStart, timeEnd, totalPage, currentPage, dataGetType.getType());
+        AlarmListGetActionInfo actionInfo = new AlarmListGetActionInfo(0, alarmType, timeStart, timeEnd, deviceId, totalPage, currentPage, dataGetType.getType());
         RequestInfo r = new RequestInfo(context, actionInfo);
         return GsonUtil.toJson(r);
     }

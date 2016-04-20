@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
@@ -30,7 +31,8 @@ public class DateInputActivity extends BaseActivity {
     private TextView dateTV;
     @ViewInject(R.id.datePicker)
     private DatePicker datePicker;
-
+    @ViewInject(R.id.timePicker)
+    private TimePicker timePicker;
     private String date;
 
     @Override

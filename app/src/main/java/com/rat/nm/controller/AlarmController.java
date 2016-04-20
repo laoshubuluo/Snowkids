@@ -33,8 +33,8 @@ public class AlarmController {
     /**
      * 告警获取
      */
-    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String alarmType, String timeStart, String timeEnd) {
-        AlarmListGetRequest request = new AlarmListGetRequest(handler, context, totalPage, currentPage, alarmType, timeStart, timeEnd, dataGetType);
+    public void getList(int totalPage, int currentPage, DataGetType dataGetType, String alarmType, String timeStart, String timeEnd, String deviceId) {
+        AlarmListGetRequest request = new AlarmListGetRequest(handler, context, totalPage, currentPage, alarmType, timeStart, timeEnd, deviceId, dataGetType);
         VolleyManager.getInstance(context).add2RequestQueue(request.getRequest());
     }
 }
