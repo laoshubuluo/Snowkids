@@ -74,14 +74,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/controller/AlarmController.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/controller/AlarmController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/AlarmFilterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/AlarmFilterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/AlarmListActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/AlarmListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/entity/net/request/AlarmListGetActionInfo.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/entity/net/request/AlarmListGetActionInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/AlarmListGetRequest.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/network/request/AlarmListGetRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/base/DateInputActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/base/DateInputActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rat/nm/activity/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_alarm_filter.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_alarm_filter.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NetworkManager.iws" />
@@ -3773,7 +3765,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461082435724</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="alarm filter activity modify">
+      <created>1461163024885</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1461163024885</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
