@@ -13676,8 +13676,6 @@ com.rat.networkmanager.R$id: int deviceName
 com.rat.networkmanager.R$id: int deviceType
 com.rat.networkmanager.R$id: int deviceTypeListLV
 com.rat.networkmanager.R$id: int deviceTypeMIV
-com.rat.networkmanager.R$id: int diviceName
-com.rat.networkmanager.R$id: int diviceType
 com.rat.networkmanager.R$id: int down_click_linearLayout
 com.rat.networkmanager.R$id: int downlaod_progress_horizontal
 com.rat.networkmanager.R$id: int download_app_name
@@ -14291,10 +14289,11 @@ com.rat.nm.entity.net.request.AlarmListGetActionInfo
 com.rat.nm.entity.net.request.AlarmListGetActionInfo: java.lang.String alarmType
 com.rat.nm.entity.net.request.AlarmListGetActionInfo: java.lang.String timeStart
 com.rat.nm.entity.net.request.AlarmListGetActionInfo: java.lang.String timeEnd
+com.rat.nm.entity.net.request.AlarmListGetActionInfo: java.lang.String deviceId
 com.rat.nm.entity.net.request.AlarmListGetActionInfo: int totalPage
 com.rat.nm.entity.net.request.AlarmListGetActionInfo: int currentPage
 com.rat.nm.entity.net.request.AlarmListGetActionInfo: java.lang.String pageType
-com.rat.nm.entity.net.request.AlarmListGetActionInfo: AlarmListGetActionInfo(int,java.lang.String,java.lang.String,java.lang.String,int,int,java.lang.String)
+com.rat.nm.entity.net.request.AlarmListGetActionInfo: AlarmListGetActionInfo(int,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,int,java.lang.String)
 com.rat.nm.entity.net.request.DeviceGetActionInfo
 com.rat.nm.entity.net.request.DeviceGetActionInfo: java.lang.String deviceId
 com.rat.nm.entity.net.request.DeviceGetActionInfo: DeviceGetActionInfo(int,java.lang.String)

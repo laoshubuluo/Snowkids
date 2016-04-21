@@ -74,12 +74,7 @@ public class LoginActivity extends Activity implements Handler.Callback, View.On
     }
 
     public void initData() {
-        //TODO
-        userNameET.setText("wangguan001");
-        passwordET.setText("wangguan001");
-        AppUtils.getInstance().setServerIp("182.92.107.7:8080");
     }
-
 
     /**
      * Handler发送message的逻辑处理方法

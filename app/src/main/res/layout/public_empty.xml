@@ -19,6 +19,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/empty"
-        android:textColor="@color/gray"
+        android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
 </LinearLayout>

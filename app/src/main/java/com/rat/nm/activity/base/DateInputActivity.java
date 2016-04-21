@@ -35,6 +35,12 @@ public class DateInputActivity extends BaseActivity {
     private TimePicker timePicker;
     private String date;
 
+    private int yearInt;
+    private int monthInt;
+    private int dayInt;
+    private int hourInt;
+    private int minuteInt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +65,6 @@ public class DateInputActivity extends BaseActivity {
      * 初始化数据
      */
     private void initData() {
-        int yearInt;
-        int monthInt;
-        int dayInt;
         // 回显
         dateTV.setText(date);
         Calendar c = Calendar.getInstance();
@@ -77,16 +80,36 @@ public class DateInputActivity extends BaseActivity {
         yearInt = c.get(Calendar.YEAR);
         monthInt = c.get(Calendar.MONTH);
         dayInt = c.get(Calendar.DAY_OF_MONTH);
+        hourInt = c.get(Calendar.HOUR_OF_DAY);
+        minuteInt = c.get(Calendar.MINUTE);
         datePicker.init(yearInt, monthInt, dayInt, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                // 获取一个日历对象，并初始化为当前选中的时间
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(year, monthOfYear, dayOfMonth, 0, 0, 0);
-                date = DateUtil.dateToString(calendar.getTime());
-                dateTV.setText(date);
+                yearInt = year;
+                monthInt = monthOfYear;
+                dayInt = dayOfMonth;
+                updateDateView();
             }
         });
+        timePicker.setCurrentHour(hourInt);
+        timePicker.setCurrentMinute(minuteInt);
+        timePicker.setIs24HourView(false);
+        timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                hourInt = hourOfDay;
+                minuteInt = minute;
+                updateDateView();
+            }
+        });
+    }
+
+    private void updateDateView() {
+        // 获取一个日历对象，并初始化为当前选中的时间
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(yearInt, monthInt, dayInt, hourInt, minuteInt, 0);
+        date = DateUtil.dateToString(calendar.getTime());
+        dateTV.setText(date);
     }
 
     @Override

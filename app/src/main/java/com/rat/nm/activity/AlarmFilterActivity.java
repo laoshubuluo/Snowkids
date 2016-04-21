@@ -94,8 +94,8 @@ public class AlarmFilterActivity extends BaseActivity {
      * 初始化数据
      */
     public void initData() {
-//        initDeviceTypeData();
-//        initDeviceNameData();
+        initDeviceTypeData();
+        initDeviceNameData();
         controller.getTypeList();
     }
 
@@ -168,9 +168,12 @@ public class AlarmFilterActivity extends BaseActivity {
                 i.putExtra("alarmType", alarmType.getSeletedItem().toString().trim().replace("All", ""));
                 i.putExtra("timeStart", timeStart.getText().toString().trim());
                 i.putExtra("timeEnd", timeEnd.getText().toString().trim());
-                if (1 != deviceName.getSeletedIndex()) { // 非选中All
-                    Device device = deviceList.get(deviceName.getSeletedIndex() - 1 - 1);
+                int selectedIndex = deviceName.getSeletedIndex();
+                if (0 != selectedIndex) { // 非选中All
+                    Device device = deviceList.get(selectedIndex - 1);
                     i.putExtra("deviceId", device.getId());
+                } else {
+                    i.putExtra("deviceId", "");
                 }
                 startActivity(i);
                 break;
