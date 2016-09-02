@@ -91,7 +91,7 @@
             android:textSize="@dimen/font_17sp" />
     </RelativeLayout>
 
-    <com.rat.nm.view.WheelView
+    <com.rat.snowkids.view.WheelView
         android:id="@+id/operateEnvironment"
         android:layout_width="250dp"
         android:layout_height="wrap_content" />

@@ -17,7 +17,7 @@
             android:id="@+id/empty"
             layout="@layout/public_empty" />
 
-        <com.rat.nm.view.pull2refresh.XListView
+        <com.rat.snowkids.view.pull2refresh.XListView
             android:id="@+id/deviceTypeListLV"
             style="@style/listview_in_root_layout" />
 

@@ -110,7 +110,7 @@
 -dontwarn java.util.**
 
 #model层，避免混淆
--keep class com.rat.nm.entity.** { *; }
+-keep class snowkids.entity.** { *; }
 
 #注解，避免混淆
 -keepattributes *Annotation*
@@ -161,7 +161,7 @@
 }
 
 #文件缓存地址等，不混淆
--keep class com.rat.nm.appmanager.** { *; }
+-keep class snowkids.appmanager.** { *; }
 
 ######################### 自定义 end #########################################
 

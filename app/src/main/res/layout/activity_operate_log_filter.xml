@@ -19,7 +19,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/font_17sp" />
 
-    <com.rat.nm.view.WheelView
+    <com.rat.snowkids.view.WheelView
         android:id="@+id/operateLogType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

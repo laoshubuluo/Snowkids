@@ -810,71 +810,71 @@ com.nostra13.universalimageloader.utils.StorageUtils:
 com.rat.networkmanager.BuildConfig
 com.rat.networkmanager.Manifest
 com.rat.networkmanager.Manifest$permission
-com.rat.networkmanager.R
-com.rat.networkmanager.R$anim
-com.rat.networkmanager.R$attr
-com.rat.networkmanager.R$color
-com.rat.networkmanager.R$dimen
-com.rat.networkmanager.R$drawable
-com.rat.networkmanager.R$id
-com.rat.networkmanager.R$layout
-com.rat.networkmanager.R$mipmap
-com.rat.networkmanager.R$raw
-com.rat.networkmanager.R$string
-com.rat.networkmanager.R$style
-com.rat.networkmanager.R$styleable
-com.rat.nm.activity.DeviceDetailActivity:
+com.snowkids.snowkids.R
+com.snowkids.snowkids.R$anim
+com.snowkids.snowkids.R$attr
+com.snowkids.snowkids.R$color
+com.snowkids.snowkids.R$dimen
+com.snowkids.snowkids.R$drawable
+com.snowkids.snowkids.R$id
+com.snowkids.snowkids.R$layout
+com.snowkids.snowkids.R$mipmap
+com.snowkids.snowkids.R$raw
+com.snowkids.snowkids.R$string
+com.snowkids.snowkids.R$style
+com.snowkids.snowkids.R$styleable
+snowkids.activity.DeviceDetailActivity:
     private android.widget.LinearLayout empty
-com.rat.nm.adapter.AlarmDetailAdapter
-com.rat.nm.adapter.AlarmDetailAdapter$1
-com.rat.nm.adapter.AlarmDetailAdapter$ViewHolder
-com.rat.nm.adapter.ParameterListAdapter:
+snowkids.adapter.AlarmDetailAdapter
+snowkids.adapter.AlarmDetailAdapter$1
+snowkids.adapter.AlarmDetailAdapter$ViewHolder
+snowkids.adapter.ParameterListAdapter:
     44:53:public void modifyData(java.util.List,boolean)
     56:56:public java.util.List getList()
-com.rat.nm.common.Actions
-com.rat.nm.common.ActivityResultConstant
-com.rat.nm.common.Constant
-com.rat.nm.common.MessageSignConstant
-com.rat.nm.common.ResponseConstant
-com.rat.nm.common.WebConstant:
+snowkids.common.Actions
+snowkids.common.ActivityResultConstant
+snowkids.common.Constant
+snowkids.common.MessageSignConstant
+snowkids.common.ResponseConstant
+snowkids.common.WebConstant:
     12:13:private WebConstant()
-com.rat.nm.controller.AlarmController:
+snowkids.controller.AlarmController:
     31:31:public void get(java.lang.String)
-com.rat.nm.controller.OperateLogController:
+snowkids.controller.OperateLogController:
     31:31:public void get(java.lang.String)
-com.rat.nm.network.VolleyManager:
+snowkids.network.VolleyManager:
     46:47:public void cancelPendingRequests(java.lang.String)
-com.rat.nm.network.request.base.BaseVolleyGetRequest
-com.rat.nm.network.request.base.BaseVolleyPostRequest:
+snowkids.network.request.base.BaseVolleyGetRequest
+snowkids.network.request.base.BaseVolleyPostRequest:
     31:59:public byte[] addRequestPrefixData(java.lang.String)
-com.rat.nm.network.request.base.BaseVolleyRequest:
+snowkids.network.request.base.BaseVolleyRequest:
     public abstract java.lang.Object getRequest()
-com.rat.nm.network.request.base.GetStringRequest
-com.rat.nm.network.request.base.PostJsonRequest:
+snowkids.network.request.base.GetStringRequest
+snowkids.network.request.base.PostJsonRequest:
     34:34:public bridge synthetic java.lang.Object getRequest()
-com.rat.nm.network.request.base.PostStringRequest
-com.rat.nm.network.request.base.PostStringRequest$1
-com.rat.nm.network.request.base.VolleyErrorHelper:
+snowkids.network.request.base.PostStringRequest
+snowkids.network.request.base.PostStringRequest$1
+snowkids.network.request.base.VolleyErrorHelper:
     24:24:public VolleyErrorHelper()
     57:83:private static java.lang.String handleServerError(java.lang.Object,android.content.Context)
-com.rat.nm.network.request.base.VolleyErrorHelper$1
-com.rat.nm.util.AlbumImageLoader
-com.rat.nm.util.AlbumImageLoader$1
-com.rat.nm.util.AlbumImageLoader$1$1
-com.rat.nm.util.AlbumImageLoader$2
-com.rat.nm.util.AlbumImageLoader$3
-com.rat.nm.util.AlbumImageLoader$4
-com.rat.nm.util.AlbumImageLoader$ImageSize
-com.rat.nm.util.AlbumImageLoader$ImgBeanHolder
-com.rat.nm.util.AlbumImageLoader$Type
-com.rat.nm.util.AppUtils:
+snowkids.network.request.base.VolleyErrorHelper$1
+snowkids.util.AlbumImageLoader
+snowkids.util.AlbumImageLoader$1
+snowkids.util.AlbumImageLoader$1$1
+snowkids.util.AlbumImageLoader$2
+snowkids.util.AlbumImageLoader$3
+snowkids.util.AlbumImageLoader$4
+snowkids.util.AlbumImageLoader$ImageSize
+snowkids.util.AlbumImageLoader$ImgBeanHolder
+snowkids.util.AlbumImageLoader$Type
+snowkids.util.AppUtils:
     70:71:public static void reset()
-    79:79:public com.rat.nm.appmanager.Application getApplication()
+    79:79:public snowkids.appmanager.Application getApplication()
     88:88:public int getCurrentVersion()
-com.rat.nm.util.BitmapUtils
-com.rat.nm.util.CharacterParser
-com.rat.nm.util.CollectionUtils
-com.rat.nm.util.DateUtil:
+snowkids.util.BitmapUtils
+snowkids.util.CharacterParser
+snowkids.util.CollectionUtils
+snowkids.util.DateUtil:
     private static final int ONEDAY
     26:27:private DateUtil()
     33:34:public static java.lang.String getStringToday()
@@ -892,35 +892,35 @@ com.rat.nm.util.DateUtil:
     224:229:public static java.lang.String longToString(long,java.lang.String)
     234:237:public static java.util.Date longToDate(long,java.lang.String)
     241:241:public static java.lang.String dateToString(java.util.Date,java.lang.String)
-com.rat.nm.util.DensityUtil
-com.rat.nm.util.DimensionUtils
-com.rat.nm.util.DisplayDataUtil
-com.rat.nm.util.DownLoadUtil
-com.rat.nm.util.GsonUtil:
+snowkids.util.DensityUtil
+snowkids.util.DimensionUtils
+snowkids.util.DisplayDataUtil
+snowkids.util.DownLoadUtil
+snowkids.util.GsonUtil:
     13:14:private GsonUtil()
-com.rat.nm.util.HttpUtils
-com.rat.nm.util.ImageUtil:
+snowkids.util.HttpUtils
+snowkids.util.ImageUtil:
     28:29:private ImageUtil()
-com.rat.nm.util.LogUtil:
+snowkids.util.LogUtil:
     private static final java.lang.String TAG
     15:16:private LogUtil()
     25:28:public static void v(java.lang.String)
     31:34:public static void d(java.lang.String)
     43:46:public static void w(java.lang.String)
-com.rat.nm.util.NetworkUtil:
+snowkids.util.NetworkUtil:
     16:16:public NetworkUtil()
     20:27:public static boolean isNetworkConnected(android.content.Context)
     32:39:public static boolean isWifiConnected(android.content.Context)
     44:51:public static boolean isMobileConnected(android.content.Context)
     59:66:public static int getConnectedType(android.content.Context)
     71:89:public static int getWifiInfo(android.content.Context)
-com.rat.nm.util.PasswordUtil
-com.rat.nm.util.PropertiesUtil
-com.rat.nm.util.ScreenShot
-com.rat.nm.util.StorageUtil:
+snowkids.util.PasswordUtil
+snowkids.util.PropertiesUtil
+snowkids.util.ScreenShot
+snowkids.util.StorageUtil:
     private static final java.lang.String CACHEDIR
     17:18:private StorageUtil()
-com.rat.nm.util.StringUtils:
+snowkids.util.StringUtils:
     20:20:public StringUtils()
     33:41:public static java.lang.String ListToCommaString(java.util.List)
     45:48:public static java.lang.String NullToString(java.lang.String)
@@ -933,9 +933,9 @@ com.rat.nm.util.StringUtils:
     139:154:public static java.lang.String join(java.util.Collection,java.lang.String)
     158:158:public static boolean getDiffrent(java.util.List,java.util.List)
     162:169:public static java.lang.String generateGUID()
-com.rat.nm.util.TextUtils
-com.rat.nm.util.ViewUtils
-com.rat.nm.util.XXTEA:
+snowkids.util.TextUtils
+snowkids.util.ViewUtils
+snowkids.util.XXTEA:
     private static final int DELTA
     20:21:private XXTEA()
     33:35:public static final byte[] encrypt(java.lang.String,byte[])
@@ -952,7 +952,7 @@ com.rat.nm.util.XXTEA:
     125:129:public static final java.lang.String decryptBase64StringToString(java.lang.String,byte[])
     135:139:public static final java.lang.String decryptBase64StringToString(java.lang.String,java.lang.String)
     166:184:private static int[] decrypt(int[],int[])
-com.rat.nm.view.MenuItemView:
+snowkids.view.MenuItemView:
     public static final int PROFILE
     public static final int DEVICE_TYPE
     public static final int DEVICE
@@ -962,36 +962,36 @@ com.rat.nm.view.MenuItemView:
     private android.widget.Button messageBtn
     103:109:public void initData(int)
     115:116:public void initClickView(com.jeremyfeinstein.slidingmenu.lib.SlidingMenu)
-com.rat.nm.view.WheelView:
+snowkids.view.WheelView:
     public static final int OFF_SET_DEFAULT
     private static final int SCROLL_DIRECTION_UP
     private static final int SCROLL_DIRECTION_DOWN
-com.rat.nm.view.dialog.SendSuccessDialog
-com.rat.nm.view.dialog.SendSuccessDialog$TimeCount
-com.rat.nm.view.dialog.SureDialog
-com.rat.nm.view.dialog.SureDialog$1
-com.rat.nm.view.pop.BasePopupWindowForListView
-com.rat.nm.view.pop.BasePopupWindowForListView$1
-com.rat.nm.view.pop.ResourcePopupWindow
-com.rat.nm.view.pop.TopPopupWindow
-com.rat.nm.view.pull2refresh.XFooterView:
+snowkids.view.dialog.SendSuccessDialog
+snowkids.view.dialog.SendSuccessDialog$TimeCount
+snowkids.view.dialog.SureDialog
+snowkids.view.dialog.SureDialog$1
+snowkids.view.pop.BasePopupWindowForListView
+snowkids.view.pop.BasePopupWindowForListView$1
+snowkids.view.pop.ResourcePopupWindow
+snowkids.view.pop.TopPopupWindow
+snowkids.view.pull2refresh.XFooterView:
     public static final int STATE_NORMAL
     public static final int STATE_READY
     public static final int STATE_LOADING
     145:147:public void normal()
     153:155:public void loading()
-com.rat.nm.view.pull2refresh.XHeaderView:
+snowkids.view.pull2refresh.XHeaderView:
     public static final int STATE_NORMAL
     public static final int STATE_READY
     public static final int STATE_REFRESHING
-com.rat.nm.view.pull2refresh.XListView:
+snowkids.view.pull2refresh.XListView:
     private static final int SCROLL_BACK_HEADER
     private static final int SCROLL_BACK_FOOTER
     private static final int SCROLL_DURATION
     private static final int PULL_LOAD_MORE_DELTA
     private static final float OFFSET_RADIO
     239:253:public void autoRefresh()
-com.rat.nm.view.pull2refresh.XScrollView:
+snowkids.view.pull2refresh.XScrollView:
     private static final int SCROLL_BACK_HEADER
     private static final int SCROLL_BACK_FOOTER
     private static final int SCROLL_DURATION

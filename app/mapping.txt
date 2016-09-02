@@ -13924,27 +13924,27 @@ com.nostra13.universalimageloader.utils.StorageUtils -> com.nostra13.universalim
     java.io.File getOwnCacheDirectory(android.content.Context,java.lang.String) -> a
     java.io.File getExternalCacheDir(android.content.Context) -> c
     boolean hasExternalStoragePermission(android.content.Context) -> d
-com.rat.nm.activity.AlarmDetailActivity -> com.rat.nm.activity.AlarmDetailActivity:
+snowkids.activity.AlarmDetailActivity -> snowkids.activity.AlarmDetailActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
     android.widget.TextView logTV -> h
-    com.rat.nm.entity.model.Alarm alarm -> i
+    snowkids.entity.model.Alarm alarm -> i
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.AlarmFilterActivity -> com.rat.nm.activity.AlarmFilterActivity:
+snowkids.activity.AlarmFilterActivity -> snowkids.activity.AlarmFilterActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
-    com.rat.nm.view.WheelView alarmType -> h
-    com.rat.nm.view.WheelView deviceType -> i
-    com.rat.nm.view.WheelView deviceName -> j
+    snowkids.view.WheelView alarmType -> h
+    snowkids.view.WheelView deviceType -> i
+    snowkids.view.WheelView deviceName -> j
     android.widget.TextView timeStart -> k
     android.widget.TextView timeEnd -> l
     android.widget.Button queryBtn -> m
     java.util.List deviceTypeList -> n
     java.util.List deviceList -> o
-    com.rat.nm.controller.DeviceController controller -> p
+    snowkids.controller.DeviceController controller -> p
     java.lang.String[] alarmTypeMsgList -> q
     java.util.List deviceTypeMsgList -> r
     java.util.List deviceNameMsgList -> s
@@ -13956,27 +13956,27 @@ com.rat.nm.activity.AlarmFilterActivity -> com.rat.nm.activity.AlarmFilterActivi
     void onClick(android.view.View) -> onClick
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
     boolean handleMessage(android.os.Message) -> handleMessage
-    com.rat.nm.controller.DeviceController access$000(com.rat.nm.activity.AlarmFilterActivity) -> a
-com.rat.nm.activity.AlarmFilterActivity$1 -> com.rat.nm.activity.a:
-    com.rat.nm.activity.AlarmFilterActivity this$0 -> a
+    snowkids.controller.DeviceController access$000(snowkids.activity.AlarmFilterActivity) -> a
+snowkids.activity.AlarmFilterActivity$1 -> snowkids.activity.a:
+    snowkids.activity.AlarmFilterActivity this$0 -> a
     void onSelected(int,java.lang.String) -> a
-com.rat.nm.activity.AlarmFilterActivity$2 -> com.rat.nm.activity.b:
-    com.rat.nm.activity.AlarmFilterActivity this$0 -> a
+snowkids.activity.AlarmFilterActivity$2 -> snowkids.activity.b:
+    snowkids.activity.AlarmFilterActivity this$0 -> a
     void onSelected(int,java.lang.String) -> a
-com.rat.nm.activity.AlarmFilterActivity$3 -> com.rat.nm.activity.c:
-    com.rat.nm.activity.AlarmFilterActivity this$0 -> a
+snowkids.activity.AlarmFilterActivity$3 -> snowkids.activity.c:
+    snowkids.activity.AlarmFilterActivity this$0 -> a
     void onSelected(int,java.lang.String) -> a
-com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
+snowkids.activity.AlarmListActivity -> snowkids.activity.AlarmListActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
-    com.rat.nm.view.pull2refresh.XListView alarmListLV -> h
+    snowkids.view.pull2refresh.XListView alarmListLV -> h
     android.widget.LinearLayout empty -> i
     android.widget.LinearLayout countLL -> j
     java.util.List alarmList -> k
     int totalPage -> l
     int currentPage -> m
-    com.rat.nm.adapter.AlarmListAdapter adapter -> n
-    com.rat.nm.controller.AlarmController controller -> o
+    snowkids.adapter.AlarmListAdapter adapter -> n
+    snowkids.controller.AlarmController controller -> o
     java.lang.String alarmType -> p
     java.lang.String timeStart -> q
     java.lang.String timeEnd -> r
@@ -13984,7 +13984,7 @@ com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
-    void updateData(com.rat.nm.entity.enums.DataGetType) -> a
+    void updateData(snowkids.entity.enums.DataGetType) -> a
     void onRefresh() -> d
     void onLoadMore() -> e
     void onLoad() -> f
@@ -13992,21 +13992,21 @@ com.rat.nm.activity.AlarmListActivity -> com.rat.nm.activity.AlarmListActivity:
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.AlarmListActivity$1 -> com.rat.nm.activity.d:
-    com.rat.nm.activity.AlarmListActivity this$0 -> a
+snowkids.activity.AlarmListActivity$1 -> snowkids.activity.d:
+    snowkids.activity.AlarmListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.DeviceDetailActivity -> com.rat.nm.activity.DeviceDetailActivity:
+snowkids.activity.DeviceDetailActivity -> snowkids.activity.DeviceDetailActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
-    com.rat.nm.view.pull2refresh.XListView parameterListLV -> h
+    snowkids.view.pull2refresh.XListView parameterListLV -> h
     android.widget.TextView deviceName -> i
     android.widget.TextView deviceModel -> j
     android.widget.TextView deviceType -> k
     android.widget.TextView deviceDescribe -> l
     java.util.List parameterList -> m
-    com.rat.nm.adapter.ParameterListAdapter adapter -> n
-    com.rat.nm.entity.model.Device device -> o
-    com.rat.nm.controller.DeviceController controller -> p
+    snowkids.adapter.ParameterListAdapter adapter -> n
+    snowkids.entity.model.Device device -> o
+    snowkids.controller.DeviceController controller -> p
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14018,23 +14018,23 @@ com.rat.nm.activity.DeviceDetailActivity -> com.rat.nm.activity.DeviceDetailActi
     void onClick(android.view.View) -> onClick
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
-com.rat.nm.activity.DeviceListActivity -> com.rat.nm.activity.DeviceListActivity:
+snowkids.activity.DeviceListActivity -> snowkids.activity.DeviceListActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
-    com.rat.nm.view.pull2refresh.XListView deviceListLV -> h
+    snowkids.view.pull2refresh.XListView deviceListLV -> h
     android.widget.LinearLayout empty -> i
     android.widget.LinearLayout countLL -> j
     java.util.List deviceList -> k
     int totalPage -> l
     int currentPage -> m
-    com.rat.nm.adapter.DeviceListAdapter adapter -> n
-    com.rat.nm.controller.DeviceController controller -> o
+    snowkids.adapter.DeviceListAdapter adapter -> n
+    snowkids.controller.DeviceController controller -> o
     java.lang.String deviceType -> p
     java.lang.String deviceName -> q
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
-    void updateData(com.rat.nm.entity.enums.DataGetType) -> a
+    void updateData(snowkids.entity.enums.DataGetType) -> a
     void onRefresh() -> d
     void onLoadMore() -> e
     void onLoad() -> f
@@ -14042,18 +14042,18 @@ com.rat.nm.activity.DeviceListActivity -> com.rat.nm.activity.DeviceListActivity
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.DeviceListActivity$1 -> com.rat.nm.activity.e:
-    com.rat.nm.activity.DeviceListActivity this$0 -> a
+snowkids.activity.DeviceListActivity$1 -> snowkids.activity.e:
+    snowkids.activity.DeviceListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.DeviceTypeListActivity -> com.rat.nm.activity.DeviceTypeListActivity:
+snowkids.activity.DeviceTypeListActivity -> snowkids.activity.DeviceTypeListActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
-    com.rat.nm.view.pull2refresh.XListView deviceTypeListLV -> h
+    snowkids.view.pull2refresh.XListView deviceTypeListLV -> h
     android.widget.LinearLayout empty -> i
     android.widget.LinearLayout countLL -> j
     java.util.List deviceTypeList -> k
-    com.rat.nm.adapter.DeviceTypeListAdapter adapter -> l
-    com.rat.nm.controller.DeviceController controller -> m
+    snowkids.adapter.DeviceTypeListAdapter adapter -> l
+    snowkids.controller.DeviceController controller -> m
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
@@ -14065,13 +14065,13 @@ com.rat.nm.activity.DeviceTypeListActivity -> com.rat.nm.activity.DeviceTypeList
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.DeviceTypeListActivity$1 -> com.rat.nm.activity.f:
-    com.rat.nm.activity.DeviceTypeListActivity this$0 -> a
+snowkids.activity.DeviceTypeListActivity$1 -> snowkids.activity.f:
+    snowkids.activity.DeviceTypeListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.LoginActivity -> com.rat.nm.activity.LoginActivity:
+snowkids.activity.LoginActivity -> snowkids.activity.LoginActivity:
     android.os.Handler handler -> a
-    com.rat.nm.view.dialog.CustomProgressDialog customProgressDialog -> b
-    com.rat.nm.view.dialog.PromptDialog promptDialog -> c
+    snowkids.view.dialog.CustomProgressDialog customProgressDialog -> b
+    snowkids.view.dialog.PromptDialog promptDialog -> c
     android.widget.TextView topTitleView -> d
     android.widget.TextView topLeftView -> e
     android.widget.Button loginBtn -> f
@@ -14084,35 +14084,35 @@ com.rat.nm.activity.LoginActivity -> com.rat.nm.activity.LoginActivity:
     boolean handleMessage(android.os.Message) -> handleMessage
     void onClick(android.view.View) -> onClick
     void notNeedLogin() -> c
-com.rat.nm.activity.MainActivity -> com.rat.nm.activity.MainActivity:
+snowkids.activity.MainActivity -> snowkids.activity.MainActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView searchET -> g
-    com.rat.nm.view.MenuItemView deviceTypeMIV -> h
-    com.rat.nm.view.MenuItemView alarmMIV -> i
-    com.rat.nm.view.MenuItemView operateLogMIV -> j
-    com.rat.nm.view.MenuItemView settingsMIV -> k
+    snowkids.view.MenuItemView deviceTypeMIV -> h
+    snowkids.view.MenuItemView alarmMIV -> i
+    snowkids.view.MenuItemView operateLogMIV -> j
+    snowkids.view.MenuItemView settingsMIV -> k
     android.widget.TextView$OnEditorActionListener actionListener -> l
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
-    android.widget.TextView access$000(com.rat.nm.activity.MainActivity) -> a
-com.rat.nm.activity.MainActivity$1 -> com.rat.nm.activity.g:
-    com.rat.nm.activity.MainActivity this$0 -> a
+    android.widget.TextView access$000(snowkids.activity.MainActivity) -> a
+snowkids.activity.MainActivity$1 -> snowkids.activity.g:
+    snowkids.activity.MainActivity this$0 -> a
     boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent) -> onEditorAction
-com.rat.nm.activity.OperateLogDetailActivity -> com.rat.nm.activity.OperateLogDetailActivity:
+snowkids.activity.OperateLogDetailActivity -> snowkids.activity.OperateLogDetailActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
     android.widget.TextView logTV -> h
-    com.rat.nm.entity.model.OperateLog operateLog -> i
+    snowkids.entity.model.OperateLog operateLog -> i
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.OperateLogFilterActivity -> com.rat.nm.activity.OperateLogFilterActivity:
+snowkids.activity.OperateLogFilterActivity -> snowkids.activity.OperateLogFilterActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
     android.widget.EditText operateLogUser -> h
-    com.rat.nm.view.WheelView operateLogType -> i
+    snowkids.view.WheelView operateLogType -> i
     android.widget.TextView timeStart -> j
     android.widget.TextView timeEnd -> k
     android.widget.Button queryBtn -> l
@@ -14122,20 +14122,20 @@ com.rat.nm.activity.OperateLogFilterActivity -> com.rat.nm.activity.OperateLogFi
     void initData() -> c
     void onClick(android.view.View) -> onClick
     void onActivityResult(int,int,android.content.Intent) -> onActivityResult
-com.rat.nm.activity.OperateLogFilterActivity$1 -> com.rat.nm.activity.h:
-    com.rat.nm.activity.OperateLogFilterActivity this$0 -> a
+snowkids.activity.OperateLogFilterActivity$1 -> snowkids.activity.h:
+    snowkids.activity.OperateLogFilterActivity this$0 -> a
     void onSelected(int,java.lang.String) -> a
-com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogListActivity:
+snowkids.activity.OperateLogListActivity -> snowkids.activity.OperateLogListActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
-    com.rat.nm.view.pull2refresh.XListView operateLogListLV -> h
+    snowkids.view.pull2refresh.XListView operateLogListLV -> h
     android.widget.LinearLayout empty -> i
     android.widget.LinearLayout countLL -> j
     java.util.List operateLogList -> k
     int totalPage -> l
     int currentPage -> m
-    com.rat.nm.adapter.OperateLogListAdapter adapter -> n
-    com.rat.nm.controller.OperateLogController controller -> o
+    snowkids.adapter.OperateLogListAdapter adapter -> n
+    snowkids.controller.OperateLogController controller -> o
     java.lang.String operateUser -> p
     java.lang.String operateType -> q
     java.lang.String timeStart -> r
@@ -14143,7 +14143,7 @@ com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogList
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
-    void updateData(com.rat.nm.entity.enums.DataGetType) -> a
+    void updateData(snowkids.entity.enums.DataGetType) -> a
     void onRefresh() -> d
     void onLoadMore() -> e
     void onLoad() -> f
@@ -14151,38 +14151,38 @@ com.rat.nm.activity.OperateLogListActivity -> com.rat.nm.activity.OperateLogList
     void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
     boolean handleMessage(android.os.Message) -> handleMessage
     void initCountView(java.util.List) -> a
-com.rat.nm.activity.OperateLogListActivity$1 -> com.rat.nm.activity.i:
-    com.rat.nm.activity.OperateLogListActivity this$0 -> a
+snowkids.activity.OperateLogListActivity$1 -> snowkids.activity.i:
+    snowkids.activity.OperateLogListActivity this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.SettingsActivity -> com.rat.nm.activity.SettingsActivity:
+snowkids.activity.SettingsActivity -> snowkids.activity.SettingsActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
     android.widget.ImageView remeberMeIV -> h
     android.widget.ImageView receivePushMessageIV -> i
-    com.rat.nm.view.WheelView operateEnvironment -> j
+    snowkids.view.WheelView operateEnvironment -> j
     android.widget.EditText serverIpET -> k
     android.widget.Button logoutBtn -> l
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> b
     void initData() -> c
     void onClick(android.view.View) -> onClick
-com.rat.nm.activity.SettingsActivity$1 -> com.rat.nm.activity.j:
-    com.rat.nm.entity.model.Environment val$environment -> a
-    com.rat.nm.activity.SettingsActivity this$0 -> b
+snowkids.activity.SettingsActivity$1 -> snowkids.activity.j:
+    snowkids.entity.model.Environment val$environment -> a
+    snowkids.activity.SettingsActivity this$0 -> b
     void onSelected(int,java.lang.String) -> a
-com.rat.nm.activity.WelcomeActivity -> com.rat.nm.activity.WelcomeActivity:
+snowkids.activity.WelcomeActivity -> snowkids.activity.WelcomeActivity:
     int waitTime -> a
     android.widget.ImageView logo -> b
     void onCreate(android.os.Bundle) -> onCreate
     void initView() -> a
     void initData() -> b
-com.rat.nm.activity.WelcomeActivity$1 -> com.rat.nm.activity.k:
-    com.rat.nm.activity.WelcomeActivity this$0 -> a
+snowkids.activity.WelcomeActivity$1 -> snowkids.activity.k:
+    snowkids.activity.WelcomeActivity this$0 -> a
     void run() -> run
-com.rat.nm.activity.base.BaseActivity -> com.rat.nm.activity.base.BaseActivity:
+snowkids.activity.base.BaseActivity -> snowkids.activity.base.BaseActivity:
     android.os.Handler handler -> a
-    com.rat.nm.view.dialog.CustomProgressDialog customProgressDialog -> b
-    com.rat.nm.view.dialog.PromptDialog promptDialog -> c
+    snowkids.view.dialog.CustomProgressDialog customProgressDialog -> b
+    snowkids.view.dialog.PromptDialog promptDialog -> c
     com.nostra13.universalimageloader.core.ImageLoader imageLoader -> d
     com.jeremyfeinstein.slidingmenu.lib.SlidingMenu menu -> e
     void onCreate(android.os.Bundle) -> onCreate
@@ -14190,7 +14190,7 @@ com.rat.nm.activity.base.BaseActivity -> com.rat.nm.activity.base.BaseActivity:
     boolean handleMessage(android.os.Message) -> handleMessage
     void onClick(android.view.View) -> onClick
     void onDestroy() -> onDestroy
-com.rat.nm.activity.base.DateInputActivity -> com.rat.nm.activity.base.DateInputActivity:
+snowkids.activity.base.DateInputActivity -> snowkids.activity.base.DateInputActivity:
     android.widget.TextView topTitleView -> f
     android.widget.TextView topLeftView -> g
     android.widget.TextView dateTV -> h
@@ -14208,22 +14208,22 @@ com.rat.nm.activity.base.DateInputActivity -> com.rat.nm.activity.base.DateInput
     void updateDateView() -> d
     void onClick(android.view.View) -> onClick
     void comitChange() -> e
-    int access$002(com.rat.nm.activity.base.DateInputActivity,int) -> a
-    int access$102(com.rat.nm.activity.base.DateInputActivity,int) -> b
-    int access$202(com.rat.nm.activity.base.DateInputActivity,int) -> c
-    void access$300(com.rat.nm.activity.base.DateInputActivity) -> a
-    int access$402(com.rat.nm.activity.base.DateInputActivity,int) -> d
-    int access$502(com.rat.nm.activity.base.DateInputActivity,int) -> e
-com.rat.nm.activity.base.DateInputActivity$1 -> com.rat.nm.activity.base.a:
-    com.rat.nm.activity.base.DateInputActivity this$0 -> a
+    int access$002(snowkids.activity.base.DateInputActivity,int) -> a
+    int access$102(snowkids.activity.base.DateInputActivity,int) -> b
+    int access$202(snowkids.activity.base.DateInputActivity,int) -> c
+    void access$300(snowkids.activity.base.DateInputActivity) -> a
+    int access$402(snowkids.activity.base.DateInputActivity,int) -> d
+    int access$502(snowkids.activity.base.DateInputActivity,int) -> e
+snowkids.activity.base.DateInputActivity$1 -> snowkids.activity.base.a:
+    snowkids.activity.base.DateInputActivity this$0 -> a
     void onDateChanged(android.widget.DatePicker,int,int,int) -> onDateChanged
-com.rat.nm.activity.base.DateInputActivity$2 -> com.rat.nm.activity.base.b:
-    com.rat.nm.activity.base.DateInputActivity this$0 -> a
+snowkids.activity.base.DateInputActivity$2 -> snowkids.activity.base.b:
+    snowkids.activity.base.DateInputActivity this$0 -> a
     void onTimeChanged(android.widget.TimePicker,int,int) -> onTimeChanged
-com.rat.nm.adapter.AlarmListAdapter -> com.rat.nm.a.a:
+snowkids.adapter.AlarmListAdapter -> snowkids.a.a:
     android.content.Context context -> b
     java.util.List list -> c
-    com.rat.nm.adapter.AlarmListAdapter$ViewHolder viewHolder -> d
+    snowkids.adapter.AlarmListAdapter$ViewHolder viewHolder -> d
     com.nostra13.universalimageloader.core.ImageLoader imageLoader -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
@@ -14231,27 +14231,27 @@ com.rat.nm.adapter.AlarmListAdapter -> com.rat.nm.a.a:
     java.util.List getList() -> a
     void modifyData(java.util.List,boolean) -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.rat.nm.adapter.AlarmListAdapter$1 -> com.rat.nm.a.a$1:
-com.rat.nm.adapter.AlarmListAdapter$ViewHolder -> com.rat.nm.a.a$a:
+snowkids.adapter.AlarmListAdapter$1 -> snowkids.a.a$1:
+snowkids.adapter.AlarmListAdapter$ViewHolder -> snowkids.a.a$a:
     android.widget.ImageView iconIV -> b
     android.widget.TextView nameTV -> c
     android.widget.TextView contentTV -> d
     android.widget.TextView desTV -> e
     android.widget.ImageView statusIV -> f
-    com.rat.nm.adapter.AlarmListAdapter this$0 -> a
-    android.widget.ImageView access$102(com.rat.nm.adapter.AlarmListAdapter$ViewHolder,android.widget.ImageView) -> a
-    android.widget.TextView access$202(com.rat.nm.adapter.AlarmListAdapter$ViewHolder,android.widget.TextView) -> a
-    android.widget.TextView access$302(com.rat.nm.adapter.AlarmListAdapter$ViewHolder,android.widget.TextView) -> b
-    android.widget.TextView access$402(com.rat.nm.adapter.AlarmListAdapter$ViewHolder,android.widget.TextView) -> c
-    android.widget.ImageView access$502(com.rat.nm.adapter.AlarmListAdapter$ViewHolder,android.widget.ImageView) -> b
-    android.widget.TextView access$200(com.rat.nm.adapter.AlarmListAdapter$ViewHolder) -> a
-    android.widget.TextView access$300(com.rat.nm.adapter.AlarmListAdapter$ViewHolder) -> b
-    android.widget.TextView access$400(com.rat.nm.adapter.AlarmListAdapter$ViewHolder) -> c
-    android.widget.ImageView access$500(com.rat.nm.adapter.AlarmListAdapter$ViewHolder) -> d
-com.rat.nm.adapter.DeviceListAdapter -> com.rat.nm.a.b:
+    snowkids.adapter.AlarmListAdapter this$0 -> a
+    android.widget.ImageView access$102(snowkids.adapter.AlarmListAdapter$ViewHolder,android.widget.ImageView) -> a
+    android.widget.TextView access$202(snowkids.adapter.AlarmListAdapter$ViewHolder,android.widget.TextView) -> a
+    android.widget.TextView access$302(snowkids.adapter.AlarmListAdapter$ViewHolder,android.widget.TextView) -> b
+    android.widget.TextView access$402(snowkids.adapter.AlarmListAdapter$ViewHolder,android.widget.TextView) -> c
+    android.widget.ImageView access$502(snowkids.adapter.AlarmListAdapter$ViewHolder,android.widget.ImageView) -> b
+    android.widget.TextView access$200(snowkids.adapter.AlarmListAdapter$ViewHolder) -> a
+    android.widget.TextView access$300(snowkids.adapter.AlarmListAdapter$ViewHolder) -> b
+    android.widget.TextView access$400(snowkids.adapter.AlarmListAdapter$ViewHolder) -> c
+    android.widget.ImageView access$500(snowkids.adapter.AlarmListAdapter$ViewHolder) -> d
+snowkids.adapter.DeviceListAdapter -> snowkids.a.b:
     android.content.Context context -> b
     java.util.List list -> c
-    com.rat.nm.adapter.DeviceListAdapter$ViewHolder viewHolder -> d
+    snowkids.adapter.DeviceListAdapter$ViewHolder viewHolder -> d
     com.nostra13.universalimageloader.core.ImageLoader imageLoader -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
@@ -14259,25 +14259,25 @@ com.rat.nm.adapter.DeviceListAdapter -> com.rat.nm.a.b:
     void modifyData(java.util.List,boolean) -> a
     java.util.List getList() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.rat.nm.adapter.DeviceListAdapter$1 -> com.rat.nm.a.b$1:
-com.rat.nm.adapter.DeviceListAdapter$ViewHolder -> com.rat.nm.a.b$a:
+snowkids.adapter.DeviceListAdapter$1 -> snowkids.a.b$1:
+snowkids.adapter.DeviceListAdapter$ViewHolder -> snowkids.a.b$a:
     android.widget.ImageView iconIV -> b
     android.widget.TextView nameTV -> c
     android.widget.TextView desTV -> d
     android.widget.ImageView statusIV -> e
-    com.rat.nm.adapter.DeviceListAdapter this$0 -> a
-    android.widget.ImageView access$102(com.rat.nm.adapter.DeviceListAdapter$ViewHolder,android.widget.ImageView) -> a
-    android.widget.TextView access$202(com.rat.nm.adapter.DeviceListAdapter$ViewHolder,android.widget.TextView) -> a
-    android.widget.TextView access$302(com.rat.nm.adapter.DeviceListAdapter$ViewHolder,android.widget.TextView) -> b
-    android.widget.ImageView access$402(com.rat.nm.adapter.DeviceListAdapter$ViewHolder,android.widget.ImageView) -> b
-    android.widget.TextView access$200(com.rat.nm.adapter.DeviceListAdapter$ViewHolder) -> a
-    android.widget.TextView access$300(com.rat.nm.adapter.DeviceListAdapter$ViewHolder) -> b
-    android.widget.ImageView access$100(com.rat.nm.adapter.DeviceListAdapter$ViewHolder) -> c
-    android.widget.ImageView access$400(com.rat.nm.adapter.DeviceListAdapter$ViewHolder) -> d
-com.rat.nm.adapter.DeviceTypeListAdapter -> com.rat.nm.a.c:
+    snowkids.adapter.DeviceListAdapter this$0 -> a
+    android.widget.ImageView access$102(snowkids.adapter.DeviceListAdapter$ViewHolder,android.widget.ImageView) -> a
+    android.widget.TextView access$202(snowkids.adapter.DeviceListAdapter$ViewHolder,android.widget.TextView) -> a
+    android.widget.TextView access$302(snowkids.adapter.DeviceListAdapter$ViewHolder,android.widget.TextView) -> b
+    android.widget.ImageView access$402(snowkids.adapter.DeviceListAdapter$ViewHolder,android.widget.ImageView) -> b
+    android.widget.TextView access$200(snowkids.adapter.DeviceListAdapter$ViewHolder) -> a
+    android.widget.TextView access$300(snowkids.adapter.DeviceListAdapter$ViewHolder) -> b
+    android.widget.ImageView access$100(snowkids.adapter.DeviceListAdapter$ViewHolder) -> c
+    android.widget.ImageView access$400(snowkids.adapter.DeviceListAdapter$ViewHolder) -> d
+snowkids.adapter.DeviceTypeListAdapter -> snowkids.a.c:
     android.content.Context context -> b
     java.util.List list -> c
-    com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder viewHolder -> d
+    snowkids.adapter.DeviceTypeListAdapter$ViewHolder viewHolder -> d
     com.nostra13.universalimageloader.core.ImageLoader imageLoader -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
@@ -14285,24 +14285,24 @@ com.rat.nm.adapter.DeviceTypeListAdapter -> com.rat.nm.a.c:
     void modifyData(java.util.List,boolean) -> a
     java.util.List getList() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.rat.nm.adapter.DeviceTypeListAdapter$1 -> com.rat.nm.a.c$1:
-com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder -> com.rat.nm.a.c$a:
+snowkids.adapter.DeviceTypeListAdapter$1 -> snowkids.a.c$1:
+snowkids.adapter.DeviceTypeListAdapter$ViewHolder -> snowkids.a.c$a:
     android.widget.ImageView iconIV -> b
     android.widget.TextView nameTV -> c
     android.widget.TextView desTV -> d
     android.widget.ImageView statusIV -> e
-    com.rat.nm.adapter.DeviceTypeListAdapter this$0 -> a
-    android.widget.ImageView access$102(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.ImageView) -> a
-    android.widget.TextView access$202(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.TextView) -> a
-    android.widget.TextView access$302(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.TextView) -> b
-    android.widget.ImageView access$402(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.ImageView) -> b
-    android.widget.TextView access$200(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder) -> a
-    android.widget.TextView access$300(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder) -> b
-    android.widget.ImageView access$100(com.rat.nm.adapter.DeviceTypeListAdapter$ViewHolder) -> c
-com.rat.nm.adapter.OperateLogListAdapter -> com.rat.nm.a.d:
+    snowkids.adapter.DeviceTypeListAdapter this$0 -> a
+    android.widget.ImageView access$102(snowkids.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.ImageView) -> a
+    android.widget.TextView access$202(snowkids.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.TextView) -> a
+    android.widget.TextView access$302(snowkids.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.TextView) -> b
+    android.widget.ImageView access$402(snowkids.adapter.DeviceTypeListAdapter$ViewHolder,android.widget.ImageView) -> b
+    android.widget.TextView access$200(snowkids.adapter.DeviceTypeListAdapter$ViewHolder) -> a
+    android.widget.TextView access$300(snowkids.adapter.DeviceTypeListAdapter$ViewHolder) -> b
+    android.widget.ImageView access$100(snowkids.adapter.DeviceTypeListAdapter$ViewHolder) -> c
+snowkids.adapter.OperateLogListAdapter -> snowkids.a.d:
     android.content.Context context -> b
     java.util.List list -> c
-    com.rat.nm.adapter.OperateLogListAdapter$ViewHolder viewHolder -> d
+    snowkids.adapter.OperateLogListAdapter$ViewHolder viewHolder -> d
     com.nostra13.universalimageloader.core.ImageLoader imageLoader -> a
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
@@ -14310,130 +14310,130 @@ com.rat.nm.adapter.OperateLogListAdapter -> com.rat.nm.a.d:
     void modifyData(java.util.List,boolean) -> a
     java.util.List getList() -> a
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.rat.nm.adapter.OperateLogListAdapter$1 -> com.rat.nm.a.d$1:
-com.rat.nm.adapter.OperateLogListAdapter$ViewHolder -> com.rat.nm.a.d$a:
+snowkids.adapter.OperateLogListAdapter$1 -> snowkids.a.d$1:
+snowkids.adapter.OperateLogListAdapter$ViewHolder -> snowkids.a.d$a:
     android.widget.ImageView iconIV -> b
     android.widget.TextView nameTV -> c
     android.widget.TextView contentTV -> d
     android.widget.TextView desTV -> e
     android.widget.ImageView statusIV -> f
-    com.rat.nm.adapter.OperateLogListAdapter this$0 -> a
-    android.widget.ImageView access$102(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder,android.widget.ImageView) -> a
-    android.widget.TextView access$202(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder,android.widget.TextView) -> a
-    android.widget.TextView access$302(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder,android.widget.TextView) -> b
-    android.widget.TextView access$402(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder,android.widget.TextView) -> c
-    android.widget.ImageView access$502(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder,android.widget.ImageView) -> b
-    android.widget.TextView access$200(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder) -> a
-    android.widget.TextView access$300(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder) -> b
-    android.widget.TextView access$400(com.rat.nm.adapter.OperateLogListAdapter$ViewHolder) -> c
-com.rat.nm.adapter.ParameterListAdapter -> com.rat.nm.a.e:
+    snowkids.adapter.OperateLogListAdapter this$0 -> a
+    android.widget.ImageView access$102(snowkids.adapter.OperateLogListAdapter$ViewHolder,android.widget.ImageView) -> a
+    android.widget.TextView access$202(snowkids.adapter.OperateLogListAdapter$ViewHolder,android.widget.TextView) -> a
+    android.widget.TextView access$302(snowkids.adapter.OperateLogListAdapter$ViewHolder,android.widget.TextView) -> b
+    android.widget.TextView access$402(snowkids.adapter.OperateLogListAdapter$ViewHolder,android.widget.TextView) -> c
+    android.widget.ImageView access$502(snowkids.adapter.OperateLogListAdapter$ViewHolder,android.widget.ImageView) -> b
+    android.widget.TextView access$200(snowkids.adapter.OperateLogListAdapter$ViewHolder) -> a
+    android.widget.TextView access$300(snowkids.adapter.OperateLogListAdapter$ViewHolder) -> b
+    android.widget.TextView access$400(snowkids.adapter.OperateLogListAdapter$ViewHolder) -> c
+snowkids.adapter.ParameterListAdapter -> snowkids.a.e:
     android.content.Context context -> a
     java.util.List list -> b
-    com.rat.nm.adapter.ParameterListAdapter$ViewHolder viewHolder -> c
+    snowkids.adapter.ParameterListAdapter$ViewHolder viewHolder -> c
     int getCount() -> getCount
     java.lang.Object getItem(int) -> getItem
     long getItemId(int) -> getItemId
     android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-com.rat.nm.adapter.ParameterListAdapter$1 -> com.rat.nm.a.e$1:
-com.rat.nm.adapter.ParameterListAdapter$ViewHolder -> com.rat.nm.a.e$a:
+snowkids.adapter.ParameterListAdapter$1 -> snowkids.a.e$1:
+snowkids.adapter.ParameterListAdapter$ViewHolder -> snowkids.a.e$a:
     android.widget.TextView keyTV -> b
     android.widget.TextView valueTV -> c
-    com.rat.nm.adapter.ParameterListAdapter this$0 -> a
-    android.widget.TextView access$102(com.rat.nm.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> a
-    android.widget.TextView access$202(com.rat.nm.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> b
-    android.widget.TextView access$100(com.rat.nm.adapter.ParameterListAdapter$ViewHolder) -> a
-    android.widget.TextView access$200(com.rat.nm.adapter.ParameterListAdapter$ViewHolder) -> b
-com.rat.nm.appmanager.AppData -> com.rat.nm.appmanager.AppData:
+    snowkids.adapter.ParameterListAdapter this$0 -> a
+    android.widget.TextView access$102(snowkids.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> a
+    android.widget.TextView access$202(snowkids.adapter.ParameterListAdapter$ViewHolder,android.widget.TextView) -> b
+    android.widget.TextView access$100(snowkids.adapter.ParameterListAdapter$ViewHolder) -> a
+    android.widget.TextView access$200(snowkids.adapter.ParameterListAdapter$ViewHolder) -> b
+snowkids.appmanager.AppData -> snowkids.appmanager.AppData:
     android.os.Handler DefaultHandler -> DefaultHandler
-com.rat.nm.appmanager.Application -> com.rat.nm.appmanager.Application:
+snowkids.appmanager.Application -> snowkids.appmanager.Application:
     void onCreate() -> onCreate
-com.rat.nm.appmanager.CrashHandler -> com.rat.nm.appmanager.CrashHandler:
+snowkids.appmanager.CrashHandler -> snowkids.appmanager.CrashHandler:
     java.lang.Thread$UncaughtExceptionHandler mDefaultHandler -> mDefaultHandler
-    com.rat.nm.appmanager.CrashHandler INSTANCE -> INSTANCE
+    snowkids.appmanager.CrashHandler INSTANCE -> INSTANCE
     android.content.Context mContext -> mContext
     java.util.Map infos -> infos
     java.text.DateFormat formatter -> formatter
     boolean isFrist -> isFrist
-    com.rat.nm.appmanager.CrashHandler getInstance() -> getInstance
+    snowkids.appmanager.CrashHandler getInstance() -> getInstance
     void init(android.content.Context) -> init
     void uncaughtException(java.lang.Thread,java.lang.Throwable) -> uncaughtException
     boolean handleException(java.lang.Throwable) -> handleException
     void collectDeviceInfo(android.content.Context) -> collectDeviceInfo
     java.lang.String saveCrashInfo2File(java.lang.Throwable) -> saveCrashInfo2File
-com.rat.nm.appmanager.CrashHandler$1 -> com.rat.nm.appmanager.CrashHandler$1:
-    com.rat.nm.appmanager.CrashHandler this$0 -> this$0
+snowkids.appmanager.CrashHandler$1 -> snowkids.appmanager.CrashHandler$1:
+    snowkids.appmanager.CrashHandler this$0 -> this$0
     void run() -> run
-com.rat.nm.common.WebConstant -> com.rat.nm.b.a:
+snowkids.common.WebConstant -> snowkids.b.a:
     java.lang.String WEB_KEY -> a
     java.lang.String getServerUrl() -> a
     java.lang.String getServerIp() -> b
-com.rat.nm.controller.AlarmController -> com.rat.nm.c.a:
+snowkids.controller.AlarmController -> snowkids.c.a:
     android.os.Handler handler -> a
     android.content.Context context -> b
-    void getList(int,int,com.rat.nm.entity.enums.DataGetType,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-com.rat.nm.controller.DeviceController -> com.rat.nm.c.b:
+    void getList(int,int,snowkids.entity.enums.DataGetType,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+snowkids.controller.DeviceController -> snowkids.c.b:
     android.os.Handler handler -> a
     android.content.Context context -> b
     void get(java.lang.String) -> a
-    void getList(int,int,com.rat.nm.entity.enums.DataGetType,java.lang.String,java.lang.String) -> a
+    void getList(int,int,snowkids.entity.enums.DataGetType,java.lang.String,java.lang.String) -> a
     void getTypeList() -> a
-com.rat.nm.controller.LoginController -> com.rat.nm.c.c:
+snowkids.controller.LoginController -> snowkids.c.c:
     android.os.Handler handler -> a
     android.content.Context context -> b
     void login(java.lang.String,java.lang.String,int) -> a
-com.rat.nm.controller.OperateLogController -> com.rat.nm.c.d:
+snowkids.controller.OperateLogController -> snowkids.c.d:
     android.os.Handler handler -> a
     android.content.Context context -> b
-    void getList(int,int,com.rat.nm.entity.enums.DataGetType,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
-com.rat.nm.entity.enums.AlarmType -> com.rat.nm.entity.enums.AlarmType:
-    com.rat.nm.entity.enums.AlarmType INFO -> INFO
-    com.rat.nm.entity.enums.AlarmType ALARM -> ALARM
-    com.rat.nm.entity.enums.AlarmType FAULT -> FAULT
-    com.rat.nm.entity.enums.AlarmType UNKNOW -> UNKNOW
+    void getList(int,int,snowkids.entity.enums.DataGetType,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+snowkids.entity.enums.AlarmType -> snowkids.entity.enums.AlarmType:
+    snowkids.entity.enums.AlarmType INFO -> INFO
+    snowkids.entity.enums.AlarmType ALARM -> ALARM
+    snowkids.entity.enums.AlarmType FAULT -> FAULT
+    snowkids.entity.enums.AlarmType UNKNOW -> UNKNOW
     int code -> code
     java.lang.String message -> message
-    com.rat.nm.entity.enums.AlarmType[] $VALUES -> $VALUES
-    com.rat.nm.entity.enums.AlarmType[] values() -> values
-    com.rat.nm.entity.enums.AlarmType valueOf(java.lang.String) -> valueOf
+    snowkids.entity.enums.AlarmType[] $VALUES -> $VALUES
+    snowkids.entity.enums.AlarmType[] values() -> values
+    snowkids.entity.enums.AlarmType valueOf(java.lang.String) -> valueOf
     int getCode() -> getCode
     void setCode(int) -> setCode
     java.lang.String getMessage() -> getMessage
     void setMessage(java.lang.String) -> setMessage
-com.rat.nm.entity.enums.DataGetType -> com.rat.nm.entity.enums.DataGetType:
-    com.rat.nm.entity.enums.DataGetType PAGE_DOWN -> PAGE_DOWN
-    com.rat.nm.entity.enums.DataGetType UPDATE -> UPDATE
+snowkids.entity.enums.DataGetType -> snowkids.entity.enums.DataGetType:
+    snowkids.entity.enums.DataGetType PAGE_DOWN -> PAGE_DOWN
+    snowkids.entity.enums.DataGetType UPDATE -> UPDATE
     java.lang.String type -> type
-    com.rat.nm.entity.enums.DataGetType[] $VALUES -> $VALUES
-    com.rat.nm.entity.enums.DataGetType[] values() -> values
-    com.rat.nm.entity.enums.DataGetType valueOf(java.lang.String) -> valueOf
+    snowkids.entity.enums.DataGetType[] $VALUES -> $VALUES
+    snowkids.entity.enums.DataGetType[] values() -> values
+    snowkids.entity.enums.DataGetType valueOf(java.lang.String) -> valueOf
     java.lang.String getType() -> getType
-com.rat.nm.entity.enums.OperateLogType -> com.rat.nm.entity.enums.OperateLogType:
-    com.rat.nm.entity.enums.OperateLogType AUTO -> AUTO
-    com.rat.nm.entity.enums.OperateLogType MANUAL -> MANUAL
-    com.rat.nm.entity.enums.OperateLogType UNKNOW -> UNKNOW
+snowkids.entity.enums.OperateLogType -> snowkids.entity.enums.OperateLogType:
+    snowkids.entity.enums.OperateLogType AUTO -> AUTO
+    snowkids.entity.enums.OperateLogType MANUAL -> MANUAL
+    snowkids.entity.enums.OperateLogType UNKNOW -> UNKNOW
     int code -> code
     java.lang.String message -> message
-    com.rat.nm.entity.enums.OperateLogType[] $VALUES -> $VALUES
-    com.rat.nm.entity.enums.OperateLogType[] values() -> values
-    com.rat.nm.entity.enums.OperateLogType valueOf(java.lang.String) -> valueOf
+    snowkids.entity.enums.OperateLogType[] $VALUES -> $VALUES
+    snowkids.entity.enums.OperateLogType[] values() -> values
+    snowkids.entity.enums.OperateLogType valueOf(java.lang.String) -> valueOf
     int getCode() -> getCode
     void setCode(int) -> setCode
     java.lang.String getMessage() -> getMessage
     void setMessage(java.lang.String) -> setMessage
-com.rat.nm.entity.enums.RunningStatus -> com.rat.nm.entity.enums.RunningStatus:
-    com.rat.nm.entity.enums.RunningStatus ONLINE -> ONLINE
-    com.rat.nm.entity.enums.RunningStatus OFFLINE -> OFFLINE
-    com.rat.nm.entity.enums.RunningStatus UNKNOW -> UNKNOW
+snowkids.entity.enums.RunningStatus -> snowkids.entity.enums.RunningStatus:
+    snowkids.entity.enums.RunningStatus ONLINE -> ONLINE
+    snowkids.entity.enums.RunningStatus OFFLINE -> OFFLINE
+    snowkids.entity.enums.RunningStatus UNKNOW -> UNKNOW
     int code -> code
     java.lang.String message -> message
-    com.rat.nm.entity.enums.RunningStatus[] $VALUES -> $VALUES
-    com.rat.nm.entity.enums.RunningStatus[] values() -> values
-    com.rat.nm.entity.enums.RunningStatus valueOf(java.lang.String) -> valueOf
+    snowkids.entity.enums.RunningStatus[] $VALUES -> $VALUES
+    snowkids.entity.enums.RunningStatus[] values() -> values
+    snowkids.entity.enums.RunningStatus valueOf(java.lang.String) -> valueOf
     int getCode() -> getCode
     void setCode(int) -> setCode
     java.lang.String getMessage() -> getMessage
     void setMessage(java.lang.String) -> setMessage
-com.rat.nm.entity.model.Alarm -> com.rat.nm.entity.model.Alarm:
+snowkids.entity.model.Alarm -> snowkids.entity.model.Alarm:
     java.lang.String id -> id
     java.lang.String type -> type
     java.lang.String deviceId -> deviceId
@@ -14458,7 +14458,7 @@ com.rat.nm.entity.model.Alarm -> com.rat.nm.entity.model.Alarm:
     void setNmx(java.lang.String) -> setNmx
     java.lang.String getDeviceName() -> getDeviceName
     void setDeviceName(java.lang.String) -> setDeviceName
-com.rat.nm.entity.model.Device -> com.rat.nm.entity.model.Device:
+snowkids.entity.model.Device -> snowkids.entity.model.Device:
     java.lang.String id -> id
     java.lang.String name4Show -> name4Show
     java.lang.String nameInEN -> nameInEN
@@ -14489,7 +14489,7 @@ com.rat.nm.entity.model.Device -> com.rat.nm.entity.model.Device:
     void setImageUrl(java.lang.String) -> setImageUrl
     void setRunningStatus(java.lang.String) -> setRunningStatus
     void setParameterList(java.util.List) -> setParameterList
-com.rat.nm.entity.model.DeviceType -> com.rat.nm.entity.model.DeviceType:
+snowkids.entity.model.DeviceType -> snowkids.entity.model.DeviceType:
     java.lang.String id -> id
     java.lang.String name -> name
     java.lang.String describe -> describe
@@ -14502,14 +14502,14 @@ com.rat.nm.entity.model.DeviceType -> com.rat.nm.entity.model.DeviceType:
     void setDescribe(java.lang.String) -> setDescribe
     java.lang.String getImageUrl() -> getImageUrl
     void setImageUrl(java.lang.String) -> setImageUrl
-com.rat.nm.entity.model.Environment -> com.rat.nm.entity.model.Environment:
+snowkids.entity.model.Environment -> snowkids.entity.model.Environment:
     java.lang.String current -> current
     java.lang.String[] list -> list
     java.lang.String getCurrent() -> getCurrent
     void setCurrent(java.lang.String) -> setCurrent
     java.lang.String[] getList() -> getList
     void setList(java.lang.String[]) -> setList
-com.rat.nm.entity.model.OperateLog -> com.rat.nm.entity.model.OperateLog:
+snowkids.entity.model.OperateLog -> snowkids.entity.model.OperateLog:
     java.lang.String id -> id
     java.lang.String type -> type
     java.lang.String deviceId -> deviceId
@@ -14534,7 +14534,7 @@ com.rat.nm.entity.model.OperateLog -> com.rat.nm.entity.model.OperateLog:
     void setLog(java.lang.String) -> setLog
     java.lang.String getTime() -> getTime
     void setTime(java.lang.String) -> setTime
-com.rat.nm.entity.model.Parameter -> com.rat.nm.entity.model.Parameter:
+snowkids.entity.model.Parameter -> snowkids.entity.model.Parameter:
     java.lang.String id -> id
     java.lang.String key -> key
     java.lang.String value -> value
@@ -14550,9 +14550,9 @@ com.rat.nm.entity.model.Parameter -> com.rat.nm.entity.model.Parameter:
     void setDescribe(java.lang.String) -> setDescribe
     java.lang.String getTime() -> getTime
     void setTime(java.lang.String) -> setTime
-com.rat.nm.entity.net.request.AlarmGetActionInfo -> com.rat.nm.entity.net.request.AlarmGetActionInfo:
+snowkids.entity.net.request.AlarmGetActionInfo -> snowkids.entity.net.request.AlarmGetActionInfo:
     java.lang.String alarmId -> alarmId
-com.rat.nm.entity.net.request.AlarmListGetActionInfo -> com.rat.nm.entity.net.request.AlarmListGetActionInfo:
+snowkids.entity.net.request.AlarmListGetActionInfo -> snowkids.entity.net.request.AlarmListGetActionInfo:
     java.lang.String alarmType -> alarmType
     java.lang.String timeStart -> timeStart
     java.lang.String timeEnd -> timeEnd
@@ -14560,21 +14560,21 @@ com.rat.nm.entity.net.request.AlarmListGetActionInfo -> com.rat.nm.entity.net.re
     int totalPage -> totalPage
     int currentPage -> currentPage
     java.lang.String pageType -> pageType
-com.rat.nm.entity.net.request.DeviceGetActionInfo -> com.rat.nm.entity.net.request.DeviceGetActionInfo:
+snowkids.entity.net.request.DeviceGetActionInfo -> snowkids.entity.net.request.DeviceGetActionInfo:
     java.lang.String deviceId -> deviceId
-com.rat.nm.entity.net.request.DeviceListGetActionInfo -> com.rat.nm.entity.net.request.DeviceListGetActionInfo:
+snowkids.entity.net.request.DeviceListGetActionInfo -> snowkids.entity.net.request.DeviceListGetActionInfo:
     java.lang.String deviceType -> deviceType
     java.lang.String deviceName -> deviceName
     int totalPage -> totalPage
     int currentPage -> currentPage
     java.lang.String pageType -> pageType
-com.rat.nm.entity.net.request.LoginActionInfo -> com.rat.nm.entity.net.request.LoginActionInfo:
+snowkids.entity.net.request.LoginActionInfo -> snowkids.entity.net.request.LoginActionInfo:
     java.lang.String userId -> userId
     java.lang.String password -> password
     int type -> type
-com.rat.nm.entity.net.request.OperateLogGetActionInfo -> com.rat.nm.entity.net.request.OperateLogGetActionInfo:
+snowkids.entity.net.request.OperateLogGetActionInfo -> snowkids.entity.net.request.OperateLogGetActionInfo:
     java.lang.String operateLogId -> operateLogId
-com.rat.nm.entity.net.request.OperateLogListGetActionInfo -> com.rat.nm.entity.net.request.OperateLogListGetActionInfo:
+snowkids.entity.net.request.OperateLogListGetActionInfo -> snowkids.entity.net.request.OperateLogListGetActionInfo:
     java.lang.String operateUser -> operateUser
     java.lang.String operateType -> operateType
     java.lang.String timeStart -> timeStart
@@ -14582,29 +14582,29 @@ com.rat.nm.entity.net.request.OperateLogListGetActionInfo -> com.rat.nm.entity.n
     int totalPage -> totalPage
     int currentPage -> currentPage
     java.lang.String pageType -> pageType
-com.rat.nm.entity.net.request.base.AbstractRequestInfo -> com.rat.nm.entity.net.request.base.AbstractRequestInfo:
+snowkids.entity.net.request.base.AbstractRequestInfo -> snowkids.entity.net.request.base.AbstractRequestInfo:
     long serialVersionUID -> serialVersionUID
-com.rat.nm.entity.net.request.base.ActionInfo -> com.rat.nm.entity.net.request.base.ActionInfo:
+snowkids.entity.net.request.base.ActionInfo -> snowkids.entity.net.request.base.ActionInfo:
     int actionId -> actionId
     java.lang.String environment -> environment
-com.rat.nm.entity.net.request.base.AppInfo -> com.rat.nm.entity.net.request.base.AppInfo:
+snowkids.entity.net.request.base.AppInfo -> snowkids.entity.net.request.base.AppInfo:
     java.lang.String language -> language
     int versionCode -> versionCode
     java.lang.String versionName -> versionName
     java.lang.String bundleId -> bundleId
     java.lang.String channelId -> channelId
-com.rat.nm.entity.net.request.base.LocationInfo -> com.rat.nm.entity.net.request.base.LocationInfo:
+snowkids.entity.net.request.base.LocationInfo -> snowkids.entity.net.request.base.LocationInfo:
     java.lang.String cityName -> cityName
     java.lang.String countryCode -> countryCode
     double longitude -> longitude
     double latitude -> latitude
     java.lang.String address -> address
-com.rat.nm.entity.net.request.base.RequestInfo -> com.rat.nm.entity.net.request.base.RequestInfo:
-    com.rat.nm.entity.net.request.base.LocationInfo locationInfo -> locationInfo
-    com.rat.nm.entity.net.request.base.SystemInfo systemInfo -> systemInfo
-    com.rat.nm.entity.net.request.base.AppInfo appInfo -> appInfo
-    com.rat.nm.entity.net.request.base.ActionInfo actionInfo -> actionInfo
-com.rat.nm.entity.net.request.base.SystemInfo -> com.rat.nm.entity.net.request.base.SystemInfo:
+snowkids.entity.net.request.base.RequestInfo -> snowkids.entity.net.request.base.RequestInfo:
+    snowkids.entity.net.request.base.LocationInfo locationInfo -> locationInfo
+    snowkids.entity.net.request.base.SystemInfo systemInfo -> systemInfo
+    snowkids.entity.net.request.base.AppInfo appInfo -> appInfo
+    snowkids.entity.net.request.base.ActionInfo actionInfo -> actionInfo
+snowkids.entity.net.request.base.SystemInfo -> snowkids.entity.net.request.base.SystemInfo:
     java.lang.String uidi -> uidi
     java.lang.String imei -> imei
     java.lang.String imsi -> imsi
@@ -14615,11 +14615,11 @@ com.rat.nm.entity.net.request.base.SystemInfo -> com.rat.nm.entity.net.request.b
     java.lang.String osVer -> osVer
     java.lang.String language -> language
     java.lang.String apn -> apn
-com.rat.nm.entity.net.response.AlarmGetRspInfo -> com.rat.nm.entity.net.response.AlarmGetRspInfo:
-    com.rat.nm.entity.model.Alarm alarm -> alarm
-    com.rat.nm.entity.model.Alarm getAlarm() -> getAlarm
-    void setAlarm(com.rat.nm.entity.model.Alarm) -> setAlarm
-com.rat.nm.entity.net.response.AlarmListGetRspInfo -> com.rat.nm.entity.net.response.AlarmListGetRspInfo:
+snowkids.entity.net.response.AlarmGetRspInfo -> snowkids.entity.net.response.AlarmGetRspInfo:
+    snowkids.entity.model.Alarm alarm -> alarm
+    snowkids.entity.model.Alarm getAlarm() -> getAlarm
+    void setAlarm(snowkids.entity.model.Alarm) -> setAlarm
+snowkids.entity.net.response.AlarmListGetRspInfo -> snowkids.entity.net.response.AlarmListGetRspInfo:
     int totalPage -> totalPage
     int currentPage -> currentPage
     java.util.List alarmList -> alarmList
@@ -14629,7 +14629,7 @@ com.rat.nm.entity.net.response.AlarmListGetRspInfo -> com.rat.nm.entity.net.resp
     void setCurrentPage(int) -> setCurrentPage
     java.util.List getAlarmList() -> getAlarmList
     void setAlarmList(java.util.List) -> setAlarmList
-com.rat.nm.entity.net.response.AuthGetInfo -> com.rat.nm.entity.net.response.AuthGetInfo:
+snowkids.entity.net.response.AuthGetInfo -> snowkids.entity.net.response.AuthGetInfo:
     java.lang.String shortCode -> shortCode
     int duration -> duration
     int userStatus -> userStatus
@@ -14639,11 +14639,11 @@ com.rat.nm.entity.net.response.AuthGetInfo -> com.rat.nm.entity.net.response.Aut
     void setDuration(int) -> setDuration
     int getUserStatus() -> getUserStatus
     void setUserStatus(int) -> setUserStatus
-com.rat.nm.entity.net.response.DeviceGetRspInfo -> com.rat.nm.entity.net.response.DeviceGetRspInfo:
-    com.rat.nm.entity.model.Device device -> device
-    com.rat.nm.entity.model.Device getDevice() -> getDevice
-    void setDevice(com.rat.nm.entity.model.Device) -> setDevice
-com.rat.nm.entity.net.response.DeviceListGetRspInfo -> com.rat.nm.entity.net.response.DeviceListGetRspInfo:
+snowkids.entity.net.response.DeviceGetRspInfo -> snowkids.entity.net.response.DeviceGetRspInfo:
+    snowkids.entity.model.Device device -> device
+    snowkids.entity.model.Device getDevice() -> getDevice
+    void setDevice(snowkids.entity.model.Device) -> setDevice
+snowkids.entity.net.response.DeviceListGetRspInfo -> snowkids.entity.net.response.DeviceListGetRspInfo:
     int totalPage -> totalPage
     int currentPage -> currentPage
     java.util.List deviceList -> deviceList
@@ -14653,11 +14653,11 @@ com.rat.nm.entity.net.response.DeviceListGetRspInfo -> com.rat.nm.entity.net.res
     void setCurrentPage(int) -> setCurrentPage
     java.util.List getDeviceList() -> getDeviceList
     void setDeviceList(java.util.List) -> setDeviceList
-com.rat.nm.entity.net.response.DeviceTypeListGetRspInfo -> com.rat.nm.entity.net.response.DeviceTypeListGetRspInfo:
+snowkids.entity.net.response.DeviceTypeListGetRspInfo -> snowkids.entity.net.response.DeviceTypeListGetRspInfo:
     java.util.List deviceTypeList -> deviceTypeList
     java.util.List getDeviceTypeList() -> getDeviceTypeList
     void setDeviceTypeList(java.util.List) -> setDeviceTypeList
-com.rat.nm.entity.net.response.LoginRegisterInfo -> com.rat.nm.entity.net.response.LoginRegisterInfo:
+snowkids.entity.net.response.LoginRegisterInfo -> snowkids.entity.net.response.LoginRegisterInfo:
     java.lang.String token -> token
     java.lang.String environmentStr -> environmentStr
     java.lang.String[] environmentList -> environmentList
@@ -14665,11 +14665,11 @@ com.rat.nm.entity.net.response.LoginRegisterInfo -> com.rat.nm.entity.net.respon
     void setToken(java.lang.String) -> setToken
     java.lang.String[] getEnvironmentList() -> getEnvironmentList
     void setEnvironmentList(java.lang.String[]) -> setEnvironmentList
-com.rat.nm.entity.net.response.OperateLogGetRspInfo -> com.rat.nm.entity.net.response.OperateLogGetRspInfo:
-    com.rat.nm.entity.model.OperateLog operateLog -> operateLog
-    com.rat.nm.entity.model.OperateLog getOperateLog() -> getOperateLog
-    void setOperateLog(com.rat.nm.entity.model.OperateLog) -> setOperateLog
-com.rat.nm.entity.net.response.OperateLogListGetRspInfo -> com.rat.nm.entity.net.response.OperateLogListGetRspInfo:
+snowkids.entity.net.response.OperateLogGetRspInfo -> snowkids.entity.net.response.OperateLogGetRspInfo:
+    snowkids.entity.model.OperateLog operateLog -> operateLog
+    snowkids.entity.model.OperateLog getOperateLog() -> getOperateLog
+    void setOperateLog(snowkids.entity.model.OperateLog) -> setOperateLog
+snowkids.entity.net.response.OperateLogListGetRspInfo -> snowkids.entity.net.response.OperateLogListGetRspInfo:
     int totalPage -> totalPage
     int currentPage -> currentPage
     java.util.List operateLogList -> operateLogList
@@ -14679,8 +14679,8 @@ com.rat.nm.entity.net.response.OperateLogListGetRspInfo -> com.rat.nm.entity.net
     void setCurrentPage(int) -> setCurrentPage
     java.util.List getOperateLogList() -> getOperateLogList
     void setOperateLogList(java.util.List) -> setOperateLogList
-com.rat.nm.entity.net.response.WelcomeDataGetInfo -> com.rat.nm.entity.net.response.WelcomeDataGetInfo:
-com.rat.nm.entity.net.response.base.ResponseInfo -> com.rat.nm.entity.net.response.base.ResponseInfo:
+snowkids.entity.net.response.WelcomeDataGetInfo -> snowkids.entity.net.response.WelcomeDataGetInfo:
+snowkids.entity.net.response.base.ResponseInfo -> snowkids.entity.net.response.base.ResponseInfo:
     int actionId -> actionId
     int code -> code
     java.lang.String message -> message
@@ -14690,9 +14690,9 @@ com.rat.nm.entity.net.response.base.ResponseInfo -> com.rat.nm.entity.net.respon
     void setCode(int) -> setCode
     java.lang.String getMessage() -> getMessage
     void setMessage(java.lang.String) -> setMessage
-com.rat.nm.fragment.MenuLeftFragment -> com.rat.nm.fragment.MenuLeftFragment:
+snowkids.fragment.MenuLeftFragment -> snowkids.fragment.MenuLeftFragment:
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-com.rat.nm.fragment.MenuRightFragment -> com.rat.nm.fragment.MenuRightFragment:
+snowkids.fragment.MenuRightFragment -> snowkids.fragment.MenuRightFragment:
     android.widget.LinearLayout logoutLL -> a
     android.widget.TextView userNameTV -> b
     android.view.View view -> c
@@ -14700,18 +14700,18 @@ com.rat.nm.fragment.MenuRightFragment -> com.rat.nm.fragment.MenuRightFragment:
     android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
     void initView(android.view.View) -> a
     void initData() -> a
-com.rat.nm.fragment.MenuRightFragment$1 -> com.rat.nm.fragment.a:
-    com.rat.nm.fragment.MenuRightFragment this$0 -> a
+snowkids.fragment.MenuRightFragment$1 -> snowkids.fragment.a:
+    snowkids.fragment.MenuRightFragment this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.network.VolleyManager -> com.rat.nm.d.a:
-    com.rat.nm.network.VolleyManager instance -> a
+snowkids.network.VolleyManager -> snowkids.d.a:
+    snowkids.network.VolleyManager instance -> a
     android.content.Context context -> b
     com.android.volley.RequestQueue requestQueue -> c
-    com.rat.nm.network.VolleyManager getInstance(android.content.Context) -> a
+    snowkids.network.VolleyManager getInstance(android.content.Context) -> a
     void add2RequestQueue(com.android.volley.Request) -> a
     com.android.volley.RequestQueue getRequestQueue() -> a
-com.rat.nm.network.request.AlarmListGetRequest -> com.rat.nm.d.a.a:
-    com.rat.nm.entity.enums.DataGetType dataGetType -> g
+snowkids.network.request.AlarmListGetRequest -> snowkids.d.a.a:
+    snowkids.entity.enums.DataGetType dataGetType -> g
     int totalPage -> h
     int currentPage -> i
     java.lang.String alarmType -> j
@@ -14723,15 +14723,15 @@ com.rat.nm.network.request.AlarmListGetRequest -> com.rat.nm.d.a.a:
     java.lang.String requestTag() -> c
     void responseSuccess(org.json.JSONObject) -> a
     void responseSuccess(java.lang.Object) -> a
-com.rat.nm.network.request.DeviceGetRequest -> com.rat.nm.d.a.b:
+snowkids.network.request.DeviceGetRequest -> snowkids.d.a.b:
     java.lang.String deviceId -> g
     java.lang.String getParamsJson() -> a
     java.lang.String getUrl() -> b
     java.lang.String requestTag() -> c
     void responseSuccess(org.json.JSONObject) -> a
     void responseSuccess(java.lang.Object) -> a
-com.rat.nm.network.request.DeviceListGetRequest -> com.rat.nm.d.a.c:
-    com.rat.nm.entity.enums.DataGetType dataGetType -> g
+snowkids.network.request.DeviceListGetRequest -> snowkids.d.a.c:
+    snowkids.entity.enums.DataGetType dataGetType -> g
     int totalPage -> h
     int currentPage -> i
     java.lang.String deviceType -> j
@@ -14741,13 +14741,13 @@ com.rat.nm.network.request.DeviceListGetRequest -> com.rat.nm.d.a.c:
     java.lang.String requestTag() -> c
     void responseSuccess(org.json.JSONObject) -> a
     void responseSuccess(java.lang.Object) -> a
-com.rat.nm.network.request.DeviceTypeListGetRequest -> com.rat.nm.d.a.d:
+snowkids.network.request.DeviceTypeListGetRequest -> snowkids.d.a.d:
     java.lang.String getParamsJson() -> a
     java.lang.String getUrl() -> b
     java.lang.String requestTag() -> c
     void responseSuccess(org.json.JSONObject) -> a
     void responseSuccess(java.lang.Object) -> a
-com.rat.nm.network.request.LoginRequest -> com.rat.nm.d.a.e:
+snowkids.network.request.LoginRequest -> snowkids.d.a.e:
     java.lang.String userName -> g
     java.lang.String password -> h
     int type -> i
@@ -14756,8 +14756,8 @@ com.rat.nm.network.request.LoginRequest -> com.rat.nm.d.a.e:
     java.lang.String requestTag() -> c
     void responseSuccess(org.json.JSONObject) -> a
     void responseSuccess(java.lang.Object) -> a
-com.rat.nm.network.request.OperateLogListGetRequest -> com.rat.nm.d.a.f:
-    com.rat.nm.entity.enums.DataGetType dataGetType -> g
+snowkids.network.request.OperateLogListGetRequest -> snowkids.d.a.f:
+    snowkids.entity.enums.DataGetType dataGetType -> g
     int totalPage -> h
     int currentPage -> i
     java.lang.String operateUser -> j
@@ -14769,9 +14769,9 @@ com.rat.nm.network.request.OperateLogListGetRequest -> com.rat.nm.d.a.f:
     java.lang.String requestTag() -> c
     void responseSuccess(org.json.JSONObject) -> a
     void responseSuccess(java.lang.Object) -> a
-com.rat.nm.network.request.base.BaseVolleyPostRequest -> com.rat.nm.d.a.a.a:
+snowkids.network.request.base.BaseVolleyPostRequest -> snowkids.d.a.a.a:
     int requestType() -> d
-com.rat.nm.network.request.base.BaseVolleyRequest -> com.rat.nm.d.a.a.b:
+snowkids.network.request.base.BaseVolleyRequest -> snowkids.d.a.a.b:
     com.android.volley.Response$Listener responseSuccessListener -> a
     com.android.volley.Response$ErrorListener responseErrorListener -> b
     java.lang.String getUrl() -> b
@@ -14779,13 +14779,13 @@ com.rat.nm.network.request.base.BaseVolleyRequest -> com.rat.nm.d.a.a.b:
     java.lang.String requestTag() -> c
     void responseSuccess(java.lang.Object) -> a
     void responseError(com.android.volley.VolleyError) -> a
-com.rat.nm.network.request.base.BaseVolleyRequest$1 -> com.rat.nm.d.a.a.c:
-    com.rat.nm.network.request.base.BaseVolleyRequest this$0 -> a
+snowkids.network.request.base.BaseVolleyRequest$1 -> snowkids.d.a.a.c:
+    snowkids.network.request.base.BaseVolleyRequest this$0 -> a
     void onResponse(java.lang.Object) -> onResponse
-com.rat.nm.network.request.base.BaseVolleyRequest$2 -> com.rat.nm.d.a.a.d:
-    com.rat.nm.network.request.base.BaseVolleyRequest this$0 -> a
+snowkids.network.request.base.BaseVolleyRequest$2 -> snowkids.d.a.a.d:
+    snowkids.network.request.base.BaseVolleyRequest this$0 -> a
     void onErrorResponse(com.android.volley.VolleyError) -> onErrorResponse
-com.rat.nm.network.request.base.PostJsonRequest -> com.rat.nm.d.a.a.e:
+snowkids.network.request.base.PostJsonRequest -> snowkids.d.a.a.e:
     int CUD_SOCKET_TIMEOUT -> c
     int MAX_RETRIES -> d
     android.os.Handler handler -> e
@@ -14793,24 +14793,24 @@ com.rat.nm.network.request.base.PostJsonRequest -> com.rat.nm.d.a.a.e:
     java.lang.String getParamsJson() -> a
     com.android.volley.toolbox.JsonRequest getRequest() -> e
     void responseError(com.android.volley.VolleyError) -> a
-com.rat.nm.network.request.base.PostJsonRequest$1 -> com.rat.nm.d.a.a.f:
-    com.rat.nm.network.request.base.PostJsonRequest this$0 -> a
+snowkids.network.request.base.PostJsonRequest$1 -> snowkids.d.a.a.f:
+    snowkids.network.request.base.PostJsonRequest this$0 -> a
     java.util.Map getHeaders() -> getHeaders
     byte[] getBody() -> getBody
     com.android.volley.Response parseNetworkResponse(com.android.volley.NetworkResponse) -> parseNetworkResponse
-com.rat.nm.network.request.base.VolleyErrorHelper -> com.rat.nm.d.a.a.g:
+snowkids.network.request.base.VolleyErrorHelper -> snowkids.d.a.a.g:
     java.lang.String getMessage(java.lang.Object,android.content.Context) -> a
     boolean isNetworkProblem(java.lang.Object) -> a
     boolean isServerProblem(java.lang.Object) -> b
-com.rat.nm.receiver.SystemBootReceiver -> com.rat.nm.receiver.SystemBootReceiver:
+snowkids.receiver.SystemBootReceiver -> snowkids.receiver.SystemBootReceiver:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
-com.rat.nm.util.AppUtils -> com.rat.nm.e.a:
+snowkids.util.AppUtils -> snowkids.e.a:
     android.content.SharedPreferences sharedPreferences -> a
     android.content.pm.PackageInfo packageInfo -> b
-    com.rat.nm.util.AppUtils instance -> c
-    com.rat.nm.appmanager.Application context -> d
-    com.rat.nm.util.AppUtils getInstance() -> a
-    com.rat.nm.util.AppUtils initial(com.rat.nm.appmanager.Application) -> a
+    snowkids.util.AppUtils instance -> c
+    snowkids.appmanager.Application context -> d
+    snowkids.util.AppUtils getInstance() -> a
+    snowkids.util.AppUtils initial(snowkids.appmanager.Application) -> a
     boolean isRemeberMe() -> b
     void updateIsRemeberMe(boolean) -> a
     boolean isReceivePushMessage() -> c
@@ -14819,49 +14819,49 @@ com.rat.nm.util.AppUtils -> com.rat.nm.e.a:
     void setUserName(java.lang.String) -> a
     java.lang.String getUserToken() -> e
     void setUserToken(java.lang.String) -> b
-    com.rat.nm.entity.model.Environment getUserEnvironment() -> f
-    void setUserEnvironment(com.rat.nm.entity.model.Environment) -> a
-    void setUserEnvironment4Update(com.rat.nm.entity.model.Environment) -> b
+    snowkids.entity.model.Environment getUserEnvironment() -> f
+    void setUserEnvironment(snowkids.entity.model.Environment) -> a
+    void setUserEnvironment4Update(snowkids.entity.model.Environment) -> b
     java.lang.String getServerIp() -> g
     void setServerIp(java.lang.String) -> c
-com.rat.nm.util.DateUtil -> com.rat.nm.e.b:
+snowkids.util.DateUtil -> snowkids.e.b:
     java.text.SimpleDateFormat formatter -> a
     java.text.SimpleDateFormat dateFormat -> b
     java.text.SimpleDateFormat dateAndTimeFormat -> c
     java.lang.String dateToString(java.util.Date) -> a
     java.util.Date stringToDate(java.lang.String,java.lang.String) -> a
-com.rat.nm.util.GsonUtil -> com.rat.nm.e.c:
+snowkids.util.GsonUtil -> snowkids.e.c:
     com.google.gson.Gson gson -> a
     java.lang.String toJson(java.lang.Object) -> a
     java.lang.Object fromJson(java.lang.String,java.lang.Class) -> a
-com.rat.nm.util.ImageUtil -> com.rat.nm.e.d:
+snowkids.util.ImageUtil -> snowkids.e.d:
     int corners -> a
     void initImageLoader(android.content.Context) -> a
     com.nostra13.universalimageloader.core.DisplayImageOptions getImageOptions() -> a
-com.rat.nm.util.LogUtil -> com.rat.nm.e.e:
+snowkids.util.LogUtil -> snowkids.e.e:
     boolean enable -> a
     void i(java.lang.String) -> a
     void e(java.lang.String,java.lang.Throwable) -> a
-com.rat.nm.util.NetworkUtil -> com.rat.nm.e.f:
+snowkids.util.NetworkUtil -> snowkids.e.f:
     java.lang.String getNetWorkType(android.content.Context) -> a
     boolean isFastMobileNetwork(android.content.Context) -> b
-com.rat.nm.util.StorageUtil -> com.rat.nm.e.g:
+snowkids.util.StorageUtil -> snowkids.e.g:
     java.lang.String getCacheDirectory(android.content.Context) -> a
     java.lang.String getStorageBasePath(android.content.Context) -> b
     boolean checkRomSpace(int) -> a
     boolean checkSDcardSpace(int) -> b
     void deleteCache(android.content.Context) -> c
-com.rat.nm.util.StringUtils -> com.rat.nm.e.h:
+snowkids.util.StringUtils -> snowkids.e.h:
     char[] HEX_DIGITS -> a
     boolean isNotBlank(java.lang.String) -> a
     boolean isNullOrBlank(java.lang.String) -> b
-com.rat.nm.util.UserUtils -> com.rat.nm.e.i:
-    com.rat.nm.util.UserUtils instance -> a
+snowkids.util.UserUtils -> snowkids.e.i:
+    snowkids.util.UserUtils instance -> a
     android.content.Context context -> b
-    com.rat.nm.util.UserUtils getInstance(android.content.Context) -> a
+    snowkids.util.UserUtils getInstance(android.content.Context) -> a
     boolean isTokenError(int,java.lang.String) -> a
     void logout() -> a
-com.rat.nm.util.XXTEA -> com.rat.nm.e.j:
+snowkids.util.XXTEA -> snowkids.e.j:
     int MX(int,int,int,int,int,int[]) -> a
     byte[] encrypt(byte[],byte[]) -> a
     byte[] encrypt(java.lang.String,java.lang.String) -> a
@@ -14870,20 +14870,20 @@ com.rat.nm.util.XXTEA -> com.rat.nm.e.j:
     byte[] fixKey(byte[]) -> a
     int[] toIntArray(byte[],boolean) -> a
     byte[] toByteArray(int[],boolean) -> a
-com.rat.nm.view.CountView -> com.rat.nm.view.a:
+snowkids.view.CountView -> snowkids.view.a:
     android.content.Context context -> a
     java.lang.String title -> b
     java.lang.String count -> c
     android.widget.TextView titleTV -> d
     android.widget.TextView countTV -> e
-com.rat.nm.view.CountView$1 -> com.rat.nm.view.b:
-    com.rat.nm.view.CountView this$0 -> a
+snowkids.view.CountView$1 -> snowkids.view.b:
+    snowkids.view.CountView this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.view.CountView$2 -> com.rat.nm.view.c:
+snowkids.view.CountView$2 -> snowkids.view.c:
     android.content.Context val$context -> a
-    com.rat.nm.view.CountView this$0 -> b
+    snowkids.view.CountView this$0 -> b
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.rat.nm.view.MenuItemView -> com.rat.nm.view.MenuItemView:
+snowkids.view.MenuItemView -> snowkids.view.MenuItemView:
     android.content.Context context -> b
     int itemType -> c
     android.widget.FrameLayout itemFL -> d
@@ -14892,14 +14892,14 @@ com.rat.nm.view.MenuItemView -> com.rat.nm.view.MenuItemView:
     com.jeremyfeinstein.slidingmenu.lib.SlidingMenu menu -> g
     android.view.View$OnTouchListener onTouchListener -> a
     void initView(int) -> a
-    android.widget.FrameLayout access$000(com.rat.nm.view.MenuItemView) -> a
-    int access$100(com.rat.nm.view.MenuItemView) -> b
-    com.jeremyfeinstein.slidingmenu.lib.SlidingMenu access$200(com.rat.nm.view.MenuItemView) -> c
-    android.content.Context access$300(com.rat.nm.view.MenuItemView) -> d
-com.rat.nm.view.MenuItemView$1 -> com.rat.nm.view.d:
-    com.rat.nm.view.MenuItemView this$0 -> a
+    android.widget.FrameLayout access$000(snowkids.view.MenuItemView) -> a
+    int access$100(snowkids.view.MenuItemView) -> b
+    com.jeremyfeinstein.slidingmenu.lib.SlidingMenu access$200(snowkids.view.MenuItemView) -> c
+    android.content.Context access$300(snowkids.view.MenuItemView) -> d
+snowkids.view.MenuItemView$1 -> snowkids.view.d:
+    snowkids.view.MenuItemView this$0 -> a
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.rat.nm.view.WheelView -> com.rat.nm.view.WheelView:
+snowkids.view.WheelView -> snowkids.view.WheelView:
     java.lang.String TAG -> a
     android.content.Context context -> m
     android.widget.LinearLayout views -> n
@@ -14915,7 +14915,7 @@ com.rat.nm.view.WheelView -> com.rat.nm.view.WheelView:
     int scrollDirection -> o
     android.graphics.Paint paint -> k
     int viewWidth -> l
-    com.rat.nm.view.WheelView$OnWheelViewListener onWheelViewListener -> p
+    snowkids.view.WheelView$OnWheelViewListener onWheelViewListener -> p
     java.util.List getItems() -> getItems
     void setItems(java.util.List) -> setItems
     int getOffset() -> getOffset
@@ -14935,52 +14935,52 @@ com.rat.nm.view.WheelView -> com.rat.nm.view.WheelView:
     int getSeletedIndex() -> getSeletedIndex
     void fling(int) -> fling
     boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
-    com.rat.nm.view.WheelView$OnWheelViewListener getOnWheelViewListener() -> getOnWheelViewListener
-    void setOnWheelViewListener(com.rat.nm.view.WheelView$OnWheelViewListener) -> setOnWheelViewListener
+    snowkids.view.WheelView$OnWheelViewListener getOnWheelViewListener() -> getOnWheelViewListener
+    void setOnWheelViewListener(snowkids.view.WheelView$OnWheelViewListener) -> setOnWheelViewListener
     int dip2px(float) -> a
     int getViewMeasuredHeight(android.view.View) -> a
-    void access$000(com.rat.nm.view.WheelView) -> a
-    int[] access$100(com.rat.nm.view.WheelView) -> b
-com.rat.nm.view.WheelView$1 -> com.rat.nm.view.e:
-    com.rat.nm.view.WheelView this$0 -> a
+    void access$000(snowkids.view.WheelView) -> a
+    int[] access$100(snowkids.view.WheelView) -> b
+snowkids.view.WheelView$1 -> snowkids.view.e:
+    snowkids.view.WheelView this$0 -> a
     void run() -> run
-com.rat.nm.view.WheelView$1$1 -> com.rat.nm.view.f:
+snowkids.view.WheelView$1$1 -> snowkids.view.f:
     int val$remainder -> a
     int val$divided -> b
-    com.rat.nm.view.WheelView$1 this$1 -> c
+    snowkids.view.WheelView$1 this$1 -> c
     void run() -> run
-com.rat.nm.view.WheelView$1$2 -> com.rat.nm.view.g:
+snowkids.view.WheelView$1$2 -> snowkids.view.g:
     int val$remainder -> a
     int val$divided -> b
-    com.rat.nm.view.WheelView$1 this$1 -> c
+    snowkids.view.WheelView$1 this$1 -> c
     void run() -> run
-com.rat.nm.view.WheelView$2 -> com.rat.nm.view.h:
-    com.rat.nm.view.WheelView this$0 -> a
+snowkids.view.WheelView$2 -> snowkids.view.h:
+    snowkids.view.WheelView this$0 -> a
     void draw(android.graphics.Canvas) -> draw
     void setAlpha(int) -> setAlpha
     void setColorFilter(android.graphics.ColorFilter) -> setColorFilter
     int getOpacity() -> getOpacity
-com.rat.nm.view.WheelView$3 -> com.rat.nm.view.i:
+snowkids.view.WheelView$3 -> snowkids.view.i:
     int val$p -> a
-    com.rat.nm.view.WheelView this$0 -> b
+    snowkids.view.WheelView this$0 -> b
     void run() -> run
-com.rat.nm.view.WheelView$OnWheelViewListener -> com.rat.nm.view.WheelView$a:
+snowkids.view.WheelView$OnWheelViewListener -> snowkids.view.WheelView$a:
     void onSelected(int,java.lang.String) -> a
-com.rat.nm.view.dialog.CustomProgressDialog -> com.rat.nm.view.a.a:
+snowkids.view.dialog.CustomProgressDialog -> snowkids.view.a.a:
     android.content.Context context -> a
     java.lang.String text -> b
     void onCreate(android.os.Bundle) -> onCreate
-com.rat.nm.view.dialog.PromptDialog -> com.rat.nm.view.a.b:
+snowkids.view.dialog.PromptDialog -> snowkids.view.a.b:
     android.widget.TextView titleTV -> a
     android.widget.TextView contentTV -> b
     android.widget.TextView sureTV -> c
     void show() -> show
     void dismiss() -> dismiss
     void initData(java.lang.String,java.lang.String) -> a
-com.rat.nm.view.dialog.PromptDialog$1 -> com.rat.nm.view.a.c:
-    com.rat.nm.view.dialog.PromptDialog this$0 -> a
+snowkids.view.dialog.PromptDialog$1 -> snowkids.view.a.c:
+    snowkids.view.dialog.PromptDialog this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.view.pull2refresh.XFooterView -> com.rat.nm.view.pull2refresh.XFooterView:
+snowkids.view.pull2refresh.XFooterView -> snowkids.view.pull2refresh.XFooterView:
     int ROTATE_ANIM_DURATION -> a
     android.view.View mLayout -> b
     android.view.View mProgressBar -> c
@@ -14994,7 +14994,7 @@ com.rat.nm.view.pull2refresh.XFooterView -> com.rat.nm.view.pull2refresh.XFooter
     int getBottomMargin() -> getBottomMargin
     void hide() -> a
     void show() -> b
-com.rat.nm.view.pull2refresh.XHeaderView -> com.rat.nm.view.pull2refresh.XHeaderView:
+snowkids.view.pull2refresh.XHeaderView -> snowkids.view.pull2refresh.XHeaderView:
     int ROTATE_ANIM_DURATION -> a
     android.widget.LinearLayout mContainer -> b
     android.widget.ImageView mArrowImageView -> c
@@ -15008,18 +15008,18 @@ com.rat.nm.view.pull2refresh.XHeaderView -> com.rat.nm.view.pull2refresh.XHeader
     void setState(int) -> setState
     void setVisibleHeight(int) -> setVisibleHeight
     int getVisibleHeight() -> getVisibleHeight
-com.rat.nm.view.pull2refresh.XListView -> com.rat.nm.view.pull2refresh.XListView:
+snowkids.view.pull2refresh.XListView -> snowkids.view.pull2refresh.XListView:
     float mLastY -> a
     android.widget.Scroller mScroller -> b
     android.widget.AbsListView$OnScrollListener mScrollListener -> c
     int mScrollBack -> d
-    com.rat.nm.view.pull2refresh.XListView$IXListViewListener mListener -> e
-    com.rat.nm.view.pull2refresh.XHeaderView mHeader -> f
+    snowkids.view.pull2refresh.XListView$IXListViewListener mListener -> e
+    snowkids.view.pull2refresh.XHeaderView mHeader -> f
     android.widget.RelativeLayout mHeaderContent -> g
     android.widget.TextView mHeaderTime -> h
     int mHeaderHeight -> i
     android.widget.LinearLayout mFooterLayout -> j
-    com.rat.nm.view.pull2refresh.XFooterView mFooterView -> k
+    snowkids.view.pull2refresh.XFooterView mFooterView -> k
     boolean mIsFooterReady -> l
     boolean mEnablePullRefresh -> m
     boolean mPullRefreshing -> n
@@ -15035,7 +15035,7 @@ com.rat.nm.view.pull2refresh.XListView -> com.rat.nm.view.pull2refresh.XListView
     void stopRefresh() -> a
     void stopLoadMore() -> b
     void setRefreshTime() -> c
-    void setXListViewListener(com.rat.nm.view.pull2refresh.XListView$IXListViewListener) -> setXListViewListener
+    void setXListViewListener(snowkids.view.pull2refresh.XListView$IXListViewListener) -> setXListViewListener
     void invokeOnScrolling() -> d
     void updateHeaderHeight(float) -> a
     void resetHeaderHeight() -> e
@@ -15050,33 +15050,33 @@ com.rat.nm.view.pull2refresh.XListView -> com.rat.nm.view.pull2refresh.XListView
     void refresh() -> h
     void loadMore() -> i
     void setAdapter(android.widget.Adapter) -> setAdapter
-    int access$002(com.rat.nm.view.pull2refresh.XListView,int) -> a
-    android.widget.RelativeLayout access$100(com.rat.nm.view.pull2refresh.XListView) -> a
-    void access$200(com.rat.nm.view.pull2refresh.XListView) -> b
-com.rat.nm.view.pull2refresh.XListView$1 -> com.rat.nm.view.pull2refresh.a:
-    com.rat.nm.view.pull2refresh.XListView this$0 -> a
+    int access$002(snowkids.view.pull2refresh.XListView,int) -> a
+    android.widget.RelativeLayout access$100(snowkids.view.pull2refresh.XListView) -> a
+    void access$200(snowkids.view.pull2refresh.XListView) -> b
+snowkids.view.pull2refresh.XListView$1 -> snowkids.view.pull2refresh.a:
+    snowkids.view.pull2refresh.XListView this$0 -> a
     void onGlobalLayout() -> onGlobalLayout
-com.rat.nm.view.pull2refresh.XListView$2 -> com.rat.nm.view.pull2refresh.b:
-    com.rat.nm.view.pull2refresh.XListView this$0 -> a
+snowkids.view.pull2refresh.XListView$2 -> snowkids.view.pull2refresh.b:
+    snowkids.view.pull2refresh.XListView this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.view.pull2refresh.XListView$IXListViewListener -> com.rat.nm.view.pull2refresh.XListView$a:
+snowkids.view.pull2refresh.XListView$IXListViewListener -> snowkids.view.pull2refresh.XListView$a:
     void onRefresh() -> d
     void onLoadMore() -> e
-com.rat.nm.view.pull2refresh.XListView$OnXScrollListener -> com.rat.nm.view.pull2refresh.XListView$b:
+snowkids.view.pull2refresh.XListView$OnXScrollListener -> snowkids.view.pull2refresh.XListView$b:
     void onXScrolling(android.view.View) -> a
-com.rat.nm.view.pull2refresh.XScrollView -> com.rat.nm.view.pull2refresh.XScrollView:
+snowkids.view.pull2refresh.XScrollView -> snowkids.view.pull2refresh.XScrollView:
     float mLastY -> a
     android.widget.Scroller mScroller -> b
     android.widget.AbsListView$OnScrollListener mScrollListener -> c
     int mScrollBack -> d
-    com.rat.nm.view.pull2refresh.XScrollView$IXScrollViewListener mListener -> e
+    snowkids.view.pull2refresh.XScrollView$IXScrollViewListener mListener -> e
     android.widget.LinearLayout mLayout -> f
     android.widget.LinearLayout mContentLayout -> g
-    com.rat.nm.view.pull2refresh.XHeaderView mHeader -> h
+    snowkids.view.pull2refresh.XHeaderView mHeader -> h
     android.widget.RelativeLayout mHeaderContent -> i
     android.widget.TextView mHeaderTime -> j
     int mHeaderHeight -> k
-    com.rat.nm.view.pull2refresh.XFooterView mFooterView -> l
+    snowkids.view.pull2refresh.XFooterView mFooterView -> l
     boolean mEnablePullRefresh -> m
     boolean mPullRefreshing -> n
     boolean mEnablePullLoad -> o
@@ -15088,7 +15088,7 @@ com.rat.nm.view.pull2refresh.XScrollView -> com.rat.nm.view.pull2refresh.XScroll
     void setPullRefreshEnable(boolean) -> setPullRefreshEnable
     void setPullLoadEnable(boolean) -> setPullLoadEnable
     void setAutoLoadEnable(boolean) -> setAutoLoadEnable
-    void setIXScrollViewListener(com.rat.nm.view.pull2refresh.XScrollView$IXScrollViewListener) -> setIXScrollViewListener
+    void setIXScrollViewListener(snowkids.view.pull2refresh.XScrollView$IXScrollViewListener) -> setIXScrollViewListener
     void invokeOnScrolling() -> a
     void updateHeaderHeight(float) -> a
     void resetHeaderHeight() -> b
@@ -15106,23 +15106,23 @@ com.rat.nm.view.pull2refresh.XScrollView -> com.rat.nm.view.pull2refresh.XScroll
     void onScroll(android.widget.AbsListView,int,int,int) -> onScroll
     void refresh() -> h
     void loadMore() -> i
-    int access$002(com.rat.nm.view.pull2refresh.XScrollView,int) -> a
-    android.widget.RelativeLayout access$100(com.rat.nm.view.pull2refresh.XScrollView) -> a
-    void access$200(com.rat.nm.view.pull2refresh.XScrollView) -> b
-com.rat.nm.view.pull2refresh.XScrollView$1 -> com.rat.nm.view.pull2refresh.c:
-    com.rat.nm.view.pull2refresh.XScrollView this$0 -> a
+    int access$002(snowkids.view.pull2refresh.XScrollView,int) -> a
+    android.widget.RelativeLayout access$100(snowkids.view.pull2refresh.XScrollView) -> a
+    void access$200(snowkids.view.pull2refresh.XScrollView) -> b
+snowkids.view.pull2refresh.XScrollView$1 -> snowkids.view.pull2refresh.c:
+    snowkids.view.pull2refresh.XScrollView this$0 -> a
     void onGlobalLayout() -> onGlobalLayout
-com.rat.nm.view.pull2refresh.XScrollView$2 -> com.rat.nm.view.pull2refresh.d:
-    com.rat.nm.view.pull2refresh.XScrollView this$0 -> a
+snowkids.view.pull2refresh.XScrollView$2 -> snowkids.view.pull2refresh.d:
+    snowkids.view.pull2refresh.XScrollView this$0 -> a
     void onClick(android.view.View) -> onClick
-com.rat.nm.view.pull2refresh.XScrollView$3 -> com.rat.nm.view.pull2refresh.e:
-    com.rat.nm.view.pull2refresh.XScrollView this$0 -> a
+snowkids.view.pull2refresh.XScrollView$3 -> snowkids.view.pull2refresh.e:
+    snowkids.view.pull2refresh.XScrollView this$0 -> a
     void run() -> run
-com.rat.nm.view.pull2refresh.XScrollView$4 -> com.rat.nm.view.pull2refresh.f:
-    com.rat.nm.view.pull2refresh.XScrollView this$0 -> a
+snowkids.view.pull2refresh.XScrollView$4 -> snowkids.view.pull2refresh.f:
+    snowkids.view.pull2refresh.XScrollView this$0 -> a
     void run() -> run
-com.rat.nm.view.pull2refresh.XScrollView$IXScrollViewListener -> com.rat.nm.view.pull2refresh.XScrollView$a:
+snowkids.view.pull2refresh.XScrollView$IXScrollViewListener -> snowkids.view.pull2refresh.XScrollView$a:
     void onRefresh() -> a
     void onLoadMore() -> b
-com.rat.nm.view.pull2refresh.XScrollView$OnXScrollListener -> com.rat.nm.view.pull2refresh.XScrollView$b:
+snowkids.view.pull2refresh.XScrollView$OnXScrollListener -> snowkids.view.pull2refresh.XScrollView$b:
     void onXScrolling(android.view.View) -> a
