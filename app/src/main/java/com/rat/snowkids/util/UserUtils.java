@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.rat.snowkids.activity.LoginActivity;
 import com.rat.snowkids.common.ResponseConstant;
 
 
@@ -45,13 +44,13 @@ public class UserUtils {
      * @return
      */
     public boolean isTokenError(int code, String message) {
-        if (ResponseConstant.TOKEN_ERROR == code) {
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-            logout();
-            Intent intent = new Intent((Activity) context, LoginActivity.class);
-            context.startActivity(intent);
-            return true;
-        } else
+//        if (ResponseConstant.TOKEN_ERROR == code) {
+//            Toast.makeText(context, message, Toast.LENGTH_LONG).show();
+//            logout();
+//            Intent intent = new Intent((Activity) context, LoginActivity.class);
+//            context.startActivity(intent);
+//            return true;
+//        } else
             return false;
     }
 
@@ -59,11 +58,11 @@ public class UserUtils {
      * 退出登录
      */
     public void logout() {
-        AppUtils.getInstance().setUserName("");
-        AppUtils.getInstance().setUserToken("");
-        AppUtils.getInstance().updateIsRemeberMe(false);
-        Intent i = new Intent(context, LoginActivity.class);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
+//        AppUtils.getInstance().setUserName("");
+//        AppUtils.getInstance().setUserToken("");
+//        AppUtils.getInstance().updateIsRemeberMe(false);
+//        Intent i = new Intent(context, LoginActivity.class);
+//        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        context.startActivity(i);
     }
 }

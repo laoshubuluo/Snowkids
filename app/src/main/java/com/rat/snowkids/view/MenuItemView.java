@@ -122,7 +122,7 @@ public class MenuItemView extends FrameLayout {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             if (event.getAction() == MotionEvent.ACTION_DOWN) {
-                itemFL.setBackgroundResource(R.mipmap.menu_circle_blue);
+                itemFL.setBackgroundResource(R.mipmap.menu_articles);
             } else if (event.getAction() == MotionEvent.ACTION_UP) {
                 itemFL.setBackgroundResource(R.mipmap.menu_circle_border);
 

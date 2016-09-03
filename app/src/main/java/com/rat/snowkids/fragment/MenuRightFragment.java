@@ -5,12 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.snowkids.snowkids.R;
 import com.rat.snowkids.util.AppUtils;
-import com.rat.snowkids.util.UserUtils;
+import com.snowkids.snowkids.R;
 
 /**
  * author : L.jinzhu
@@ -18,8 +17,13 @@ import com.rat.snowkids.util.UserUtils;
  * introduce : 滑动菜单界面
  */
 public class MenuRightFragment extends Fragment {
-    private LinearLayout logoutLL;
+    private ImageView iconIV;
     private TextView userNameTV;
+    private ImageView powerFullRemindIV;
+    private ImageView theftProofRemindIV;
+    private TextView shareAppTV;
+    private TextView marketJDTV;
+    private TextView marketTBTV;
     private View view;
 
     @Override
@@ -47,15 +51,13 @@ public class MenuRightFragment extends Fragment {
      * 初始化界面
      */
     private void initView(View view) {
+        iconIV = (ImageView) view.findViewById(R.id.iconIV);
         userNameTV = (TextView) view.findViewById(R.id.userNameTV);
-        logoutLL = (LinearLayout) view.findViewById(R.id.logoutLL);
-        logoutLL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UserUtils.getInstance(getActivity()).logout();
-                getActivity().finish();
-            }
-        });
+        powerFullRemindIV = (ImageView) view.findViewById(R.id.powerFullRemindIV);
+        theftProofRemindIV = (ImageView) view.findViewById(R.id.theftProofRemindIV);
+        shareAppTV = (TextView) view.findViewById(R.id.shareAppTV);
+        marketJDTV = (TextView) view.findViewById(R.id.marketJDTV);
+        marketTBTV = (TextView) view.findViewById(R.id.marketTBTV);
     }
 
     /**

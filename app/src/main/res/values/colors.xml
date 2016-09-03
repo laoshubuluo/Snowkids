@@ -1,14 +1,19 @@
 <resources>
     <color name="blue">#01699f</color>
     <color name="blue_43">#436E8B</color>
-    <color name="white">#ffffff</color>
     <color name="black">#000000</color>
-    <color name="red">#ff0000</color>
     <color name="orage">#FF6633</color>
     <color name="green">#10ff00</color>
-    <color name="gray">#7f7f7f</color>
     <color name="gray_ad">#adadad</color>
 
     <color name="translate">#00000000</color>//透明
     <color name="translate_half_white">#a0ffffff</color>//半透明白
+
+
+    <!--new-->
+    <color name="red">#b7373b</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="white">#ffffff</color>
+
+
 </resources>

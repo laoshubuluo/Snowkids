@@ -1,6 +1,6 @@
 <resources>
     <!--公共部分-->
-    <string name="app_name">网管系统</string>
+    <string name="app_name">Snowkids</string>
 
     <string name="loading">请求中</string>
     <string name="loading_error">请求失败</string>
@@ -87,4 +87,20 @@
     <string name="server_ip">服务器地址</string>
     <string name="server_tip">提醒：如果您输入上述地址，应用所有请求将指向您输入的新地址。格式参考：182.92.107.7:8080</string>
     <string name="setting_success">设置成功</string>
+
+
+    <!--new-->
+
+    <string name="power_full_remind">满电提醒</string>
+    <string name="theft_proof_remind">防盗提醒</string>
+    <string name="power_full_remind_label">手机电量达到100%，开启本项可收到音乐或震动提醒</string>
+    <string name="theft_proof_remind_label">使用本App时，拔出数据线会发出警告声音，并发送推送通知</string>
+    <string name="share_app">分享APP</string>
+    <string name="snowkids_version">snowkids 1.0</string>
+    <string name="snowkids_market_jingdong">snowkids京东旗舰店</string>
+    <string name="snowkids_market_taobao">snowkids天猫旗舰店</string>
+
+    <string name="power_full">已充满</string>
+    <string name="power_ing">充电中</string>
+    <string name="power_time_out">剩余可用时间：</string>
 </resources>

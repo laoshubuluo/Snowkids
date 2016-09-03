@@ -81,6 +81,4 @@ public class BaseActivity extends SlidingFragmentActivity implements Handler.Cal
         }
         super.onDestroy();
     }
-
-
 }
