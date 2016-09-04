@@ -213,73 +213,34 @@ public class AppUtils {
     public void setServerIp(String serverIp) {
         sharedPreferences.edit().putString("serverIp", serverIp).commit();
     }
-//
-//    /**
-//     * 是否首次上报通讯录信息
-//     */
-//    public boolean isFirstInformContacts() {
-//        String key = "isFirstInformContacts_" + this.getUserId();
-//        return sharedPreferences.getBoolean(key, true);
-//    }
-//
-//    /**
-//     * 更新状态：非首次上报通讯录信息
-//     */
-//    public void updateInformContactsStatus() {
-//        String key = "isFirstInformContacts_" + this.getUserId();
-//        sharedPreferences.edit().putBoolean(key, false).commit();
-//    }
-//
-//    public void setPDialogIsShow(boolean isShow) {
-//        sharedPreferences.edit().putBoolean("isShowPDialog", isShow).commit();
-//    }
-//
-//    /**
-//     * 是否首次登录（首次登录，需要完善用户信息）
-//     */
-//    public boolean isLoginFirst() {
-//        return sharedPreferences.getBoolean("isLoginFirst", false);
-//    }
-//
-//    /**
-//     * 更新登录状态
-//     */
-//    public void updateLoginStatus(int isLoginFirst) {
-//        if (isLoginFirst == 1)// 首次登录
-//            sharedPreferences.edit().putBoolean("isLoginFirst", true).commit();
-//        else
-//            sharedPreferences.edit().putBoolean("isLoginFirst", false).commit();
-//    }
-//
-//    public boolean getPDialogIsShow() {
-//        return sharedPreferences.getBoolean("isShowPDialog", false);
-//    }
-//
-//    /**
-//     * 获取系统文章版本。从任务中获取，再次获取任务时上传，由服务器匹配是否有新文章
-//     */
-//    public long getSystemNewsVersion() {
-//        String key = "systemNewsVersion_" + this.getUserId();
-//        return sharedPreferences.getLong(key, 0);
-//    }
-//
-//    /**
-//     * 更新系统文章版本
-//     */
-//    public void updateSystemNewsVersion(long systemNewsVersion) {
-//        String key = "systemNewsVersion_" + this.getUserId();
-//        sharedPreferences.edit().putLong(key, systemNewsVersion).commit();
-//    }
-//
-//    /**
-//     * 应用细信息是否上报成功
-//     */
-//    public boolean isAppInfoInformOK() {
-//        int informOKVersion = sharedPreferences.getInt("informOKAppInfo", 0);
-//        if (informOKVersion == getCurrentVersion())
-//            return true;
-//        else
-//            return false;
-//    }
-//
+
+
+    /**
+     * 是否满电提醒
+     */
+    public boolean isPowerFullRemind() {
+        return sharedPreferences.getBoolean("isPowerFullRemind", false);
+    }
+
+    /**
+     * 更新状态：是否满电提醒
+     */
+    public void updateIsPowerFullRemind(boolean isPowerFullRemind) {
+        sharedPreferences.edit().putBoolean("isPowerFullRemind", isPowerFullRemind).commit();
+    }
+
+    /**
+     * 是否防盗提醒
+     */
+    public boolean isTheftProofRemind() {
+        return sharedPreferences.getBoolean("isTheftProofRemind", false);
+    }
+
+    /**
+     * 更新状态：是否防盗提醒
+     */
+    public void updateIsTheftProofRemind(boolean isTheftProofRemind) {
+        sharedPreferences.edit().putBoolean("isTheftProofRemind", isTheftProofRemind).commit();
+    }
+
 }

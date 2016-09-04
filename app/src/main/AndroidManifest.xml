@@ -70,6 +70,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.rat.snowkids.activity.base.WebActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.rat.snowkids.activity.DeviceListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
