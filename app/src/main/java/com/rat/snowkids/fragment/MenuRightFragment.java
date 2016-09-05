@@ -1,5 +1,10 @@
 package com.rat.snowkids.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,15 +13,20 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rat.snowkids.activity.base.WebActivity;
+import com.rat.snowkids.common.Actions;
 import com.rat.snowkids.util.AppUtils;
+import com.rat.snowkids.util.LogUtil;
 import com.snowkids.snowkids.R;
+
+import java.io.File;
 
 /**
  * author : L.jinzhu
  * date : 2016/1/24
  * introduce : 滑动菜单界面
  */
-public class MenuRightFragment extends Fragment {
+public class MenuRightFragment extends Fragment implements View.OnClickListener {
     private ImageView iconIV;
     private TextView userNameTV;
     private ImageView powerFullRemindIV;
@@ -42,6 +52,7 @@ public class MenuRightFragment extends Fragment {
             view = inflater.inflate(R.layout.fragment_menu_right, null);
             initView(view);
             initData();
+            initBroadcastReceiver();
         }
         return view;
     }
@@ -58,6 +69,11 @@ public class MenuRightFragment extends Fragment {
         shareAppTV = (TextView) view.findViewById(R.id.shareAppTV);
         marketJDTV = (TextView) view.findViewById(R.id.marketJDTV);
         marketTBTV = (TextView) view.findViewById(R.id.marketTBTV);
+        powerFullRemindIV.setOnClickListener(this);
+        theftProofRemindIV.setOnClickListener(this);
+        shareAppTV.setOnClickListener(this);
+        marketJDTV.setOnClickListener(this);
+        marketTBTV.setOnClickListener(this);
     }
 
     /**
@@ -65,5 +81,114 @@ public class MenuRightFragment extends Fragment {
      */
     private void initData() {
         userNameTV.setText(AppUtils.getInstance().getUserName());
+    }
+
+    /**
+     * 初始化广播
+     */
+    public void initBroadcastReceiver() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Actions.POWER_FULL_REMIND_STATUS_CHANGE);
+        filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
+        getActivity().registerReceiver(receiver, filter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.powerFullRemindIV:
+                // 是否满电提醒
+                if (AppUtils.getInstance().isPowerFullRemind()) {
+                    AppUtils.getInstance().updateIsPowerFullRemind(false);
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                } else {
+                    AppUtils.getInstance().updateIsPowerFullRemind(true);
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                }
+                getActivity().sendBroadcast(new Intent(Actions.POWER_FULL_REMIND_STATUS_CHANGE));
+                break;
+            case R.id.theftProofRemindIV:
+                // 是否防盗提醒
+                if (AppUtils.getInstance().isTheftProofRemind()) {
+                    AppUtils.getInstance().updateIsTheftProofRemind(false);
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                } else {
+                    AppUtils.getInstance().updateIsTheftProofRemind(true);
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                }
+                getActivity().sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
+                break;
+            case R.id.marketJDTV:
+                intent = new Intent(getActivity(), WebActivity.class);
+                intent.putExtra(WebActivity.INTENT_MARKET_TYPE, WebActivity.INTENT_MARKET_TYPE_JD);
+                startActivity(intent);
+                break;
+            case R.id.marketTBTV:
+                intent = new Intent(getActivity(), WebActivity.class);
+                intent.putExtra(WebActivity.INTENT_MARKET_TYPE, WebActivity.INTENT_MARKET_TYPE_TB);
+                startActivity(intent);
+                break;
+            case R.id.shareAppTV:
+                shareMsg("这里是页面title", "分享信息title", "分享信息内容", "");
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 分享功能
+     *
+     * @param activityTitle Activity的名字
+     * @param msgTitle      消息标题
+     * @param msgText       消息内容
+     * @param imgPath       图片路径，不分享图片则传null
+     */
+    public void shareMsg(String activityTitle, String msgTitle, String msgText, String imgPath) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        if (imgPath == null || imgPath.equals("")) {
+            intent.setType("text/plain"); // 纯文本
+        } else {
+            File f = new File(imgPath);
+            if (f != null && f.exists() && f.isFile()) {
+                intent.setType("image/jpg");
+                Uri u = Uri.fromFile(f);
+                intent.putExtra(Intent.EXTRA_STREAM, u);
+            }
+        }
+        intent.putExtra(Intent.EXTRA_SUBJECT, msgTitle);
+        intent.putExtra(Intent.EXTRA_TEXT, msgText);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(Intent.createChooser(intent, activityTitle));
+    }
+
+    BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            LogUtil.i("receive broadcast,action:" + intent.getAction());
+            // 满电提醒
+            if (Actions.POWER_FULL_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
+                if (AppUtils.getInstance().isPowerFullRemind()) {
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                } else {
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                }
+            }
+            // 防盗提醒
+            else if (Actions.THEFT_PROOF_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
+                if (AppUtils.getInstance().isTheftProofRemind()) {
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                } else {
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                }
+            }
+        }
+    };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().unregisterReceiver(receiver);
     }
 }

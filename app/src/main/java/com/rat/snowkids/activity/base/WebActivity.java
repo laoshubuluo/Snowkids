@@ -1,6 +1,7 @@
 package com.rat.snowkids.activity.base;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -27,6 +28,8 @@ public class WebActivity extends BaseActivity {
 
     @ViewInject(R.id.webview)
     private WebView webView;
+    @ViewInject(R.id.loadingView)
+    private View loadingView;
 
     private int type;
     private String url;
@@ -70,14 +73,20 @@ public class WebActivity extends BaseActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 super.onPageFinished(view, url);
-                // html加载完成之后，添加监听图片的点击js函数
-
+                loadingView.setVisibility(View.GONE);
             }
 
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
+                loadingView.setVisibility(View.GONE);
                 Toast.makeText(getApplicationContext(), "加载失败：code：" + errorCode, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                loadingView.setVisibility(View.VISIBLE);
+                super.onPageStarted(view, url, favicon);
             }
         });
 

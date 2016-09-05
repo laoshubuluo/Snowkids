@@ -11,12 +11,25 @@
         android:background="@color/white"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/powerDataView"
+        <LinearLayout
+            android:id="@+id/powerDataLL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:background="@mipmap/power_data" />
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/powerDataView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/power_data" />
+
+            <TextView
+                android:id="@+id/powerStatusTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/marketLL"
@@ -55,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/marketLL"
-            android:layout_below="@id/powerDataView"
+            android:layout_below="@id/powerDataLL"
             android:orientation="vertical">
 
             <RelativeLayout

@@ -214,17 +214,19 @@
             android:process=":pushservice" />
         <!-- 个推SDK配置结束 -->
 
-        <receiver android:name="com.rat.snowkids.receiver.USBBroadcastReceiver">
+        <!--new-->
+        <receiver android:name="com.rat.snowkids.receiver.PowerConnectionReceiver">
             <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.MEDIA_MOUNTED" />
-                <action android:name="android.intent.action.MEDIA_EJECT" />
-                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
-
-                <data android:scheme="file" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </receiver>
-
-
+        <receiver android:name="com.rat.snowkids.receiver.PowerLevelReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.ACTION_BATTERY_LOW" />
+                <action android:name="android.intent.action.ACTION_BATTERY_OKAY" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

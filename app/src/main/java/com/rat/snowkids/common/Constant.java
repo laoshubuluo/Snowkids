@@ -1,5 +1,7 @@
 package com.rat.snowkids.common;
 
+import android.os.Handler;
+
 /**
  * @author L.jinzhu
  * @Description: 定义一些常量
@@ -20,8 +22,7 @@ public class Constant {
     //系统偏好参数写入文件
     public static final String PREFS_NAME = "dp_prefs";
 
-//    //数据库[通用]常量
-//    public final static int DB_COMMON_VERSION = 3;
+    public static Handler mainHandler;
 
 //    // 客服号
 //    public static long UID_SERVICE_START = 1000;

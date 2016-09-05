@@ -1,19 +1,28 @@
 package com.rat.snowkids.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rat.snowkids.activity.base.BaseActivity;
 import com.rat.snowkids.activity.base.WebActivity;
+import com.rat.snowkids.common.Actions;
+import com.rat.snowkids.common.Constant;
+import com.rat.snowkids.common.MessageSignConstant;
+import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.AppUtils;
+import com.rat.snowkids.util.LogUtil;
 import com.snowkids.snowkids.R;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements Handler.Callback {
     private TextView topTitleView;
     private TextView topLeftView;
 
@@ -23,6 +32,9 @@ public class MainActivity extends BaseActivity {
     private ImageView theftProofRemindIV;
     private TextView marketJDTV;
     private TextView marketTBTV;
+    private TextView powerStatusTV;
+
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +42,15 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initView();
         initData();
+        initBroadcastReceiver();
     }
 
     /**
      * 初始化界面
      */
     public void initView() {
+        handler = new Handler(this);
+        Constant.mainHandler = handler;
         topTitleView = (TextView) findViewById(R.id.top_name);
         topLeftView = (TextView) findViewById(R.id.top_left);
         powerFullRemindRL = (RelativeLayout) findViewById(R.id.powerFullRemindRL);
@@ -44,6 +59,7 @@ public class MainActivity extends BaseActivity {
         theftProofRemindIV = (ImageView) findViewById(R.id.theftProofRemindIV);
         marketJDTV = (TextView) findViewById(R.id.marketJDTV);
         marketTBTV = (TextView) findViewById(R.id.marketTBTV);
+        powerStatusTV = (TextView) findViewById(R.id.powerStatusTV);
 
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
@@ -59,12 +75,22 @@ public class MainActivity extends BaseActivity {
     public void initData() {
     }
 
+    /**
+     * 初始化广播
+     */
+    public void initBroadcastReceiver() {
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(Actions.POWER_FULL_REMIND_STATUS_CHANGE);
+        filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
+        registerReceiver(receiver, filter);
+    }
+
     @Override
     public void onClick(View v) {
         Intent intent;
         switch (v.getId()) {
             case R.id.top_left:
-                Toast.makeText(getApplicationContext(), "打开侧边栏", Toast.LENGTH_LONG).show();
+                menu.showMenu(true);
                 break;
             case R.id.powerFullRemindRL:
                 // 是否满电提醒
@@ -75,7 +101,7 @@ public class MainActivity extends BaseActivity {
                     AppUtils.getInstance().updateIsPowerFullRemind(true);
                     powerFullRemindIV.setBackgroundResource(R.mipmap.circle_green);
                 }
-                Toast.makeText(getApplicationContext(), getString(R.string.setting_success), Toast.LENGTH_SHORT).show();
+                sendBroadcast(new Intent(Actions.POWER_FULL_REMIND_STATUS_CHANGE));
                 break;
             case R.id.theftProofRemindRL:
                 // 是否防盗提醒
@@ -86,7 +112,7 @@ public class MainActivity extends BaseActivity {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.circle_green);
                 }
-                Toast.makeText(getApplicationContext(), getString(R.string.setting_success), Toast.LENGTH_SHORT).show();
+                sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
             case R.id.marketJDTV:
                 intent = new Intent(MainActivity.this, WebActivity.class);
@@ -101,5 +127,51 @@ public class MainActivity extends BaseActivity {
             default:
                 break;
         }
+    }
+
+    BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            LogUtil.i("receive broadcast,action:" + intent.getAction());
+            // 满电提醒
+            if (Actions.POWER_FULL_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
+                if (AppUtils.getInstance().isPowerFullRemind()) {
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.circle_red);
+                } else {
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.circle_green);
+                }
+            }
+            // 防盗提醒
+            else if (Actions.THEFT_PROOF_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
+                if (AppUtils.getInstance().isTheftProofRemind()) {
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.circle_red);
+                } else {
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.circle_green);
+                }
+            }
+        }
+    };
+
+    /**
+     * Handler发送message的逻辑处理方法
+     *
+     * @param msg
+     * @return
+     */
+    @Override
+    public boolean handleMessage(Message msg) {
+        switch (msg.what) {
+            case MessageSignConstant.POWER_CONNECTION_STATUS:
+                Power power = (Power) msg.getData().getSerializable("power");
+                powerStatusTV.setText(power.isCharging() + "");
+                break;
+        }
+        return false;
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
     }
 }
