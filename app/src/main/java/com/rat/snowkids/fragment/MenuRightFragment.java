@@ -120,7 +120,6 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 }
                 getActivity().sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
-
             case R.id.nightModelIV:
                 // 是否开启夜间模式
                 if (AppUtils.getInstance().isNightMode()) {
@@ -185,17 +184,17 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
             // 满电提醒
             if (Actions.POWER_FULL_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
                 if (AppUtils.getInstance().isPowerFullRemind()) {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-                } else {
                     powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                } else {
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 }
             }
             // 防盗提醒
             else if (Actions.THEFT_PROOF_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
                 if (AppUtils.getInstance().isTheftProofRemind()) {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-                } else {
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                } else {
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 }
             }
         }

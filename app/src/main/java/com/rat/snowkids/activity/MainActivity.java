@@ -20,6 +20,7 @@ import com.rat.snowkids.common.MessageSignConstant;
 import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.LogUtil;
+import com.rat.snowkids.util.MediaUtil;
 import com.snowkids.snowkids.R;
 
 public class MainActivity extends BaseActivity implements Handler.Callback {
@@ -109,9 +110,17 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 if (AppUtils.getInstance().isTheftProofRemind()) {
                     AppUtils.getInstance().updateIsTheftProofRemind(false);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+
+                    // TODO by L.jinzhu
+                    MediaUtil.getInstance(getApplicationContext()).start();
+
                 } else {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                    // TODO by L.jinzhu
+
+                    MediaUtil.getInstance(getApplicationContext()).stop();
+
                 }
                 sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
