@@ -219,7 +219,7 @@ public class AppUtils {
      * 是否满电提醒
      */
     public boolean isPowerFullRemind() {
-        return sharedPreferences.getBoolean("isPowerFullRemind", false);
+        return sharedPreferences.getBoolean("isPowerFullRemind", true);
     }
 
     /**
@@ -233,7 +233,7 @@ public class AppUtils {
      * 是否防盗提醒
      */
     public boolean isTheftProofRemind() {
-        return sharedPreferences.getBoolean("isTheftProofRemind", false);
+        return sharedPreferences.getBoolean("isTheftProofRemind", true);
     }
 
     /**

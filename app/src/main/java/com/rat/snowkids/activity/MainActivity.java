@@ -23,16 +23,16 @@ import com.rat.snowkids.util.LogUtil;
 import com.snowkids.snowkids.R;
 
 public class MainActivity extends BaseActivity implements Handler.Callback {
-    private TextView topTitleView;
     private TextView topLeftView;
 
     private RelativeLayout powerFullRemindRL;
     private RelativeLayout theftProofRemindRL;
     private ImageView powerFullRemindIV;
     private ImageView theftProofRemindIV;
-    private TextView marketJDTV;
-    private TextView marketTBTV;
-    private TextView powerStatusTV;
+    private ImageView marketJDIV;
+    private ImageView marketTBIV;
+    private TextView powerStatusTV1;
+    private TextView powerStatusTV2;
 
     private Handler handler;
 
@@ -51,22 +51,22 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
     public void initView() {
         handler = new Handler(this);
         Constant.mainHandler = handler;
-        topTitleView = (TextView) findViewById(R.id.top_name);
         topLeftView = (TextView) findViewById(R.id.top_left);
         powerFullRemindRL = (RelativeLayout) findViewById(R.id.powerFullRemindRL);
         theftProofRemindRL = (RelativeLayout) findViewById(R.id.theftProofRemindRL);
         powerFullRemindIV = (ImageView) findViewById(R.id.powerFullRemindIV);
         theftProofRemindIV = (ImageView) findViewById(R.id.theftProofRemindIV);
-        marketJDTV = (TextView) findViewById(R.id.marketJDTV);
-        marketTBTV = (TextView) findViewById(R.id.marketTBTV);
-        powerStatusTV = (TextView) findViewById(R.id.powerStatusTV);
+        marketJDIV = (ImageView) findViewById(R.id.marketJDIV);
+        marketTBIV = (ImageView) findViewById(R.id.marketTBIV);
+        powerStatusTV1 = (TextView) findViewById(R.id.powerStatusTV1);
+        powerStatusTV2 = (TextView) findViewById(R.id.powerStatusTV2);
 
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
         powerFullRemindRL.setOnClickListener(this);
         theftProofRemindRL.setOnClickListener(this);
-        marketJDTV.setOnClickListener(this);
-        marketTBTV.setOnClickListener(this);
+        marketJDIV.setOnClickListener(this);
+        marketTBIV.setOnClickListener(this);
     }
 
     /**
@@ -96,10 +96,10 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 // 是否满电提醒
                 if (AppUtils.getInstance().isPowerFullRemind()) {
                     AppUtils.getInstance().updateIsPowerFullRemind(false);
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.circle_red);
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 } else {
                     AppUtils.getInstance().updateIsPowerFullRemind(true);
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.circle_green);
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 }
                 sendBroadcast(new Intent(Actions.POWER_FULL_REMIND_STATUS_CHANGE));
                 break;
@@ -107,10 +107,10 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 // 是否防盗提醒
                 if (AppUtils.getInstance().isTheftProofRemind()) {
                     AppUtils.getInstance().updateIsTheftProofRemind(false);
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.circle_red);
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 } else {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.circle_green);
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 }
                 sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
@@ -136,17 +136,17 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
             // 满电提醒
             if (Actions.POWER_FULL_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
                 if (AppUtils.getInstance().isPowerFullRemind()) {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.circle_red);
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 } else {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.circle_green);
+                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 }
             }
             // 防盗提醒
             else if (Actions.THEFT_PROOF_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
                 if (AppUtils.getInstance().isTheftProofRemind()) {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.circle_red);
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 } else {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.circle_green);
+                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 }
             }
         }
@@ -163,7 +163,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         switch (msg.what) {
             case MessageSignConstant.POWER_CONNECTION_STATUS:
                 Power power = (Power) msg.getData().getSerializable("power");
-                powerStatusTV.setText(power.isCharging() + "");
+                powerStatusTV1.setText(power.isCharging() + "");
                 break;
         }
         return false;

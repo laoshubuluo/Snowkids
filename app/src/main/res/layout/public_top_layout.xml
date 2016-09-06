@@ -1,22 +1,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/top_layout"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
-    android:background="@color/gray"
+    android:layout_height="42.5dp"
+    android:background="@color/white_f8"
     android:orientation="vertical"
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
 
     <TextView
         android:id="@+id/top_name"
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background="@mipmap/main_top_logo"
-        android:gravity="center_vertical"
-        android:singleLine="true"
-        android:textColor="@color/blue"
-        android:textSize="@dimen/font_20sp" />
+        android:gravity="center" />
 
     <TextView
         android:id="@+id/top_left"
@@ -24,22 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:background="@mipmap/menu_in"
-        android:singleLine="true" />
-
-    <TextView
-        android:id="@+id/top_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:singleLine="true"
-        android:textSize="@dimen/font_17sp"
-        android:visibility="gone" />
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@mipmap/publi_top_line" />
+        android:layout_marginLeft="18dp"
+        android:background="@mipmap/menu_in" />
 </RelativeLayout>

@@ -165,4 +165,14 @@
     <!--<item name="android:backgroundDimEnabled">true</item>-->
     <!--&lt;!&ndash; 模糊 &ndash;&gt;-->
     <!--</style>-->
+
+
+    <declare-styleable name="CustomView">
+        <attr name="roundColor" format="color" />
+        <attr name="progressColor" format="color" />
+        <attr name="textIsShow" format="boolean" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="roundWidth" format="integer" />
+    </declare-styleable>
 </resources>
