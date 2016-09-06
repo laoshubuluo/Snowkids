@@ -10,6 +10,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.SweepGradient;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
@@ -80,6 +81,9 @@ public class CustomView extends View {
         textColor = array.getColor(R.styleable.CustomView_textColor, Color.BLACK);//文字颜色
         roundWidth = array.getInt(R.styleable.CustomView_roundWidth, 60);//圆环宽度
 
+
+        roundWidth = 150;
+
         array.recycle();
 
         //动画
@@ -134,8 +138,13 @@ public class CustomView extends View {
 
         // 画外环
         paint = new Paint();
+
+        // 增加渐变颜色
+        LinearGradient shader = new LinearGradient(0, 50, viewWidth / 2, 50, new int[]{Color.RED, Color.GREEN, Color.RED}, new float[]{0, 0.5f, 1}, Shader.TileMode.MIRROR);
+        paint.setShader(shader);
+
         paint.setAntiAlias(true);                        //设置画笔为无锯齿
-        paint.setColor(roundColor);                      //设置画笔颜色
+//        paint.setColor(roundColor);                      //设置画笔颜色
         paint.setStrokeWidth(roundWidth);                //线宽
         paint.setStyle(Paint.Style.STROKE);              //空心
         canvas.drawArc(oval, 160, 220, false, paint);    //绘制圆弧
@@ -152,12 +161,11 @@ public class CustomView extends View {
 
         // 画进度层
         // 增加渐变颜色
-        LinearGradient gradient = new LinearGradient(0, 0, 60, 60, Color.RED, Color.YELLOW, Shader.TileMode.MIRROR);
-        paint.setShader(gradient);
-        paint.setColor(progressColor);
-        paint.setStrokeWidth(roundWidth + 1);
-        canvas.drawArc(oval, 160, 220 * nowPro / max, false, paint);  //绘制圆弧
-
+//        shader = new SweepGradient(90, 90, Color.YELLOW, Color.RED);
+        paint.setShader(shader);
+//        paint.setColor(progressColor);
+        paint.setStrokeWidth(roundWidth - 30);
+        canvas.drawArc(oval, 160, 220 * nowPro / max, true, paint);  //绘制圆弧
     }
 
 

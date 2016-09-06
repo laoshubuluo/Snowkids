@@ -243,4 +243,17 @@ public class AppUtils {
         sharedPreferences.edit().putBoolean("isTheftProofRemind", isTheftProofRemind).commit();
     }
 
+    /**
+     * 是否夜间模式
+     */
+    public boolean isNightMode() {
+        return sharedPreferences.getBoolean("isNightMode", true);
+    }
+
+    /**
+     * 更新状态：是否夜间模式
+     */
+    public void updateIsNightMode(boolean isNightMode) {
+        sharedPreferences.edit().putBoolean("isNightMode", isNightMode).commit();
+    }
 }

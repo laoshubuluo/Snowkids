@@ -1,113 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/red"
-    android:orientation="vertical"
-    android:padding="40dp">
+    android:paddingLeft="39dp"
+    android:paddingRight="39dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/iconIV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="66.5dp"
             android:background="@mipmap/user_icon" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="39dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/power_full_remind"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <ImageView
+                android:id="@+id/powerFullRemindIV"
+                android:layout_width="34dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/settings_turn_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18.5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/theft_proof_remind"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <ImageView
+                android:id="@+id/theftProofRemindIV"
+                android:layout_width="34dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/settings_turn_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18.5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/light_model"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <ImageView
+                android:id="@+id/nightModelIV"
+                android:layout_width="34dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:background="@mipmap/settings_turn_on" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shareAppRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="18.5dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/share_app"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_17sp" />
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/more" />
+        </RelativeLayout>
+
         <TextView
-            android:id="@+id/userNameTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="L.jinzhu"
+            android:layout_marginTop="18.5dp"
+            android:text="@string/snowkids_version"
             android:textColor="@color/white"
-            android:textSize="25dp" />
-
+            android:textSize="16sp" />
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40.5dp"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/marketJDTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:text="@string/power_full_remind"
+            android:text="@string/snowkids_market_jingdong"
             android:textColor="@color/white"
             android:textSize="@dimen/font_17sp" />
 
-        <ImageView
-            android:id="@+id/powerFullRemindIV"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:background="@mipmap/settings_turn_on" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp">
-
         <TextView
+            android:id="@+id/marketTBTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:text="@string/theft_proof_remind"
+            android:layout_marginTop="23.5dp"
+            android:text="@string/snowkids_market_taobao"
             android:textColor="@color/white"
             android:textSize="@dimen/font_17sp" />
-
-        <ImageView
-            android:id="@+id/theftProofRemindIV"
-            android:layout_width="60dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerInParent="true"
-            android:background="@mipmap/settings_turn_on" />
-    </RelativeLayout>
-
-    <TextView
-        android:id="@+id/shareAppTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/share_app"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/snowkids_version"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
-
-    <TextView
-        android:id="@+id/marketJDTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/snowkids_market_jingdong"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
-
-    <TextView
-        android:id="@+id/marketTBTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/snowkids_market_taobao"
-        android:textColor="@color/white"
-        android:textSize="@dimen/font_17sp" />
-</LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

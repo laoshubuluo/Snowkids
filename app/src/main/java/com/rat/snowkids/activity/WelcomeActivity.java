@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.igexin.sdk.PushManager;
 import com.lidroid.xutils.ViewUtils;
@@ -14,9 +15,11 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.snowkids.snowkids.R;
 
 public class WelcomeActivity extends Activity {
-    private final int waitTime = 3000;
+    private final int waitTime = 1000;
     @ViewInject(R.id.logo)
     private ImageView logo;
+    @ViewInject(R.id.text)
+    private TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class WelcomeActivity extends Activity {
 
     public void initView() {
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.from_y2_to_y1);
-        logo.startAnimation(animation);
+        text.startAnimation(animation);
     }
 
     public void initData() {

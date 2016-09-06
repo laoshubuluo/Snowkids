@@ -10,4 +10,6 @@ public class Actions {
     public static final String POWER_FULL_REMIND_STATUS_CHANGE = "rat.snowkids.action.POWER_FULL_REMIND_STATUS_CHANGE";
     // 防盗提醒状态改变
     public static final String THEFT_PROOF_REMIND_STATUS_CHANGE = "rat.snowkids.action.THEFT_PROOF_REMIND_STATUS_CHANGE";
+    // 夜间模式状态改变
+    public static final String NIGHT_MODEL_STATUS_CHANGE = "rat.snowkids.action.NIGHT_MODEL_STATUS_CHANGE";
 }

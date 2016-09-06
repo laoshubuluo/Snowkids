@@ -10,14 +10,19 @@
     <color name="translate_half_white">#a0ffffff</color>//半透明白
 
 
-    <color name="red">#b7373b</color>
     <color name="gray">#7f7f7f</color>
-    <color name="white">#ffffff</color>
 
 
     <!--new-->
+    <color name="white">#ffffff</color>
+    <color name="red">#b7363b</color>
     <color name="gray_e6">#e6e7e7</color>
+    <color name="gray_f2">#f2f2ed</color>
     <color name="white_f8">#f8f8f8</color>
-    <color name="white_8d">#8d8986</color>
+    <color name="gray_8d">#8d8986</color>
 
+    <color name="red_from">#890202</color>// 渐变色
+    <color name="red_to">#b90404</color>// 渐变色
+    <color name="gray_from">#c0c0c0</color>// 渐变色
+    <color name="gray_to">#e5e3e3</color>// 渐变色
 </resources>

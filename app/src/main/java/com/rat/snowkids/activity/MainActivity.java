@@ -82,6 +82,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Actions.POWER_FULL_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
+        filter.addAction(Actions.NIGHT_MODEL_STATUS_CHANGE);
         registerReceiver(receiver, filter);
     }
 
@@ -114,12 +115,12 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 }
                 sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
-            case R.id.marketJDTV:
+            case R.id.marketJDIV:
                 intent = new Intent(MainActivity.this, WebActivity.class);
                 intent.putExtra(WebActivity.INTENT_MARKET_TYPE, WebActivity.INTENT_MARKET_TYPE_JD);
                 startActivity(intent);
                 break;
-            case R.id.marketTBTV:
+            case R.id.marketTBIV:
                 intent = new Intent(MainActivity.this, WebActivity.class);
                 intent.putExtra(WebActivity.INTENT_MARKET_TYPE, WebActivity.INTENT_MARKET_TYPE_TB);
                 startActivity(intent);
@@ -147,6 +148,14 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 } else {
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                }
+            }
+            // 夜间模式
+            else if (Actions.NIGHT_MODEL_STATUS_CHANGE.equals(intent.getAction())) {
+                if (AppUtils.getInstance().isNightMode()) {
+                    // TODO by L.jinzhu
+                } else {
+                    // TODO by L.jinzhu
                 }
             }
         }
