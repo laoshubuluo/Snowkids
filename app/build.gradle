@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.snowkids.snowkids"
-        minSdkVersion 16
+        minSdkVersion 14
         targetSdkVersion 21
         versionCode 10000
         versionName "1.0.0"

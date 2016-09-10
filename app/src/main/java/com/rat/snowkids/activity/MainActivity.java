@@ -20,6 +20,7 @@ import com.rat.snowkids.common.Constant;
 import com.rat.snowkids.common.MessageSignConstant;
 import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.AppUtils;
+import com.rat.snowkids.util.DateUtil;
 import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
 import com.rat.snowkids.util.PowerUtil;
@@ -84,6 +85,11 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         powerStatusTV1.setText(getString(R.string.power_time_out));
         powerStatusTV2.setText(power.getTimeLeft());
         // 夜间模式
+        if (AppUtils.getInstance().isNightMode() && DateUtil.isOnNight()) {
+            powerStatusTV1.setText(getString(R.string.night_model_time_setting));
+            powerStatusTV2.setText(getString(R.string.night_model_from_10_to_7));
+        }
+        // TODO by L.jinzhu
     }
 
     /**

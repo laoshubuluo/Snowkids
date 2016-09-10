@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.widget.Toast;
 
 import com.rat.snowkids.common.Constant;
 import com.rat.snowkids.common.MessageSignConstant;
@@ -17,6 +18,7 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Power power = PowerUtil.getPowerData(context);
         LogUtil.i("receive broadcast,action:" + intent.getAction() + "|" + power.toString());
+        Toast.makeText(context, power.toString(), Toast.LENGTH_SHORT).show();
         Bundle bundle = new Bundle();
         bundle.putSerializable("power", power);
         Message msg = new Message();

@@ -73,7 +73,7 @@ public class MonitorService extends Service implements Handler.Callback {
                     if (AppUtils.getInstance().isTheftProofRemind()) {
                         MediaUtil.getInstance(getApplicationContext()).start();
 //                        // 启动自己
-//                        Intent intent = new Intent(getBaseContext(), MainActivity.class);
+//                        Intent intent = new Intent(Moni(), MainActivity.class);
 //                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //                        getApplication().startActivity(intent);
                     }

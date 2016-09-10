@@ -1,9 +1,11 @@
 package com.rat.snowkids.util;
 
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+
+import com.snowkids.snowkids.R;
+
+import java.io.IOException;
 
 
 /**
@@ -35,16 +37,9 @@ public class MediaUtil {
      */
     private MediaUtil(Context context) {
         try {
-            AssetManager assetManager = context.getAssets();
-            AssetFileDescriptor fileDescriptor = assetManager.openFd("1.mp3");
-
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.setDataSource(
-                    fileDescriptor.getFileDescriptor(),
-                    fileDescriptor.getStartOffset(),
-                    fileDescriptor.getLength());
+            mediaPlayer = MediaPlayer.create(context, R.raw.music1);
             mediaPlayer.prepare();
-        } catch (Throwable e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

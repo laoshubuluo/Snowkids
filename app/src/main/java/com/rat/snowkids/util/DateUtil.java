@@ -241,4 +241,15 @@ public class DateUtil {
         return new SimpleDateFormat(formatType).format(data);
     }
 
+    public static boolean isOnNight() {
+        // 下午10点-早上7点
+        long time = System.currentTimeMillis();
+        Calendar mCalendar = Calendar.getInstance();
+        mCalendar.setTimeInMillis(time);
+        int mHour = mCalendar.get(Calendar.HOUR);
+        if (mHour < 7 || mHour >= 22)
+            return true;
+        else
+            return false;
+    }
 }

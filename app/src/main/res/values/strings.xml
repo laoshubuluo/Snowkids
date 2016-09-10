@@ -106,4 +106,5 @@
     <string name="power_time_out">剩余可用时间:</string>
     <string name="welcome_label">时刻在你身边</string>
     <string name="night_model_time_setting">夜间模式    时间设定</string>
+    <string name="night_model_from_10_to_7">由 下午10:00 至 上午7:00</string>
 </resources>
