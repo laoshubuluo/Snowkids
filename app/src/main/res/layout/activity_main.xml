@@ -155,12 +155,12 @@
             android:orientation="vertical">
 
             <com.rat.snowkids.view.CustomView
-                progressColor="@android:color/holo_orange_dark"
-                roundColor="@android:color/holo_blue_dark"
+                progressColor="@color/red_from"
+                roundColor="@color/gray_from"
                 roundWidth="60"
-                textColor="@android:color/black"
+                textColor="@color/red"
                 textIsShow="true"
-                textSize="14sp"
+                textSize="50sp"
                 android:layout_width="260dp"
                 android:layout_height="201dp"
                 android:visibility="visible" />

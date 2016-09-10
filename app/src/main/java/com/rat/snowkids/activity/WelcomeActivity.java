@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.igexin.sdk.PushManager;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.rat.snowkids.service.MonitorService;
 import com.snowkids.snowkids.R;
 
 public class WelcomeActivity extends Activity {
@@ -30,8 +31,17 @@ public class WelcomeActivity extends Activity {
         // 个推push服务初始化
         PushManager.getInstance().initialize(this.getApplicationContext());
 
+        initService();
         initView();
         initData();
+    }
+
+    public void initView() {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.from_y2_to_y1);
+        text.startAnimation(animation);
+    }
+
+    public void initData() {
         // 定时跳转
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -43,11 +53,8 @@ public class WelcomeActivity extends Activity {
         }, waitTime);
     }
 
-    public void initView() {
-        Animation animation = AnimationUtils.loadAnimation(this, R.anim.from_y2_to_y1);
-        text.startAnimation(animation);
-    }
-
-    public void initData() {
+    public void initService() {
+        Intent intent = new Intent(WelcomeActivity.this, MonitorService.class);
+        startService(intent);
     }
 }

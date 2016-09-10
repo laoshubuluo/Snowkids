@@ -5,8 +5,6 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.MediaPlayer;
 
-import java.io.IOException;
-
 
 /**
  * 播放资源
@@ -45,21 +43,26 @@ public class MediaUtil {
                     fileDescriptor.getFileDescriptor(),
                     fileDescriptor.getStartOffset(),
                     fileDescriptor.getLength());
+            mediaPlayer.prepare();
         } catch (Throwable e) {
             e.printStackTrace();
         }
     }
 
     public void start() {
-        try {
-            mediaPlayer.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        mediaPlayer.start();
+        if (null != mediaPlayer && !mediaPlayer.isPlaying())
+            mediaPlayer.start();
+    }
+
+    public void pause() {
+        if (null != mediaPlayer && mediaPlayer.isPlaying())
+            mediaPlayer.pause();
     }
 
     public void stop() {
-        mediaPlayer.stop();
+        if (null != mediaPlayer)
+            mediaPlayer.stop();
+        mediaPlayer.release();
+        mediaPlayer = null;
     }
 }

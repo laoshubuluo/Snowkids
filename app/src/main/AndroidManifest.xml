@@ -227,6 +227,10 @@
                 <action android:name="android.intent.action.ACTION_BATTERY_OKAY" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name="com.rat.snowkids.service.MonitorService"
+            android:persistent="true" />
     </application>
 
 </manifest>

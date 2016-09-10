@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rat.snowkids.activity.base.BaseActivity;
 import com.rat.snowkids.activity.base.WebActivity;
@@ -21,10 +22,12 @@ import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
+import com.rat.snowkids.util.PowerUtil;
 import com.snowkids.snowkids.R;
 
 public class MainActivity extends BaseActivity implements Handler.Callback {
     private TextView topLeftView;
+    private TextView topRightView;
 
     private RelativeLayout powerFullRemindRL;
     private RelativeLayout theftProofRemindRL;
@@ -51,8 +54,9 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
      */
     public void initView() {
         handler = new Handler(this);
-        Constant.mainHandler = handler;
+        Constant.handlerInMainActivity = handler;
         topLeftView = (TextView) findViewById(R.id.top_left);
+        topRightView = (TextView) findViewById(R.id.top_right);
         powerFullRemindRL = (RelativeLayout) findViewById(R.id.powerFullRemindRL);
         theftProofRemindRL = (RelativeLayout) findViewById(R.id.theftProofRemindRL);
         powerFullRemindIV = (ImageView) findViewById(R.id.powerFullRemindIV);
@@ -64,6 +68,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
 
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
+        topRightView.setText("Beta版本");
         powerFullRemindRL.setOnClickListener(this);
         theftProofRemindRL.setOnClickListener(this);
         marketJDIV.setOnClickListener(this);
@@ -74,6 +79,11 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
      * 初始化数据
      */
     public void initData() {
+        Power power = PowerUtil.getPowerData(getApplicationContext());
+        // 白天模式
+        powerStatusTV1.setText(getString(R.string.power_time_out));
+        powerStatusTV2.setText(power.getTimeLeft());
+        // 夜间模式
     }
 
     /**
@@ -110,17 +120,9 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 if (AppUtils.getInstance().isTheftProofRemind()) {
                     AppUtils.getInstance().updateIsTheftProofRemind(false);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-
-                    // TODO by L.jinzhu
-                    MediaUtil.getInstance(getApplicationContext()).start();
-
                 } else {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
-                    // TODO by L.jinzhu
-
-                    MediaUtil.getInstance(getApplicationContext()).stop();
-
                 }
                 sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
@@ -181,7 +183,14 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         switch (msg.what) {
             case MessageSignConstant.POWER_CONNECTION_STATUS:
                 Power power = (Power) msg.getData().getSerializable("power");
-                powerStatusTV1.setText(power.isCharging() + "");
+                // 开始充电
+                if (power.isCharging()) {
+                    Toast.makeText(getApplicationContext(), "开始充电，修改上面的进度", Toast.LENGTH_LONG).show();
+                }
+                // 拔掉电源
+                else {
+                    Toast.makeText(getApplicationContext(), "拔掉电源，修改上面的进度", Toast.LENGTH_LONG).show();
+                }
                 break;
         }
         return false;
@@ -191,5 +200,6 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(receiver);
+        MediaUtil.getInstance(getApplication()).stop();
     }
 }

@@ -1,5 +1,7 @@
 package com.rat.snowkids.entity.model;
 
+import android.os.BatteryManager;
+
 import java.io.Serializable;
 
 /**
@@ -12,6 +14,9 @@ public class Power implements Serializable {
     private boolean isPowerFull;// 是否满电
     private boolean isUsbPower;// 是否usb充电
     private boolean isACPower;// 是否交流电充电
+    private int level;// 当前剩余电量
+    private float batteryPct;// 电量百分比
+    private String timeLeft;// 电池剩余时间
 
     public boolean isCharging() {
         return isCharging;
@@ -45,6 +50,30 @@ public class Power implements Serializable {
         this.isACPower = isACPower;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public float getBatteryPct() {
+        return batteryPct;
+    }
+
+    public void setBatteryPct(float batteryPct) {
+        this.batteryPct = batteryPct;
+    }
+
+    public String getTimeLeft() {
+        return timeLeft;
+    }
+
+    public void setTimeLeft(String timeLeft) {
+        this.timeLeft = timeLeft;
+    }
+
     @Override
     public String toString() {
         return "Power{" +
@@ -52,6 +81,9 @@ public class Power implements Serializable {
                 ", isPowerFull=" + isPowerFull +
                 ", isUsbPower=" + isUsbPower +
                 ", isACPower=" + isACPower +
+                ", level=" + level +
+                ", batteryPct=" + batteryPct +
+                ", timeLeft='" + timeLeft + '\'' +
                 '}';
     }
 }
