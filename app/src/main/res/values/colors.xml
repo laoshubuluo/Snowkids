@@ -20,6 +20,10 @@
     <color name="gray_f2">#f2f2ed</color>
     <color name="white_f8">#f8f8f8</color>
     <color name="gray_8d">#8d8986</color>
+    <color name="gray_3b">#3b3b3b</color>
+    <color name="gray_61">#616161</color>
+    <color name="gray_46">#464748</color>
+    <color name="gray_52">#525252</color>
 
     <color name="red_from">#890202</color>// 渐变色
     <color name="red_to">#b90404</color>// 渐变色

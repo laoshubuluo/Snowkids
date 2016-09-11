@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,16 +25,20 @@ import com.rat.snowkids.util.DateUtil;
 import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
 import com.rat.snowkids.util.PowerUtil;
+import com.rat.snowkids.util.ResourceUtil;
 import com.snowkids.snowkids.R;
 
 public class MainActivity extends BaseActivity implements Handler.Callback {
     private TextView topLeftView;
     private TextView topRightView;
+    private RelativeLayout topLayout;
+    private LinearLayout mainLL;
 
     private RelativeLayout powerFullRemindRL;
     private RelativeLayout theftProofRemindRL;
     private ImageView powerFullRemindIV;
     private ImageView theftProofRemindIV;
+    private LinearLayout marketLL;
     private ImageView marketJDIV;
     private ImageView marketTBIV;
     private TextView powerStatusTV1;
@@ -58,10 +63,13 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         Constant.handlerInMainActivity = handler;
         topLeftView = (TextView) findViewById(R.id.top_left);
         topRightView = (TextView) findViewById(R.id.top_right);
+        topLayout = (RelativeLayout) findViewById(R.id.top_layout);
+        mainLL = (LinearLayout) findViewById(R.id.mainLL);
         powerFullRemindRL = (RelativeLayout) findViewById(R.id.powerFullRemindRL);
         theftProofRemindRL = (RelativeLayout) findViewById(R.id.theftProofRemindRL);
         powerFullRemindIV = (ImageView) findViewById(R.id.powerFullRemindIV);
         theftProofRemindIV = (ImageView) findViewById(R.id.theftProofRemindIV);
+        marketLL = (LinearLayout) findViewById(R.id.marketLL);
         marketJDIV = (ImageView) findViewById(R.id.marketJDIV);
         marketTBIV = (ImageView) findViewById(R.id.marketTBIV);
         powerStatusTV1 = (TextView) findViewById(R.id.powerStatusTV1);
@@ -81,15 +89,50 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
      */
     public void initData() {
         Power power = PowerUtil.getPowerData(getApplicationContext());
-        // 白天模式
-        powerStatusTV1.setText(getString(R.string.power_time_out));
-        powerStatusTV2.setText(power.getTimeLeft());
         // 夜间模式
         if (AppUtils.getInstance().isNightMode() && DateUtil.isOnNight()) {
             powerStatusTV1.setText(getString(R.string.night_model_time_setting));
             powerStatusTV2.setText(getString(R.string.night_model_from_10_to_7));
+
+            mainLL.setBackgroundColor(getResources().getColor(R.color.gray_3b));
+            topLayout.setBackgroundColor(getResources().getColor(R.color.gray_61));
+            powerFullRemindRL.setBackgroundColor(getResources().getColor(R.color.gray_46));
+            theftProofRemindRL.setBackgroundColor(getResources().getColor(R.color.gray_46));
+            marketLL.setBackgroundColor(getResources().getColor(R.color.gray_52));
+            marketJDIV.setImageResource(R.mipmap.jingdong_logo_night);
+            marketTBIV.setImageResource(R.mipmap.taobao_logo_night);
+        } else {
+            // 白天模式
+            powerStatusTV1.setText(getString(R.string.power_time_out));
+            powerStatusTV2.setText(power.getTimeLeft());
         }
-        // TODO by L.jinzhu
+
+        initRemindStatus4PowerFull();
+        initRemindStatus4TheftProof();
+    }
+
+    /**
+     * 初始化提醒状态
+     */
+    public void initRemindStatus4PowerFull() {
+        // 满电提醒
+        if (AppUtils.getInstance().isPowerFullRemind()) {
+            powerFullRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_on));
+        } else {
+            powerFullRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_off));
+        }
+    }
+
+    /**
+     * 初始化提醒状态
+     */
+    public void initRemindStatus4TheftProof() {
+        // 防盗提醒
+        if (AppUtils.getInstance().isTheftProofRemind()) {
+            theftProofRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_on));
+        } else {
+            theftProofRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_off));
+        }
     }
 
     /**
@@ -114,10 +157,10 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 // 是否满电提醒
                 if (AppUtils.getInstance().isPowerFullRemind()) {
                     AppUtils.getInstance().updateIsPowerFullRemind(false);
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                    powerFullRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_off));
                 } else {
                     AppUtils.getInstance().updateIsPowerFullRemind(true);
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                    powerFullRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_on));
                 }
                 sendBroadcast(new Intent(Actions.POWER_FULL_REMIND_STATUS_CHANGE));
                 break;
@@ -125,10 +168,10 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                 // 是否防盗提醒
                 if (AppUtils.getInstance().isTheftProofRemind()) {
                     AppUtils.getInstance().updateIsTheftProofRemind(false);
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                    theftProofRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_off));
                 } else {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                    theftProofRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_on));
                 }
                 sendBroadcast(new Intent(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE));
                 break;
@@ -153,26 +196,17 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
             LogUtil.i("receive broadcast,action:" + intent.getAction());
             // 满电提醒
             if (Actions.POWER_FULL_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
-                if (AppUtils.getInstance().isPowerFullRemind()) {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
-                } else {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-                }
+                initRemindStatus4PowerFull();
             }
             // 防盗提醒
             else if (Actions.THEFT_PROOF_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
-                if (AppUtils.getInstance().isTheftProofRemind()) {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
-                } else {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-                }
+                initRemindStatus4TheftProof();
             }
             // 夜间模式
             else if (Actions.NIGHT_MODEL_STATUS_CHANGE.equals(intent.getAction())) {
-                if (AppUtils.getInstance().isNightMode()) {
-                    // TODO by L.jinzhu
-                } else {
-                    // TODO by L.jinzhu
+                // 当前是夜间 && 非夜间模式
+                if (DateUtil.isOnNight() && !AppUtils.getInstance().isNightMode()) {
+                    // TODO by L.jinzhu for 取消夜间模式
                 }
             }
         }

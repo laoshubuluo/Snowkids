@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
+import android.widget.Toast;
 
 import com.rat.snowkids.activity.MainActivity;
 import com.rat.snowkids.common.Constant;
@@ -34,6 +35,7 @@ public class MonitorService extends Service implements Handler.Callback {
     public void onCreate() {
         super.onCreate();
         LogUtil.i("onCreate:" + this.getClass().getSimpleName());
+        Toast.makeText(getApplicationContext(), this.getClass().getSimpleName() + " start success", Toast.LENGTH_SHORT).show();
         handler = new Handler(this);
         Constant.handlerInMonitorService = handler;
     }
@@ -43,8 +45,8 @@ public class MonitorService extends Service implements Handler.Callback {
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
         Notification notification = new Notification.Builder(this)
-                .setContentTitle("")
-                .setContentText("")
+                .setContentTitle("Snowkids")
+                .setContentText("Snowkids电量监控、防盗提醒进行中")
                 .setSmallIcon(R.mipmap.notifycation_logo)
                 .setContentIntent(pendingIntent)
                 .build();

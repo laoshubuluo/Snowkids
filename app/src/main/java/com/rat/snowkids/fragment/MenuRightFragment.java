@@ -31,7 +31,7 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
     private ImageView iconIV;
     private ImageView powerFullRemindIV;
     private ImageView theftProofRemindIV;
-    private ImageView lightModelIV;
+    private ImageView nightModelIV;
     private RelativeLayout shareAppRL;
     private TextView marketJDTV;
     private TextView marketTBTV;
@@ -58,7 +58,6 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
         return view;
     }
 
-
     /**
      * 初始化界面
      */
@@ -66,13 +65,13 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
         iconIV = (ImageView) view.findViewById(R.id.iconIV);
         powerFullRemindIV = (ImageView) view.findViewById(R.id.powerFullRemindIV);
         theftProofRemindIV = (ImageView) view.findViewById(R.id.theftProofRemindIV);
-        lightModelIV = (ImageView) view.findViewById(R.id.nightModelIV);
+        nightModelIV = (ImageView) view.findViewById(R.id.nightModelIV);
         shareAppRL = (RelativeLayout) view.findViewById(R.id.shareAppRL);
         marketJDTV = (TextView) view.findViewById(R.id.marketJDTV);
         marketTBTV = (TextView) view.findViewById(R.id.marketTBTV);
         powerFullRemindIV.setOnClickListener(this);
         theftProofRemindIV.setOnClickListener(this);
-        lightModelIV.setOnClickListener(this);
+        nightModelIV.setOnClickListener(this);
         shareAppRL.setOnClickListener(this);
         marketJDTV.setOnClickListener(this);
         marketTBTV.setOnClickListener(this);
@@ -82,6 +81,9 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
      * 初始化数据
      */
     private void initData() {
+        initRemindStatus4PowerFull();
+        initRemindStatus4TheftProof();
+        initRemindStatus4NightModel();
     }
 
     /**
@@ -92,6 +94,42 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
         filter.addAction(Actions.POWER_FULL_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
         getActivity().registerReceiver(receiver, filter);
+    }
+
+    /**
+     * 初始化提醒状态
+     */
+    public void initRemindStatus4PowerFull() {
+        // 满电提醒
+        if (AppUtils.getInstance().isPowerFullRemind()) {
+            powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+        } else {
+            powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+        }
+    }
+
+    /**
+     * 初始化提醒状态
+     */
+    public void initRemindStatus4TheftProof() {
+        // 防盗提醒
+        if (AppUtils.getInstance().isTheftProofRemind()) {
+            theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
+        } else {
+            theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+        }
+    }
+
+    /**
+     * 初始化提醒状态
+     */
+    public void initRemindStatus4NightModel() {
+        // 夜间模式
+        if (AppUtils.getInstance().isNightMode()) {
+            nightModelIV.setBackgroundResource(R.mipmap.settings_turn_on);
+        } else {
+            nightModelIV.setBackgroundResource(R.mipmap.settings_turn_off);
+        }
     }
 
     @Override
@@ -124,10 +162,10 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 // 是否开启夜间模式
                 if (AppUtils.getInstance().isNightMode()) {
                     AppUtils.getInstance().updateIsNightMode(false);
-                    lightModelIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                    nightModelIV.setBackgroundResource(R.mipmap.settings_turn_off);
                 } else {
                     AppUtils.getInstance().updateIsNightMode(true);
-                    lightModelIV.setBackgroundResource(R.mipmap.settings_turn_on);
+                    nightModelIV.setBackgroundResource(R.mipmap.settings_turn_on);
                 }
                 getActivity().sendBroadcast(new Intent(Actions.NIGHT_MODEL_STATUS_CHANGE));
                 break;
@@ -183,19 +221,11 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
             LogUtil.i("receive broadcast,action:" + intent.getAction());
             // 满电提醒
             if (Actions.POWER_FULL_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
-                if (AppUtils.getInstance().isPowerFullRemind()) {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
-                } else {
-                    powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-                }
+                initRemindStatus4PowerFull();
             }
             // 防盗提醒
             else if (Actions.THEFT_PROOF_REMIND_STATUS_CHANGE.equals(intent.getAction())) {
-                if (AppUtils.getInstance().isTheftProofRemind()) {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
-                } else {
-                    theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
-                }
+                initRemindStatus4TheftProof();
             }
         }
     };

@@ -246,10 +246,13 @@ public class DateUtil {
         long time = System.currentTimeMillis();
         Calendar mCalendar = Calendar.getInstance();
         mCalendar.setTimeInMillis(time);
-        int mHour = mCalendar.get(Calendar.HOUR);
-        if (mHour < 7 || mHour >= 22)
+        int mHour = mCalendar.get(Calendar.HOUR_OF_DAY);
+        if (mHour < 7 || mHour >= 22) {
+            LogUtil.i("当前为夜间模式，时间（h）：" + mHour);
             return true;
-        else
+        } else {
+            LogUtil.i("当前并非夜间模式，时间（h）：" + mHour);
             return false;
+        }
     }
 }
