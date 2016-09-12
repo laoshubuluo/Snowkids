@@ -18,6 +18,7 @@ import com.rat.snowkids.activity.base.WebActivity;
 import com.rat.snowkids.common.Actions;
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.LogUtil;
+import com.rat.snowkids.util.MediaUtil;
 import com.snowkids.snowkids.R;
 
 import java.io.File;
@@ -139,6 +140,7 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 if (AppUtils.getInstance().isPowerFullRemind()) {
                     AppUtils.getInstance().updateIsPowerFullRemind(false);
                     powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                    MediaUtil.getInstance(getActivity()).pausePF();
                 } else {
                     AppUtils.getInstance().updateIsPowerFullRemind(true);
                     powerFullRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
@@ -150,6 +152,7 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 if (AppUtils.getInstance().isTheftProofRemind()) {
                     AppUtils.getInstance().updateIsTheftProofRemind(false);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_off);
+                    MediaUtil.getInstance(getActivity()).pauseTP();
                 } else {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
                     theftProofRemindIV.setBackgroundResource(R.mipmap.settings_turn_on);
@@ -167,7 +170,6 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 }
                 getActivity().sendBroadcast(new Intent(Actions.NIGHT_MODEL_STATUS_CHANGE));
                 break;
-
             case R.id.marketJDTV:
                 intent = new Intent(getActivity(), WebActivity.class);
                 intent.putExtra(WebActivity.INTENT_MARKET_TYPE, WebActivity.INTENT_MARKET_TYPE_JD);

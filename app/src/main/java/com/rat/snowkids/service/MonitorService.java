@@ -67,13 +67,13 @@ public class MonitorService extends Service implements Handler.Callback {
             case MessageSignConstant.POWER_CONNECTION_STATUS:
                 // 开始充电
                 if (power.isCharging()) {
-                    MediaUtil.getInstance(getApplicationContext()).pause();
+                    MediaUtil.getInstance(getApplicationContext()).pauseTP();
                 }
                 // 拔掉电源
                 else {
                     // 报警
                     if (AppUtils.getInstance().isTheftProofRemind()) {
-                        MediaUtil.getInstance(getApplicationContext()).start();
+                        MediaUtil.getInstance(getApplicationContext()).start4TP();
 //                        // 启动自己
 //                        Intent intent = new Intent(Moni(), MainActivity.class);
 //                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -81,10 +81,13 @@ public class MonitorService extends Service implements Handler.Callback {
                     }
                 }
                 break;
+            case MessageSignConstant.POWER_LEVEL_OK:
+                if (AppUtils.getInstance().isPowerFullRemind())
+                    MediaUtil.getInstance(getApplicationContext()).start4PF();
+                break;
         }
         return false;
     }
-
 
     @Override
     public void onDestroy() {

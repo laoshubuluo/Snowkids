@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rat.snowkids.activity.base.BaseActivity;
 import com.rat.snowkids.activity.base.WebActivity;
@@ -97,12 +98,12 @@ public class MainActivity extends BaseActivity {
 
             mainLL.setBackgroundColor(getResources().getColor(R.color.gray_3b));
             topLayout.setBackgroundColor(getResources().getColor(R.color.gray_61));
-            powerFullRemindRL.setBackgroundColor(getResources().getColor(R.color.gray_46));
-            theftProofRemindRL.setBackgroundColor(getResources().getColor(R.color.gray_46));
+            powerFullRemindRL.setBackgroundColor(getResources().getColor(R.color.gray_61));
+            theftProofRemindRL.setBackgroundColor(getResources().getColor(R.color.gray_61));
             marketLL.setBackgroundColor(getResources().getColor(R.color.gray_52));
             marketJDIV.setImageResource(R.mipmap.jingdong_logo_night);
             marketTBIV.setImageResource(R.mipmap.taobao_logo_night);
-            marketLine.setBackgroundColor(getResources().getColor(R.color.gray_47));
+            marketLine.setBackgroundColor(getResources().getColor(R.color.gray_8d));
         }
         // 白天模式
         else {
@@ -118,7 +119,7 @@ public class MainActivity extends BaseActivity {
         else if (power.isPowerFull())
             powerStatusTV.setText(getApplication().getString(R.string.power_full));
         else
-            powerStatusTV.setText("");
+            powerStatusTV.setText(getApplication().getString(R.string.power_not));
 
         initRemindStatus4PowerFull();
         initRemindStatus4TheftProof();
@@ -157,6 +158,7 @@ public class MainActivity extends BaseActivity {
         filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.NIGHT_MODEL_STATUS_CHANGE);
         filter.addAction(Actions.POWER_CONNECT_STATUS_CHANGE);
+        filter.addAction(Actions.POWER_LEVEL_OK);
         registerReceiver(receiver, filter);
     }
 
@@ -179,6 +181,7 @@ public class MainActivity extends BaseActivity {
                 if (AppUtils.getInstance().isPowerFullRemind()) {
                     AppUtils.getInstance().updateIsPowerFullRemind(false);
                     powerFullRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_off));
+                    MediaUtil.getInstance(getApplicationContext()).pausePF();
                 } else {
                     AppUtils.getInstance().updateIsPowerFullRemind(true);
                     powerFullRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_on));
@@ -190,6 +193,7 @@ public class MainActivity extends BaseActivity {
                 if (AppUtils.getInstance().isTheftProofRemind()) {
                     AppUtils.getInstance().updateIsTheftProofRemind(false);
                     theftProofRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_off));
+                    MediaUtil.getInstance(getApplicationContext()).pauseTP();
                 } else {
                     AppUtils.getInstance().updateIsTheftProofRemind(true);
                     theftProofRemindIV.setBackgroundResource(ResourceUtil.getResource(R.mipmap.settings_turn_on));
@@ -228,6 +232,7 @@ public class MainActivity extends BaseActivity {
                 // 当前是夜间 && 非夜间模式
                 if (DateUtil.isOnNight() && !AppUtils.getInstance().isNightMode()) {
                     // TODO by L.jinzhu for 取消夜间模式
+                    Toast.makeText(getApplicationContext(), "取消夜间模式功能，待开发", Toast.LENGTH_SHORT).show();
                 }
             }
             // 连接状态变更
@@ -239,8 +244,12 @@ public class MainActivity extends BaseActivity {
                 }
                 // 拔掉电源
                 else {
-                    powerStatusTV.setText("");
+                    powerStatusTV.setText(getApplication().getString(R.string.power_not));
                 }
+            }
+            // 电池等级变更-OK
+            else if (Actions.POWER_LEVEL_OK.equals(intent.getAction())) {
+                // TODO by L.jinzhu for纠正100%数据
             }
         }
     };

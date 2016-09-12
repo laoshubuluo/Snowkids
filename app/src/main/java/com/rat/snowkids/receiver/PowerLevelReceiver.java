@@ -3,17 +3,25 @@ package com.rat.snowkids.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
+import android.os.Message;
 
-import com.rat.snowkids.entity.model.Power;
+import com.rat.snowkids.common.Actions;
+import com.rat.snowkids.common.Constant;
+import com.rat.snowkids.common.MessageSignConstant;
 import com.rat.snowkids.util.LogUtil;
-import com.rat.snowkids.util.PowerUtil;
 
 public class PowerLevelReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         LogUtil.i("receive broadcast,action:" + intent.getAction());
-        Power power = PowerUtil.getPowerData(context);
-        Toast.makeText(context, power.toString(), Toast.LENGTH_LONG).show();
+        if ("android.intent.action.ACTION_BATTERY_OKAY".equals(intent.getAction())) {
+            // 通知service
+            Message msg = new Message();
+            msg.what = MessageSignConstant.POWER_LEVEL_OK;
+            if (null != Constant.handlerInMonitorService)
+                Constant.handlerInMonitorService.sendMessage(msg);
+            // 通知activity
+            context.sendBroadcast(new Intent(Actions.POWER_LEVEL_OK));
+        }
     }
 }

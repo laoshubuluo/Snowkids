@@ -1,31 +1,15 @@
 <resources>
-    <color name="blue">#01699f</color>
-    <color name="blue_43">#436E8B</color>
-    <color name="black">#000000</color>
-    <color name="orage">#FF6633</color>
-    <color name="green">#10ff00</color>
-    <color name="gray_ad">#adadad</color>
     <color name="translate">#00000000</color>//透明
     <color name="translate_half_white">#a0ffffff</color>//半透明白
-    <color name="gray">#7f7f7f</color>
 
-    <!--new-->
-    <color name="red">#b7363b</color>
-    <color name="red_d2">#d23a2f</color>
+    <color name="red_d7">#d71518</color>
+    <color name="red_d2">#d23a2f</color>// 百分比大字
     <color name="white">#ffffff</color>
-    <color name="white_f2">#f2f2ed</color>
-    <color name="white_f8">#f8f8f8</color>
-    <color name="gray_e6">#e6e7e7</color>
-    <color name="gray_8d">#8d8986</color>
-    <color name="gray_3b">#3b3b3b</color>
-    <color name="gray_61">#616161</color>
-    <color name="gray_46">#464748</color>
-    <color name="gray_52">#525252</color>
-    <color name="gray_47">#474747</color>
-    <color name="gray_b5">#b5b5b6</color>
-
-    <color name="red_from">#890202</color>// 渐变色
-    <color name="red_to">#b90404</color>// 渐变色
-    <color name="gray_from">#c0c0c0</color>// 渐变色
-    <color name="gray_to">#e5e3e3</color>// 渐变色
+    <color name="white_f8">#f8f8f8</color>// 白天满电和防盗提醒下的方块背景色
+    <color name="white_e6">#e6e7e7</color>// 白天主背景色
+    <color name="gray_3b">#3b3b3b</color>// 夜景主背景色
+    <color name="gray_61">#616161</color>// 夜景满电和防盗提醒下的方块背景色
+    <color name="gray_52">#525252</color>// 夜景商店布局总背景色
+    <color name="gray_8d">#8d8986</color>// 夜景模式满电提醒文字
+    <color name="gray_b5">#b5b5b6</color>// 已充满
 </resources>

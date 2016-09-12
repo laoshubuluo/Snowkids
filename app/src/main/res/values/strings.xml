@@ -35,6 +35,7 @@
 
     <string name="power_full">已充满</string>
     <string name="power_ing">充电中</string>
+    <string name="power_not">未充电</string>
     <string name="power_time_out">剩余可用时间:</string>
     <string name="welcome_label">时刻在你身边</string>
     <string name="night_model_time_setting">夜间模式    时间设定</string>

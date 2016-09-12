@@ -1,9 +1,9 @@
 package com.rat.snowkids.util;
 
 import android.content.Context;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.AssetManager;
 import android.media.MediaPlayer;
+
+import com.snowkids.snowkids.R;
 
 
 /**
@@ -13,7 +13,8 @@ import android.media.MediaPlayer;
  * @date 2015-09-07 18:25:16
  */
 public class MediaUtil {
-    private static MediaPlayer mediaPlayer;
+    private static MediaPlayer mediaPlayer4TP;// 防盗告警
+    private static MediaPlayer mediaPlayer4PF;// 电满告警
     private static MediaUtil instance;
 
     /**
@@ -35,34 +36,52 @@ public class MediaUtil {
      */
     private MediaUtil(Context context) {
         try {
-            AssetManager assetManager = context.getAssets();
-            AssetFileDescriptor fileDescriptor = assetManager.openFd("music1.mp3");
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.setDataSource(
-                    fileDescriptor.getFileDescriptor(),
-                    fileDescriptor.getStartOffset(),
-                    fileDescriptor.getLength());
-            mediaPlayer.prepare();
+            mediaPlayer4TP = MediaPlayer.create(context, R.raw.guard);
+            if (mediaPlayer4TP != null) {
+                mediaPlayer4TP.stop();
+            }
+            mediaPlayer4TP.prepare();
+
+            mediaPlayer4PF = MediaPlayer.create(context, R.raw.batteryfull);
+            if (mediaPlayer4PF != null) {
+                mediaPlayer4PF.stop();
+            }
+            mediaPlayer4PF.prepare();
         } catch (Throwable e) {
             LogUtil.e("media prepare error:", e);
             e.printStackTrace();
         }
     }
 
-    public void start() {
-        if (null != mediaPlayer && !mediaPlayer.isPlaying())
-            mediaPlayer.start();
+    public void start4PF() {
+        if (null != mediaPlayer4PF && !mediaPlayer4PF.isPlaying())
+            mediaPlayer4PF.start();
     }
 
-    public void pause() {
-        if (null != mediaPlayer && mediaPlayer.isPlaying())
-            mediaPlayer.pause();
+    public void pausePF() {
+        if (null != mediaPlayer4PF && mediaPlayer4PF.isPlaying())
+            mediaPlayer4PF.pause();
+    }
+
+    public void start4TP() {
+        if (null != mediaPlayer4TP && !mediaPlayer4TP.isPlaying())
+            mediaPlayer4TP.start();
+    }
+
+    public void pauseTP() {
+        if (null != mediaPlayer4TP && mediaPlayer4TP.isPlaying())
+            mediaPlayer4TP.pause();
     }
 
     public void stop() {
-        if (null != mediaPlayer)
-            mediaPlayer.stop();
-        mediaPlayer.release();
-        mediaPlayer = null;
+        if (null != mediaPlayer4TP)
+            mediaPlayer4TP.stop();
+        mediaPlayer4TP.release();
+        mediaPlayer4TP = null;
+
+        if (null != mediaPlayer4PF)
+            mediaPlayer4PF.stop();
+        mediaPlayer4PF.release();
+        mediaPlayer4PF = null;
     }
 }

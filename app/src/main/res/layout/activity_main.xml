@@ -2,7 +2,7 @@
     android:id="@+id/mainLL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_e6"
+    android:background="@color/white_e6"
     android:orientation="vertical">
 
     <include layout="@layout/public_top_layout" />
@@ -33,7 +33,7 @@
                 android:id="@+id/marketLine"
                 android:layout_width="1dp"
                 android:layout_height="60dp"
-                android:background="@color/gray_e6" />
+                android:background="@color/white_e6" />
 
             <ImageView
                 android:id="@+id/marketJDIV"
@@ -163,10 +163,8 @@
 
                 <com.rat.snowkids.view.CustomView
                     android:id="@+id/customView"
-                    progressColor="@color/red_from"
-                    roundColor="@color/gray_from"
                     roundWidth="60"
-                    textColor="@color/red"
+                    textColor="@color/red_d7"
                     textIsShow="false"
                     textSize="50sp"
                     android:layout_width="match_parent"

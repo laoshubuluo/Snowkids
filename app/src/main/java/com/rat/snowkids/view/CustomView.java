@@ -70,11 +70,11 @@ public class CustomView extends View {
     private void initAttrs(AttributeSet attr, Context context) {
         TypedArray array = context.obtainStyledAttributes(attr, R.styleable.CustomView);
 
-        roundColor = array.getColor(R.styleable.CustomView_roundColor, context.getResources().getColor(R.color.gray_from));//环形颜色
-        progressColor = array.getColor(R.styleable.CustomView_progressColor, context.getResources().getColor(R.color.red_from));//进度颜色
+        roundColor = array.getColor(R.styleable.CustomView_roundColor, context.getResources().getColor(R.color.gray_b5));//环形颜色
+        progressColor = array.getColor(R.styleable.CustomView_progressColor, context.getResources().getColor(R.color.red_d7));//进度颜色
         textIsShow = array.getBoolean(R.styleable.CustomView_textIsShow, false);//文字
         textSize = array.getDimension(R.styleable.CustomView_textSize, 100);//文字大小
-        textColor = array.getColor(R.styleable.CustomView_textColor, context.getResources().getColor(R.color.red));//文字颜色
+        textColor = array.getColor(R.styleable.CustomView_textColor, context.getResources().getColor(R.color.red_d7));//文字颜色
         roundWidth = array.getInt(R.styleable.CustomView_roundWidth, 70);//圆环宽度
 
         array.recycle();
