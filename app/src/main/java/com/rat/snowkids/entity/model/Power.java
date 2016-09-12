@@ -1,7 +1,5 @@
 package com.rat.snowkids.entity.model;
 
-import android.os.BatteryManager;
-
 import java.io.Serializable;
 
 /**
@@ -58,8 +56,8 @@ public class Power implements Serializable {
         this.level = level;
     }
 
-    public float getBatteryPct() {
-        return batteryPct;
+    public String getBatteryPct() {
+        return String.valueOf((int) (batteryPct * 100)) + "%";
     }
 
     public void setBatteryPct(float batteryPct) {

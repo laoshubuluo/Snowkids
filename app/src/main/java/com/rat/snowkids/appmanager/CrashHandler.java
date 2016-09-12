@@ -7,7 +7,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.Environment;
 import android.os.Looper;
-
+import android.widget.Toast;
 
 import com.rat.snowkids.util.LogUtil;
 
@@ -79,7 +79,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
             mDefaultHandler.uncaughtException(thread, ex);
         } else {
             try {
-                Thread.sleep(3000);
+                Thread.sleep(5000);
             } catch (InterruptedException e) {
                 LogUtil.e("error : ", e);
             }
@@ -94,18 +94,17 @@ public class CrashHandler implements UncaughtExceptionHandler {
      *
      * @return true:如果处理了该异常信息;否则返回false.
      */
-    private boolean handleException(Throwable ex) {
+    private boolean handleException(final Throwable ex) {
         if (ex == null) {
             return false;
         }
         if (isFrist) {
             isFrist = false;
-            //使用Toast来显示异常信息
             new Thread() {
                 @Override
                 public void run() {
                     Looper.prepare();
-                    // Toast.makeText(mContext, "很抱歉,程序出现异常,即将退出.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext, "很抱歉,程序出现异常,即将退出", Toast.LENGTH_LONG).show();
                     Looper.loop();
                 }
             }.start();
@@ -178,7 +177,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
             String time = formatter.format(new Date());
             String fileName = "crash-" + time + "-" + timestamp + ".log";
             if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-                String path = "/sdcard/crash/";
+                String path = "/sdcard/snowkids-log/";
                 File dir = new File(path);
                 if (!dir.exists()) {
                     dir.mkdirs();

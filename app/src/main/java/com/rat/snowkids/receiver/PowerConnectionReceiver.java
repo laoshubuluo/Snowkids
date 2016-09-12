@@ -3,28 +3,23 @@ package com.rat.snowkids.receiver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Message;
-import android.widget.Toast;
 
+import com.rat.snowkids.common.Actions;
 import com.rat.snowkids.common.Constant;
 import com.rat.snowkids.common.MessageSignConstant;
-import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.LogUtil;
-import com.rat.snowkids.util.PowerUtil;
 
 public class PowerConnectionReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        Power power = PowerUtil.getPowerData(context);
-        LogUtil.i("receive broadcast,action:" + intent.getAction() + "|" + power.toString());
-        Toast.makeText(context, power.toString(), Toast.LENGTH_SHORT).show();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("power", power);
+        LogUtil.i("receive broadcast,action:" + intent.getAction());
+        // 通知service
         Message msg = new Message();
         msg.what = MessageSignConstant.POWER_CONNECTION_STATUS;
-        msg.setData(bundle);
-        Constant.handlerInMainActivity.sendMessage(msg);
-        Constant.handlerInMonitorService.sendMessage(msg);
+        if (null != Constant.handlerInMonitorService)
+            Constant.handlerInMonitorService.sendMessage(msg);
+        // 通知activity
+        context.sendBroadcast(new Intent(Actions.POWER_CONNECT_STATUS_CHANGE));
     }
 }

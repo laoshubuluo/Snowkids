@@ -5,20 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rat.snowkids.activity.base.BaseActivity;
 import com.rat.snowkids.activity.base.WebActivity;
 import com.rat.snowkids.common.Actions;
-import com.rat.snowkids.common.Constant;
-import com.rat.snowkids.common.MessageSignConstant;
 import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.DateUtil;
@@ -26,9 +21,10 @@ import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
 import com.rat.snowkids.util.PowerUtil;
 import com.rat.snowkids.util.ResourceUtil;
+import com.rat.snowkids.view.CustomView;
 import com.snowkids.snowkids.R;
 
-public class MainActivity extends BaseActivity implements Handler.Callback {
+public class MainActivity extends BaseActivity {
     private TextView topLeftView;
     private TextView topRightView;
     private RelativeLayout topLayout;
@@ -42,10 +38,13 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
     private ImageView marketJDIV;
     private ImageView marketTBIV;
     private View marketLine;
+
+
+    private CustomView customView;
+    private TextView powerPercentTV;
+    private TextView powerStatusTV;
     private TextView powerStatusTV1;
     private TextView powerStatusTV2;
-
-    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +58,6 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
      * 初始化界面
      */
     public void initView() {
-        handler = new Handler(this);
-        Constant.handlerInMainActivity = handler;
         topLeftView = (TextView) findViewById(R.id.top_left);
         topRightView = (TextView) findViewById(R.id.top_right);
         topLayout = (RelativeLayout) findViewById(R.id.top_layout);
@@ -73,6 +70,9 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         marketJDIV = (ImageView) findViewById(R.id.marketJDIV);
         marketTBIV = (ImageView) findViewById(R.id.marketTBIV);
         marketLine = findViewById(R.id.marketLine);
+        customView = (CustomView) findViewById(R.id.customView);
+        powerPercentTV = (TextView) findViewById(R.id.powerPercentTV);
+        powerStatusTV = (TextView) findViewById(R.id.powerStatusTV);
         powerStatusTV1 = (TextView) findViewById(R.id.powerStatusTV1);
         powerStatusTV2 = (TextView) findViewById(R.id.powerStatusTV2);
 
@@ -103,11 +103,22 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
             marketJDIV.setImageResource(R.mipmap.jingdong_logo_night);
             marketTBIV.setImageResource(R.mipmap.taobao_logo_night);
             marketLine.setBackgroundColor(getResources().getColor(R.color.gray_47));
-        } else {
-            // 白天模式
+        }
+        // 白天模式
+        else {
             powerStatusTV1.setText(getString(R.string.power_time_out));
             powerStatusTV2.setText(power.getTimeLeft());
         }
+
+        // TODO by L.jinzhu for。。。
+//        customView.re
+        powerPercentTV.setText(power.getBatteryPct());
+        if (power.isCharging())
+            powerStatusTV.setText(getApplication().getString(R.string.power_ing));
+        else if (power.isPowerFull())
+            powerStatusTV.setText(getApplication().getString(R.string.power_full));
+        else
+            powerStatusTV.setText("");
 
         initRemindStatus4PowerFull();
         initRemindStatus4TheftProof();
@@ -145,6 +156,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         filter.addAction(Actions.POWER_FULL_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.NIGHT_MODEL_STATUS_CHANGE);
+        filter.addAction(Actions.POWER_CONNECT_STATUS_CHANGE);
         registerReceiver(receiver, filter);
     }
 
@@ -218,32 +230,20 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
                     // TODO by L.jinzhu for 取消夜间模式
                 }
             }
-        }
-    };
-
-    /**
-     * Handler发送message的逻辑处理方法
-     *
-     * @param msg
-     * @return
-     */
-    @Override
-    public boolean handleMessage(Message msg) {
-        switch (msg.what) {
-            case MessageSignConstant.POWER_CONNECTION_STATUS:
-                Power power = (Power) msg.getData().getSerializable("power");
+            // 连接状态变更
+            else if (Actions.POWER_CONNECT_STATUS_CHANGE.equals(intent.getAction())) {
+                Power power = PowerUtil.getPowerData(getApplicationContext());
                 // 开始充电
                 if (power.isCharging()) {
-                    Toast.makeText(getApplicationContext(), "开始充电，修改上面的进度", Toast.LENGTH_LONG).show();
+                    powerStatusTV.setText(getApplication().getString(R.string.power_ing));
                 }
                 // 拔掉电源
                 else {
-                    Toast.makeText(getApplicationContext(), "拔掉电源，修改上面的进度", Toast.LENGTH_LONG).show();
+                    powerStatusTV.setText("");
                 }
-                break;
+            }
         }
-        return false;
-    }
+    };
 
     @Override
     protected void onDestroy() {

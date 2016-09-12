@@ -156,16 +156,51 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <com.rat.snowkids.view.CustomView
-                progressColor="@color/red_from"
-                roundColor="@color/gray_from"
-                roundWidth="60"
-                textColor="@color/red"
-                textIsShow="true"
-                textSize="50sp"
+            <FrameLayout
                 android:layout_width="260dp"
-                android:layout_height="201dp"
-                android:visibility="visible" />
+                android:layout_height="200dp"
+                android:layout_gravity="center">
+
+                <com.rat.snowkids.view.CustomView
+                    android:id="@+id/customView"
+                    progressColor="@color/red_from"
+                    roundColor="@color/gray_from"
+                    roundWidth="60"
+                    textColor="@color/red"
+                    textIsShow="false"
+                    textSize="50sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/powerPercentTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="30%"
+                        android:textColor="@color/red_d2"
+                        android:textSize="50sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/powerStatusTV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="status"
+                        android:textColor="@color/gray_b5"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/powerStatusTV1"

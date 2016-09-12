@@ -14,7 +14,5 @@ public class Constant {
     //系统偏好参数写入文件
     public static final String PREFS_NAME = "dp_prefs";
 
-    public static Handler handlerInMainActivity;
     public static Handler handlerInMonitorService;
-
 }

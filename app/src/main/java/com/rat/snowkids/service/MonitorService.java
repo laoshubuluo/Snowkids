@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
-import android.widget.Toast;
 
 import com.rat.snowkids.activity.MainActivity;
 import com.rat.snowkids.common.Constant;
@@ -16,6 +15,7 @@ import com.rat.snowkids.entity.model.Power;
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
+import com.rat.snowkids.util.PowerUtil;
 import com.snowkids.snowkids.R;
 
 /**
@@ -35,9 +35,9 @@ public class MonitorService extends Service implements Handler.Callback {
     public void onCreate() {
         super.onCreate();
         LogUtil.i("onCreate:" + this.getClass().getSimpleName());
-        Toast.makeText(getApplicationContext(), this.getClass().getSimpleName() + " start success", Toast.LENGTH_SHORT).show();
         handler = new Handler(this);
         Constant.handlerInMonitorService = handler;
+        // Toast.makeText(getApplicationContext(), this.getClass().getSimpleName() + " start success", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -62,9 +62,9 @@ public class MonitorService extends Service implements Handler.Callback {
      */
     @Override
     public boolean handleMessage(Message msg) {
+        Power power = PowerUtil.getPowerData(getApplicationContext());
         switch (msg.what) {
             case MessageSignConstant.POWER_CONNECTION_STATUS:
-                Power power = (Power) msg.getData().getSerializable("power");
                 // 开始充电
                 if (power.isCharging()) {
                     MediaUtil.getInstance(getApplicationContext()).pause();

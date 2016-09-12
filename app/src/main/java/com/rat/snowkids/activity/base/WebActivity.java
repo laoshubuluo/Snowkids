@@ -2,6 +2,8 @@ package com.rat.snowkids.activity.base;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -61,12 +63,16 @@ public class WebActivity extends BaseActivity {
         webSettings.setBuiltInZoomControls(true); // 设置显示缩放按钮
         webSettings.setSupportZoom(true); // 支持缩放
         webSettings.setLoadWithOverviewMode(true);
+        if (Build.VERSION.SDK_INT >= 19) {
+            webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        }
         //覆盖WebView默认使用第三方或系统默认浏览器打开网页的行为，使网页用WebView打开
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                //返回值是true的时候控制去WebView打开，为false调用系统浏览器或第三方浏览器
-                view.loadUrl(url);
+                if (url.startsWith("http:") || url.startsWith("https:")) {
+                    return false;
+                }
                 return true;
             }
 
@@ -80,7 +86,7 @@ public class WebActivity extends BaseActivity {
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
                 super.onReceivedError(view, errorCode, description, failingUrl);
                 loadingView.setVisibility(View.GONE);
-                Toast.makeText(getApplicationContext(), "加载失败：code：" + errorCode, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "加载失败：code：" + errorCode + " | message: " + description, Toast.LENGTH_LONG).show();
             }
 
             @Override

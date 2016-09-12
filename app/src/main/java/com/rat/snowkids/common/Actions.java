@@ -12,4 +12,6 @@ public class Actions {
     public static final String THEFT_PROOF_REMIND_STATUS_CHANGE = "rat.snowkids.action.THEFT_PROOF_REMIND_STATUS_CHANGE";
     // 夜间模式状态改变
     public static final String NIGHT_MODEL_STATUS_CHANGE = "rat.snowkids.action.NIGHT_MODEL_STATUS_CHANGE";
+    // 连接状态改变
+    public static final String POWER_CONNECT_STATUS_CHANGE = "rat.snowkids.action.POWER_CONNECT_STATUS_CHANGE";
 }

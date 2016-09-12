@@ -5,7 +5,6 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
@@ -36,9 +35,9 @@ public class CustomView extends View {
     //文字颜色
     private int textColor;
     //最大进度
-    private int max = 1000;
+    private int max = 100;
     //当前进度
-    private int progress = 300;
+    private int progress = 30;
     //圆弧宽度
     private int roundWidth = 30;
 
@@ -73,7 +72,7 @@ public class CustomView extends View {
 
         roundColor = array.getColor(R.styleable.CustomView_roundColor, context.getResources().getColor(R.color.gray_from));//环形颜色
         progressColor = array.getColor(R.styleable.CustomView_progressColor, context.getResources().getColor(R.color.red_from));//进度颜色
-        textIsShow = array.getBoolean(R.styleable.CustomView_textIsShow, true);//文字
+        textIsShow = array.getBoolean(R.styleable.CustomView_textIsShow, false);//文字
         textSize = array.getDimension(R.styleable.CustomView_textSize, 100);//文字大小
         textColor = array.getColor(R.styleable.CustomView_textColor, context.getResources().getColor(R.color.red));//文字颜色
         roundWidth = array.getInt(R.styleable.CustomView_roundWidth, 70);//圆环宽度
@@ -129,7 +128,6 @@ public class CustomView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         // 画外环
         paint = new Paint();
         // 增加渐变颜色
@@ -158,64 +156,6 @@ public class CustomView extends View {
         paint.setColor(progressColor);
         paint.setStrokeWidth(roundWidth - 20);
         canvas.drawArc(oval, 160, 220 * nowPro / max, false, paint);  //绘制圆弧
-    }
-
-
-    private int getDefaultHeight() {
-        return 0;
-    }
-
-    private int getDefaultWidth() {
-        return 0;
-    }
-
-
-    public int getRoundColor() {
-        return roundColor;
-    }
-
-    public void setRoundColor(int roundColor) {
-        this.roundColor = roundColor;
-    }
-
-    public int getProgressColor() {
-        return progressColor;
-    }
-
-    public void setProgressColor(int progressColor) {
-        this.progressColor = progressColor;
-    }
-
-    public boolean getText() {
-        return textIsShow;
-    }
-
-    public void setText(boolean text) {
-        this.textIsShow = text;
-    }
-
-    public float getTextSize() {
-        return textSize;
-    }
-
-    public void setTextSize(float textSize) {
-        this.textSize = textSize;
-    }
-
-    public int getTextColor() {
-        return textColor;
-    }
-
-    public void setTextColor(int textColor) {
-        this.textColor = textColor;
-    }
-
-    public int getMax() {
-        return max;
-    }
-
-    public void setMax(int max) {
-        this.max = max;
     }
 
     public int getProgress() {
