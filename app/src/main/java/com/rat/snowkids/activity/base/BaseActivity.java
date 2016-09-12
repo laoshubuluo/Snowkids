@@ -10,11 +10,10 @@ import android.view.Window;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.snowkids.snowkids.R;
 import com.rat.snowkids.fragment.MenuLeftFragment;
 import com.rat.snowkids.fragment.MenuRightFragment;
 import com.rat.snowkids.view.dialog.CustomProgressDialog;
-import com.rat.snowkids.view.dialog.PromptDialog;
+import com.snowkids.snowkids.R;
 
 /**
  * author : L.jinzhu
@@ -24,7 +23,6 @@ import com.rat.snowkids.view.dialog.PromptDialog;
 public class BaseActivity extends SlidingFragmentActivity implements Handler.Callback, View.OnClickListener {
     public Handler handler;
     public CustomProgressDialog customProgressDialog;
-    public PromptDialog promptDialog;
     public ImageLoader imageLoader;
     public SlidingMenu menu;
 
@@ -33,7 +31,6 @@ public class BaseActivity extends SlidingFragmentActivity implements Handler.Cal
         requestWindowFeature(Window.FEATURE_NO_TITLE);// 统一去掉标题栏
         super.onCreate(savedInstanceState);
         handler = new Handler(this);
-        promptDialog = new PromptDialog(BaseActivity.this);
         imageLoader = ImageLoader.getInstance();
 
         // 加载滑动菜单
@@ -75,9 +72,6 @@ public class BaseActivity extends SlidingFragmentActivity implements Handler.Cal
     protected void onDestroy() {
         if (null != customProgressDialog) {
             customProgressDialog.dismiss();
-        }
-        if (null != promptDialog) {
-            promptDialog.dismiss();
         }
         super.onDestroy();
     }

@@ -5,13 +5,9 @@
     <color name="orage">#FF6633</color>
     <color name="green">#10ff00</color>
     <color name="gray_ad">#adadad</color>
-
     <color name="translate">#00000000</color>//透明
     <color name="translate_half_white">#a0ffffff</color>//半透明白
-
-
     <color name="gray">#7f7f7f</color>
-
 
     <!--new-->
     <color name="red">#b7363b</color>

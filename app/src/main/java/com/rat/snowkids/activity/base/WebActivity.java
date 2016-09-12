@@ -18,8 +18,8 @@ public class WebActivity extends BaseActivity {
     public static final String INTENT_MARKET_TYPE = "market_type";
     public static final int INTENT_MARKET_TYPE_JD = 1;
     public static final int INTENT_MARKET_TYPE_TB = 2;
-    private static final String MARKET_URL_JD = "http://www.jd.com";
-    private static final String MARKET_URL_TB = "http://www.taobao.com";
+    private static final String MARKET_URL_JD = "http://snowkidscable.jd.com";
+    private static final String MARKET_URL_TB = "https://snowkidssm.tmall.com";
 
     @ViewInject(R.id.top_name)
     private TextView topTitleView;

@@ -21,75 +21,7 @@
     <string name="footer_hint_load_normal">加载更多</string>
     <string name="footer_hint_load_ready">松开加载更多</string>
 
-    <string name="submit">提交</string>
-    <string name="cancel">取消</string>
     <string name="back">返回</string>
-    <string name="prompt">提示</string>
-    <string name="sure">确定</string>
-    <string name="send">发送</string>
-    <string name="read_more">查看更多...</string>
-    <string name="empty">暂无内容，请重试</string>
-    <string name="time">日期</string>
-    <string name="level">等级</string>
-    <string name="query">查询</string>
-    <string name="search">搜索</string>
-
-    <!--主菜单-->
-    <string name="menu">Menu</string>
-    <string name="profile">Profile</string>
-    <string name="device">Device</string>
-    <string name="device_type">Device Type</string>
-    <string name="device_list">Device List</string>
-    <string name="parameter_list">Parameter List</string>
-    <string name="alarm">Alarm</string>
-    <string name="alarm_filter">Alarm Filter</string>
-    <string name="alarm_list">Alarm List</string>
-    <string name="operate_log">Operate Log</string>
-    <string name="operate_log_list">Operate Log List</string>
-    <string name="operate_log_filter">Operate Log Filter</string>
-    <string name="settings">Settings</string>
-
-    <!--登录鉴权-->
-    <string name="action_settings">设置</string>
-    <string name="login">登录</string>
-    <string name="logout">退出登录</string>
-    <string name="register">注册</string>
-    <string name="login_success">登录成功</string>
-    <string name="login_failure">登录失败</string>
-    <string name="login_error">登录异常</string>
-    <string name="user_name_is_null">用户名不能为空</string>
-    <string name="password_is_null">密码不能为空</string>
-
-    <!--其他-->
-    <string name="device_colon">设备: </string>
-    <string name="user_colon">用户:</string>
-    <string name="date_choice">选择日期:</string>
-    <string name="date">日期</string>
-    <string name="alarm_type">告警类型</string>
-    <string name="operate_log_type">操作日志类型</string>
-    <string name="operate_log_user">操作用户</string>
-    <string name="timeStart">开始时间</string>
-    <string name="timeEnd">终止时间</string>
-    <string name="device_type_small">设备类型</string>
-    <string name="device_name_small">设备名称</string>
-    <string name="device_name_is_null">设备名称不能为空，请重新输入</string>
-
-    <string name="device_name_colon">设备名称：</string>
-    <string name="device_type_colon">设备类型：</string>
-    <string name="device_model_colon">设备型号：</string>
-    <string name="device_describe_colon">设备描述：</string>
-
-    <string name="search_commit">请输入设备名称，并点击键盘搜索键</string>
-
-    <string name="remeber_me">记住我</string>
-    <string name="receive_push_message">接收消息提醒</string>
-    <string name="operate_environment">操作环境</string>
-    <string name="server_ip">服务器地址</string>
-    <string name="server_tip">提醒：如果您输入上述地址，应用所有请求将指向您输入的新地址。格式参考：182.92.107.7:8080</string>
-    <string name="setting_success">设置成功</string>
-
-
-    <!--new-->
 
     <string name="power_full_remind">满电提醒</string>
     <string name="theft_proof_remind">防盗提醒</string>

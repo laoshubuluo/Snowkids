@@ -58,7 +58,7 @@ public abstract class PostJsonRequest extends BaseVolleyPostRequest<JsonRequest,
                     headers.put("Charset", "UTF-8");
                     headers.put("Content-Type", "application/json");
                     headers.put("Accept-Encoding", "gzip,deflate");
-                    headers.put("token", AppUtils.getInstance().getUserToken());
+                    //headers.put("token", AppUtils.getInstance().getUserToken());
                     return headers;
                 }
 

@@ -16,6 +16,5 @@ public class ActionInfo extends AbstractRequestInfo {
 
     public ActionInfo(int actionId) {
         this.actionId = actionId;
-        this.environment = AppUtils.getInstance().getUserEnvironment().getCurrent();
     }
 }

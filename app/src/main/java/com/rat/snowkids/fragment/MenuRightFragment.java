@@ -28,7 +28,6 @@ import java.io.File;
  * introduce : 滑动菜单界面
  */
 public class MenuRightFragment extends Fragment implements View.OnClickListener {
-    private ImageView iconIV;
     private ImageView powerFullRemindIV;
     private ImageView theftProofRemindIV;
     private ImageView nightModelIV;
@@ -62,7 +61,6 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
      * 初始化界面
      */
     private void initView(View view) {
-        iconIV = (ImageView) view.findViewById(R.id.iconIV);
         powerFullRemindIV = (ImageView) view.findViewById(R.id.powerFullRemindIV);
         theftProofRemindIV = (ImageView) view.findViewById(R.id.theftProofRemindIV);
         nightModelIV = (ImageView) view.findViewById(R.id.nightModelIV);
@@ -181,7 +179,8 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 startActivity(intent);
                 break;
             case R.id.shareAppRL:
-                shareMsg("这里是页面title", "分享信息title", "分享信息内容", "");
+                // TODO by L.jinzhu
+                shareMsg("分享", "让你的数据线变得更聪明", "分享信息内容", "");
                 break;
             default:
                 break;
