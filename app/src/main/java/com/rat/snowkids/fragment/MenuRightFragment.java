@@ -181,7 +181,6 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 startActivity(intent);
                 break;
             case R.id.shareAppRL:
-                // TODO by L.jinzhu for
                 shareMsg("这里是页面title", "分享信息title", "分享信息内容", "");
                 break;
             default:

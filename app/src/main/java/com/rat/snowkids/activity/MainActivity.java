@@ -41,6 +41,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
     private LinearLayout marketLL;
     private ImageView marketJDIV;
     private ImageView marketTBIV;
+    private View marketLine;
     private TextView powerStatusTV1;
     private TextView powerStatusTV2;
 
@@ -51,7 +52,6 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        initData();
         initBroadcastReceiver();
     }
 
@@ -72,6 +72,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         marketLL = (LinearLayout) findViewById(R.id.marketLL);
         marketJDIV = (ImageView) findViewById(R.id.marketJDIV);
         marketTBIV = (ImageView) findViewById(R.id.marketTBIV);
+        marketLine = findViewById(R.id.marketLine);
         powerStatusTV1 = (TextView) findViewById(R.id.powerStatusTV1);
         powerStatusTV2 = (TextView) findViewById(R.id.powerStatusTV2);
 
@@ -101,6 +102,7 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
             marketLL.setBackgroundColor(getResources().getColor(R.color.gray_52));
             marketJDIV.setImageResource(R.mipmap.jingdong_logo_night);
             marketTBIV.setImageResource(R.mipmap.taobao_logo_night);
+            marketLine.setBackgroundColor(getResources().getColor(R.color.gray_47));
         } else {
             // 白天模式
             powerStatusTV1.setText(getString(R.string.power_time_out));
@@ -144,6 +146,13 @@ public class MainActivity extends BaseActivity implements Handler.Callback {
         filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.NIGHT_MODEL_STATUS_CHANGE);
         registerReceiver(receiver, filter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtil.i("onResume:" + this.getClass().getSimpleName());
+        initData();
     }
 
     @Override

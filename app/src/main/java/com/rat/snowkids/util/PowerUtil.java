@@ -35,7 +35,7 @@ public class PowerUtil {
 
         // 电池剩余时间，各种方式无法测算准确，各大厂商数据均为写死，so，写死~
         // 100% = 12小时 = 12*60 = 720分钟
-        int totalTime = 720;
+        int totalTime = 720 + (int) (Math.random() * 60);
         int timeLeftInt = (int) (totalTime * batteryPct);
         String timeLeftStr = timeLeftInt / 60 + "小时" + timeLeftInt % 60 + "分";
 
