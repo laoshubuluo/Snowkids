@@ -79,7 +79,6 @@ public class MainActivity extends BaseActivity {
 
         topLeftView.setVisibility(View.VISIBLE);
         topLeftView.setOnClickListener(this);
-        topRightView.setText("Beta版本");
         powerFullRemindRL.setOnClickListener(this);
         theftProofRemindRL.setOnClickListener(this);
         marketJDIV.setOnClickListener(this);

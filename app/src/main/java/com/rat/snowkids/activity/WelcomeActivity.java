@@ -15,7 +15,7 @@ import com.rat.snowkids.service.MonitorService;
 import com.snowkids.snowkids.R;
 
 public class WelcomeActivity extends Activity {
-    private final int waitTime = 1000;
+    private final int waitTime = 4000;
     @ViewInject(R.id.logo)
     private ImageView logo;
     @ViewInject(R.id.text)

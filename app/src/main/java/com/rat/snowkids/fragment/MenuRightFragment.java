@@ -182,7 +182,7 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.shareAppRL:
                 // TODO by L.jinzhu
-                shareMsg("分享", "让你的数据线变得更聪明", "分享信息内容", "");
+                shareMsg("分享", "让你的数据线变得更聪明", "Snowkis 让你的数据线变得更聪明", "");
                 break;
             default:
                 break;
