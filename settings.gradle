@@ -1,2 +1,1 @@
 include ':app', ':extras:SlidingMenu', ':PushSDK'
-project(':PushSDK').projectDir = new File('extras/PushSDK')

@@ -25,6 +25,7 @@ import com.rat.snowkids.util.ResourceUtil;
 import com.rat.snowkids.view.CustomView;
 import com.snowkids.snowkids.R;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 public class MainActivity extends BaseActivity {
     private TextView topLeftView;
@@ -52,6 +53,9 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // 初始化友盟推送
+        PushAgent.getInstance(this).onAppStart();
+
         initView();
         initBroadcastReceiver();
     }

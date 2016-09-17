@@ -2,7 +2,10 @@ package com.rat.snowkids.appmanager;
 
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.ImageUtil;
+import com.rat.snowkids.util.LogUtil;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
 
 /**
  * author : L.jinzhu
@@ -28,5 +31,18 @@ public class Application extends android.app.Application {
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
 
         // 初始化友盟推送
+        PushAgent mPushAgent = PushAgent.getInstance(this);
+        // 注册推送服务，每次调用register方法都会回调该接口
+        mPushAgent.register(new IUmengRegisterCallback() {
+            @Override
+            public void onSuccess(String deviceToken) {
+                LogUtil.i("umeng push register success: " + deviceToken);
+            }
+
+            @Override
+            public void onFailure(String s, String s1) {
+                LogUtil.i("umeng push register failure: " + s);
+            }
+        });
     }
 }

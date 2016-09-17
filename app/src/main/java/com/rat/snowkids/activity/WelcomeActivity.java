@@ -14,6 +14,7 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.snowkids.service.MonitorService;
 import com.snowkids.snowkids.R;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.message.PushAgent;
 
 public class WelcomeActivity extends Activity {
     private final int waitTime = 4000;
@@ -28,14 +29,12 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
         // 基础框架初始化
         ViewUtils.inject(this);//xUtils框架注解注入view和事件
+        // 初始化友盟推送
+        PushAgent.getInstance(this).onAppStart();
 
         initService();
         initView();
         initData();
-
-
-
-
     }
 
     public void initView() {

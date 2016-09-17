@@ -247,7 +247,6 @@ public static final int *;
    public static final int *;
 }
 
-
 #支付宝
 #-keep class com.alipay.android.app.IAliPay{*;}
 #-keep class com.alipay.android.app.IAlixPay{*;}
