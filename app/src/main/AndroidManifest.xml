@@ -10,6 +10,9 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name="com.rat.snowkids.appmanager.Application"
@@ -50,5 +53,17 @@
                 <action android:name="android.intent.action.ACTION_BATTERY_OKAY" />
             </intent-filter>
         </receiver>
+
+        <!-- 友盟 start -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="57dc942be0f55ae60400254e" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="3c200015915120a011c42bd22f09c5c1" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="GuanWang" />
+        <!-- 友盟 end -->
     </application>
 </manifest>

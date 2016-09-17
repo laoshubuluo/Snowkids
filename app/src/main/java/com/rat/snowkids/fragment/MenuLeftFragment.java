@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.snowkids.snowkids.R;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * author : L.jinzhu
@@ -21,4 +22,15 @@ public class MenuLeftFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_menu_left, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(getActivity());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(getActivity());
+    }
 }

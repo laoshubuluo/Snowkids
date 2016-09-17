@@ -20,6 +20,7 @@ import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
 import com.snowkids.snowkids.R;
+import com.umeng.analytics.MobclickAgent;
 
 import java.io.File;
 
@@ -234,5 +235,17 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
     public void onDestroy() {
         super.onDestroy();
         getActivity().unregisterReceiver(receiver);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(getActivity());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(getActivity());
     }
 }

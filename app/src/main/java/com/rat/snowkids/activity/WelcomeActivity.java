@@ -13,6 +13,7 @@ import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
 import com.rat.snowkids.service.MonitorService;
 import com.snowkids.snowkids.R;
+import com.umeng.analytics.MobclickAgent;
 
 public class WelcomeActivity extends Activity {
     private final int waitTime = 4000;
@@ -31,6 +32,10 @@ public class WelcomeActivity extends Activity {
         initService();
         initView();
         initData();
+
+
+
+
     }
 
     public void initView() {
@@ -53,5 +58,17 @@ public class WelcomeActivity extends Activity {
     public void initService() {
         Intent intent = new Intent(WelcomeActivity.this, MonitorService.class);
         startService(intent);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
     }
 }

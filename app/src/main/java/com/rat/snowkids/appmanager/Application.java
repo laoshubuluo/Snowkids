@@ -2,6 +2,7 @@ package com.rat.snowkids.appmanager;
 
 import com.rat.snowkids.util.AppUtils;
 import com.rat.snowkids.util.ImageUtil;
+import com.umeng.analytics.MobclickAgent;
 
 /**
  * author : L.jinzhu
@@ -22,5 +23,10 @@ public class Application extends android.app.Application {
 
         // 基础框架初始化
         ImageUtil.initImageLoader(this);// ImageLoader框架初始化图片处理工具
+
+        // 初始化友盟
+        MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+
+        // 初始化友盟推送
     }
 }

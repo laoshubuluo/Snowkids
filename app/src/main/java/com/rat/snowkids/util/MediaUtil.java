@@ -40,13 +40,13 @@ public class MediaUtil {
             if (mediaPlayer4TP != null) {
                 mediaPlayer4TP.stop();
             }
-            mediaPlayer4TP.prepare();
+            mediaPlayer4TP.prepareAsync();
 
             mediaPlayer4PF = MediaPlayer.create(context, R.raw.batteryfull);
             if (mediaPlayer4PF != null) {
                 mediaPlayer4PF.stop();
             }
-            mediaPlayer4PF.prepare();
+            mediaPlayer4PF.prepareAsync();
         } catch (Throwable e) {
             LogUtil.e("media prepare error:", e);
             e.printStackTrace();
@@ -54,8 +54,15 @@ public class MediaUtil {
     }
 
     public void start4PF() {
-        if (null != mediaPlayer4PF && !mediaPlayer4PF.isPlaying())
-            mediaPlayer4PF.start();
+        if (null == mediaPlayer4PF || mediaPlayer4PF.isPlaying())
+            return;
+        mediaPlayer4PF.setOnSeekCompleteListener(new MediaPlayer.OnSeekCompleteListener() {
+            @Override
+            public void onSeekComplete(MediaPlayer mp) {
+                mediaPlayer4PF.start();
+            }
+        });
+        mediaPlayer4PF.seekTo(0);// 重新定位
     }
 
     public void pausePF() {
@@ -64,8 +71,15 @@ public class MediaUtil {
     }
 
     public void start4TP() {
-        if (null != mediaPlayer4TP && !mediaPlayer4TP.isPlaying())
-            mediaPlayer4TP.start();
+        if (null == mediaPlayer4TP || mediaPlayer4TP.isPlaying())
+            return;
+        mediaPlayer4TP.setOnSeekCompleteListener(new MediaPlayer.OnSeekCompleteListener() {
+            @Override
+            public void onSeekComplete(MediaPlayer mp) {
+                mediaPlayer4TP.start();
+            }
+        });
+        mediaPlayer4TP.seekTo(0);// 重新定位
     }
 
     public void pauseTP() {
@@ -74,14 +88,16 @@ public class MediaUtil {
     }
 
     public void stop() {
-        if (null != mediaPlayer4TP)
+        if (null != mediaPlayer4TP) {
             mediaPlayer4TP.stop();
-        mediaPlayer4TP.release();
-        mediaPlayer4TP = null;
+            mediaPlayer4TP.release();
+            mediaPlayer4TP = null;
+        }
 
-        if (null != mediaPlayer4PF)
+        if (null != mediaPlayer4PF) {
             mediaPlayer4PF.stop();
-        mediaPlayer4PF.release();
-        mediaPlayer4PF = null;
+            mediaPlayer4PF.release();
+            mediaPlayer4PF = null;
+        }
     }
 }

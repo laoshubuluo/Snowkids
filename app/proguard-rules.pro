@@ -217,6 +217,36 @@
 -keepclassmembers class * {
    public <init>(org.json.JSONObject);
 }
+-keep public class com.snowkids.snowkids.R$*{
+public static final int *;
+}
+-keepclassmembers enum * {
+    public static **[] values();
+        public static ** valueOf(java.lang.String);
+}
+#友盟推送
+-dontwarn com.taobao.**
+-dontwarn anet.channel.**
+-dontwarn anetwork.channel.**
+-dontwarn org.android.**
+-dontwarn org.apache.thrift.**
+-dontwarn com.xiaomi.**
+-dontwarn com.huawei.**
+
+-keepattributes *Annotation*
+
+-keep class com.taobao.** {*;}
+-keep class org.android.** {*;}
+-keep class anet.channel.** {*;}
+-keep class com.umeng.** {*;}
+-keep class com.xiaomi.** {*;}
+-keep class com.huawei.** {*;}
+-keep class org.apache.thrift.** {*;}
+
+-keep public class **.R$*{
+   public static final int *;
+}
+
 
 #支付宝
 #-keep class com.alipay.android.app.IAliPay{*;}

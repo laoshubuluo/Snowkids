@@ -24,6 +24,7 @@ import com.rat.snowkids.util.PowerUtil;
 import com.rat.snowkids.util.ResourceUtil;
 import com.rat.snowkids.view.CustomView;
 import com.snowkids.snowkids.R;
+import com.umeng.analytics.MobclickAgent;
 
 public class MainActivity extends BaseActivity {
     private TextView topLeftView;
@@ -166,6 +167,13 @@ public class MainActivity extends BaseActivity {
         super.onResume();
         LogUtil.i("onResume:" + this.getClass().getSimpleName());
         initData();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override
