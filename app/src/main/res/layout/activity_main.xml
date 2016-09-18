@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainLL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -169,20 +170,25 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:layout_width="260dp"
-                android:layout_height="260dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="44dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-                <com.rat.snowkids.view.CustomView
-                    android:id="@+id/customView"
-                    roundWidth="60"
-                    textColor="@color/red_d2"
-                    textIsShow="false"
-                    textSize="50sp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:visibility="visible" />
+                <com.ethanco.circleprogresslibrary.CircleProgress
+                    android:id="@+id/circleProgress"
+                    android:layout_width="260dp"
+                    android:layout_height="260dp"
+                    custom:bgColor="@color/gray_8f"
+                    custom:currProgress="160"
+                    custom:foreEndColor="@color/red_b7"
+                    custom:foreStartColor="@color/red_d2"
+                    custom:isCircleCorner="true"
+                    custom:isSolid="false"
+                    custom:maxProgress="260"
+                    custom:progressInitialPosition="-90"
+                    custom:progressWidth="26dp"
+                    custom:useAnimation="true"
+                    custom:useGradient="true" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

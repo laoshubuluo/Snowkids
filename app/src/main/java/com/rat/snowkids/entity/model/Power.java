@@ -56,8 +56,8 @@ public class Power implements Serializable {
         this.level = level;
     }
 
-    public String getBatteryPct() {
-        return String.valueOf((int) (batteryPct * 100)) + "%";
+    public int getBatteryPct() {
+        return (int) (batteryPct * 100);
     }
 
     public void setBatteryPct(float batteryPct) {

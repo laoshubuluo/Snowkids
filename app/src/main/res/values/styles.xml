@@ -19,13 +19,4 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:background">@android:color/transparent</item>
     </style>
-
-    <declare-styleable name="CustomView">
-        <attr name="roundColor" format="color" />
-        <attr name="progressColor" format="color" />
-        <attr name="textIsShow" format="boolean" />
-        <attr name="textSize" format="dimension" />
-        <attr name="textColor" format="color" />
-        <attr name="roundWidth" format="integer" />
-    </declare-styleable>
 </resources>

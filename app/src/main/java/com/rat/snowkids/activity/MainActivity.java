@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ethanco.circleprogresslibrary.CircleProgress;
 import com.rat.snowkids.activity.base.BaseActivity;
 import com.rat.snowkids.activity.base.WebActivity;
 import com.rat.snowkids.common.Actions;
@@ -21,14 +22,12 @@ import com.rat.snowkids.util.LogUtil;
 import com.rat.snowkids.util.MediaUtil;
 import com.rat.snowkids.util.PowerUtil;
 import com.rat.snowkids.util.ResourceUtil;
-import com.rat.snowkids.view.CustomView;
 import com.snowkids.snowkids.R;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.message.PushAgent;
 
 public class MainActivity extends BaseActivity {
     private TextView topLeftView;
-    private TextView topRightView;
     private RelativeLayout topLayout;
     private LinearLayout remindLL;
     private LinearLayout powerDataLL;
@@ -42,7 +41,7 @@ public class MainActivity extends BaseActivity {
     private View marketLine;
 
 
-    private CustomView customView;
+    private CircleProgress circleProgress;
     private TextView powerPercentTV;
     private TextView powerStatusTV;
     private TextView powerStatusTV1;
@@ -64,7 +63,6 @@ public class MainActivity extends BaseActivity {
      */
     public void initView() {
         topLeftView = (TextView) findViewById(R.id.top_left);
-        topRightView = (TextView) findViewById(R.id.top_right);
         topLayout = (RelativeLayout) findViewById(R.id.top_layout);
         powerDataLL = (LinearLayout) findViewById(R.id.powerDataLL);
         remindLL = (LinearLayout) findViewById(R.id.remindLL);
@@ -76,7 +74,7 @@ public class MainActivity extends BaseActivity {
         marketJDIV = (ImageView) findViewById(R.id.marketJDIV);
         marketTBIV = (ImageView) findViewById(R.id.marketTBIV);
         marketLine = findViewById(R.id.marketLine);
-        customView = (CustomView) findViewById(R.id.customView);
+        circleProgress = (CircleProgress) findViewById(R.id.circleProgress);
         powerPercentTV = (TextView) findViewById(R.id.powerPercentTV);
         powerStatusTV = (TextView) findViewById(R.id.powerStatusTV);
         powerStatusTV1 = (TextView) findViewById(R.id.powerStatusTV1);
@@ -104,7 +102,8 @@ public class MainActivity extends BaseActivity {
             initData4Day(power);
         }
 
-        powerPercentTV.setText(power.getBatteryPct());
+        circleProgress.setProgress(power.getBatteryPct());
+        powerPercentTV.setText(power.getBatteryPct() + "%");
         if (power.isCharging())
             powerStatusTV.setText(getApplication().getString(R.string.power_ing));
         else if (power.isPowerFull())
@@ -265,7 +264,7 @@ public class MainActivity extends BaseActivity {
                 // 当前是夜间 && 非夜间模式
                 if (DateUtil.isOnNight() && !AppUtils.getInstance().isNightMode()) {
                     initData4Day(power);
-                } else {
+                } else if (DateUtil.isOnNight()) {
                     initData4Night();
                 }
                 initRemindStatus4PowerFull();
@@ -284,7 +283,7 @@ public class MainActivity extends BaseActivity {
             }
             // 电池等级变更-OK
             else if (Actions.POWER_LEVEL_OK.equals(intent.getAction())) {
-                // TODO by L.jinzhu for纠正100%数据
+                circleProgress.setProgress(100);
             }
         }
     };

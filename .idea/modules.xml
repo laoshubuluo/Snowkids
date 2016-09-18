@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/extras/SlidingMenu/SlidingMenu.iml" filepath="$PROJECT_DIR$/extras/SlidingMenu/SlidingMenu.iml" />
       <module fileurl="file://$PROJECT_DIR$/Snowkids.iml" filepath="$PROJECT_DIR$/Snowkids.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circleprogresslibrary/circleprogresslibrary.iml" filepath="$PROJECT_DIR$/circleprogresslibrary/circleprogresslibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/extras/extras.iml" filepath="$PROJECT_DIR$/extras/extras.iml" />
     </modules>
   </component>
