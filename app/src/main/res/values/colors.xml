@@ -2,14 +2,18 @@
     <color name="translate">#00000000</color>//透明
     <color name="translate_half_white">#a0ffffff</color>//半透明白
 
-    <color name="red_d7">#d71518</color>
-    <color name="red_d2">#d23a2f</color>// 百分比大字
-    <color name="white">#ffffff</color>
-    <color name="white_f8">#f8f8f8</color>// 白天满电和防盗提醒下的方块背景色
-    <color name="white_e6">#e6e7e7</color>// 白天主背景色
-    <color name="gray_3b">#3b3b3b</color>// 夜景主背景色
-    <color name="gray_61">#616161</color>// 夜景满电和防盗提醒下的方块背景色
-    <color name="gray_52">#525252</color>// 夜景商店布局总背景色
-    <color name="gray_8d">#8d8986</color>// 夜景模式满电提醒文字
-    <color name="gray_b5">#b5b5b6</color>// 已充满
+    <color name="white_f8">#f8f8f8</color>// topView
+    <color name="gray_61">#616161</color>// topView（夜景）
+    <color name="white_f2">#f2f3ed</color>// 充电进度布局
+    <color name="gray_3b">#3b3b3b</color>// 充电进度布局（夜景）
+    <color name="white_ed">#ede9e4</color>// 满电和防盗布局总背景色
+    <color name="gray_46">#464748</color>// 满电和防盗布局总背景色（夜景）
+    <color name="gray_c3">#c3c3c3</color>// 商店布局总背景色
+    <color name="gray_52">#525252</color>// 商店布局总背景色（夜景）
+
+    <color name="gray_8d">#8d8986</color>// 文字：时间设定、剩余可用时间
+    <color name="gray_8f">#8f8f90</color>// 文字：已充满
+    <color name="red_d2">#d23a2f</color>// 文字：百分比数字、满点提醒
+    <color name="red_b7">#b7363b</color>// 主红色
+    <color name="white">#ffffff</color>// 主白色
 </resources>

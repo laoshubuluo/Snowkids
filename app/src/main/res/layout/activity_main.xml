@@ -2,7 +2,6 @@
     android:id="@+id/mainLL"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_e6"
     android:orientation="vertical">
 
     <include layout="@layout/public_top_layout" />
@@ -15,9 +14,8 @@
         <LinearLayout
             android:id="@+id/marketLL"
             android:layout_width="match_parent"
-            android:layout_height="72.5dp"
+            android:layout_height="39dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/white_f8"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="2">
@@ -33,7 +31,7 @@
                 android:id="@+id/marketLine"
                 android:layout_width="1dp"
                 android:layout_height="60dp"
-                android:background="@color/white_e6" />
+                android:background="@color/gray_8d" />
 
             <ImageView
                 android:id="@+id/marketJDIV"
@@ -49,18 +47,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@id/marketLL"
-            android:layout_marginBottom="1dp"
-            android:orientation="vertical">
+            android:background="@color/white_ed"
+            android:orientation="vertical"
+            android:paddingBottom="17dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp"
+            android:paddingTop="17dp">
 
             <RelativeLayout
                 android:id="@+id/powerFullRemindRL"
                 android:layout_width="match_parent"
-                android:layout_height="77.5dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:background="@color/white_f8"
+                android:background="@drawable/shape_rectangle_solid_red"
                 android:gravity="center"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp">
+                android:paddingBottom="4dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="4dp">
 
                 <ImageView
                     android:id="@+id/powerFullRemindIV"
@@ -76,7 +80,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginRight="95dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@id/powerFullRemindIV"
                     android:orientation="vertical">
 
@@ -85,12 +90,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/power_full_remind"
-                        android:textColor="@color/gray_8d"
-                        android:textSize="22sp" />
+                        android:textColor="@color/red_b7"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:singleLine="true"
                         android:text="@string/power_full_remind_label"
                         android:textColor="@color/gray_8d"
                         android:textSize="11sp" />
@@ -101,13 +108,15 @@
             <RelativeLayout
                 android:id="@+id/theftProofRemindRL"
                 android:layout_width="match_parent"
-                android:layout_height="77.5dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="1dp"
-                android:background="@color/white_f8"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/shape_rectangle_solid_red"
                 android:gravity="center"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp">
+                android:paddingBottom="4dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="13dp"
+                android:paddingTop="4dp">
 
                 <ImageView
                     android:id="@+id/theftProofRemindIV"
@@ -123,7 +132,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:layout_marginRight="95dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
                     android:layout_toLeftOf="@id/theftProofRemindIV"
                     android:orientation="vertical">
 
@@ -132,12 +142,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/theft_proof_remind"
-                        android:textColor="@color/gray_8d"
-                        android:textSize="22sp" />
+                        android:textColor="@color/red_b7"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:singleLine="true"
                         android:text="@string/theft_proof_remind_label"
                         android:textColor="@color/gray_8d"
                         android:textSize="11sp" />
@@ -150,21 +162,22 @@
         <LinearLayout
             android:id="@+id/powerDataLL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@id/remindLL"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="44dp"
             android:gravity="center"
             android:orientation="vertical">
 
             <FrameLayout
                 android:layout_width="260dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center">
+                android:layout_height="260dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="44dp">
 
                 <com.rat.snowkids.view.CustomView
                     android:id="@+id/customView"
                     roundWidth="60"
-                    textColor="@color/red_d7"
+                    textColor="@color/red_d2"
                     textIsShow="false"
                     textSize="50sp"
                     android:layout_width="match_parent"
@@ -172,10 +185,11 @@
                     android:visibility="visible" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
+                    android:layout_margin="70dp"
+                    android:background="@mipmap/circle_dot"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -185,8 +199,7 @@
                         android:layout_height="wrap_content"
                         android:text="30%"
                         android:textColor="@color/red_d2"
-                        android:textSize="50sp"
-                        android:textStyle="bold" />
+                        android:textSize="40sp" />
 
                     <TextView
                         android:id="@+id/powerStatusTV"
@@ -194,8 +207,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="status"
-                        android:textColor="@color/gray_b5"
-                        android:textSize="16sp" />
+                        android:textColor="@color/gray_8d"
+                        android:textSize="15sp" />
                 </LinearLayout>
 
             </FrameLayout>
@@ -204,7 +217,7 @@
                 android:id="@+id/powerStatusTV1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="29dp"
+                android:layout_marginTop="-20dp"
                 android:text="text1"
                 android:textColor="@color/gray_8d"
                 android:textSize="16sp" />

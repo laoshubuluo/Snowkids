@@ -27,7 +27,7 @@
     <string name="theft_proof_remind">防盗提醒</string>
     <string name="night_model">夜间模式</string>
     <string name="power_full_remind_label">手机电量达到100%，开启本项可收到音乐或震动提醒</string>
-    <string name="theft_proof_remind_label">使用本App时，拔出数据线会发出警告声音，并发送推送通知</string>
+    <string name="theft_proof_remind_label">使用App时，拔出数据线会发出警告声音，并发送推送通知</string>
     <string name="share_app">分享APP</string>
     <string name="snowkids_version">Snowkids 1.0</string>
     <string name="snowkids_market_jingdong">Snowkids 京东旗舰店</string>
