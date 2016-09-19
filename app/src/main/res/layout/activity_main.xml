@@ -82,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="2dp"
                     android:layout_toLeftOf="@id/powerFullRemindIV"
                     android:orientation="vertical">
 
@@ -101,7 +101,7 @@
                         android:singleLine="true"
                         android:text="@string/power_full_remind_label"
                         android:textColor="@color/gray_8d"
-                        android:textSize="11sp" />
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </RelativeLayout>
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginRight="2dp"
                     android:layout_toLeftOf="@id/theftProofRemindIV"
                     android:orientation="vertical">
 
@@ -153,7 +153,7 @@
                         android:singleLine="true"
                         android:text="@string/theft_proof_remind_label"
                         android:textColor="@color/gray_8d"
-                        android:textSize="11sp" />
+                        android:textSize="10sp" />
                 </LinearLayout>
 
             </RelativeLayout>

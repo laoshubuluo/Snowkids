@@ -102,15 +102,7 @@ public class MainActivity extends BaseActivity {
             initData4Day(power);
         }
 
-        circleProgress.setProgress(power.getBatteryPct());
-        powerPercentTV.setText(power.getBatteryPct() + "%");
-        if (power.isCharging())
-            powerStatusTV.setText(getApplication().getString(R.string.power_ing));
-        else if (power.isPowerFull())
-            powerStatusTV.setText(getApplication().getString(R.string.power_full));
-        else
-            powerStatusTV.setText(getApplication().getString(R.string.power_not));
-
+        initPowerStatus(power);
         initRemindStatus4PowerFull();
         initRemindStatus4TheftProof();
     }
@@ -150,6 +142,20 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
+     * 初始化电量状态
+     */
+    public void initPowerStatus(Power power) {
+        circleProgress.setProgress(power.getBatteryPct());
+        powerPercentTV.setText(power.getBatteryPct() + "%");
+        if (power.isCharging())
+            powerStatusTV.setText(getApplication().getString(R.string.power_ing));
+        else if (power.isPowerFull())
+            powerStatusTV.setText(getApplication().getString(R.string.power_full));
+        else
+            powerStatusTV.setText(getApplication().getString(R.string.power_not));
+    }
+
+    /**
      * 初始化提醒状态
      */
     public void initRemindStatus4PowerFull() {
@@ -182,7 +188,7 @@ public class MainActivity extends BaseActivity {
         filter.addAction(Actions.THEFT_PROOF_REMIND_STATUS_CHANGE);
         filter.addAction(Actions.NIGHT_MODEL_STATUS_CHANGE);
         filter.addAction(Actions.POWER_CONNECT_STATUS_CHANGE);
-        filter.addAction(Actions.POWER_LEVEL_OK);
+        filter.addAction(Actions.POWER_CHANGED);
         registerReceiver(receiver, filter);
     }
 
@@ -281,9 +287,9 @@ public class MainActivity extends BaseActivity {
                     powerStatusTV.setText(getApplication().getString(R.string.power_not));
                 }
             }
-            // 电池等级变更-OK
-            else if (Actions.POWER_LEVEL_OK.equals(intent.getAction())) {
-                circleProgress.setProgress(100);
+            // 电池变化
+            else if (Actions.POWER_CHANGED.equals(intent.getAction())) {
+                initPowerStatus(power);
             }
         }
     };

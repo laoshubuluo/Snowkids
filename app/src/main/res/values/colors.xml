@@ -4,7 +4,7 @@
 
     <color name="white_f8">#f8f8f8</color>// topView
     <color name="gray_61">#616161</color>// topView（夜景）
-    <color name="white_f2">#f2f3ed</color>// 充电进度布局
+    <color name="white_f2">#f2f2ed</color>// 充电进度布局
     <color name="gray_3b">#3b3b3b</color>// 充电进度布局（夜景）
     <color name="white_ed">#ede9e4</color>// 满电和防盗布局总背景色
     <color name="gray_46">#464748</color>// 满电和防盗布局总背景色（夜景）

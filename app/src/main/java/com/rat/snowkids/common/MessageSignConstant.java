@@ -14,5 +14,4 @@ public class MessageSignConstant {
 
 
     public static final int POWER_CONNECTION_STATUS = 101;
-    public static final int POWER_LEVEL_OK = 102;
 }

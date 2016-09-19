@@ -15,6 +15,6 @@ public class Actions {
 
     // 连接状态改变
     public static final String POWER_CONNECT_STATUS_CHANGE = "rat.snowkids.action.POWER_CONNECT_STATUS_CHANGE";
-    // 电量等级-OK
-    public static final String POWER_LEVEL_OK = "rat.snowkids.action.POWER_LEVEL_OK";
+    // 电量等级
+    public static final String POWER_CHANGED = "rat.snowkids.action.POWER_CHANGED";
 }
