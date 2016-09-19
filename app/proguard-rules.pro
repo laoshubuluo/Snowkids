@@ -247,6 +247,11 @@ public static final int *;
    public static final int *;
 }
 
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
 #支付宝
 #-keep class com.alipay.android.app.IAliPay{*;}
 #-keep class com.alipay.android.app.IAlixPay{*;}

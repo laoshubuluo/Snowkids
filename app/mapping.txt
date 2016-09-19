@@ -20781,6 +20781,7 @@ com.rat.snowkids.activity.MainActivity -> com.rat.snowkids.activity.MainActivity
     void initData() -> c
     void initData4Day(com.rat.snowkids.entity.model.Power) -> a
     void initData4Night() -> d
+    void initPowerStatus(com.rat.snowkids.entity.model.Power) -> b
     void initRemindStatus4PowerFull() -> e
     void initRemindStatus4TheftProof() -> f
     void initBroadcastReceiver() -> g
@@ -20789,7 +20790,6 @@ com.rat.snowkids.activity.MainActivity -> com.rat.snowkids.activity.MainActivity
     void onClick(android.view.View) -> onClick
     void onDestroy() -> onDestroy
     android.widget.TextView access$000(com.rat.snowkids.activity.MainActivity) -> a
-    com.ethanco.circleprogresslibrary.CircleProgress access$100(com.rat.snowkids.activity.MainActivity) -> b
 com.rat.snowkids.activity.MainActivity$1 -> com.rat.snowkids.activity.a:
     com.rat.snowkids.activity.MainActivity this$0 -> a
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
@@ -20915,12 +20915,17 @@ com.rat.snowkids.receiver.PowerConnectionReceiver -> com.rat.snowkids.receiver.P
 com.rat.snowkids.receiver.PowerLevelReceiver -> com.rat.snowkids.receiver.PowerLevelReceiver:
     void onReceive(android.content.Context,android.content.Intent) -> onReceive
 com.rat.snowkids.service.MonitorService -> com.rat.snowkids.service.MonitorService:
-    android.os.Handler handler -> a
+    android.os.Handler handler -> b
+    android.content.BroadcastReceiver receiver -> a
     android.os.IBinder onBind(android.content.Intent) -> onBind
     void onCreate() -> onCreate
     int onStartCommand(android.content.Intent,int,int) -> onStartCommand
+    void initBroadcastReceiver() -> a
     boolean handleMessage(android.os.Message) -> handleMessage
     void onDestroy() -> onDestroy
+com.rat.snowkids.service.MonitorService$1 -> com.rat.snowkids.service.a:
+    com.rat.snowkids.service.MonitorService this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
 com.rat.snowkids.util.AppUtils -> com.rat.snowkids.b.a:
     android.content.SharedPreferences sharedPreferences -> a
     android.content.pm.PackageInfo packageInfo -> b

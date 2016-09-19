@@ -50,10 +50,9 @@ dependencies {
     compile files('libs/volley.jar')
     compile files('libs/xUtils-2.6.14.jar')
     compile files('libs/gson-2.2.4.jar')
-    compile project(':extras:SlidingMenu')    // 滑动菜单项目
-    compile project(':PushSDK')
     compile files('libs/universal-image-loader-1.9.3.jar')
-    compile files('libs/umeng/umeng-analytics-v6.0.1.jar')
-    compile files('libs/umeng/utdid4all-1.1.5_proguard.jar')
-    compile project(':circleprogresslibrary')
+    compile project(':extras:SlidingMenu') // 滑动菜单项目
+    compile project(':PushSDK')// 友盟推送
+    compile files('libs/umeng/umeng-analytics-v6.0.1.jar')// 友盟统计
+    compile project(':circleprogresslibrary')// 圆形进度
 }
