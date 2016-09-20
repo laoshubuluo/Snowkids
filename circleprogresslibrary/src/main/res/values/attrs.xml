@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="CircleProgress">
-        <!-- 进度条的背景色-->
-        <attr name="bgColor" format="color" />
+        <!-- 进度条的背景色 起始颜色-->
+        <attr name="bgStartColor" format="color" />
+        <!-- 进度条的背景色 结束颜色-->
+        <attr name="bgEndColor" format="color" />
         <!-- 进度条的前景色 起始颜色-->
         <attr name="foreStartColor" format="color" />
         <!-- 进度条的前景色 结束颜色-->

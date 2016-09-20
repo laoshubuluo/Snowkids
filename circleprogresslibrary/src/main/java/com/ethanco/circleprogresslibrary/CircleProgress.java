@@ -35,7 +35,10 @@ public class CircleProgress extends View {
     private int foreEndColcor;
     private Paint forePaint;
 
-    private int bgPaintColor;
+    //背景色起始颜色
+    private int bgSartColor;
+    //背景色结束颜色
+    private int bgEndColor;
     private Paint bgPaint;
     //进度条初始位置
     private int progressInitialPosition;
@@ -67,9 +70,10 @@ public class CircleProgress extends View {
 
     protected void initVar(Context context, AttributeSet attrs) {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.CircleProgress);
-        bgPaintColor = ta.getColor(R.styleable.CircleProgress_bgColor, Color.GRAY);
         foreStartColor = ta.getColor(R.styleable.CircleProgress_foreStartColor, Color.BLUE);
         foreEndColcor = ta.getColor(R.styleable.CircleProgress_foreEndColor, Color.BLUE);
+        bgSartColor = ta.getColor(R.styleable.CircleProgress_bgStartColor, Color.GRAY);
+        bgEndColor = ta.getColor(R.styleable.CircleProgress_bgEndColor, Color.GRAY);
         maxProgress = ta.getInteger(R.styleable.CircleProgress_maxProgress, 320);
         mStrokeWidth = ta.getDimension(R.styleable.CircleProgress_progressWidth, 12);
         currProgress = ta.getInteger(R.styleable.CircleProgress_currProgress, 160);
@@ -104,10 +108,14 @@ public class CircleProgress extends View {
         mPaintRectF = new RectF(0 + mStrokeWidth, 0 + mStrokeWidth, mWidth - mStrokeWidth, mHeight - mStrokeWidth);
 
         if (useGradient) {
-            LinearGradient gradient = new LinearGradient(0, 0, mWidth, mHeight, foreEndColcor, foreStartColor, Shader.TileMode.CLAMP);
-            forePaint.setShader(gradient);
+            LinearGradient gradientFore = new LinearGradient(0, mHeight / 2, mWidth, mHeight / 2, foreStartColor, foreEndColcor, Shader.TileMode.CLAMP);
+            forePaint.setShader(gradientFore);
+
+            LinearGradient gradientBg = new LinearGradient(0, mHeight / 2, mWidth, mHeight / 2, bgSartColor, bgEndColor, Shader.TileMode.CLAMP);
+            bgPaint.setShader(gradientBg);
         } else {
             forePaint.setColor(foreStartColor);
+            bgPaint.setColor(bgSartColor);
         }
     }
 
@@ -124,7 +132,7 @@ public class CircleProgress extends View {
 
     protected void initBgPaint() {
         bgPaint = new Paint();
-        bgPaint.setColor(bgPaintColor);
+        bgPaint.setColor(bgSartColor);
         bgPaint.setStrokeWidth(mStrokeWidth);
         setCommonPaint(bgPaint, isSolid, isCircleCorner);
     }

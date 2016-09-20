@@ -16,4 +16,9 @@
     <color name="red_d2">#d23a2f</color>// 文字：百分比数字、满点提醒
     <color name="red_b7">#b7363b</color>// 主红色
     <color name="white">#ffffff</color>// 主白色
+
+    <color name="red_8b">#8b0202</color>// 进度前景色-start
+    <color name="red_b8">#b80403</color>// 进度前景色-end
+    <color name="gray_cf">#cfcdcd</color>// 进度背景色-start
+    <color name="gray_e7">#e7e4e5</color>// 进度背景色-end
 </resources>

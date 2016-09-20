@@ -182,7 +182,7 @@ public class MenuRightFragment extends Fragment implements View.OnClickListener 
                 startActivity(intent);
                 break;
             case R.id.shareAppRL:
-                shareMsg("分享", "让你的数据线变得更聪明", "Snowkis 让你的数据线变得更聪明 http://a.app.qq.com/o/simple.jsp?pkgname=com.snowkids.snowkids", "");
+                shareMsg("分享", "让你的数据线变得更聪明", "Snowkids 让你的数据线变得更聪明 http://a.app.qq.com/o/simple.jsp?pkgname=com.snowkids.snowkids", "");
                 break;
             default:
                 break;
